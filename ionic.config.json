@@ -1,0 +1,7 @@
+{
+  "name": "LGBTQApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
