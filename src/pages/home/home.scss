@@ -1,3 +1,138 @@
 page-home {
 
+  .scroll-content{
+    padding: 0 !important;
+  }
+
+  ion-card{
+    margin: 4% 6% !important;
+    width: 88% !important;
+  }
+
+  .swiper-slide{
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+}
+
+.toolbar{
+  min-height: 64px;
+}
+
+.articleType{
+  margin-left: auto
+}
+
+.articles{
+  p{
+    padding: 0% 6%;
+  }
+  .titleText{
+    margin-bottom: 0;
+  }
+  .row{
+        margin-bottom: 4%;
+  }
+  .articleDate, .articleType{
+        text-transform: uppercase;
+  }
+}
+
+  .slide-zoom{
+    text-align: left;
+  }
+
+  .toolbar-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .arrow{
+    position: absolute;
+    top: 19%;
+    z-index: 20;
+    font-size: 3.2em;
+  }
+
+  .arrowLeft{
+    left: 2%;
+  }
+
+.arrowRight{
+  right: 2%;
+}
+
+  .articles{
+    height: 49%;
+  }
+
+  @media (max-height: 500px) {
+    .articles{
+      height: 43%;
+    }
+  }
+
+  .newsButton{
+      height: 9%;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .sections{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-slide{
+      margin-top: 1%;
+      margin-bottom: 2%;
+      width: 28.8vw !important;
+    }
+    .swiper-slide:first-child {
+      margin-left: 3% !important;
+    }
+    .swiper-slide:last-of-type {
+      margin-right: 3% !important;
+    }
+  }
+
+  .panicButton{
+
+      height: 12%;
+
+      .grid{
+        height: 100%;
+      }
+
+      ion-row{
+
+          height: 100%;
+          align-items: center;
+
+          .icono{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+
+          ion-card-header{
+            text-transform: uppercase;
+            padding: 0;
+          }
+
+          ion-card-content{
+            font-size: 1.2rem;
+            padding: 0;
+          }
+
+      }
+
+  }
+
 }

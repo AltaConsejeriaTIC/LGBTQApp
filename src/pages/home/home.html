@@ -1,14 +1,94 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-icon name="glasses"></ion-icon>
+        <p>En Bogotá se puede ser</p>
+        <ion-icon name="menu"></ion-icon>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+    <ion-icon name="ios-arrow-dropleft" class="arrow arrowLeft"></ion-icon>
+
+    <ion-slides pager class="articles">
+
+
+        <ion-slide style="background-color: green">
+          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <ion-row>
+            <p class="articleDate">20 junio, 2018</p>
+            <p class="articleType">noticia</p>
+          </ion-row>
+        </ion-slide>
+
+        <ion-slide style="background-color: blue">
+          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <ion-row>
+            <p class="articleDate">20 junio, 2018</p>
+            <p class="articleType">noticia</p>
+          </ion-row>
+        </ion-slide>
+
+        <ion-slide style="background-color: red">
+          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <ion-row>
+            <p class="articleDate">20 junio, 2018</p>
+            <p class="articleType">noticia</p>
+          </ion-row>
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-icon name="ios-arrow-dropright" class="arrow arrowRight"></ion-icon>
+
+    <ion-card class="newsButton">
+
+        <ion-card-content>
+          todos los eventos y noticias
+        </ion-card-content>
+
+    </ion-card>
+
+    <ion-slides slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections">
+
+        <ion-slide style="background-color: green">
+
+        </ion-slide>
+
+        <ion-slide style="background-color: blue">
+
+        </ion-slide>
+
+        <ion-slide style="background-color: red">
+
+        </ion-slide>
+
+        <ion-slide style="background-color: yellow">
+
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-card class="panicButton">
+        <ion-grid>
+            <ion-row>
+                  <ion-col col-3 class="icono">
+                      <ion-icon name="glasses"></ion-icon>
+                  </ion-col>
+
+                  <ion-col col-9>
+                      <ion-card-header>
+                          Boton de emergencia
+                      </ion-card-header>
+
+                      <ion-card-content>
+                        Llama al 123 o alerta a tus contactos en caso de sentirte en riesgo
+                      </ion-card-content>
+                  </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
 </ion-content>
