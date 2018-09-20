@@ -1,7 +1,25 @@
 page-home {
 
+  p.headerTitle {
+    font-weight: 900;
+}
+
   .scroll-content{
     padding: 0 !important;
+  }
+
+ion-icon{
+font-size: 3.2rem;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ffffff;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
   }
 
   ion-card{
@@ -9,10 +27,12 @@ page-home {
     width: 88% !important;
   }
 
-  .swiper-slide{
+  .article{
     display: flex;
     align-items: flex-end;
     justify-content: start;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10.38%, rgba(0, 0, 0, 0.445897) 30.68%, rgba(0, 0, 0, 0.74) 49%), url("../assets/imgs/home.png");
+    background-size: 100% 100%;
 }
 
 .toolbar{
@@ -29,18 +49,37 @@ page-home {
   }
   .titleText{
     margin-bottom: 0;
+    text-align: left;
+    color: white;
+    letter-spacing: 0.06em;
+    line-height: 4vh;
+    font-size: 2rem;
   }
+
+  @media (max-height: 500px) {
+    .titleText{
+      line-height: 3.5vh;
+      font-size: 1.5rem;
+    }
+  }
+
   .row{
         margin-bottom: 4%;
   }
   .articleDate, .articleType{
         text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 1.15rem;
+        font-weight: bold;
+  }
+
+.articleDate{
+  color: white;
+}
+  .articleType{
+      color: #F15E15;
   }
 }
-
-  .slide-zoom{
-    text-align: left;
-  }
 
   .toolbar-content{
     display: flex;
@@ -53,7 +92,14 @@ page-home {
     position: absolute;
     top: 19%;
     z-index: 20;
-    font-size: 3.2em;
+    color: white;
+    font-size: 1.8em;
+    border-radius: 50%;
+    color: white;
+    padding: 1.5%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(30px);/* Note: backdrop-filter has minimal browser support */
+    transform: rotate(0.29deg);
   }
 
   .arrowLeft{
@@ -70,7 +116,7 @@ page-home {
 
   @media (max-height: 500px) {
     .articles{
-      height: 43%;
+      height: 48%;
     }
   }
 
@@ -80,6 +126,8 @@ page-home {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-weight: 800;
+      letter-spacing: 0.03em;
   }
 
   .sections{
@@ -88,14 +136,53 @@ page-home {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.2em;
+    color: white;
+
+    ion-icon{
+    font-size: 4rem;
+    }
+
+    @media (max-height: 500px) {
+      ion-icon{
+      font-size: 3rem;
+      }
+    }
+
+    .slide-zoom {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+    .sectionText{
+      font-size: 1.04rem !important;
+      margin: 10.15%;
+    }
+
+    @media (max-height: 500px) {
+      .sectionText{
+        font-size: 0.9rem !important;
+      }
+    }
+
+    .alianza{
+      margin: 10.15% 13%;
+    }
 
     ion-slide{
-      margin-top: 1%;
-      margin-bottom: 2%;
       width: 28.8vw !important;
+      margin-right: 5px;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      align-items: baseline;
+      border-radius: 3%;
     }
     .swiper-slide:first-child {
-      margin-left: 3% !important;
+      margin-left: 7% !important;
     }
     .swiper-slide:last-of-type {
       margin-right: 3% !important;
@@ -110,6 +197,10 @@ page-home {
         height: 100%;
       }
 
+        margin: 0;
+        padding-bottom: 7px;
+        position: relative;
+
       ion-row{
 
           height: 100%;
@@ -120,19 +211,61 @@ page-home {
             display: flex;
             align-items: center;
           }
+          .campana{
+            background: #FD3D37;
+            border: 1px solid #FD3D37;
+            border-radius: 50%;
+            color: white;
+            padding: 10%;
+          }
+
+          @media (max-height: 500px) {
+            .campana{
+              padding: 7%;
+            }
+          }
+
+          .panicButtonText{
+            padding: 5.5%;
+          }
+
+          ion-card-header, ion-card-content{
+            padding: 0;
+            font-weight: 900;
+            line-height: 2.4vh;
+            letter-spacing: 0.06em;
+          }
 
           ion-card-header{
             text-transform: uppercase;
-            padding: 0;
+            font-size: 1.2rem;
           }
 
           ion-card-content{
-            font-size: 1.2rem;
-            padding: 0;
+            font-weight: 400;
+            font-size: 1.05rem;
+            padding-top: 1vh !important;
+          }
+
+          @media (max-height: 500px) {
+            ion-card-content{
+              font-size: 0.85rem;
+              padding-top: 0.2vh !important;
+            }
           }
 
       }
 
+  }
+
+  .panicButton:before {
+    position: absolute;
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 2px;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 
 }

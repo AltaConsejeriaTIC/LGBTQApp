@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import "../theme/icons";
+
+@import "../theme/untitled-font-1";
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../assets/fonts/Nunito/Nunito-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-style: bold;
+  src: url('../assets/fonts/Nunito/Nunito-Bold.ttf') format('ttf');
+
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-style: extra-bold;
+  src: url('../assets/fonts/Nunito/Nunito-ExtraBold.ttf') format('ttf');
+
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../assets/fonts/Nunito/Nunito-Black.ttf') format('ttf');
+  font-weight: 900;
+  font-style: boldest;
+}
+
+* {
+  font-family: 'Nunito';
+}

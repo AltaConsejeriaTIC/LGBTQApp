@@ -1,0 +1,57 @@
+
+
+@font-face {
+  font-family: "untitled-font-1";
+  src:url("../assets/fonts/untitled-font-1/untitled-font-1.eot");
+  src:url("../assets/fonts/untitled-font-1/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/untitled-font-1/untitled-font-1.woff") format("woff"),
+    url("../assets/fonts/untitled-font-1/untitled-font-1.ttf") format("truetype"),
+    url("../assets/fonts/untitled-font-1/untitled-font-1.svg#untitled-font-1") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin makeIcon($arg, $val) {
+    .icon-#{$arg}:before ,
+    .ion-#{$arg}:before ,
+    .ion-ios-#{$arg}:before ,
+    .ion-ios-#{$arg}-outline:before ,
+    .ion-md-#{$arg}:before ,
+    .ion-md-#{$arg}-outline:before {
+        content: $val;
+    }
+}
+
+@include makeIcon(icon-fleacha-atras, '\e003');
+@include makeIcon(icon-flecha-derecha, '\e004');
+@include makeIcon(icon-icono-configuracion, '\e006');
+@include makeIcon(icon-icono-alianzas, '\e002');
+@include makeIcon(icon-icono-censo, '\e005');
+@include makeIcon(icon-icono-facebook, '\e008');
+@include makeIcon(icon-icono-llamada, '\e009');
+@include makeIcon(icon-icono-mensaje, '\e00a');
+@include makeIcon(icon-icono-nosotros, '\e00b');
+@include makeIcon(icon-icono-politica, '\e00c');
+@include makeIcon(icon-icono-twitter, '\e00d');
+@include makeIcon(icon-icono-organizaciones, '\e00e');
+@include makeIcon(icon-menu-hamburguesa, '\e00f');
+@include makeIcon(icon-icono-denuncia, '\e000');
+@include makeIcon(icon-icono-configuracion-1, '\e001');
+@include makeIcon(icon-flecha-derecha-1, '\e007');
+@include makeIcon(icon-fleacha-atras-1, '\e0010');

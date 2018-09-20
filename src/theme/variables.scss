@@ -78,7 +78,8 @@ $colors: (
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
-@import "ionic.ionicons";
+
+@import "ionicons";
 
 
 // Fonts
@@ -86,3 +87,16 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$font-family-untitled-font-1: "untitled-font-1";
+$font-family-iconmoon: "IconMoon";
+
+@font-face {
+font-family: Nunito;
+src: url("../assets/fonts/Nunito/Nunito-Regular.ttf");
+}
+
+$font-family-ios-base: "Nunito";
+$font-family-md-base: "Nunito";
+$font-family-wp-base: "Nunito";
+$font-family-Nunito: "Nunito";
