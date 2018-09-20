@@ -1,5 +1,12 @@
 page-home {
 
+  ion-navbar{
+    img {
+    max-width: 15%;
+    border: 0;
+      }
+  }
+
   p.headerTitle {
     font-weight: 900;
 }
@@ -59,7 +66,7 @@ font-size: 3.2rem;
   @media (max-height: 500px) {
     .titleText{
       line-height: 3.5vh;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -69,7 +76,7 @@ font-size: 3.2rem;
   .articleDate, .articleType{
         text-transform: uppercase;
         letter-spacing: 0.04em;
-        font-size: 1.15rem;
+        font-size: 0.9rem;
         font-weight: bold;
   }
 
@@ -141,6 +148,7 @@ font-size: 3.2rem;
 
     ion-icon{
     font-size: 4rem;
+    padding-top: 2vh;
     }
 
     @media (max-height: 500px) {
@@ -243,7 +251,8 @@ font-size: 3.2rem;
 
           ion-card-content{
             font-weight: 400;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            letter-spacing: 0;
             padding-top: 1vh !important;
           }
 
