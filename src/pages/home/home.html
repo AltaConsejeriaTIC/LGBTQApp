@@ -9,9 +9,9 @@
 <ion-content padding>
 
 
-    <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft"></ion-icon>
+    <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()"></ion-icon>
 
-    <ion-slides pager class="articles">
+    <ion-slides pager class="articles" #slides>
 
 
         <ion-slide class="article">
@@ -40,7 +40,7 @@
 
     </ion-slides>
 
-    <ion-icon name="icon-flecha-derecha" class="arrow arrowRight"></ion-icon>
+    <ion-icon name="icon-flecha-derecha" class="arrow arrowRight" (click)="nextSlide()"></ion-icon>
 
     <ion-card class="newsButton">
 

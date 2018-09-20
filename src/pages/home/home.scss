@@ -2,9 +2,9 @@ page-home {
 
   ion-navbar{
     img {
-    max-width: 15%;
+    max-width: 14%;
     border: 0;
-      }
+}
   }
 
   p.headerTitle {
@@ -38,7 +38,7 @@ font-size: 3.2rem;
     display: flex;
     align-items: flex-end;
     justify-content: start;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10.38%, rgba(0, 0, 0, 0.445897) 30.68%, rgba(0, 0, 0, 0.74) 49%), url("../assets/imgs/home.png");
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home.png");
     background-size: 100% 100%;
 }
 
