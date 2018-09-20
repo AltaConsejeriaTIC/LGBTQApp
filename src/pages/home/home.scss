@@ -34,12 +34,23 @@ font-size: 3.2rem;
     width: 88% !important;
   }
 
-  .article{
+  .article1, .article2, .article3{
     display: flex;
     align-items: flex-end;
     justify-content: start;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home.png");
     background-size: 100% 100%;
+}
+
+.article1{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home.png");
+}
+
+.article2{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home2.png");
+}
+
+.article3{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home3.png");
 }
 
 .toolbar{
