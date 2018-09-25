@@ -1,9 +1,13 @@
 <ion-header>
+
     <ion-navbar>
+
         <img src="../assets/icon/logo.png">
         <p class="headerTitle">En Bogotá se puede ser</p>
-        <ion-icon name="icon-menu-hamburguesa"></ion-icon>
+        <ion-icon name="icon-menu-hamburguesa" (click)="openMenuModal()"></ion-icon>
+
     </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
@@ -11,11 +15,10 @@
 
     <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()"></ion-icon>
 
-    <ion-slides pager class="articles" #slides>
-
+    <ion-slides pager class="articles" #slides (ionSlideDidChange)="slideChanged()">
 
         <ion-slide class="article article1">
-          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
           <ion-row>
             <p class="articleDate">20 junio, 2018</p>
             <p class="articleType">noticia</p>
@@ -23,7 +26,7 @@
         </ion-slide>
 
         <ion-slide class="article article2">
-          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
           <ion-row>
             <p class="articleDate">20 junio, 2018</p>
             <p class="articleType">noticia</p>
@@ -31,7 +34,7 @@
         </ion-slide>
 
         <ion-slide class="article article3">
-          <p class="titleText">Miles de personas salen a las calles de la India  a protestar</p>
+          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
           <ion-row>
             <p class="articleDate">20 junio, 2018</p>
             <p class="articleType">noticia</p>
@@ -44,7 +47,7 @@
 
     <ion-card class="newsButton">
 
-        <ion-card-content>
+        <ion-card-content (click)="goToListado()">
           todos los eventos y noticias
         </ion-card-content>
 
@@ -52,22 +55,22 @@
 
     <ion-slides slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections">
 
-        <ion-slide style="background-color: #F1185D">
+        <ion-slide style="background-color: #F1185D" (click)="goToDenuncia()">
           <ion-icon name="icon-icono-denuncia"></ion-icon>
           <p class="sectionText">Canales de denuncia</p>
         </ion-slide>
 
-        <ion-slide style="background-color: #055ADA">
+        <ion-slide style="background-color: #055ADA" (click)="goToDerecho()">
             <ion-icon name="icon-icono-politica"></ion-icon>
             <p class="sectionText">Así garantizamos tus derechos</p>
         </ion-slide>
 
-        <ion-slide style="background-color: #05AE0B">
+        <ion-slide style="background-color: #05AE0B" (click)="goToAlianza()">
           <ion-icon name="icon-icono-alianzas"></ion-icon>
           <p class="sectionText alianza">Nuestras alianza</p>
         </ion-slide>
 
-        <ion-slide style="background-color: #670FB9">
+        <ion-slide style="background-color: #670FB9" (click)="goToOrganizacion()">
           <ion-icon name="icon-icono-organizaciones"></ion-icon>
           <p class="sectionText">Organizaciones sociales</p>
         </ion-slide>
@@ -77,9 +80,8 @@
     <ion-card class="panicButton">
         <ion-grid>
             <ion-row>
-                  <ion-col col-3 class="icono">
-                      <ion-icon name="icon-campana-boton" class="campana"></ion-icon>
-                  </ion-col>
+
+                  <ion-icon name="icon-campana-boton" class="campana"></ion-icon>
 
                   <ion-col col-9 class="panicButtonText">
                       <ion-card-header>

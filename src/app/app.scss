@@ -14,7 +14,6 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-@import "../theme/icons";
 
 @import "../theme/untitled-font-1";
 
@@ -51,3 +50,40 @@
 * {
   font-family: 'Nunito';
 }
+
+
+  ion-modal {
+
+    ion-content.content{
+      padding: 1% !important;
+    }
+
+    .scroll-content {
+        padding: 1% !important;
+}
+.item-md {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+      pointer-events: none;
+      ion-backdrop {
+        visibility: visible;
+          pointer-events: auto;
+          &.backdrop-hide {
+              opacity: 0 !important;
+              pointer-events: none;
+              cursor: auto;
+          }
+      }
+      .modal-wrapper {
+          pointer-events: auto;
+          position: absolute;
+          opacity: 1;
+          transform: translateY(0px);
+          right: 5%;
+          top: 2%;
+          width: 69%;
+          height: 16%;
+      }
+  }

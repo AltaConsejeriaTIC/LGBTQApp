@@ -2,102 +2,109 @@ page-home {
 
   ion-navbar{
     img {
-    max-width: 14%;
-    border: 0;
-}
+      max-width: 14%;
+    }
   }
 
   p.headerTitle {
     font-weight: 900;
-}
+  }
 
   .scroll-content{
     padding: 0 !important;
   }
 
-ion-icon{
-font-size: 3.2rem;
-}
-
-.swiper-pagination-bullet-active {
-    background: #ffffff;
-    opacity: 1;
-}
-
-.swiper-pagination-bullet {
-    width: 5px;
-    height: 5px;
+  ion-icon{
+    font-size: 3.2rem;
   }
+
+  .swiper-pagination-bullet-active {
+      background: #ffffff;
+      opacity: 1;
+  }
+
+  .swiper-pagination-bullet {
+      width: 5px;
+      height: 5px;
+    }
 
   ion-card{
     margin: 4% 6% !important;
     width: 88% !important;
   }
 
+  .articles{
+    height: 48%;
+  }
+
   .article1, .article2, .article3{
     display: flex;
     align-items: flex-end;
     justify-content: start;
-    background-size: 100% 100%;
-}
-
-.article1{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home.png");
-}
-
-.article2{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home2.png");
-}
-
-.article3{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home3.png");
-}
-
-.toolbar{
-  min-height: 64px;
-}
-
-.articleType{
-  margin-left: auto
-}
-
-.articles{
-  p{
-    padding: 0% 6%;
-  }
-  .titleText{
-    margin-bottom: 0;
-    text-align: left;
-    color: white;
-    letter-spacing: 0.06em;
-    line-height: 4vh;
-    font-size: 2rem;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
   }
 
-  @media (max-height: 500px) {
+  .article1{
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home.png");
+  }
+
+  .article2{
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home2.png");
+  }
+
+  .article3{
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../assets/imgs/home3.png");
+  }
+
+  .toolbar{
+    min-height: 64px;
+  }
+
+  .articleType{
+    margin-left: auto;
+  }
+
+  .articles{
+    .slide-zoom {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
     .titleText{
-      line-height: 3.5vh;
-      font-size: 1.2rem;
+      margin-bottom: 0;
+      text-align: left;
+      color: white;
+      letter-spacing: 0.06em;
+      line-height: 4vh;
+      font-size: 2rem;
+    }
+
+    @media (max-height: 500px) {
+      .titleText{
+        line-height: 3.5vh;
+        font-size: 1.2rem;
+      }
+    }
+
+    .row{
+          margin-bottom: 4%;
+    }
+    .articleDate, .articleType{
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          font-size: 0.9rem;
+          font-weight: bold;
+    }
+
+  .articleDate{
+    color: white;
+  }
+    .articleType{
+        color: #F15E15;
     }
   }
-
-  .row{
-        margin-bottom: 4%;
-  }
-  .articleDate, .articleType{
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        font-size: 0.9rem;
-        font-weight: bold;
-  }
-
-.articleDate{
-  color: white;
-}
-  .articleType{
-      color: #F15E15;
-  }
-}
 
   .toolbar-content{
     display: flex;
@@ -124,19 +131,14 @@ font-size: 3.2rem;
     left: 2%;
   }
 
-.arrowRight{
-  right: 2%;
-}
+  .arrowRight{
+    right: 2%;
+  }
 
   .articles{
-    height: 49%;
   }
 
-  @media (max-height: 500px) {
-    .articles{
-      height: 48%;
-    }
-  }
+
 
   .newsButton{
       height: 9%;
@@ -149,64 +151,64 @@ font-size: 3.2rem;
   }
 
   .sections{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.2em;
-    color: white;
-
-    ion-icon{
-    font-size: 4rem;
-    padding-top: 2vh;
-    }
-
-    @media (max-height: 500px) {
-      ion-icon{
-      font-size: 3rem;
-      }
-    }
-
-    .slide-zoom {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-
-    .sectionText{
-      font-size: 1.04rem !important;
-      margin: 10.15%;
-    }
-
-    @media (max-height: 500px) {
-      .sectionText{
-        font-size: 0.9rem !important;
-      }
-    }
-
-    .alianza{
-      margin: 10.15% 13%;
-    }
-
-    ion-slide{
-      width: 28.8vw !important;
-      margin-right: 5px;
-      text-align: center;
+      height: 20%;
+      width: 100%;
       display: flex;
-      flex-flow: column;
-      height: 100%;
-      align-items: baseline;
-      border-radius: 3%;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2em;
+      color: white;
+
+      ion-icon{
+      font-size: 4rem;
+      padding-top: 2vh;
+      }
+
+      @media (max-height: 500px) {
+        ion-icon{
+        font-size: 3rem;
+        }
+      }
+
+      .slide-zoom {
+          height: 100%;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+      }
+
+      .sectionText{
+        font-size: 1.04rem !important;
+        margin: 10.15%;
+      }
+
+      @media (max-height: 500px) {
+        .sectionText{
+          font-size: 0.9rem !important;
+        }
+      }
+
+      .alianza{
+        margin: 10.15% 13%;
+      }
+
+      ion-slide{
+        width: 28.8vw !important;
+        margin-right: 5px;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        align-items: baseline;
+        border-radius: 3%;
+      }
+      .swiper-slide:first-child {
+        margin-left: 7% !important;
+      }
+      .swiper-slide:last-of-type {
+        margin-right: 3% !important;
+      }
     }
-    .swiper-slide:first-child {
-      margin-left: 7% !important;
-    }
-    .swiper-slide:last-of-type {
-      margin-right: 3% !important;
-    }
-  }
 
   .panicButton{
 
@@ -224,6 +226,7 @@ font-size: 3.2rem;
 
           height: 100%;
           align-items: center;
+          justify-content: center;
 
           .icono{
             justify-content: center;
@@ -235,12 +238,12 @@ font-size: 3.2rem;
             border: 1px solid #FD3D37;
             border-radius: 50%;
             color: white;
-            padding: 10%;
+            padding: 2%;
           }
 
           @media (max-height: 500px) {
-            .campana{
-              padding: 7%;
+          .campana{
+              padding: 1%;
             }
           }
 
