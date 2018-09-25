@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { QuienesSomosPage } from '../quienes-somos/quienes-somos';
+import { FormularioPage } from '../formulario/formulario';
 
 /**
  * Generated class for the ModalMenuPage page.
@@ -20,6 +22,14 @@ export class ModalMenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalMenuPage');
+  }
+
+  goToQuienesSomos() {
+    this.navCtrl.push(QuienesSomosPage);
+  }
+
+  goToFormulario() {
+    this.navCtrl.push(FormularioPage);
   }
 
   dismiss() {

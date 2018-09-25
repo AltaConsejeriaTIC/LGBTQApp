@@ -13,6 +13,9 @@ import { DenunciaPage } from "../pages/denuncia/denuncia";
 import { AlianzaPage } from "../pages/alianza/alianza";
 import { OrganizacionPage } from "../pages/organizacion/organizacion";
 
+import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
+import { FormularioPage } from '../pages/formulario/formulario';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,7 +25,9 @@ import { OrganizacionPage } from "../pages/organizacion/organizacion";
     DerechoPage,
     DenunciaPage,
     AlianzaPage,
-    OrganizacionPage
+    OrganizacionPage,
+    QuienesSomosPage,
+    FormularioPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,9 @@ import { OrganizacionPage } from "../pages/organizacion/organizacion";
     DerechoPage,
     DenunciaPage,
     AlianzaPage,
-    OrganizacionPage
+    OrganizacionPage,
+    QuienesSomosPage,
+    FormularioPage
   ],
   providers: [
     StatusBar,

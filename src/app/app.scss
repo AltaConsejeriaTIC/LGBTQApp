@@ -55,16 +55,13 @@
   ion-modal {
 
     ion-content.content{
-      padding: 1% !important;
+      padding: 2% !important;
     }
 
     .scroll-content {
-        padding: 1% !important;
-}
-.item-md {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
+        padding: 2% !important;
+        overflow-y: hidden;
+    }
 
       pointer-events: none;
       ion-backdrop {
@@ -83,7 +80,13 @@
           transform: translateY(0px);
           right: 5%;
           top: 2%;
-          width: 69%;
-          height: 16%;
+          width: 70%;
+          height: 17%;
+          max-height: 114px;
       }
+      @media (max-height: 500px) {
+        .modal-wrapper {
+            height: 20%;
+          }
+        }
   }
