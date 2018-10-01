@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Nunito';
-  src: url('../assets/fonts/Nunito/Nunito-Regular.ttf') format('ttf');
+  src: url('../assets/Nunito/Nunito-Regular.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
 }
@@ -28,7 +28,7 @@
   font-family: 'Nunito';
   font-weight: 700;
   font-style: bold;
-  src: url('../assets/fonts/Nunito/Nunito-Bold.ttf') format('ttf');
+  src: url('../assets/Nunito/Nunito-Bold.ttf') format('ttf');
 
 }
 
@@ -36,13 +36,13 @@
   font-family: 'Nunito';
   font-weight: 800;
   font-style: extra-bold;
-  src: url('../assets/fonts/Nunito/Nunito-ExtraBold.ttf') format('ttf');
+  src: url('../assets/Nunito/Nunito-ExtraBold.ttf') format('ttf');
 
 }
 
 @font-face {
   font-family: 'Nunito';
-  src: url('../assets/fonts/Nunito/Nunito-Black.ttf') format('ttf');
+  src: url('../assets/Nunito/Nunito-Black.ttf') format('ttf');
   font-weight: 900;
   font-style: boldest;
 }
@@ -53,6 +53,10 @@
 
 
   ion-modal {
+
+    .ion-page.show-page {
+      border-radius: 6.5px;
+}
 
     ion-content.content{
       padding: 2% !important;

@@ -10,7 +10,6 @@ import { FormularioPage } from '../formulario/formulario';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-modal-menu',
   templateUrl: 'modal-menu.html',

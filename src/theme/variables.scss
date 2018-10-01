@@ -3,7 +3,7 @@
 
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
-$font-path: "../assets/fonts";
+$font-path: "../assets";
 
 
 // The app direction is used to include
@@ -89,11 +89,34 @@ $colors: (
 @import "noto-sans";
 
 $font-family-untitled-font-1: "untitled-font-1";
-$font-family-iconmoon: "IconMoon";
 
 @font-face {
 font-family: Nunito;
-src: url("../assets/fonts/Nunito/Nunito-Regular.ttf");
+src: url("../assets/Nunito/Nunito-Regular.ttf");
+font-weight: 400;
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 700;
+  src: url('../assets/Nunito/Nunito-Bold.ttf');
+  font-style: bold;
+
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 800;
+  src: url('../assets/Nunito/Nunito-ExtraBold.ttf');
+  font-style: extra-bold;
+
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 900;
+  src: url('../assets/Nunito/Nunito-Black.ttf');
+  font-style: boldest;
 }
 
 $font-family-ios-base: "Nunito";
