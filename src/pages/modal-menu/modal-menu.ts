@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { QuienesSomosPage } from '../quienes-somos/quienes-somos';
 import { FormularioPage } from '../formulario/formulario';
 
@@ -12,12 +12,10 @@ import { FormularioPage } from '../formulario/formulario';
 
 @Component({
   selector: 'page-modal-menu',
-  templateUrl: 'modal-menu.html',
+  templateUrl: 'modal-menu.html'
 })
 export class ModalMenuPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalMenuPage');
@@ -32,7 +30,6 @@ export class ModalMenuPage {
   }
 
   dismiss() {
-   this.viewCtrl.dismiss();
- }
-
+    this.viewCtrl.dismiss();
+  }
 }

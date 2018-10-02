@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the QuienesSomosPage page.
@@ -10,15 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-quienes-somos',
-  templateUrl: 'quienes-somos.html',
+  templateUrl: 'quienes-somos.html'
 })
 export class QuienesSomosPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuienesSomosPage');
   }
-
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the DerechoPage page.
@@ -10,15 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-derecho',
-  templateUrl: 'derecho.html',
+  templateUrl: 'derecho.html'
 })
 export class DerechoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DerechoPage');
   }
-
 }

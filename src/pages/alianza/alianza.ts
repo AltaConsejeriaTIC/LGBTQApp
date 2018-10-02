@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the AlianzaPage page.
@@ -10,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-alianza',
-  templateUrl: 'alianza.html',
+  templateUrl: 'alianza.html'
 })
 export class AlianzaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   backButtonClick() {
-    console.log('// dos omething')
+    console.log('// dos omething');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlianzaPage');
   }
-
 }
