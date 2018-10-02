@@ -6,19 +6,56 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ACTUALIDAD EN BOGOTÁ </ion-title>
-    <div>
-      <button (click)="changeSectionEvents()">EVENTOS</button>
-      <button (click)="changeSectionNews()">NOTICIAS</button>
-    </div>
+  <ion-navbar hideBackButton>
+    <ion-title>ACTUALIDAD EN BOGOTÁ</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+  <div class="divButSec">
+    <button (click)="changeSectionEvents()" class="buttonSection">EVENTOS</button>
+    <button (click)="changeSectionNews()" class="buttonSection">NOTICIAS</button>
+  </div>
 
 </ion-header>
 
 <ion-content padding>
 
-  <div *ngIf="evento">Evento</div>
-  <div *ngIf="noticia">Noticia</div>
+  <div class="month">
+    <p>Agosto, 2018</p>
+  </div>
+  <div *ngIf="evento">
+    <div class="article">
+      <img src="../assets/imgs/home.png">
+      <ion-row class="articleContent">
+        <ion-col col-2 class="articleDate">
+          <p>26 DOM</p>
+        </ion-col>
+        <ion-col col-10 class="articleText">
+          <p>Ciclo Rosa 2018</p>
+          <p>Muestras audiovisuales</p>
+          <p>2:00 P.M. - 5:00 A.M.<p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="noticia">
+    <div class="news">
+      <img src="../assets/imgs/home2.png">
+      <ion-row class="articleContent">
+        <ion-col col-12 class="articleDate">
+          <p>03 septiembre 2018 - 12:00PM </p>
+        </ion-col>
+        <ion-col col-12 class="articleText">
+          <p>'Huellas Diversas': Robinson Chaparro y la causa LGBTI en Guaviare</p>
+          <p>Nacido y criado en San José del Guaviare; Robinson Chaparro vivió pensando que era normal esconderse
+            cuando atacaban ...</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
 
 </ion-content>

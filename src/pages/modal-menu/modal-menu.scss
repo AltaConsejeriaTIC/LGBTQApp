@@ -7,6 +7,12 @@ page-modal-menu {
       margin: 0 !important;
     }
 
+    ion-icon {
+    font-size: 1.7em;
+}
+
+
+
   @media (max-height: 500px) {
     ion-label {
         font-size: 1.2rem;
@@ -30,4 +36,18 @@ page-modal-menu {
     justify-content: space-evenly;
     align-items: center;
   }
+
+  .ayudanos{
+    display: flex;
+    align-items: flex-start;
+  }
+  .ayudanos:before {
+          background-color: #bdbdbda3;
+          content: '';
+          width: 88%;
+          top: 1px;
+          position: absolute;
+          right: 5%;
+          height: 1px;
+       }
 }

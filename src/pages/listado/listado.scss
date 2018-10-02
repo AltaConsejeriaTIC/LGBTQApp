@@ -1,3 +1,61 @@
 page-listado {
+  ion-title {
+    text-transform: uppercase;
+  }
 
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #ff5c0b;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+    color: white !important;
+  }
+
+  .scroll-content {
+    img {
+      width: 100%;
+    }
+  }
+  .divButSec {
+    background-color: #ff5c0b;
+  }
+
+  .buttonSection {
+    background-color: #ff5c0b;
+    color: white;
+    margin: 1vh 8vh;
+  }
+
+  .month {
+    height: 7vh;
+    background-color: #ce4908;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      color: white;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+  .article {
+    .articleDate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .news {
+    display: block;
+  }
+
+  .articleDate {
+  }
 }
