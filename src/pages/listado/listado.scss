@@ -30,11 +30,22 @@ page-listado {
       p{
         color: white;
         margin: 0;
+        font-weight: bold;
       }
     }
+    .article{
+        .articleDate{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+       }
+    }
+
+    .news{
+      display: block;
+    }
+
+
     .articleDate{
-      display: flex;
-      justify-content: center;
-      align-items: center;
    }
 }
