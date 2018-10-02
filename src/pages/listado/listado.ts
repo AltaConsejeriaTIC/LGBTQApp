@@ -11,15 +11,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-listado',
-  templateUrl: 'listado.html',
+  templateUrl: 'listado.html'
 })
 export class ListadoPage {
+  public evento: boolean = true;
+  public noticia: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListadoPage');
   }
 
+  changeSectionEvents() {
+    this.evento = true;
+    this.noticia = false;
+  }
+  changeSectionNews() {
+    this.evento = false;
+    this.noticia = true;
+  }
 }

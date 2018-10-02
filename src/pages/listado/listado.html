@@ -7,11 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Eventos y noticias </ion-title>
+    <ion-title>ACTUALIDAD EN BOGOTÁ </ion-title>
+    <div>
+      <button (click)="changeSectionEvents()">EVENTOS</button>
+      <button (click)="changeSectionNews()">NOTICIAS</button>
+    </div>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+
+  <div *ngIf="evento">Evento</div>
+  <div *ngIf="noticia">Noticia</div>
 
 </ion-content>
