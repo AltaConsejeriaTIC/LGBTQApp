@@ -6,12 +6,37 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>Eventos y noticias </ion-title>
+        <ion-buttons left>
+    		<button ion-button navPop icon-only>
+                  <ion-icon name="icon-fleacha-atras"></ion-icon>
+    		</button>
+    	</ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+
+  <div class="month">
+     <p>Agosto, 2018</p>
+  </div>
+
+<div class="article">
+    <img src="../assets/imgs/home.png">
+    <ion-row class="articleContent">
+      <ion-col col-2 class="articleDate">
+        <p>26 DOM</p>
+      </ion-col>
+      <ion-col col-10 class="articleText">
+        <p>Ciclo Rosa 2018</p>
+        <p>Muestras audiovisuales</p>
+        <p>2:00 P.M. - 5:00 A.M.<p>
+      </ion-col>
+    </ion-row>
+
+</div>
+
 
 </ion-content>

@@ -1,3 +1,40 @@
 page-listado {
+    ion-title{
+       text-transform: uppercase;
+    }
 
+    ion-content, .scroll-content{
+    padding: 0 !important;
+    }
+
+    .toolbar-background {
+        background-color: #FF5C0B;
+      }
+
+    .bar-button-default, .toolbar-title{
+      color: white !important;
+    }
+
+    .scroll-content{
+      img {
+              width: 100%;
+          }
+    }
+
+    .month{
+      height: 7vh;
+      background-color: #CE4908;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        color: white;
+        margin: 0;
+      }
+    }
+    .articleDate{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
 }
