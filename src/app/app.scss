@@ -93,4 +93,10 @@
             height: 22.5%;
           }
         }
+        @media (min-height: 800px) {
+          .modal-wrapper {
+              height: 13.5%;
+            }
+          }
+
   }
