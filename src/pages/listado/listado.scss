@@ -1,6 +1,8 @@
 page-listado {
-  ion-title {
+  .toolbar-title.toolbar-title {
     text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
   }
 
   ion-content,
@@ -17,6 +19,10 @@ page-listado {
     color: white !important;
   }
 
+  ion-title .title {
+
+}
+
   .scroll-content {
     img {
       width: 100%;
@@ -24,27 +30,73 @@ page-listado {
   }
 
   .divButSec {
-      background-color: #ff5c0b;
+    height: 8vh;
+    background-color: #ff5c0b;
+    display: flex;
+    border-top: 1px solid #db4f0a;
   }
 
   .buttonSection {
-      background-color: #ff5c0b;
-      color: white;
-      margin: 1vh 8vh;
+    background-color: #ff5c0b;
+    padding: 0;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 1.24rem;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: white;
+    margin: 0;
+    width: 50%;
   }
 
+  .buttonNews{
+             position: relative;
+  }
+
+  .buttonNews:before {
+          background-color: #db4f0a;
+          content: '';
+          height: 60%;
+          left: -1px;
+          position: absolute;
+          top: 20%;
+          width: 1px;
+       }
+
+.buttonEvents{
+           position: relative;
+}
+
+.lineEvents:before{
+    background-color: white;
+    content: '';
+    width: 35%;
+    bottom: 1px;
+    position: absolute;
+    left: 32%;
+    height: 3px;
+}
+
+.lineNews:after{
+  background-color: white;
+  content: '';
+  width: 35%;
+  bottom: 1px;
+  position: absolute;
+  left: 32%;
+  height: 3px;
+}
+
   .month {
-    height: 7vh;
-    background-color: #ce4908;
+    height: 5.5vh;
+    background-color: #db4f0a;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    margin: 0;
+    font-weight: bold;
 
-    p {
-      color: white;
-      margin: 0;
-      font-weight: bold;
-    }
   }
 
   .article {
@@ -79,13 +131,11 @@ page-listado {
             background-color: #bdbdbda3;
             content: '';
             height: 88%;
-            left: 1px;
+            left: 0px;
             position: absolute;
             top: 7%;
             width: 1px;
          }
-
-
   }
 
   .news {
