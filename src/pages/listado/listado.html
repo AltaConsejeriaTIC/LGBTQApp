@@ -27,7 +27,7 @@
 
   <p class="month">Agosto, 2018</p>
 
-  <div *ngIf="evento">
+  <div *ngIf="evento" (click)="goToDetails()">
     <div class="article">
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div *ngIf="noticia">
+  <div *ngIf="noticia" (click)="goToDetails()">
     <div class="news">
       <img src="../assets/imgs/home2.png">
       <ion-row class="articleContent">

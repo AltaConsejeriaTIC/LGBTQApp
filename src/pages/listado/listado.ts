@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { ContentDetailPage } from '../content-detail/content-detail';
 /**
  * Generated class for the ListadoPage page.
  *
@@ -29,5 +29,8 @@ export class ListadoPage {
   changeSectionNews() {
     this.evento = false;
     this.noticia = true;
+  }
+  goToDetails() {
+    this.navCtrl.push(ContentDetailPage);
   }
 }

@@ -16,6 +16,8 @@ import { OrganizacionPage } from "../pages/organizacion/organizacion";
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
 
+import { ContentDetailPage } from '../pages/content-detail/content-detail';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +29,8 @@ import { FormularioPage } from '../pages/formulario/formulario';
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
-    FormularioPage
+    FormularioPage,
+    ContentDetailPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { FormularioPage } from '../pages/formulario/formulario';
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
-    FormularioPage
+    FormularioPage,
+    ContentDetailPage
   ],
   providers: [
     StatusBar,
