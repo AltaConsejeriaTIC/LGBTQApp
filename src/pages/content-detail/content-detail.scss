@@ -1,5 +1,15 @@
 page-content-detail {
 
+
+.fixed-content:before {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  height: 3px;
+  content: '';
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
@@ -118,6 +128,19 @@ page-content-detail {
         font-weight: bold;
         font-size: 1.2rem;
       }
+    }
+
+    .link{
+          padding: 1% 10% 5% 10%;
+          color: #6D6F76;
+          line-height: 3.9vh;
+          font-size: 1.4rem;
+          p{
+            margin: 0;
+          }
+          span{
+              color: #FF5C0B;
+          }
     }
 
 }
