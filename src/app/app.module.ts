@@ -6,17 +6,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ModalMenuPage } from "../pages/modal-menu/modal-menu";
-import { ListadoPage } from "../pages/listado/listado";
-import { DerechoPage } from "../pages/derecho/derecho";
-import { DenunciaPage } from "../pages/denuncia/denuncia";
-import { AlianzaPage } from "../pages/alianza/alianza";
-import { OrganizacionPage } from "../pages/organizacion/organizacion";
+import { ModalMenuPage } from '../pages/modal-menu/modal-menu';
+import { ListadoPage } from '../pages/listado/listado';
+import { DerechoPage } from '../pages/derecho/derecho';
+import { DenunciaPage } from '../pages/denuncia/denuncia';
+import { AlianzaPage } from '../pages/alianza/alianza';
+import { OrganizacionPage } from '../pages/organizacion/organizacion';
 
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
 
 import { ContentDetailPage } from '../pages/content-detail/content-detail';
+import { DetailContentService } from '../services/detail-content.service';
 
 @NgModule({
   declarations: [
@@ -32,10 +33,7 @@ import { ContentDetailPage } from '../pages/content-detail/content-detail';
     FormularioPage,
     ContentDetailPage
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -50,10 +48,6 @@ import { ContentDetailPage } from '../pages/content-detail/content-detail';
     FormularioPage,
     ContentDetailPage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, DetailContentService]
 })
 export class AppModule {}

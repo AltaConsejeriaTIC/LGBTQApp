@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ContentDetailPage } from '../content-detail/content-detail';
+import { DetailContentService } from '../../services/detail-content.service';
+
 /**
  * Generated class for the ListadoPage page.
  *
@@ -17,7 +19,9 @@ export class ListadoPage {
   public noticia: boolean = false;
   public title: string = 'EVENTOS Y NOTICIAS';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService) {
+    this.detailService.setEvento(this.evento);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListadoPage');
@@ -27,11 +31,13 @@ export class ListadoPage {
     this.evento = true;
     this.noticia = false;
     this.title = 'EVENTOS Y NOTICIAS';
+    this.detailService.setEvento(true);
   }
   changeSectionNews() {
     this.evento = false;
     this.noticia = true;
     this.title = 'ACTUALIDAD BOGOTÁ';
+    this.detailService.setEvento(false);
   }
   goToDetails() {
     this.navCtrl.push(ContentDetailPage);
