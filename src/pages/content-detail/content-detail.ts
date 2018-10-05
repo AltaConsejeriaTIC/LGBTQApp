@@ -12,11 +12,13 @@ import {} from '@types/googlemaps';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+declare var google;
 
 @Component({
   selector: 'page-content-detail',
   templateUrl: 'content-detail.html'
 })
+
 export class ContentDetailPage {
   title: string;
   typeContent: string;
