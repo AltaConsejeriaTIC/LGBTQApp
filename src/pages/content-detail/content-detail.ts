@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
 import { DetailContentService } from '../../services/detail-content.service';
+
+import {} from '@types/googlemaps';
+
+
 /**
  * Generated class for the ContentDetailPage page.
  *
@@ -15,6 +20,7 @@ import { DetailContentService } from '../../services/detail-content.service';
 export class ContentDetailPage {
   title: string;
   typeContent: string;
+  map: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService) {
     this.typeContent = this.detailService.getContent();
@@ -25,7 +31,35 @@ export class ContentDetailPage {
     }
   }
 
-  // ionViewDidLoad() {
-  //   console.log(this.detailService.getContent());
-  // }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ContentDetailPage');
+    this.initializeMap();
+  }
+
+  initializeMap() {
+
+  let locationOptions = {timeout: 20000, enableHighAccuracy: true};
+
+    navigator.geolocation.getCurrentPosition(
+
+        (position) => {
+
+            let options = {
+
+              center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+              zoom: 16,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+
+            this.map = new google.maps.Map(document.getElementById("map"), options);
+        },
+
+        (error) => {
+            console.log(error);
+        }, locationOptions
+    );
+
+    }
+
+
 }
