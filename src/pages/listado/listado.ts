@@ -15,6 +15,7 @@ import { ContentDetailPage } from '../content-detail/content-detail';
 export class ListadoPage {
   public evento: boolean = true;
   public noticia: boolean = false;
+  public title: string = 'EVENTOS Y NOTICIAS';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
@@ -25,10 +26,12 @@ export class ListadoPage {
   changeSectionEvents() {
     this.evento = true;
     this.noticia = false;
+    this.title = 'EVENTOS Y NOTICIAS';
   }
   changeSectionNews() {
     this.evento = false;
     this.noticia = true;
+    this.title = 'ACTUALIDAD BOGOTÁ';
   }
   goToDetails() {
     this.navCtrl.push(ContentDetailPage);
