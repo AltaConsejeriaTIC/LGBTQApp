@@ -1,22 +1,17 @@
-
-
 @font-face {
-  font-family: "untitled-font-1";
-  src:url("../assets/untitled-font-1/untitled-font-1.eot");
-  src:url("../assets/untitled-font-1/untitled-font-1.eot?#iefix") format("embedded-opentype"),
-    url("../assets/untitled-font-1/untitled-font-1.woff") format("woff"),
-    url("../assets/untitled-font-1/untitled-font-1.ttf") format("truetype"),
-    url("../assets/untitled-font-1/untitled-font-1.svg#untitled-font-1") format("svg");
+  font-family: 'untitled-font-1';
+  src: url('../assets/untitled-font-1/untitled-font-1.eot');
+  src: url('../assets/untitled-font-1/untitled-font-1.eot?#iefix') format('embedded-opentype'),
+    url('../assets/untitled-font-1/untitled-font-1.woff') format('woff'),
+    url('../assets/untitled-font-1/untitled-font-1.ttf') format('truetype'),
+    url('../assets/untitled-font-1/untitled-font-1.svg#untitled-font-1') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
 
-
-
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: "untitled-font-1" !important;
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'untitled-font-1' !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -28,14 +23,14 @@
 }
 
 @mixin makeIcon($arg, $val) {
-    .icon-#{$arg}:before ,
-    .ion-#{$arg}:before ,
-    .ion-ios-#{$arg}:before ,
-    .ion-ios-#{$arg}-outline:before ,
-    .ion-md-#{$arg}:before ,
-    .ion-md-#{$arg}-outline:before {
-        content: $val;
-    }
+  .icon-#{$arg}:before,
+  .ion-#{$arg}:before,
+  .ion-ios-#{$arg}:before,
+  .ion-ios-#{$arg}-outline:before,
+  .ion-md-#{$arg}:before,
+  .ion-md-#{$arg}-outline:before {
+    content: $val;
+  }
 }
 
 @include makeIcon(icon-fleacha-atras, '\e003');
@@ -56,3 +51,6 @@
 @include makeIcon(icon-flecha-derecha-1, '\e007');
 @include makeIcon(icon-fleacha-atras-1, '\e010');
 @include makeIcon(icon-campana-boton, '\e011');
+@include makeIcon(icon-icono-hora, '\e012');
+@include makeIcon(icon-icono-ubicacion, '\e013');
+@include makeIcon(icon-icono-compartir, '\e014');
