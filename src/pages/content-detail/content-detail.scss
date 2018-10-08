@@ -1,5 +1,9 @@
 page-content-detail {
 
+  #map_canvas {
+    height: 50vh;
+    width: 100%;
+  }
 
 .fixed-content:before {
   background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
@@ -28,10 +32,6 @@ page-content-detail {
   .bar-button-default,
   .toolbar-title {
     color: white !important;
-  }
-
-  ion-title .title {
-
   }
 
   .scroll-content {
@@ -142,10 +142,5 @@ page-content-detail {
               color: #FF5C0B;
           }
     }
-
-    #map {
-  		height: 50vh;
-      width: 100%
-  	}
 
 }

@@ -82,19 +82,14 @@
 
   </div>
 
-  <ion-col *ngIf="typeContent==='evento'" class="map">
-    <div id='map'></div>
-  </ion-col>
+  <div id="mapa">
+      <div id="map_canvas"></div>
+  </div>
 
-  <div *ngIf="typeContent==='noticia'" class="link">
-
-    <div class="link">
+  <div *ngIf="typeContent == 'noticia'" class="link">
 
       <p>Para ver la noticia completa</p>
-      <p>haz clic en el <span>siguiente enlace</span>
-        <p>
-
-    </div>
+      <p>haz clic en el <span>siguiente enlace</span><p>
 
   </div>
 

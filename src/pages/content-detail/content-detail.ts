@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 
 import { DetailContentService } from '../../services/detail-content.service';
 
 import {} from '@types/googlemaps';
 
-
-/**
- * Generated class for the ContentDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 declare var google;
 
 @Component({
@@ -21,10 +14,11 @@ declare var google;
 
 export class ContentDetailPage {
   title: string;
-  typeContent: string;
+  typeContent: string = "evento";
   map: any;
+  hideMapNow: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, private platform: Platform) {
     this.typeContent = this.detailService.getContent();
     if (this.typeContent === 'evento') {
       this.title = 'EVENTOS EN BOGOTÁ';
@@ -34,34 +28,42 @@ export class ContentDetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContentDetailPage');
     this.initializeMap();
+    this.hideMapInNews();
   }
 
   initializeMap() {
 
-  let locationOptions = {timeout: 20000, enableHighAccuracy: true};
+        let locationOptions = {timeout: 20000, enableHighAccuracy: true};
 
-    navigator.geolocation.getCurrentPosition(
+        navigator.geolocation.getCurrentPosition(
 
-        (position) => {
+            (position) => {
 
-            let options = {
+                let options = {
+                  center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                  zoom: 16,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
 
-              center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-              zoom: 16,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
+                this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
+            },
 
-            this.map = new google.maps.Map(document.getElementById("map"), options);
-        },
-
-        (error) => {
-            console.log(error);
-        }, locationOptions
-    );
-
+            (error) => {
+                console.log(error);
+            }, locationOptions
+        );
     }
 
+  hideMapInNews(){
+    if(this.typeContent == "noticia")
+    {
+     document.getElementById('mapa').style.display = 'none';
+    }
+    else
+    {
+      document.getElementById('mapa').style.display = 'block';
+    }
+  }
 
 }
