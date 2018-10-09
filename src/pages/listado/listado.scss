@@ -19,13 +19,24 @@ page-listado {
     color: white !important;
   }
 
-  ion-title .title {
-  }
 
   .scroll-content {
-    img {
-      width: 100%;
-    }
+
+.article{
+      margin: -1px;
+      position: relative;
+      img {
+        margin-top: -3px;
+        width: 100%;
+        border: none !important;
+        border-style: none !important;
+        box-shadow: none !important;
+        -moz-box-shadow: none!important;
+        -webkit-box-shadow: none!important;
+      }
+}
+
+
   }
 
   .divButSec {
@@ -112,18 +123,28 @@ page-listado {
     }
 
     .articleText {
-      padding: 1% 3%;
+      padding: 2% 0% 7% 7%;;
+      p{
+        margin: 0;
+      }
 
       .dateArticle {
-        color: #797979;
+        color: #F8774E;
         font-weight: 600;
+        padding-top: 1%;
         margin-left: 1%;
       }
 
       .titleArticle {
         font-size: 2.3rem;
         font-weight: bold;
-        margin: 5% 1%;
+        margin: 1% 1%;
+      }
+      .placeArticle {
+        color: #797979;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 1% 1%;
       }
     }
 
@@ -136,6 +157,16 @@ page-listado {
       top: 7%;
       width: 1px;
     }
+  }
+
+  .article:before{
+    background-color: #FF5C0B;
+    content: '';
+    width: 100%;
+    bottom: 2px;
+    position: absolute;
+    height: 1.5vh;
+
   }
 
   .news {

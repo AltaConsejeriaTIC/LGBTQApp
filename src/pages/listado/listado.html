@@ -16,27 +16,70 @@
 
   </ion-navbar>
 
-</ion-header>
-
-<ion-content padding>
-
   <div class="divButSec">
     <button [ngClass]="{'lineEvents': evento == true }" (click)="changeSectionEvents()" class="buttonSection buttonEvents">EVENTOS</button>
     <button [ngClass]="{'lineNews': noticia == true }" (click)="changeSectionNews()" class="buttonSection buttonNews">NOTICIAS</button>
   </div>
 
-  <p class="month">Agosto, 2018</p>
+  <p class="month">{{monthTitle}}, 2018</p>
+
+</ion-header>
+
+<ion-content padding>
+
+
 
   <div *ngIf="evento" (click)="goToDetails()">
     <div class="article">
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
-        <ion-col col-2 class="articleDate">
-          <p>26 DOM</p>
+
+        <ion-col col-11 id="new1" class="articleText">
+          <p class="titleArticle">{{newsTitle[0]}}</p>
+          <p class="dateArticle">{{newsDuration[0]}}<p>
+          <p class="placeArticle">{{newsPlace[0]}}<p>
         </ion-col>
-        <ion-col col-10 class="articleText">
-          <p class="titleArticle">Ciclo Rosa 2018 - Muestras audiovisuales</p>
-          <p class="dateArticle">2:00 P.M. - 5:00 A.M.<p>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="evento" (click)="goToDetails()">
+    <div class="article">
+      <img src="../assets/imgs/home.png">
+      <ion-row class="articleContent">
+
+        <ion-col col-11 id="new2" class="articleText">
+          <p class="titleArticle">{{newsTitle[1]}}</p>
+          <p class="dateArticle">{{newsDuration[1]}}<p>
+          <p class="placeArticle">{{newsPlace[1]}}<p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="evento" (click)="goToDetails()">
+    <div class="article">
+      <img src="../assets/imgs/home.png">
+      <ion-row class="articleContent">
+
+        <ion-col col-11 id="new3" class="articleText">
+          <p class="titleArticle">{{newsTitle[2]}}</p>
+          <p class="dateArticle">{{newsDuration[2]}}<p>
+          <p class="placeArticle">{{newsPlace[2]}}<p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="evento" (click)="goToDetails()">
+    <div class="article">
+      <img src="../assets/imgs/home.png">
+      <ion-row class="articleContent">
+
+        <ion-col col-11 id="new4" class="articleText">
+          <p class="titleArticle">{{newsTitle[3]}}</p>
+          <p class="dateArticle">{{newsDuration[3]}}<p>
+          <p class="placeArticle">{{newsPlace[3]}}<p>
         </ion-col>
       </ion-row>
     </div>

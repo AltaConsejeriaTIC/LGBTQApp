@@ -5,13 +5,20 @@ page-content-detail {
     width: 100%;
   }
 
-.fixed-content:before {
+  .bottomLine{
+    height: 2vh;
+    width: 100%;
+    position: relative;
+  }
+
+.bottomLine:before {
   background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
   height: 3px;
   content: '';
   bottom: 0;
   right: 0;
   left: 0;
+  position: absolute;
 }
 
   .toolbar-title.toolbar-title {
@@ -41,7 +48,7 @@ page-content-detail {
   }
 
   .articleText{
-    padding: 1% 10% 5% 10%;
+    padding: 1% 10% 0% 10%;
 
     .newsDate {
         font-weight: 600;
@@ -97,12 +104,30 @@ page-content-detail {
     .textArticle{
       color: #6D6F76;
       line-height: 3.9vh;
+      position: relative;
+      padding-bottom: 1%;
     }
+
   }
 
+
+
+  .articleText:before {
+    background-color: #E3E3E3;
+    content: '';
+    width: 90%;
+    bottom: 0px;
+    position: absolute;
+    left: 5%;
+    height: 1px;
+       }
+
   .info{
-    padding: 5% 10%;
-    position: relative;
+        padding: 5% 10%;
+        position: relative;
+        ion-icon {
+          color: rgba(149, 154, 180, 0.5);
+      }
   }
 
   .info:before {
@@ -131,7 +156,7 @@ page-content-detail {
     }
 
     .link{
-          padding: 1% 10% 5% 10%;
+          padding: 5% 10% 5% 10%;
           color: #6D6F76;
           line-height: 3.9vh;
           font-size: 1.4rem;
