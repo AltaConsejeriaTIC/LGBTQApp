@@ -34,7 +34,7 @@
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
 
-        <ion-col col-11 id="new1" class="articleText">
+        <ion-col col-11 id="article1" class="articleText">
           <p class="titleArticle">{{newsTitle[0]}}</p>
           <p class="dateArticle">{{newsDuration[0]}}<p>
           <p class="placeArticle">{{newsPlace[0]}}<p>
@@ -48,7 +48,7 @@
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
 
-        <ion-col col-11 id="new2" class="articleText">
+        <ion-col col-11 id="article2" class="articleText">
           <p class="titleArticle">{{newsTitle[1]}}</p>
           <p class="dateArticle">{{newsDuration[1]}}<p>
           <p class="placeArticle">{{newsPlace[1]}}<p>
@@ -62,7 +62,7 @@
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
 
-        <ion-col col-11 id="new3" class="articleText">
+        <ion-col col-11 id="article3" class="articleText">
           <p class="titleArticle">{{newsTitle[2]}}</p>
           <p class="dateArticle">{{newsDuration[2]}}<p>
           <p class="placeArticle">{{newsPlace[2]}}<p>
@@ -76,7 +76,7 @@
       <img src="../assets/imgs/home.png">
       <ion-row class="articleContent">
 
-        <ion-col col-11 id="new4" class="articleText">
+        <ion-col col-11 id="article4" class="articleText">
           <p class="titleArticle">{{newsTitle[3]}}</p>
           <p class="dateArticle">{{newsDuration[3]}}<p>
           <p class="placeArticle">{{newsPlace[3]}}<p>
@@ -86,7 +86,55 @@
   </div>
 
   <div *ngIf="noticia" (click)="goToDetails()">
-    <div class="news">
+    <div id="new1" class="news">
+      <img src="../assets/imgs/home2.png">
+      <ion-row class="articleContent">
+        <ion-col col-12 class="articleDateNews">
+          <p>03 SEPTIEMBRE 2018 - 12:00PM </p>
+        </ion-col>
+        <ion-col col-12 class="articleTextNews">
+          <p id="articleHeaderNews">'Huellas Diversas': Robinson Chaparro y la causa LGBTI en Guaviare</p>
+          <p>Nacido y criado en San José del Guaviare; Robinson Chaparro vivió pensando que era normal esconderse
+            cuando atacaban ...</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="noticia" (click)="goToDetails()">
+    <div id="new2" class="news">
+      <img src="../assets/imgs/home2.png">
+      <ion-row class="articleContent">
+        <ion-col col-12 class="articleDateNews">
+          <p>03 SEPTIEMBRE 2018 - 12:00PM </p>
+        </ion-col>
+        <ion-col col-12 class="articleTextNews">
+          <p id="articleHeaderNews">'Huellas Diversas': Robinson Chaparro y la causa LGBTI en Guaviare</p>
+          <p>Nacido y criado en San José del Guaviare; Robinson Chaparro vivió pensando que era normal esconderse
+            cuando atacaban ...</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="noticia" (click)="goToDetails()">
+    <div id="new3" class="news">
+      <img src="../assets/imgs/home2.png">
+      <ion-row class="articleContent">
+        <ion-col col-12 class="articleDateNews">
+          <p>03 SEPTIEMBRE 2018 - 12:00PM </p>
+        </ion-col>
+        <ion-col col-12 class="articleTextNews">
+          <p id="articleHeaderNews">'Huellas Diversas': Robinson Chaparro y la causa LGBTI en Guaviare</p>
+          <p>Nacido y criado en San José del Guaviare; Robinson Chaparro vivió pensando que era normal esconderse
+            cuando atacaban ...</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="noticia" (click)="goToDetails()">
+    <div id="new4" class="news">
       <img src="../assets/imgs/home2.png">
       <ion-row class="articleContent">
         <ion-col col-12 class="articleDateNews">

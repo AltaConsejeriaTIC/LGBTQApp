@@ -159,18 +159,26 @@ page-listado {
     }
   }
 
-  .article:before{
+  .article:before, .news:before{
     background-color: #FF5C0B;
     content: '';
     width: 100%;
-    bottom: 2px;
     position: absolute;
     height: 1.5vh;
+  }
 
+  .article:before, .news:before{
+    bottom: 2px;
+  }
+
+  .news:before{
+    bottom: 1px;
   }
 
   .news {
+    margin: -1px;
     display: block;
+    position: relative;
     img {
     width: 100%;
 }
@@ -187,7 +195,7 @@ page-listado {
   }
 
   .articleTextNews {
-    padding: 0vh 5vh;
+    padding: 1vh 5vh 3vh 5vh;
     p {
       margin: 1vh 0vh;
       font-weight: 400;
