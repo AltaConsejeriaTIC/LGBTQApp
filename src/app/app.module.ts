@@ -18,6 +18,8 @@ import { FormularioPage } from '../pages/formulario/formulario';
 
 import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
+import { EventProvider } from '../providers/event/event';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { DetailContentService } from '../services/detail-content.service';
     FormularioPage,
     ContentDetailPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -48,6 +50,12 @@ import { DetailContentService } from '../services/detail-content.service';
     FormularioPage,
     ContentDetailPage
   ],
-  providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, DetailContentService]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    DetailContentService,
+    EventProvider
+  ]
 })
 export class AppModule {}

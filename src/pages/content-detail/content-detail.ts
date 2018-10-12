@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { DetailContentService } from '../../services/detail-content.service';
 
@@ -11,14 +11,13 @@ declare var google;
   selector: 'page-content-detail',
   templateUrl: 'content-detail.html'
 })
-
 export class ContentDetailPage {
   title: string;
-  typeContent: string = "evento";
+  typeContent: string = 'evento';
   map: any;
   hideMapNow: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, private platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService) {
     this.typeContent = this.detailService.getContent();
     if (this.typeContent === 'evento') {
       this.title = 'EVENTOS EN BOGOTÁ';
@@ -33,37 +32,31 @@ export class ContentDetailPage {
   }
 
   initializeMap() {
+    let locationOptions = { timeout: 20000, enableHighAccuracy: true };
 
-        let locationOptions = {timeout: 20000, enableHighAccuracy: true};
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        let options = {
+          center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
 
-        navigator.geolocation.getCurrentPosition(
+        this.map = new google.maps.Map(document.getElementById('map_canvas'), options);
+      },
 
-            (position) => {
+      (error) => {
+        console.log(error);
+      },
+      locationOptions
+    );
+  }
 
-                let options = {
-                  center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                  zoom: 16,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-
-                this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
-            },
-
-            (error) => {
-                console.log(error);
-            }, locationOptions
-        );
-    }
-
-  hideMapInNews(){
-    if(this.typeContent == "noticia")
-    {
-     document.getElementById('mapa').style.display = 'none';
-    }
-    else
-    {
+  hideMapInNews() {
+    if (this.typeContent == 'noticia') {
+      document.getElementById('mapa').style.display = 'none';
+    } else {
       document.getElementById('mapa').style.display = 'block';
     }
   }
-
 }
