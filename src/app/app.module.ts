@@ -21,6 +21,8 @@ import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
 import { HttpClientModule } from '@angular/common/http';
 
+import { Geolocation } from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -54,6 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Geolocation,
     DetailContentService,
     EventProvider
   ]
