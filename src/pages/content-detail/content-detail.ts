@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Platform } from 'ionic-angular';
-
+import { Geolocation } from '@ionic-native/geolocation';
 import { DetailContentService } from '../../services/detail-content.service';
 
 import {} from '@types/googlemaps';
@@ -17,8 +17,10 @@ export class ContentDetailPage {
   typeContent: string = "evento";
   map: any;
   hideMapNow: boolean;
+  lat: any;
+  lng: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, private platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, private platform: Platform, public geolocation: Geolocation) {
     this.typeContent = this.detailService.getContent();
     if (this.typeContent === 'evento') {
       this.title = 'EVENTOS EN BOGOTÁ';
@@ -28,8 +30,8 @@ export class ContentDetailPage {
   }
 
   ionViewDidLoad() {
-    this.initializeMap();
     this.hideMapInNews();
+    this.getPosition();
   }
 
   initializeMap() {
@@ -41,7 +43,7 @@ export class ContentDetailPage {
             (position) => {
 
                 let options = {
-                  center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                  center: new google.maps.LatLng(this.lat, this.lng),
                   zoom: 16,
                   mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
@@ -54,6 +56,27 @@ export class ContentDetailPage {
             }, locationOptions
         );
     }
+
+    getPosition(): any {
+      this.geolocation.getCurrentPosition().then((res) => {
+        this.lat= res.coords.latitude;
+        this.lng= res.coords.longitude;
+        this.initializeMap();
+      }).catch((error) => {
+          // Load the map even if we fail
+          this.loadMapFallback();
+          console.log(error);
+      });
+  }
+
+
+  loadMapFallback() {
+      let mapEle: HTMLElement = document.getElementById('map');
+
+      this.map = new google.maps.Map(mapEle, {
+          zoom: 12
+      });
+  }
 
   hideMapInNews(){
     if(this.typeContent == "noticia")

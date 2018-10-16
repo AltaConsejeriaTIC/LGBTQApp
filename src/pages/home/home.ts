@@ -1,5 +1,5 @@
-import { Component, ViewChild, HostListener} from '@angular/core';
-import { NavController, Slides, ModalController} from 'ionic-angular';
+import { Component, ViewChild, HostListener } from '@angular/core';
+import { NavController, Slides, ModalController } from 'ionic-angular';
 import { ModalMenuPage } from '../modal-menu/modal-menu';
 import { ListadoPage } from '../listado/listado';
 import { DenunciaPage } from '../denuncia/denuncia';
@@ -11,23 +11,20 @@ import { OrganizacionPage } from '../organizacion/organizacion';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-
 export class HomePage {
-
-  @ViewChild('slides') slides: Slides;
+  @ViewChild('slides')
+  slides: Slides;
 
   activeMenu: string;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-
-  }
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
 
   public innerWidth: any;
 
   myParam = '';
 
   ngOnInit() {
-      this.innerWidth = window.innerWidth;
+    this.innerWidth = window.innerWidth;
   }
 
   prevSlide() {
@@ -58,21 +55,24 @@ export class HomePage {
     this.navCtrl.push(OrganizacionPage);
   }
 
-  slideChanged(){
+  slideChanged() {
     this.slides.update();
   }
 
   @HostListener('window:resize', ['$event'])
-    onResize(event) {
-      this.innerWidth = window.innerWidth;
-      this.slideChanged();
-    }
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    this.slideChanged();
+  }
 
-    openMenuModal() :void{
-      let myModal = this.modalCtrl.create(ModalMenuPage, {}, {
+  openMenuModal(): void {
+    let myModal = this.modalCtrl.create(
+      ModalMenuPage,
+      {},
+      {
         showBackdrop: false
-      });
-      myModal.present();
-    }
-
+      }
+    );
+    myModal.present();
+  }
 }
