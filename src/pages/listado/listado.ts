@@ -45,6 +45,8 @@ export class ListadoPage {
   ngOnInit() {
     this.eventService.getEvents('http://127.0.0.1:8080/events').subscribe(
       (response) => {
+        console.log(response);
+        console.log(typeof response[0].start_date);
         this.events = response;
       },
       (error) => console.log(error)
