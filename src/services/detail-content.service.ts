@@ -17,5 +17,4 @@ export class DetailContentService {
       return 'noticia';
     }
   }
-  formatDate(date: string) {}
 }
