@@ -40,14 +40,15 @@ page-modal-menu {
   .ayudanos{
     display: flex;
     align-items: flex-start;
+    position: relative;
   }
   .ayudanos:before {
-          background-color: #bdbdbda3;
-          content: '';
-          width: 88%;
-          top: 1px;
-          position: absolute;
-          right: 5%;
-          height: 2px;
+    background-color: lightgray;
+      content: '';
+      width: 88%;
+      top: 1px;
+      position: absolute;
+      right: 5%;
+      height: 2px;
        }
 }

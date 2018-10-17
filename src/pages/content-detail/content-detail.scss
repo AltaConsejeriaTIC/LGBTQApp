@@ -52,8 +52,9 @@ page-content-detail {
 
     .newsDate {
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         color: #9e9e9e;
+        padding-left: 0;
         p{
           margin: 0;
         }
@@ -61,27 +62,34 @@ page-content-detail {
 
     .newsHeader{
       display: flex;
-      justify-content: center;
-      text-align: center;
+      justify-content: flex-start;
+      text-align: left;
       position: relative;
     }
 
     .newsHeader:before {
       background-color: #E3E3E3;
       content: '';
-      width: 100%;
+      width: 110%;
       bottom: 0px;
       position: absolute;
-      left: 0%;
+      left: -5%;
       height: 1px;
          }
 
     .shareLabel{
+    margin-right: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
     p{
       margin: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    ion-icon{
+      font-size: 1.8rem;
+      margin-right: 10px;
     }
 }
 
@@ -89,12 +97,14 @@ page-content-detail {
       text-transform: uppercase;
       font-size: 2rem;
       font-weight: 800;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
     }
 
     .sourceArticle, .sourcePicture{
       margin: 0.6vh 0;
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #6D6F76;
       span{
         color: #FF5C0B;
@@ -106,6 +116,7 @@ page-content-detail {
       line-height: 3.9vh;
       position: relative;
       padding-bottom: 1%;
+      font-size: 1.4rem;
     }
 
   }
@@ -123,22 +134,34 @@ page-content-detail {
        }
 
   .info{
-        padding: 5% 10%;
+        padding: 4% 0%;
         position: relative;
         ion-icon {
           color: rgba(149, 154, 180, 0.5);
-      }
-  }
+          font-size: 2.6rem;
+        }
+    }
+
 
   .info:before {
     background-color: #E3E3E3;
     content: '';
-    width: 90%;
+    width: 110%;
     top: 0px;
     position: absolute;
-    left: 5%;
+    left: -5%;
     height: 1px;
        }
+
+   .info:after {
+       background-color: #E3E3E3;
+       content: '';
+       width: 110%;
+       bottom: 0px;
+       position: absolute;
+       left: -5%;
+       height: 1px;
+    }
 
    .iconDate, .iconPlace {
       display: flex;
@@ -147,13 +170,19 @@ page-content-detail {
     }
 
     .contentDate, .placeInfo{
+      margin-left: 5%;
       p{
         color: rgba(54, 59, 86, 0.8);
         margin: 0.5vh 1vh;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
+
+    .contentDate .durationEvent, .placeContent .placeName{
+        color: black;
+      }
+
 
     .link{
           padding: 5% 10% 5% 10%;

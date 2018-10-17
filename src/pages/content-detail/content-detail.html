@@ -32,7 +32,7 @@
           <ion-col class="newsDate">
             <p>03 de febrero 2018</p>
           </ion-col>
-          <ion-col class="shareLabel">
+          <ion-col col-2 class="shareLabel">
             <ion-icon name="icon-icono-compartir"></ion-icon>
             <p>Compartir</p>
           </ion-col>
@@ -40,6 +40,31 @@
 
 
         <p class="titleArticle">Ciclo Rosa 2018 - Muestras audiovisuales</p>
+
+        <div *ngIf="typeContent==='evento'" class="info">
+
+          <ion-row class="timeContent">
+            <ion-col col-1 class="iconDate">
+              <ion-icon name="icon-icono-hora"></ion-icon>
+            </ion-col>
+            <ion-col col-10 class="contentDate">
+              <p class="durationEvent">Del 26 al 30 de Agosto</p>
+              <p class="timeEvent">2:00 P.M. - 5:00 A.M.<p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="placeContent">
+            <ion-col col-1 class="iconPlace">
+              <ion-icon name="icon-icono-ubicacion"></ion-icon>
+            </ion-col>
+            <ion-col col-10 class="placeInfo">
+              <p class="placeName">Cinemateca Distrital</p>
+              <p class="placeAddress">Carrera 7 No. 22-79<p>
+            </ion-col>
+          </ion-row>
+
+
+        </div>
 
         <p *ngIf="typeContent==='noticia'" class="sourceArticle">Fuente del artículo: <span>Publimetro.co</span></p>
 
@@ -57,30 +82,7 @@
 
   </div>
 
-  <div *ngIf="typeContent==='evento'" class="info">
 
-    <ion-row class="timeContent">
-      <ion-col col-2 class="iconDate">
-        <ion-icon name="icon-icono-hora"></ion-icon>
-      </ion-col>
-      <ion-col col-10 class="contentDate">
-        <p class="durationEvent">Del 26 al 30 de Agosto</p>
-        <p class="timeEvent">2:00 P.M. - 5:00 A.M.<p>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="placeContent">
-      <ion-col col-2 class="iconPlace">
-        <ion-icon name="icon-icono-ubicacion"></ion-icon>
-      </ion-col>
-      <ion-col col-10 class="placeInfo">
-        <p class="placeName">Cinemateca Distrital</p>
-        <p class="placeAddress">Carrera 7 No. 22-79<p>
-      </ion-col>
-    </ion-row>
-
-
-  </div>
 
   <div id="mapa">
       <div id="map_canvas"></div>
