@@ -35,7 +35,9 @@
 
           <ion-col col-11 id="new1" class="articleText">
             <p class="titleArticle">{{event.title}}</p>
-            <p class="dateArticle">{{event.start_date}}</p>
+            <p class="dateArticle">Del {{event.start_date | date:'dd MMMM':'':'es'}}
+              al {{event.finish_date | date:'longDate':'':'es'}}
+            </p>
             <p class="placeArticle">{{event.place}}</p>
           </ion-col>
         </ion-row>
