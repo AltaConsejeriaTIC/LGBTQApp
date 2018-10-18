@@ -178,8 +178,8 @@ page-listado {
     display: block;
     position: relative;
     img {
-    width: 100%;
-}
+      width: 100%;
+    }
   }
 
   .articleDateNews {
@@ -195,6 +195,10 @@ page-listado {
   .articleTextNews {
     padding: 0vh 5vh 3vh 5vh;
     p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       margin: 1vh 0vh;
       font-weight: 400;
       color: #6d6f76;

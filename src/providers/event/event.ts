@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 export class EventProvider {
   constructor(public http: HttpClient) {}
 
-  getEvents(baseUrl): Observable<any> {
+  getData(baseUrl): Observable<any> {
     return this.http.get(baseUrl);
     //.catch((error: any) => Observable.throw(error.json().error || 'Server error getPlaces'));
   }
