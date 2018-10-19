@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform } from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DetailContentService } from '../../services/detail-content.service';
 
@@ -14,68 +14,51 @@ declare var google;
 
 export class ContentDetailPage {
   title: string;
+  params: any = {};
   typeContent: string = "evento";
   map: any;
   hideMapNow: boolean;
-  lat: any;
-  lng: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, private platform: Platform, public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, public geolocation: Geolocation) {
     this.typeContent = this.detailService.getContent();
     if (this.typeContent === 'evento') {
       this.title = 'EVENTOS EN BOGOTÁ';
     } else {
       this.title = 'NOTICIAS';
     }
+    this.params = this.navParams.get('params');
   }
 
   ionViewDidLoad() {
     this.hideMapInNews();
-    this.getPosition();
+    this.initializeMap();
   }
 
   initializeMap() {
 
-        let locationOptions = {timeout: 20000, enableHighAccuracy: true};
-
-        navigator.geolocation.getCurrentPosition(
-
-            (position) => {
-
-                let options = {
-                  center: new google.maps.LatLng(this.lat, this.lng),
-                  zoom: 16,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-
-                this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
-            },
-
-            (error) => {
-                console.log(error);
-            }, locationOptions
-        );
+    let options = {
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
-    getPosition(): any {
-      this.geolocation.getCurrentPosition().then((res) => {
-        this.lat= res.coords.latitude;
-        this.lng= res.coords.longitude;
-        this.initializeMap();
-      }).catch((error) => {
-          // Load the map even if we fail
-          this.loadMapFallback();
-          console.log(error);
-      });
+    var geocoder = new google.maps.Geocoder();
+    this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
+    this.geocodeAddress(geocoder, this.map);
+
   }
-
-
-  loadMapFallback() {
-      let mapEle: HTMLElement = document.getElementById('map');
-
-      this.map = new google.maps.Map(mapEle, {
-          zoom: 12
-      });
+  geocodeAddress(geocoder, resultsMap) {
+    var address = this.getLocation(this.params.place);
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status === 'OK') {
+        resultsMap.setCenter(results[0].geometry.location);
+        new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
   }
 
   hideMapInNews(){
@@ -89,4 +72,9 @@ export class ContentDetailPage {
     }
   }
 
+  getLocation(place){
+    let address: string;
+    address = `${place},bogotá`;
+    return address;
+  }
 }

@@ -27,13 +27,13 @@
 
 <ion-content padding>
 
-  <div *ngIf="evento" (click)="goToDetails()">
-    <div *ngFor="let event of events">
+  <div *ngIf="evento" >
+    <div *ngFor="let event of events" (click)="goToDetails(event)">
       <div class="article">
-        <img src="{{'http://localhost:8080' + event.image}}">
+        <img [src]="'http://localhost:8080' + event.image">
         <ion-row class="articleContent">
 
-          <ion-col col-11 id="{{'event'+event.id}}" class="articleText">
+          <ion-col col-11 id="new1" class="articleText">
             <p class="titleArticle">{{event.title}}</p>
             <p class="dateArticle">Del {{event.start_date | date:'dd MMMM':'':'es'}}
               al {{event.finish_date | date:'longDate':'':'es'}}
@@ -45,23 +45,8 @@
     </div>
   </div>
 
-  <div *ngIf="evento" (click)="goToDetails()">
-    <div class="article">
-      <img src="../assets/imgs/home.png">
-      <ion-row class="articleContent">
-
-        <ion-col col-11 id="article1" class="articleText">
-          <p class="titleArticle">{{newsTitle[0]}}</p>
-          <p class="dateArticle">{{newsDuration[0]}}</p>
-          <p class="placeArticle">{{newsPlace[0]}}</p>
-        </ion-col>
-      </ion-row>
-    </div>
-  </div>
-
-
-  <div *ngIf="noticia" (click)="goToDetails()">
-    <div *ngFor="let n of news" id="new1">
+  <div *ngIf="noticia" >
+    <div *ngFor="let n of news" id="new1" (click)="goToDetails(n)">
       <div class="news">
           <img [src]="'http://localhost:8080'+ n.image">
           <ion-row class="articleContent">

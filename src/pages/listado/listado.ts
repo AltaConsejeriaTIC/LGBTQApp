@@ -49,14 +49,12 @@ export class ListadoPage {
     this.detailService.setEvento(this.evento);
     this.eventService.getData('http://127.0.0.1:8080/events').subscribe(
       (response) => {
-        console.log(response);
         this.events = response;
       },
       (error) => console.log(error)
     );
     this.eventService.getData('http://127.0.0.1:8080/news').subscribe(
       (response) => {
-        console.log(response);
         this.news = response;
       },
       (error) => console.log(error)
@@ -64,14 +62,10 @@ export class ListadoPage {
   }
 
   ionViewDidLoad() {
-
-    console.log('ionViewDidLoad ListadoPage');
-
       this.content.ionScroll.subscribe(() => {
       this.changeMonthTitle();
-      this.changeMonthTitleNews();
+      // this.changeMonthTitleNews();
       });
-
   }
 
 
@@ -89,8 +83,8 @@ export class ListadoPage {
     this.detailService.setEvento(false);
   }
 
-  goToDetails() {
-    this.navCtrl.push(ContentDetailPage);
+  goToDetails(params) {
+    this.navCtrl.push(ContentDetailPage, {params});
   }
 
   changeMonthTitle() {
@@ -141,4 +135,6 @@ export class ListadoPage {
   //     this.ref.detectChanges();
   //   }
   //     }
+
+
 }

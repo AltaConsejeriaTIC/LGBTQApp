@@ -22,7 +22,7 @@
 
   <div class="article">
 
-    <img src="../assets/imgs/home.png">
+    <img [src]="'http://localhost:8080' + params.image">
 
     <ion-row class="articleContent">
 
@@ -30,7 +30,7 @@
 
         <ion-row *ngIf="typeContent==='noticia'" class="newsHeader">
           <ion-col class="newsDate">
-            <p>03 de febrero 2018</p>
+            <p>{{params.date | date: 'longDate':'':'es'}}</p>
           </ion-col>
           <ion-col col-2 class="shareLabel">
             <ion-icon name="icon-icono-compartir"></ion-icon>
@@ -39,7 +39,7 @@
         </ion-row>
 
 
-        <p class="titleArticle">Ciclo Rosa 2018 - Muestras audiovisuales</p>
+        <p class="titleArticle">{{params.title}}</p>
 
         <div *ngIf="typeContent==='evento'" class="info">
 
@@ -48,8 +48,8 @@
               <ion-icon name="icon-icono-hora"></ion-icon>
             </ion-col>
             <ion-col col-10 class="contentDate">
-              <p class="durationEvent">Del 26 al 30 de Agosto</p>
-              <p class="timeEvent">2:00 P.M. - 5:00 A.M.<p>
+              <p class="durationEvent">Del {{params.start_date | date: 'd MMMM':'':'es'}} al {{params.finish_date | date: 'longDate':'':'es'}}</p>
+              <p class="timeEvent">{{params.start_time}} - {{params.finish_time}}<p>
             </ion-col>
           </ion-row>
 
@@ -58,23 +58,19 @@
               <ion-icon name="icon-icono-ubicacion"></ion-icon>
             </ion-col>
             <ion-col col-10 class="placeInfo">
-              <p class="placeName">Cinemateca Distrital</p>
-              <p class="placeAddress">Carrera 7 No. 22-79<p>
+              <p class="placeName">{{params.place}}</p>
+              <p class="placeAddress">{{params.address}}<p>
             </ion-col>
           </ion-row>
 
 
         </div>
 
-        <p *ngIf="typeContent==='noticia'" class="sourceArticle">Fuente del artículo: <span>Publimetro.co</span></p>
+        <p *ngIf="typeContent==='noticia'" class="sourceArticle">Fuente del artículo: <span>{{params.source}}</span></p>
 
-        <p *ngIf="typeContent==='noticia'" class="sourcePicture">Foto: EFE</p>
+        <p *ngIf="typeContent==='noticia'" class="sourcePicture">Foto: {{params.image_owner}}</p>
 
-        <p class="textArticle">El Ciclo Rosa celebra 17 años de ediciones anuales en la capital y se une a la
-          conmemoración de los 10 años de la política pública LGBT del Distrito.
-          A un año de cumplir la mayoría de edad, este ciclo sigue teniendo además programación en Medellín y Cali, con
-          una muestra de la programación que inicia en Bogotá el 28 de junio y culmina el 10 de julio en la Cinemateca
-          Distrital.<p>
+        <p class="textArticle">{{params.description}}<p>
 
       </ion-col>
 
@@ -91,7 +87,7 @@
   <div *ngIf="typeContent == 'noticia'" class="link">
 
       <p>Para ver la noticia completa</p>
-      <p>haz clic en el <a href="https://eltiempo.com/">siguiente enlace</a><p>
+      <p>haz clic en el <a [href]="params.source_link">siguiente enlace</a><p>
 
   </div>
 
