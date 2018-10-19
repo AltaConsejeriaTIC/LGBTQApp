@@ -16,6 +16,10 @@ import { OrganizacionPage } from '../pages/organizacion/organizacion';
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
 
+import {DiscriminacionPage} from '../pages/discriminacion/discriminacion';
+import {ArcoirisPage} from '../pages/arcoiris/arcoiris';
+import {PurpuraPage} from '../pages/purpura/purpura';
+
 import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
@@ -39,7 +43,11 @@ import { Geolocation } from '@ionic-native/geolocation';
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
-    ContentDetailPage
+    ContentDetailPage,
+    DiscriminacionPage,
+    ArcoirisPage,
+    PurpuraPage
+
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -54,7 +62,10 @@ import { Geolocation } from '@ionic-native/geolocation';
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
-    ContentDetailPage
+    ContentDetailPage,
+    DiscriminacionPage,
+    ArcoirisPage,
+    PurpuraPage
   ],
   providers: [
     StatusBar,

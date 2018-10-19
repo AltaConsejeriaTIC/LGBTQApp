@@ -1,4 +1,4 @@
-page-derecho {
+page-purpura {
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
@@ -11,7 +11,7 @@ page-derecho {
   }
 
   .toolbar-background {
-    background-color: #004FC6;
+    background-color: #E20C57;
   }
 
   .bar-button-default,
@@ -19,11 +19,11 @@ page-derecho {
     color: white !important;
   }
   .scroll-content{
-    background-color: #004FC6;
+    background-color: #E20C57;
   }
 
     .banner{
-      background-color: #004FC6;
+      background-color: #E20C57;
       position: relative;
       height: 35vh;
 
@@ -34,17 +34,16 @@ page-derecho {
       border-top-left-radius: 8% 8%;
       border-top-right-radius: 8% 8%;
       background-color: white;
-      height: 59vh;
-      .section{
-        height: 33.3%;
-      }
+      height: 58vh;
+
     }
 
     .tusDerechos{
       position: relative;
+      height: 66%
     }
 
-    .tusDerechos:after, .tusDerechos:before{
+    .tusDerechos:after{
       background-color: lightgray;
       content: '';
       width: 90%;
@@ -57,10 +56,6 @@ page-derecho {
         bottom: 0px;
     }
 
-    .tusDerechos:before{
-        top: 0px;
-    }
-
     .bottomLine{
       height: 0vh;
       width: 100%;
@@ -71,7 +66,7 @@ page-derecho {
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
     height: 5px;
     content: '';
-    bottom: 0;
+    bottom: -1px;
     right: 0;
     left: 0;
     position: absolute;
