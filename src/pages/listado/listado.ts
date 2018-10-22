@@ -3,6 +3,7 @@ import { NavController, NavParams, Content } from 'ionic-angular';
 import { ContentDetailPage } from '../content-detail/content-detail';
 import { DetailContentService } from '../../services/detail-content.service';
 import { EventProvider } from '../../providers/event/event';
+import { ServerConfig } from '../../../config/server'
 
 @Component({
   selector: 'page-listado',
@@ -16,6 +17,7 @@ export class ListadoPage {
   public noticia: boolean = false;
   public title: string = 'EVENTOS Y NOTICIAS';
   public monthTitle: string = 'Agosto';
+  private api = ServerConfig.apiEndPoint;
 
   public rect1: any;
   public rect2: any;
@@ -27,8 +29,8 @@ export class ListadoPage {
   public pos3: any;
   public pos4: any;
 
-  events = [];
-  news = [];
+  public events = [];
+  public news = [];
   newsTitle: string[] = ['Aguanilé', 'Ciclo rosa 2018 Muestras audiovisuales', 'Noticia 3', 'Noticia 4'];
   newsDate: string[] = ['Agosto', 'Septiembre', 'Octubre', 'Noviembre'];
   newsDuration: string[] = [
@@ -47,13 +49,13 @@ export class ListadoPage {
     public eventService: EventProvider
   ) {
     this.detailService.setEvento(this.evento);
-    this.eventService.getData('http://127.0.0.1:8080/events').subscribe(
+    this.eventService.getData(`${this.api}/events`).subscribe(
       (response) => {
         this.events = response;
       },
       (error) => console.log(error)
     );
-    this.eventService.getData('http://127.0.0.1:8080/news').subscribe(
+    this.eventService.getData(`${this.api}/news`).subscribe(
       (response) => {
         this.news = response;
       },

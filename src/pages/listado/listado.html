@@ -30,7 +30,7 @@
   <div *ngIf="evento" >
     <div *ngFor="let event of events" (click)="goToDetails(event)">
       <div class="article">
-        <img [src]="'http://localhost:8080' + event.image">
+        <img [src]="api + event.image">
         <ion-row class="articleContent">
 
           <ion-col col-11 id="new1" class="articleText">
@@ -48,7 +48,7 @@
   <div *ngIf="noticia" >
     <div *ngFor="let n of news" id="new1" (click)="goToDetails(n)">
       <div class="news">
-          <img [src]="'http://localhost:8080'+ n.image">
+          <img [src]="api + n.image">
           <ion-row class="articleContent">
             <ion-col col-12 class="articleDateNews">
               <p>{{n.date | date:'longDate':'':'es'}}</p>

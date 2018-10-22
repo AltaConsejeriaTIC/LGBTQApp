@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DetailContentService } from '../../services/detail-content.service';
+import { ServerConfig } from '../../../config/server';
 
 import {} from '@types/googlemaps';
 
@@ -18,9 +19,11 @@ export class ContentDetailPage {
   typeContent: string = "evento";
   map: any;
   hideMapNow: boolean;
+  private api;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, public geolocation: Geolocation) {
     this.typeContent = this.detailService.getContent();
+    this.api = ServerConfig.apiEndPoint;
     if (this.typeContent === 'evento') {
       this.title = 'EVENTOS EN BOGOTÁ';
     } else {
