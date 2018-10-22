@@ -3,7 +3,14 @@ page-denuncia {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.24rem;
+
   }
+
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
 
   ion-content,
   .scroll-content {
@@ -59,9 +66,13 @@ page-denuncia {
         height: 33.3%;
         .sectionTitle{
           margin-bottom: 1%;
+          color: #363B56;
+          font-weight: bold;
+          font-size: 1.7rem;
         }
         .sectionContent{
-          margin-top: 4%;
+          margin-top: 2%;
+          color: #727689;
         }
       }
       .politicaPublica, .tusDerechos, .puntosAtencion{
@@ -69,6 +80,7 @@ page-denuncia {
           align-items: center;
           .icon{
             text-align: center;
+            font-size: 2.1rem;
               margin-bottom: 11.5%;
               color: #363B56;
           }

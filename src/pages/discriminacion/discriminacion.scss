@@ -5,6 +5,12 @@ page-discriminacion {
     font-size: 1.24rem;
   }
 
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
   ion-content,
   .scroll-content {
     padding: 0 !important;
@@ -16,7 +22,7 @@ page-discriminacion {
 
   .bar-button-default,
   .toolbar-title {
-    color: white !important;
+      color: #FF9CBF !important;
   }
   .scroll-content{
     background-color: #E20C57;
@@ -25,8 +31,31 @@ page-discriminacion {
     .banner{
       background-color: #E20C57;
       position: relative;
-      height: 35vh;
+      height: 25vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
 
+      ion-icon{
+        font-size: 4.4rem;
+      }
+
+      .bannerTitle{
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 2rem;
+        margin: 0 15%;
+        text-align: center;
+      }
+
+      .bannerContent{
+        text-align: center;
+        margin:0 10%;
+        color: #FF9CBF;
+        font-size: 1.45rem;
+      }
     }
 
     .sections{
@@ -34,17 +63,62 @@ page-discriminacion {
       border-top-left-radius: 8% 8%;
       border-top-right-radius: 8% 8%;
       background-color: white;
-      height: 58vh;
-      .section{
-        height: 33.3%;
+      height: 90vh;
+      .title{
+        font-weight: bold;
+        color: #1E1A42;
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+        padding-top: 8%;
+        .icon{
+            text-align: center;
+            font-size: 2rem;
+        }
+        .sectionTitle{
+            font-size: 1.8rem;
+            margin-bottom: 0%;
+        }
+      }
+      .list {
+        p{
+          color: #727689;
+          font-size: 1.45rem;
+          span{
+          color: #E55C75;
+          margin-right: 2%;
+          font-weight: bold;
+          }
+
+      }
+      .denunciaText{
+        padding-top: 3%;
+        line-height: 3.8vh;
+        color: #727689;
+        font-size: 1.45rem;
       }
     }
+  }
 
     .bottomLine{
       height: 0vh;
       width: 100%;
       position: relative;
     }
+
+  .formButton{
+      padding: 5% 0%;
+      display: flex;
+      justify-content: center;
+      .denunciaButton{
+        background-color: #FC236F;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 6rem;
+        width: 85%;
+      }
+  }
 
   .bottomLine:before {
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
