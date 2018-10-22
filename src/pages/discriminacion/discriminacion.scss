@@ -1,16 +1,15 @@
-page-denuncia {
+page-discriminacion {
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.24rem;
-
   }
 
-.toolbar{
-  .icon{
-    color: white !important;
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
   }
-}
 
   ion-content,
   .scroll-content {
@@ -23,7 +22,7 @@ page-denuncia {
 
   .bar-button-default,
   .toolbar-title {
-    color: #FF9CBF !important;
+      color: #FF9CBF !important;
   }
   .scroll-content{
     background-color: #E20C57;
@@ -32,7 +31,7 @@ page-denuncia {
     .banner{
       background-color: #E20C57;
       position: relative;
-      height: 35vh;
+      height: 25vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -46,6 +45,9 @@ page-denuncia {
       .bannerTitle{
         text-transform: uppercase;
         font-weight: 800;
+        font-size: 2rem;
+        margin: 0 15%;
+        text-align: center;
       }
 
       .bannerContent{
@@ -61,58 +63,62 @@ page-denuncia {
       border-top-left-radius: 8% 8%;
       border-top-right-radius: 8% 8%;
       background-color: white;
-      height: 58vh;
-      .section{
-        height: 33.3%;
-        .sectionTitle{
-          margin-bottom: 1%;
-          color: #363B56;
-          font-weight: bold;
-          font-size: 1.7rem;
-        }
-        .sectionContent{
-          margin-top: 2%;
-          color: #727689;
-        }
-      }
-      .politicaPublica, .tusDerechos, .puntosAtencion{
-          display: flex;
-          align-items: center;
-          .icon{
+      height: 90vh;
+      .title{
+        font-weight: bold;
+        color: #1E1A42;
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+        padding-top: 8%;
+        .icon{
             text-align: center;
-            font-size: 2.1rem;
-              margin-bottom: 11.5%;
-              color: #363B56;
+            font-size: 2rem;
+        }
+        .sectionTitle{
+            font-size: 1.8rem;
+            margin-bottom: 0%;
+        }
+      }
+      .list {
+        p{
+          color: #727689;
+          font-size: 1.45rem;
+          span{
+          color: #E55C75;
+          margin-right: 2%;
+          font-weight: bold;
           }
+
+      }
+      .denunciaText{
+        padding-top: 3%;
+        line-height: 3.8vh;
+        color: #727689;
+        font-size: 1.45rem;
       }
     }
-
-    .tusDerechos{
-      position: relative;
-    }
-
-    .tusDerechos:after, .tusDerechos:before{
-      background-color: lightgray;
-      content: '';
-      width: 90%;
-      position: absolute;
-      left: 5%;
-      height: 1px;
-    }
-
-    .tusDerechos:after{
-        bottom: 0px;
-    }
-
-    .tusDerechos:before{
-        top: 0px;
-    }
+  }
 
     .bottomLine{
       height: 0vh;
       width: 100%;
       position: relative;
     }
+
+  .formButton{
+      padding: 5% 0%;
+      display: flex;
+      justify-content: center;
+      .denunciaButton{
+        background-color: #FC236F;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 6rem;
+        width: 85%;
+      }
+  }
 
   .bottomLine:before {
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
@@ -123,4 +129,5 @@ page-denuncia {
     left: 0;
     position: absolute;
   }
+
 }

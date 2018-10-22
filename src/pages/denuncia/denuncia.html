@@ -1,18 +1,61 @@
-<!--
-  Generated template for the DenunciaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Canales de denuncia</ion-title>
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>canales de denuncia</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <div class="banner">
+
+      <ion-icon name="icon-icono-denuncia01"></ion-icon>
+      <p class="bannerTitle">Canales de denuncia</p>
+      <p class="bannerContent">A través de los siguientes canales puedes denunciar un acto de discriminación o de vulneración a tus derechos.</p>
+
+  </div>
+
+  <div class="sections">
+    <div class="politicaPublica section" (click)="goToDiscriminacion()">
+        <ion-col col-2 class="icon">
+            <ion-icon name="icon-icono-denuncia01"></ion-icon>
+        </ion-col>
+        <ion-col col-10>
+          <p class="sectionTitle">Denuncia por discriminación</p>
+          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
+        </ion-col>
+    </div>
+    <div class="tusDerechos section" (click)="goToArcoiris()">
+      <ion-col col-2 class="icon">
+          <ion-icon name="icon-icono-llamada"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="sectionTitle">Línea arcoíris</p>
+        <p class="sectionContent">Esta línea telefónica brinda asesorías jurídicas en casos de discriminación.</p>
+      </ion-col>
+    </div>
+    <div class="puntosAtencion section" (click)="goToPurpura()">
+      <ion-col col-2 class="icon">
+          <ion-icon name="icon-icono-llamada"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="sectionTitle">Línea púrpura</p>
+        <p class="sectionContent">Línea de orientación psicosocial para las mujeres que habitan Bogotá.</p>
+      </ion-col>
+    </div>
+
+  </div>
+
+  <div class="bottomLine">
+
+  </div>
 
 </ion-content>

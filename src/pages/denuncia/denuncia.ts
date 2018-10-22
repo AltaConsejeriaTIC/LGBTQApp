@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the DenunciaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {DiscriminacionPage} from '../discriminacion/discriminacion';
+import {ArcoirisPage} from '../arcoiris/arcoiris';
+import {PurpuraPage} from '../purpura/purpura';
 
 @Component({
   selector: 'page-denuncia',
@@ -18,4 +15,17 @@ export class DenunciaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DenunciaPage');
   }
+
+  goToArcoiris(){
+    this.navCtrl.push(ArcoirisPage);
+  }
+
+  goToPurpura(){
+    this.navCtrl.push(PurpuraPage);
+  }
+
+  goToDiscriminacion(){
+    this.navCtrl.push(DiscriminacionPage);
+  }
+
 }

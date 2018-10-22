@@ -1,3 +1,79 @@
 page-derecho {
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
 
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #004FC6;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+    color: white !important;
+  }
+  .scroll-content{
+    background-color: #004FC6;
+  }
+
+    .banner{
+      background-color: #004FC6;
+      position: relative;
+      height: 35vh;
+
+    }
+
+    .sections{
+      position: relative;
+      border-top-left-radius: 8% 8%;
+      border-top-right-radius: 8% 8%;
+      background-color: white;
+      height: 59vh;
+      .section{
+        height: 33.3%;
+      }
+    }
+
+    .tusDerechos{
+      position: relative;
+    }
+
+    .tusDerechos:after, .tusDerechos:before{
+      background-color: lightgray;
+      content: '';
+      width: 90%;
+      position: absolute;
+      left: 5%;
+      height: 1px;
+    }
+
+    .tusDerechos:after{
+        bottom: 0px;
+    }
+
+    .tusDerechos:before{
+        top: 0px;
+    }
+
+    .bottomLine{
+      height: 0vh;
+      width: 100%;
+      position: relative;
+    }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
 }
