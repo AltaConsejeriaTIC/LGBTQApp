@@ -5,6 +5,10 @@ page-arcoiris {
     font-size: 1.24rem;
   }
 
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
   .toolbar{
     .icon{
       color: white !important;
@@ -31,7 +35,7 @@ page-arcoiris {
   .banner{
     background-color: #E20C57;
     position: relative;
-    height: 25vh;
+    height: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,37 +67,52 @@ page-arcoiris {
       border-top-left-radius: 8% 8%;
       border-top-right-radius: 8% 8%;
       background-color: white;
-      height: 68vh;
+      height: 75%;
 
       .text{
         position: relative;
-        height: 51vh;
+        height: 70%;
         justify-content: center;
         padding-top: 5%;
         .number {
-          font-weight: 800;
-          text-align: center;
-          letter-spacing: 0.04em;
-          color: #BB0847;
-          font-size: 3rem;
-          margin-bottom: 8%;
-
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: #BB0847;
+            font-size: 3rem;
+            margin-bottom: 8%;
+        }
+        @media (max-height: 500px){
+              .number {
+                  font-size: 2.5rem;
+                  margin-bottom: 2%;
+            }
         }
         .list{
               padding-top: 5%;
-          p{
-             margin: 5% 0%;
-             color: #727689;
-             font-size: 1.45rem;
-             line-height: 24px;
-             line-height: 3.8vh;
-          }
-          p:not(:first-child):not(:last-child){
-            font-weight: bold;
-          }
-          span{
-            font-weight: bold;
-          }
+              p{
+                 margin: 5% 0%;
+                 color: #727689;
+                 font-size: 1.45rem;
+                 line-height: 24px;
+                 line-height: 3.8vh;
+              }
+              @media (max-height: 600px){
+                  p{
+                    font-size: 1.3rem;
+                  }
+              }
+              p:not(:first-child):not(:last-child){
+                font-weight: bold;
+              }
+              span{
+                font-weight: bold;
+              }
+        }
+          @media (max-height: 500px){
+            .list{
+                padding-top: 6%;
+            }
         }
         .button{
             width: 100%;
@@ -108,6 +127,11 @@ page-arcoiris {
             }
 
         }
+      }
+      @media (max-height: 500px){
+          .text{
+              padding-top: 0%;
+          }
       }
 
       .text:after{
@@ -125,12 +149,31 @@ page-arcoiris {
 
       .horario{
         justify-content: center;
+        align-items: center;
+        height: 30%;
         p{
           color: #727689;
           font-size: 1.45rem;
         }
+        @media (max-height: 500px){
+            p{
+              font-size: 1.3rem;
+              margin-bottom: 1%;
+              margin-top: 1%
+            }
+        }
+        @media (max-height: 600px){
+            p{
+              font-size: 1.3rem;
+            }
+        }
         p:not(:first-child){
           font-weight: bold;
+        }
+      }
+      @media (max-height: 500px){
+        .horario{
+          padding-top: 3%;
         }
       }
 
