@@ -24,6 +24,8 @@ import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
 import { HttpClientModule } from '@angular/common/http';
+
+import { CallNumber } from '@ionic-native/call-number';
 //used to give format to date
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -73,7 +75,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Geolocation,
     DetailContentService,
-    EventProvider
+    EventProvider,
+    CallNumber
   ]
 })
 export class AppModule {}
