@@ -1,0 +1,202 @@
+page-objetivo {
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #004FC6;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+      color: #9BC3FF !important;
+  }
+  .scroll-content{
+    background-color: #004FC6;
+  }
+
+  .banner{
+    background-color: #004FC6;
+    position: relative;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    ion-icon{
+      font-size: 4.4rem;
+    }
+
+    .bannerTitle{
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 2rem;
+      margin: 0 15%;
+      text-align: center;
+    }
+
+    .bannerContent{
+      text-align: center;
+      margin:0 10%;
+      color: #9BC3FF;
+      font-size: 1.45rem;
+    }
+  }
+
+    .sections{
+      position: relative;
+      border-top-left-radius: 8% 8%;
+      border-top-right-radius: 8% 8%;
+      background-color: white;
+      height: 75%;
+
+      .text{
+        position: relative;
+        height: 70%;
+        justify-content: center;
+        padding-top: 5%;
+        .number {
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 0.04em;
+            color: #BB0847;
+            font-size: 3rem;
+            margin-bottom: 8%;
+        }
+        @media (max-height: 500px){
+              .number {
+                  font-size: 2.5rem;
+                  margin-bottom: 2%;
+            }
+        }
+        .list{
+              padding-top: 5%;
+              p{
+                 margin: 5% 0%;
+                 color: #727689;
+                 font-size: 1.45rem;
+                 line-height: 24px;
+                 line-height: 3.8vh;
+              }
+              @media (max-height: 600px){
+                  p{
+                    font-size: 1.3rem;
+                  }
+              }
+              p:not(:first-child):not(:last-child){
+                font-weight: bold;
+              }
+              span{
+                font-weight: bold;
+              }
+        }
+          @media (max-height: 500px){
+            .list{
+                padding-top: 6%;
+            }
+        }
+        .button{
+            width: 100%;
+            background-color: #FC236F;
+            height: 4rem;
+            .button-inner{
+              span{
+                margin: auto;
+                font-weight: 800;
+                letter-spacing: 0.04em;
+              }
+            }
+
+        }
+      }
+      @media (max-height: 500px){
+          .text{
+              padding-top: 0%;
+          }
+      }
+
+      .text:after{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+      }
+
+      .text:after{
+          bottom: 0px;
+      }
+
+      .horario{
+        justify-content: center;
+        align-items: center;
+        height: 30%;
+        p{
+          color: #6D6F76;
+          font-size: 1.3rem;
+          margin-bottom: 1%;
+          margin-top: 1%;
+          span{
+            color: #363B56;
+            font-weight: bold;
+          }
+        }
+        @media (max-height: 500px){
+            p{
+              font-size: 1.3rem;
+              margin-bottom: 1%;
+              margin-top: 1%
+            }
+        }
+        @media (max-height: 600px){
+            p{
+              font-size: 1.3rem;
+            }
+        }
+      }
+      @media (max-height: 500px){
+        .horario{
+          padding-top: 3%;
+        }
+      }
+
+    }
+
+
+    .bottomLine{
+      height: 0vh;
+      width: 100%;
+      position: relative;
+    }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: -1px;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
+
+}
