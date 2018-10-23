@@ -32,6 +32,7 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { ContactPage } from '../pages/contact/contact';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
-    PurpuraPage
+    PurpuraPage,
+    ContactPage
 
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
@@ -67,7 +69,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
-    PurpuraPage
+    PurpuraPage,
+    ContactPage
   ],
   providers: [
     StatusBar,

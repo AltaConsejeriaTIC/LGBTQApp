@@ -6,6 +6,7 @@ import { DenunciaPage } from '../denuncia/denuncia';
 import { DerechoPage } from '../derecho/derecho';
 import { AlianzaPage } from '../alianza/alianza';
 import { OrganizacionPage } from '../organizacion/organizacion';
+import { ContactPage } from '../contact/contact';
 
 @Component({
   selector: 'page-home',
@@ -53,6 +54,10 @@ export class HomePage {
 
   goToOrganizacion() {
     this.navCtrl.push(OrganizacionPage);
+  }
+
+  goToContactPage(){
+    this.navCtrl.push( ContactPage );
   }
 
   slideChanged() {
