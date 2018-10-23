@@ -32,7 +32,7 @@
           <ion-col class="newsDate">
             <p>{{params.date | date: 'longDate':'':'es'}}</p>
           </ion-col>
-          <ion-col col-2 class="shareLabel">
+          <ion-col col-2 class="shareLabel" (click)="shareNews(params)" >
             <ion-icon name="icon-icono-compartir"></ion-icon>
             <p>Compartir</p>
           </ion-col>

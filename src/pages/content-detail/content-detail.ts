@@ -3,6 +3,7 @@ import { NavController, NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DetailContentService } from '../../services/detail-content.service';
 import { ServerConfig } from '../../../config/server';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import {} from '@types/googlemaps';
 
@@ -21,15 +22,20 @@ export class ContentDetailPage {
   hideMapNow: boolean;
   private api;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private detailService: DetailContentService, public geolocation: Geolocation) {
-    this.typeContent = this.detailService.getContent();
-    this.api = ServerConfig.apiEndPoint;
-    if (this.typeContent === 'evento') {
-      this.title = 'EVENTOS EN BOGOTÁ';
-    } else {
-      this.title = 'NOTICIAS';
-    }
-    this.params = this.navParams.get('params');
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private detailService: DetailContentService,
+    public geolocation: Geolocation,
+    private socialSharing: SocialSharing) {
+
+      this.typeContent = this.detailService.getContent();
+      this.api = ServerConfig.apiEndPoint;
+      if (this.typeContent === 'evento') {
+        this.title = 'EVENTOS EN BOGOTÁ';
+      } else {
+        this.title = 'NOTICIAS';
+      }
+      this.params = this.navParams.get('params');
   }
 
   ionViewDidLoad() {
@@ -79,5 +85,15 @@ export class ContentDetailPage {
     let address: string;
     address = `${place},bogotá`;
     return address;
+  }
+
+  shareNews(news) {
+    let msg = `${news.title} ${news.source_link}`
+    this.socialSharing.share(msg, "App DDS", null, null)
+      .then( response => {
+        console.log("se pudo compartir");
+      }).catch((e) => {
+        console.error(e);
+      });
   }
 }
