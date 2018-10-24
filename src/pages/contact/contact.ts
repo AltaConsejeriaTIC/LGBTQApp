@@ -18,10 +18,14 @@ export class ContactPage {
 
 
 
-  findContacts = false;
-  nameContacts = [];
+  public findContacts = false;
+  public nameContacts = [];
+  public idSet = new Set();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts) {
+    if( this.nameContacts.length == 0 ){
+      this.findContacts = false;
+    }
   }
 
   ionViewDidLoad() {
@@ -29,28 +33,23 @@ export class ContactPage {
   }
 
   addContact(){
-    console.log( 'button is working');
-
-    // let contact: Contact = this.contacts.create();
-
-    // contact.pickContact().then( (response) =>{
-    //     console.log('response: ', response);
-    //     console.log( 'res json: ', JSON.stringify(response) );
-    //   }
-    // ).catch( (error: any) => { console.error('Error saving contact.', error) } );
 
     this.contacts.pickContact().then( response => {
-      alert("INSIDE PROMISE")
 
       console.log('response: ', response );
       const infoContact = response['_objectInstance'];
       const name = infoContact.name.formatted;
 
+      if( this.idSet.has( infoContact.id) ){
+        alert("Este contacto ya se encuentra registrado");
+      }
+      else{
+        this.idSet.add(infoContact.id);
+        this.nameContacts.push( name );
+      }
+
       console.log( 'info: ', infoContact );
       console.log('mame: ', name );
-
-      this.nameContacts.push( name );
-
       this.findContacts = true;
 
     }).catch( (error)=>{
