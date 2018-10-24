@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 
 /**
  * Generated class for the ContactPage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts) {
   }
 
   ionViewDidLoad() {
@@ -24,6 +25,26 @@ export class ContactPage {
 
   addContact(){
     console.log( 'button is working');
+
+    // let contact: Contact = this.contacts.create();
+
+    // contact.pickContact().then( (response) =>{
+    //     console.log('response: ', response);
+    //     console.log( 'res json: ', JSON.stringify(response) );
+    //   }
+    // ).catch( (error: any) => { console.error('Error saving contact.', error) } );
+
+    let contactsfound
+    this.contacts.pickContact().then((contacts) => {
+      alert("INSIDE PROMISE")
+      contactsfound = contacts;
+      console.log('response: ',contacts );
+      console.log('json: ', JSON.stringify(contacts) );
+    })
+
+    if (contactsfound.length == 0)
+      alert('No Contacts found');
+
   }
 
 }

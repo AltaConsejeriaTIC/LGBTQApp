@@ -34,6 +34,8 @@ registerLocaleData(localeEs, 'es');
 import { Geolocation } from '@ionic-native/geolocation';
 import { ContactPage } from '../pages/contact/contact';
 
+import { Contacts } from '@ionic-native/contacts';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -79,7 +81,8 @@ import { ContactPage } from '../pages/contact/contact';
     Geolocation,
     DetailContentService,
     EventProvider,
-    CallNumber
+    CallNumber,
+    Contacts
   ]
 })
 export class AppModule {}
