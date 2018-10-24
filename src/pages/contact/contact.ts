@@ -16,6 +16,11 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 })
 export class ContactPage {
 
+
+
+  findContacts = false;
+  nameContacts = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts) {
   }
 
@@ -34,16 +39,24 @@ export class ContactPage {
     //   }
     // ).catch( (error: any) => { console.error('Error saving contact.', error) } );
 
-    let contactsfound
-    this.contacts.pickContact().then((contacts) => {
+    this.contacts.pickContact().then( response => {
       alert("INSIDE PROMISE")
-      contactsfound = contacts;
-      console.log('response: ',contacts );
-      console.log('json: ', JSON.stringify(contacts) );
-    })
 
-    if (contactsfound.length == 0)
+      console.log('response: ', response );
+      const infoContact = response['_objectInstance'];
+      const name = infoContact.name.formatted;
+
+      console.log( 'info: ', infoContact );
+      console.log('mame: ', name );
+
+      this.nameContacts.push( name );
+
+      this.findContacts = true;
+
+    }).catch( (error)=>{
       alert('No Contacts found');
+      console.log('error: ', error);
+    });
 
   }
 

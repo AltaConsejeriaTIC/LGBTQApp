@@ -26,4 +26,13 @@
         </button>
     </div>
 
+
+    <div *ngIf="findContacts">
+      <ion-list>
+        <p *ngFor="let name of nameContacts">
+          {{name}}
+        </p>
+      </ion-list>
+    </div>
+
 </ion-content>
