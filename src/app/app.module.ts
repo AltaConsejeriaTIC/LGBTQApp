@@ -35,6 +35,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { ContactPage } from '../pages/contact/contact';
 
 import { Contacts } from '@ionic-native/contacts';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,12 @@ import { Contacts } from '@ionic-native/contacts';
     ContactPage
 
   ],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -72,7 +79,7 @@ import { Contacts } from '@ionic-native/contacts';
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
-    ContactPage
+    ContactPage,
   ],
   providers: [
     StatusBar,

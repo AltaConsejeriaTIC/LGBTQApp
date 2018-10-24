@@ -29,10 +29,16 @@
 
     <div *ngIf="findContacts">
       <ion-list>
-        <p *ngFor="let name of nameContacts">
-          {{name}}
+        <p *ngFor="let info of infoContacts">
+          {{info.name.formatted}}
         </p>
       </ion-list>
+    </div>
+
+    <div>
+        <button ion-button (click)="clearAllContacts()">
+          -Clear All
+        </button>
     </div>
 
 </ion-content>
