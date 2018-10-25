@@ -1,3 +1,165 @@
 page-acceso-derechos {
 
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #004FC6;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+      color: #9BC3FF !important;
+  }
+  .scroll-content{
+    background-color: #004FC6;
+  }
+
+  .banner{
+    background-color: #004FC6;
+    position: relative;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    ion-icon{
+      font-size: 4.4rem;
+    }
+
+    .bannerTitle{
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 2rem;
+      margin: 0 15%;
+      text-align: center;
+    }
+
+    .bannerContent{
+      text-align: center;
+      margin:0 10%;
+      color: #9BC3FF;
+      font-size: 1.45rem;
+    }
+  }
+
+  .sections{
+    position: relative;
+    border-top-left-radius: 6% 5%;
+    border-top-right-radius: 6% 5%;
+    background-color: white;
+    height: 75%;
+    padding-top: 5%;
+
+  }
+
+  .accordion-list {
+          background: color($colors, light);
+          ion-icon.icon.icon-md{
+            color: #2C347E;
+          }
+
+      }
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
+      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
+      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
+        padding: 2% 2% 5% 7%  !important;
+      }
+
+      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
+      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
+      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
+      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
+        padding: 9% 2% 5% 7%;
+      }
+
+      .list-header-md{
+        margin-bottom: 0;
+      }
+      .section {
+          background: #fff;
+          color: #000;
+          margin-bottom: 0px;
+
+      }
+      .section-active {
+      }
+
+      .accordion-list{
+        background-color: #004FC6;
+      }
+
+
+      .child {
+          background: #e8e7e6;
+          color: #000;
+          margin-bottom: 4px;
+      }
+      .child-item {
+          background: #f3f2f1;
+          padding: 10px;
+      }
+      .label {
+          margin: 0px;
+
+      }
+      .list {
+          margin-bottom: 0px;
+      }
+
+      .item-inner:before{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+        bottom: 0px;
+      }
+
+      .item-md p {
+    white-space: normal;
+    padding-right: 25%;
+    color: #363B56;
+    font-weight: bold;
+    font-size: 1.65rem;
+}
+
+.bottomLine{
+  height: 0vh;
+  width: 100%;
+  position: relative;
+}
+
+.bottomLine:before {
+background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+height: 5px;
+content: '';
+bottom: -1px;
+right: 0;
+left: 0;
+position: absolute;
+}
+
 }
