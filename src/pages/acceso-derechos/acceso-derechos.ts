@@ -1,13 +1,11 @@
-import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
 
 @Component({
   selector: 'page-acceso-derechos',
   templateUrl: 'acceso-derechos.html',
 })
-export class AccesoDerechosPage implements OnInit{
+export class AccesoDerechosPage{
 
   information: any[];
 
@@ -17,9 +15,10 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-icono-politica",
             "children": [
                 {
-                    "name": "Special Academy Pizza",
-                    "information": "Pastrami pork belly ball tip andouille corned beef jerky shankle landjaeger. Chicken chuck porchetta picanha, ham brisket tenderloin venison meatloaf landjaeger jowl.",
-
+                    "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                    "description": "Sector Salud - CAMI Zampar Mendoza",
+                    "phone": "(57) 3444484",
+                    "address": "Diagonal 34 No. 5 - 43"
                 }
 
             ]
@@ -29,8 +28,10 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-icono-alianzas",
             "children": [
               {
-                  "name": "Special Academy Pizza",
-                  "information": "Pastrami pork belly ball tip andouille corned beef jerky shankle landjaeger. Chicken chuck porchetta picanha, ham brisket tenderloin venison meatloaf landjaeger jowl.",
+                "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                "description": "Sector Salud - CAMI Zampar Mendoza",
+                "phone": "(57) 3444484",
+                "address": "Diagonal 34 No. 5 - 43"
 
               }
             ]
@@ -40,8 +41,10 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-icono-mensaje",
             "children": [
                 {
-                    "name": "Special Academy Pizza",
-                    "information": " Landjaeger fatback shank frankfurter, tongue shoulder ham strip steak pancetta pork short loin corned beef short ribs biltong cow",
+                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                  "description": "Sector Salud - CAMI Zampar Mendoza",
+                  "phone": "(57) 3444484",
+                  "address": "Diagonal 34 No. 5 - 43"
 
                 }
             ]
@@ -51,8 +54,10 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-icono-llamada",
             "children": [
                 {
-                    "name": "Special Academy Pizza",
-                    "information": "Pastrami pork belly ball tip andouille corned beef jerky shankle landjaeger. Chicken chuck porchetta picanha, ham brisket tenderloin venison meatloaf landjaeger jowl.",
+                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                  "description": "Sector Salud - CAMI Zampar Mendoza",
+                  "phone": "(57) 3444484",
+                  "address": "Diagonal 34 No. 5 - 43"
 
                 }
             ]
@@ -62,9 +67,10 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-campana-boton",
             "children": [
                 {
-                    "name": "Special Academy Pizza",
-                    "information": "Pastrami pork belly ball tip andouille corned beef jerky shankle landjaeger. Chicken chuck porchetta picanha, ham brisket tenderloin venison meatloaf landjaeger jowl.",
-
+                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                  "description": "Sector Salud - CAMI Zampar Mendoza",
+                  "phone": "(57) 3444484",
+                  "address": "Diagonal 34 No. 5 - 43"
                 }
             ]
         },
@@ -73,23 +79,20 @@ export class AccesoDerechosPage implements OnInit{
             "icon": "icon-icono-hora",
             "children": [
                 {
-                    "name": "Special Academy Pizza",
-                    "information": "Pastrami pork belly ball tip andouille corned beef jerky shankle landjaeger. Chicken chuck porchetta picanha, ham brisket tenderloin venison meatloaf landjaeger jowl.",
-
+                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
+                  "description": "Sector Salud - CAMI Zampar Mendoza",
+                  "phone": "(57) 3444484",
+                  "address": "Diagonal 34 No. 5 - 43"
                 }
             ]
         },
     ]
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public renderer: Renderer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.information = this.items;
         console.log(this.information);
   }
-
-  ngOnInit() {
-
-    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccesoDerechosPage');

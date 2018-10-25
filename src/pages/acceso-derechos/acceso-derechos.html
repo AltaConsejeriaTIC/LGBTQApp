@@ -15,7 +15,8 @@
 <ion-content>
 
   <div class="banner">
-      <p class="bannerTitle">Objetivo de la política pública LGBTI</p>
+      <p class="bannerTitle">tus derechos</p>
+      <p class="bannerContent">Tus derechos Encuentra información para el acceso a tus derechos con un enfoque.</p>
   </div>
 
   <div class="sections">
@@ -35,16 +36,13 @@
 
             <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
 
-                <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none>
-                    <ion-icon item-right name="add" *ngIf="!child.open"></ion-icon>
-                    <ion-icon item-right name="close" *ngIf="child.open"></ion-icon>
-                    {{ child.name }}
-                </button>
-
-
                 <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
-                    <h2>{{ child.name }}</h2>
-                    <p>{{ child.information }}</p>
+                    <h2>{{ child.information }}</h2>
+                    <p>{{ child.description }}</p>
+                    <p>Teléfono: </p>
+                    <p>{{ child.phone }}</p>
+                    <p>Direccíon: </p>
+                    <p>{{ child.address }}</p>
                 </ion-item>
 
             </ion-list-header>
