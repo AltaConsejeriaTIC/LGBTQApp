@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>Política pública LGBTI</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="banner">
+      <p class="bannerTitle">puntos de atención</p>
+      <p class="bannerContent">Política Pública LGBTI cuenta con diferentes puntos a los que puedes acercarte para obtener información o atención a tus necesidades.</p>
+  </div>
+
+  <div class="sections">
+
+    <ion-list class="accordion-list">
+
+        <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+
+          <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+            <ion-icon item-left name='{{item.icon}}'></ion-icon>
+            <ion-icon item-right name="ios-arrow-down" *ngIf="!item.open"></ion-icon>
+            <ion-icon item-right name="ios-arrow-up" *ngIf="item.open"></ion-icon>
+              <p>{{ item.name }}</p>
+          </button>
+
+          <ion-list *ngIf="item.children && item.open" no-lines>
+
+            <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+
+                <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                    <img src="{{child.image}}">
+                    <h2>{{ child.information }}</h2>
+                    <p>Teléfono: </p>
+                    <p>{{ child.phone }}</p>
+                    <p>Correo electrónico: </p>
+                    <p>{{ child.mail }}</p>
+                </ion-item>
+
+            </ion-list-header>
+
+        </ion-list>
+
+
+
+    </ion-list-header>
+
+    <div class="bottomLine">
+
+    </div>
+
+  </ion-list>
+
+  </div>
+
+
+
+</ion-content>

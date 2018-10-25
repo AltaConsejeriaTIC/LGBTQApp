@@ -20,6 +20,14 @@ import {DiscriminacionPage} from '../pages/discriminacion/discriminacion';
 import {ArcoirisPage} from '../pages/arcoiris/arcoiris';
 import {PurpuraPage} from '../pages/purpura/purpura';
 
+import {PoliticaPage} from '../pages/politica/politica';
+import {PuntosPage} from '../pages/puntos/puntos';
+import {AccesoDerechosPage} from '../pages/acceso-derechos/acceso-derechos';
+
+import {ObjetivoPage} from '../pages/objetivo/objetivo';
+import {CoordinaPage} from '../pages/coordina/coordina';
+import {LogrosPage} from '../pages/logros/logros';
+
 import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
@@ -48,7 +56,13 @@ import { Geolocation } from '@ionic-native/geolocation';
     ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
-    PurpuraPage
+    PurpuraPage,
+    PoliticaPage,
+    PuntosPage,
+    AccesoDerechosPage,
+    ObjetivoPage,
+    CoordinaPage,
+    LogrosPage
 
   ],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
@@ -67,7 +81,13 @@ import { Geolocation } from '@ionic-native/geolocation';
     ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
-    PurpuraPage
+    PurpuraPage,
+    PoliticaPage,
+    PuntosPage,
+    AccesoDerechosPage,
+    ObjetivoPage,
+    CoordinaPage,
+    LogrosPage
   ],
   providers: [
     StatusBar,
