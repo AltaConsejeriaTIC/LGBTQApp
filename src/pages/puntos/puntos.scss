@@ -5,6 +5,19 @@ page-puntos {
     font-size: 1.24rem;
   }
 
+  ion-header {
+    max-height: 6vh;
+        height: 6vh;
+  }
+
+  .toolbar-ios{
+    min-height: 6vh;
+  }
+
+  .fixed-content, .scroll-content {
+    margin-top: 6vh;
+  }
+
   ion-title.title.title-md, ion-title.title.title-ios{
     padding: 0 75px 1px !important;
   }
@@ -35,7 +48,7 @@ page-puntos {
   .banner{
     background-color: #004FC6;
     position: relative;
-    height: 32%;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,6 +66,11 @@ page-puntos {
       margin: 0 15%;
       text-align: center;
     }
+    @media (max-height: 500px){
+      .bannerTitle{
+        font-size: 1.8rem;
+      }
+    }
 
     .bannerContent{
       text-align: center;
@@ -62,7 +80,7 @@ page-puntos {
     }
     @media (max-height: 500px){
       .bannerContent{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
     }
   }
@@ -72,8 +90,6 @@ page-puntos {
     border-top-left-radius: 6% 5%;
     border-top-right-radius: 6% 5%;
     background-color: white;
-    height: 68%;
-    padding-top: 5%;
 
   }
 
@@ -88,14 +104,24 @@ page-puntos {
       ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
       ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
       ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
-        padding: 2% 2% 5% 7%  !important;
+            border-top-left-radius: 7% 30%;
+            border-top-right-radius: 7% 30%;
+            background-color: white;
+      }
+
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > .item-inner > .input-wrapper > ion-label.label.label-md{
+          background-color: #004FC6;
       }
 
       ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
       ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
       ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
       ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
-        padding: 9% 2% 5% 7%;
+
+      }
+
+      button.item.item-block.item-md.section, button.item.item-block.item-md.section-active, button.item.item-block.item-ios.section-active, button.item.item-block.item-ios.section {
+          height: 16vh;
       }
 
       .list-header-md{
@@ -117,7 +143,6 @@ page-puntos {
       .accordion-list{
         background-color: #004FC6;
       }
-
 
       .child {
           background: #e8e7e6;
@@ -160,7 +185,9 @@ page-puntos {
       }
       .label {
           margin: 0px;
-
+          img{
+            width: 100%;
+          }
       }
       .list {
           margin-bottom: 0px;
@@ -185,10 +212,18 @@ page-puntos {
     font-size: 1.65rem;
 }
 
-ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(6)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
+ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
 ion-list.list.list-md > ion-list-header.item.item-md.list-header.list-header-md > .item-inner > .input-wrapper >
-ion-label.label.label-md > ion-item.child-item.item.item-block.item-md{
+ion-label.label.label-md > ion-item.child-item.item.item-block.item-md,
+ion-list-header.item.item-ios.list-header.list-header-ios:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-ios >
+ion-list.list.list-ios > ion-list-header.item.item-ios.list-header.list-header-ios > .item-inner > .input-wrapper >
+ion-label.label.label-ios > ion-item.child-item.item.item-block.item-ios
+{
   border-bottom: 1.2vh solid #004FC6;
+}
+
+ion-icon.icon.icon-md.ion-ios-arrow-down.item-icon, ion-icon.icon.icon-md.ion-ios-arrow-up.item-icon {
+    margin-right: 7%;
 }
 
 .bottomLine{
