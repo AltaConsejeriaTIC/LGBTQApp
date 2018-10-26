@@ -1,44 +1,75 @@
-<!--
-  Generated template for the ContactPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>contact</ion-title>
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>CONFIGURACIÓN DEL BOTÓN</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-    <div class="">
+    <!-- <div class="banner">
         <ion-icon name="icon-icono-denuncia01"></ion-icon>
-        <p class="">Boton de emergencia</p>
+        <p class="bannerTitle">Boton de emergencia</p>
+    </div> -->
+
+    <ion-row class="emergency-message">
+        <ion-col col-2 class="icon">
+            <ion-icon name="icon-icono-mensaje"></ion-icon>
+        </ion-col>
+        <ion-col col-10 class="block">
+            <p class="sectionTitle">MENSAJE DE EMERGENCIA</p>
+        </ion-col>
+    </ion-row>
+
+    <div class="text-area-emergency">
+        <ion-item class="border-properties">
+            <ion-textarea placeholder="Text Input"></ion-textarea>
+        </ion-item>
     </div>
 
-    <div>
-        <button ion-button (click)="addContact()">
-          +Add contact
-        </button>
+    <!-- <div class="section politicaPublica">
+      <ion-col col-2 class="icon">
+        <ion-icon name="icon-icono-denuncia01"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="sectionTitle">MENSAJE DE EMERGENCIA</p>
+      </ion-col>
+    </div> -->
+
+
+    <div class="prueba">
+        <div>
+            <button ion-button (click)="addContact()">
+              +Add contact
+            </button>
+        </div>
+
+
+        <div *ngIf="findContacts">
+          <ion-list>
+            <p *ngFor="let info of infoContacts">
+              {{info.name.formatted}}
+            </p>
+          </ion-list>
+        </div>
+
+        <div>
+            <button ion-button (click)="clearAllContacts()">
+              -Clear All
+            </button>
+        </div>
     </div>
 
+    <div class="bottomLine">
 
-    <div *ngIf="findContacts">
-      <ion-list>
-        <p *ngFor="let info of infoContacts">
-          {{info.name.formatted}}
-        </p>
-      </ion-list>
-    </div>
-
-    <div>
-        <button ion-button (click)="clearAllContacts()">
-          -Clear All
-        </button>
     </div>
 
 </ion-content>

@@ -1,3 +1,137 @@
 page-contact {
 
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #FD3D37;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+    color: white !important;
+  }
+  .scroll-content{
+    background-color: white;
+  }
+
+
+  .banner{
+    background-color: #FD3D37;
+    position: relative;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    ion-icon{
+      font-size: 4.4rem;
+    }
+
+    @media (max-height: 500px){
+      ion-icon{
+        font-size: 3rem;
+      }
+    }
+
+    .bannerTitle{
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .bannerContent{
+      text-align: center;
+      margin:0 10%;
+      color: white;
+      font-size: 1.45rem;
+    }
+    @media (max-height: 500px){
+      .bannerContent{
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+
+  .emergency-message{
+    left: 1%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 20%;
+    justify-content: center;
+    margin-bottom: -16px;
+    .icon{
+      text-align: right;
+      font-size: 2rem;
+      margin-top: 1%;
+    }
+    .block{
+      padding-left: 2%;
+    }
+    .sectionTitle{
+      font-weight: bold;
+    }
+  }
+
+  .text-area-emergency{
+    display: flex;
+    position: relative;
+    height: 12rem;
+    width: 32rem;
+    margin-right: 0;
+    .border-properties{
+      left: 6%;
+      border: 1px solid #E5E8E8;
+      border-radius: 10px;
+    }
+  }
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: transparent;
+        box-shadow: inset 0 -1px 0 0 #dedede;
+  }
+
+  .bottomLine{
+    height: 0vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: -1x; //-1px
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  .prueba{
+    margin-top: 100px;
+  }
+
+
 }
