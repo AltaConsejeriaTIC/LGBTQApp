@@ -25,6 +25,8 @@ export class ContactPage {
   public keyInfoContacts = 'infoContacts';
   public keyIdSet = 'idSet';
 
+  public proofArr = ['AAA AAA', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage) {
     this.loadInfo();
   }
@@ -58,7 +60,7 @@ export class ContactPage {
 
     this.contacts.pickContact().then( response => {
 
-      alert("inside picking contacts");
+      //alert("inside picking contacts");
 
       const infoContact = response['_objectInstance'];
 
@@ -85,6 +87,14 @@ export class ContactPage {
     this.findContacts = false;
     this.infoContacts = [];
     this.idSet = new Set();
+  }
+
+  itemSelected( item ){
+
+  }
+
+  getLettersName(){
+
   }
 
 }

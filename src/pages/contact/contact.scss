@@ -16,9 +16,13 @@ page-contact {
     }
   }
 
-  ion-content,
+  ion-content{
+    padding: 0 !important;
+    position: relative;
+  }
   .scroll-content {
     padding: 0 !important;
+    // position: relative;
   }
 
   .toolbar-background {
@@ -73,13 +77,13 @@ page-contact {
   }
 
 
-  .emergency-message{
+  .emergency-section-message{
     left: 1%;
     display: flex;
     position: relative;
     align-items: center;
-    height: 13%;
-    padding-top: 10%;
+    height: 14%;
+    padding-top: 9%;
     justify-content: center;
     .icon{
       text-align: right;
@@ -101,37 +105,101 @@ page-contact {
     width: 32rem;
     margin-right: 0;
     .border-properties{
-      left: 6%;
+      left: 7%;
       border: 1px solid #E5E8E8;
       border-radius: 10px;
     }
   }
 
-  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
-    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-        border-bottom-color: transparent;
-        box-shadow: inset 0 -1px 0 0 #dedede;
+  .formButton{
+    padding: 5% 0% 1%;
+    display: flex;
+    justify-content: center;
+    .edit-emergency-message{
+      background-color: #FD3D37;
+      text-transform: initial;
+      font-size: 1.8rem;
+      font-weight: bold;
+      height: 4rem;
+      width: 85%;
+      .icon{
+        text-align: left;
+      }
+      .block{
+        text-align: left;
+        padding-left: 9%;
+      }
+    }
   }
+
+  .emergency-section-contacts{
+    left: 1%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 10%;
+    padding-top: 0%;
+    margin-top: 0%;
+    justify-content: center;
+    .icon{
+      text-align: right;
+      font-size: 2rem;
+      margin-top: 1%;
+    }
+    .block{
+      padding-left: 2%;
+    }
+    .sectionTitle{
+      font-weight: bold;
+    }
+  }
+
+  .contacts-section-block{
+    .list-block{
+      position: relative;
+      .resize-line{
+        padding: 0% 4%;
+        .dividerLine{
+          background: linear-gradient(to right, #E5E8E8);
+          height: 0.1rem;
+          right: 0;
+          left: 0;
+        }
+      }
+      .custom-icon{
+        position: absolute;
+        background: #244064;
+        text-align: center;
+        width: 26px;
+        height: 26px;
+        padding: 4px;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .toggle-md .toggle-icon{
+    height: 30%;
+    width: 75%;
+  }
+
 
   .bottomLine{
     height: 0vh;
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: 0.5rem;
   }
 
   .bottomLine:before {
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
     height: 5px;
     content: '';
-    bottom: -1x; //-1px
+    bottom: auto;
     right: 0;
     left: 0;
     position: absolute;
   }
 
-  .prueba{
-    margin-top: 100px;
-  }
-
-
 }
+
