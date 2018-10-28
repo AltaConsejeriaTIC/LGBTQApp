@@ -166,23 +166,48 @@ page-contact {
           left: 0;
         }
       }
-      .custom-icon{
-        position: absolute;
-        background: #244064;
-        text-align: center;
-        width: 26px;
-        height: 26px;
-        padding: 4px;
-        border-radius: 12px;
+
+      .row-contacts-info{
+        .icon-block{
+          text-align: center;
+          padding-top: 3%;
+          .custom-icon{
+            position: absolute;
+            background: #244064;
+            color: #E5E8E8;
+            text-align: center;
+            width: 27px;
+            height: 26px;
+            border-radius: 12px;
+            padding-top: 7%;
+          }
+        }
+        .text-block{
+          padding-left:0%;
+        }
+        .toggle-block{
+          padding-top: 4%;
+          flex-direction: column;
+          .check-text{
+            margin: 6% 0% 4% 0%;
+            font-size: 12px;
+            color: #05AE0B;
+          }
+        }
       }
+      
     }
   }
 
   .toggle-md .toggle-icon{
-    height: 30%;
-    width: 75%;
+    height: 36%;
+    width: 45%;
+    background-color: #E5E8E8;
   }
 
+  .toggle-md {
+    padding: 0px;
+  }
 
   .bottomLine{
     height: 0vh;

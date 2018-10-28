@@ -26,6 +26,7 @@ export class ContactPage {
   public keyIdSet = 'idSet';
 
   public proofArr = ['AAA AAA', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
+  // public proofArr = ['AAA AAA'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage) {
     this.loadInfo();
@@ -38,7 +39,7 @@ export class ContactPage {
       if( response ){
         for( let value of response){
           this.infoContacts.push( value );
-          this.idSet.add( value.id );
+          this.idSet.add( value.data.id );
         }
         this.findContacts = true;
       } else {
@@ -69,7 +70,12 @@ export class ContactPage {
       }
       else{
         this.idSet.add(infoContact.id);
-        this.infoContacts.push( infoContact );
+        this.infoContacts.push( 
+          {
+            data: infoContact,
+            toggle: true
+          }
+        );
       }
 
       this.findContacts = true;
