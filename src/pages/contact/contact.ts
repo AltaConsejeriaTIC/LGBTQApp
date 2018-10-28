@@ -24,7 +24,7 @@ export class ContactPage {
   public idSet = new Set();
   public keyInfoContacts = 'infoContacts';
   public keyIdSet = 'idSet';
-
+  
   public proofArr = ['AAA AAA', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
@@ -78,8 +78,7 @@ export class ContactPage {
         );
       }
 
-      this.findContacts = true;
-      this.storage.set( this.keyInfoContacts , this.infoContacts);
+      this.saveDataOnCellphone();
 
     }).catch( (error)=>{
       alert('No Contacts found');
@@ -95,12 +94,32 @@ export class ContactPage {
     this.idSet = new Set();
   }
 
-  itemSelected( item ){
-
+  onChange( id, toggleValue){
+    for( let value of this.infoContacts ){
+      if( value.data.id === id){
+        value.toggle = toggleValue;
+        this.saveDataOnCellphone();
+        break;
+      }
+    }
   }
 
-  getLettersName(){
-
+  getIniNames( nameContact ){
+    
+    let finalIni = '';
+    const nameArray = nameContact.split(' ');
+    for( let name of nameArray){
+      finalIni += name.charAt(0);
+    }
+    return finalIni.substring(0,( nameArray.length > 2 ? 2 : nameArray.length ) ).toUpperCase();
   }
+
+  saveDataOnCellphone(){
+    this.findContacts = true;
+    this.storage.set( this.keyInfoContacts , this.infoContacts);
+  }
+
+  itemSelected( item ){  }
+
 
 }

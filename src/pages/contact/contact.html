@@ -43,35 +43,23 @@
       </ion-col>
     </ion-row>
 
-    <div class="contacts-section-block">
-            <div>
-                    <button ion-button (click)="addContact()">
-                      +Add contact
-                    </button>
-                </div>
-    
-            <!-- <div *ngIf="findContacts"> -->
-            <div>
-              <!-- <span class="custom-icon">AL</span> -->
-              <!-- <ion-list>
-                <p *ngFor="let info of infoContacts" (click)="itemSelected(info)">
-                  {{info.name.formatted}}
-                </p>
-              </ion-list> -->
-    
+    <div class="contacts-section-block">    
+            <div *ngIf="findContacts">    
               <ion-list class="list-block">
-                  <div *ngFor="let info of proofArr; last as lastElement" (click)="itemSelected(info)">
+                  <div *ngFor="let info of infoContacts; last as lastElement" (click)="itemSelected(info)">
     
                     <ion-row class="row-contacts-info">
                       <ion-col col-3 class="icon-block"> 
-                          <span class="custom-icon">AL</span>
+                          <span class="custom-icon"> {{getIniNames(info.data.name.formatted)}}</span>
                       </ion-col>
                       <ion-col col-6 class="text-block"> 
-                          <p> {{info}}</p>
+                          <p>  {{info.data.name.formatted}} </p>
                         </ion-col>
                       <ion-col col-3 class="toggle-block"> 
-                          <ion-toggle color="secondary" ></ion-toggle>
-                          <p class="check-text">ACTIVO</p>  
+                          <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)"></ion-toggle>
+                          <p class="check-text" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }">
+                              {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
+                          </p>  
                       </ion-col>
                     </ion-row>
     
@@ -95,15 +83,11 @@
       </button>
     </ion-row>
 
-
-    <!-- <div class="section politicaPublica">
-      <ion-col col-2 class="icon">
-        <ion-icon name="icon-icono-denuncia01"></ion-icon>
-      </ion-col>
-      <ion-col col-10>
-        <p class="sectionTitle">MENSAJE DE EMERGENCIA</p>
-      </ion-col>
-    </div> -->
+    <div>
+        <button ion-button (click)="clearAllContacts()">
+            -Clear All
+        </button>
+    </div>
 
     <!-- <div class="bottomLine"></div> -->
 
