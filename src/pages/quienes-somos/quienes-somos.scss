@@ -17,6 +17,12 @@ page-quienes-somos {
   position: absolute;
 }
 
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
+
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
@@ -35,7 +41,7 @@ page-quienes-somos {
 
   .bar-button-default,
   .toolbar-title {
-    color: white !important;
+    color: rgba(255, 255, 255, 0.6) !important;
   }
 
   .scroll-content {
@@ -45,11 +51,40 @@ page-quienes-somos {
     }
   }
 
+  .direccionText, .direccionObjetivo, .direccionContacto, .social{
+   padding: 3% 7%;
+   position: relative;
+  }
+
   .direccionContent .title{
     color: #1E1A42;
     font-weight: bold;
-    line-height: 1vh;
-    font-size: 1.6rem;
+    line-height: 4vh;
+    font-size: 1.7rem;
+  }
+
+  .direccionText:before, .direccionObjetivo:before {
+    background-color: lightgray;
+      content: '';
+      width: 90%;
+      position: absolute;
+      left: 5%;
+      height: 1px;
+      bottom: 0px;
+  }
+
+  .direccionContacto>p:nth-child(odd){
+    color: #1E1A42;
+    font-weight: bold;
+  }
+
+  .social{
+    padding-top: 3%;
+  }
+
+  .social ion-icon{
+        font-size: 2.7rem;
+        padding-right: 3%;
   }
 
 }
