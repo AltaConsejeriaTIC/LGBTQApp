@@ -63,6 +63,11 @@ page-quienes-somos {
     font-size: 1.7rem;
   }
 
+  .direccionContent .title{
+    line-height: 3vh;
+    padding-right: 10%;
+  }
+
   .direccionText:before, .direccionObjetivo:before {
     background-color: lightgray;
       content: '';
@@ -76,7 +81,13 @@ page-quienes-somos {
   .direccionContacto>p:nth-child(odd){
     color: #1E1A42;
     font-weight: bold;
+    margin-top: 0;
   }
+
+  .direccionContacto>p:nth-child(even){
+    margin-bottom: 0;
+  }
+
 
   .social{
     padding-top: 3%;
