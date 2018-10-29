@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams, IonicPage} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DetailContentService } from '../../services/detail-content.service';
 import { ServerConfig } from '../../../config/server';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { EventProvider } from '../../providers/event/event';
 
 import {} from '@types/googlemaps';
 
 declare var google;
 
+@IonicPage({
+  name: 'content',
+  segment: 'content/:id'
+})
 @Component({
   selector: 'page-content-detail',
   templateUrl: 'content-detail.html'
@@ -20,22 +25,21 @@ export class ContentDetailPage {
   typeContent: string = "evento";
   map: any;
   hideMapNow: boolean;
-  private api;
+  match;
+  protected api = ServerConfig.apiEndPoint;
+  protected id: number;
 
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
     public navParams: NavParams,
     private detailService: DetailContentService,
     public geolocation: Geolocation,
-    private socialSharing: SocialSharing) {
-
-      this.typeContent = this.detailService.getContent();
-      this.api = ServerConfig.apiEndPoint;
-      if (this.typeContent === 'evento') {
-        this.title = 'EVENTOS EN BOGOTÁ';
-      } else {
-        this.title = 'NOTICIAS';
-      }
-      this.params = this.navParams.get('params');
+    private socialSharing: SocialSharing,
+    private eventService: EventProvider
+  ) {
+    this.match = this.navParams.get('data');
+    this.loadData(this.match);
+    this.setTitle();
   }
 
   ionViewDidLoad() {
@@ -44,17 +48,38 @@ export class ContentDetailPage {
   }
 
   initializeMap() {
-
     let options = {
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-
-    var geocoder = new google.maps.Geocoder();
+    let geocoder = new google.maps.Geocoder();
     this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
     this.geocodeAddress(geocoder, this.map);
-
   }
+
+  setTitle(){
+    if (this.typeContent === 'evento') {
+      this.title = 'EVENTOS EN BOGOTÁ';
+    } else {
+      this.title = 'NOTICIAS';
+    }
+  }
+
+  loadData(data) {
+    if (data){
+      this.typeContent = this.detailService.getContent();
+      this.id = this.navParams.get('id');
+      this.params = this.navParams.get('data');
+    }else{
+      this.typeContent = 'evento';
+      this.id = parseInt(this.navParams.get('id'));
+      this.eventService.getEvent(this.api, this.id).subscribe(
+        (response) => this.params = response,
+        (error) => console.log(error)
+      );
+    }
+  }
+
   geocodeAddress(geocoder, resultsMap) {
     var address = this.getLocation(this.params.place);
     geocoder.geocode({'address': address}, function(results, status) {
@@ -90,6 +115,17 @@ export class ContentDetailPage {
   shareNews(news) {
     let msg = `${news.title} ${news.source_link}`
     this.socialSharing.share(msg, "App DDS", null, null)
+      .then( response => {
+        console.log("se pudo compartir");
+      }).catch((e) => {
+        console.error(e);
+      });
+  }
+
+  shareEvent(event) {
+    let url = `myapp://home/content/${event.id}`;
+    let msg = "En Bogota se puede ser"
+    this.socialSharing.share(msg, null, null, url)
       .then( response => {
         console.log("se pudo compartir");
       }).catch((e) => {

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Deeplinks } from '@ionic-native/deeplinks'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,10 +18,10 @@ import { OrganizacionPage } from '../pages/organizacion/organizacion';
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
 
-import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
 import { HttpClientModule } from '@angular/common/http';
+import { ContentDetailModule } from '../pages/content-detail/content-detail.module'
 //used to give format to date
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -39,10 +40,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
-    FormularioPage,
-    ContentDetailPage
+    FormularioPage
   ],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp), ContentDetailModule],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -54,8 +54,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
-    FormularioPage,
-    ContentDetailPage
+    FormularioPage
   ],
   providers: [
     StatusBar,
@@ -64,7 +63,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Geolocation,
     DetailContentService,
-    EventProvider
+    EventProvider,
+    Deeplinks
   ]
 })
 export class AppModule {}

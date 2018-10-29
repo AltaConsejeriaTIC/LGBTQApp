@@ -1,6 +1,6 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams, Content } from 'ionic-angular';
-import { ContentDetailPage } from '../content-detail/content-detail';
+// import { ContentDetailPage } from '../content-detail/content-detail';
 import { DetailContentService } from '../../services/detail-content.service';
 import { EventProvider } from '../../providers/event/event';
 import { ServerConfig } from '../../../config/server'
@@ -17,7 +17,7 @@ export class ListadoPage {
   public noticia: boolean = false;
   public title: string = 'EVENTOS Y NOTICIAS';
   public monthTitle: string = 'Agosto';
-  private api = ServerConfig.apiEndPoint;
+  protected api = ServerConfig.apiEndPoint;
 
   public rect1: any;
   public rect2: any;
@@ -86,7 +86,7 @@ export class ListadoPage {
   }
 
   goToDetails(params) {
-    this.navCtrl.push(ContentDetailPage, {params});
+    this.navCtrl.push('content', { id: params.id , data: params});
   }
 
   changeMonthTitle() {

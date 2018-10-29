@@ -79,22 +79,23 @@ page-content-detail {
          }
 
     .shareLabel{
-    margin-right: 8%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p{
-      margin: 0;
-      font-size: 1.4rem;
-      font-weight: 600;
+      margin-right: 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      ion-icon{
+        font-size: 1.8rem;
+        margin-right: 10px;
+      }
     }
-    ion-icon{
-      font-size: 1.8rem;
-      margin-right: 10px;
-    }
-}
 
     .titleArticle{
+      color: #1E1A42;
       text-transform: uppercase;
       font-size: 2rem;
       font-weight: 800;
@@ -122,7 +123,19 @@ page-content-detail {
 
   }
 
-
+  .shareButton {
+    .icon {
+      color: #363B56;
+      font-size: 1.8rem;
+    }
+    span {
+      margin: auto;
+      color: #363B56;
+      font-size: 1.2rem;
+      font-family: "Open Sans";
+      font-weight: 700
+    }
+  }
 
   .articleText:before {
     background-color: #E3E3E3;
@@ -181,7 +194,7 @@ page-content-detail {
     }
 
     .contentDate .durationEvent, .placeContent .placeName{
-        color: black;
+        color: #363B56;;
       }
 
 
