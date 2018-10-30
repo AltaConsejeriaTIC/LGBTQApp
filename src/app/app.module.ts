@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Deeplinks } from '@ionic-native/deeplinks'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -28,7 +30,6 @@ import {ObjetivoPage} from '../pages/objetivo/objetivo';
 import {CoordinaPage} from '../pages/coordina/coordina';
 import {LogrosPage} from '../pages/logros/logros';
 
-import { ContentDetailPage } from '../pages/content-detail/content-detail';
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
 import { HttpClientModule } from '@angular/common/http';
@@ -53,7 +54,6 @@ import { Geolocation } from '@ionic-native/geolocation';
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
-    ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
@@ -78,7 +78,6 @@ import { Geolocation } from '@ionic-native/geolocation';
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
-    ContentDetailPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
@@ -91,12 +90,14 @@ import { Geolocation } from '@ionic-native/geolocation';
   ],
   providers: [
     StatusBar,
+    SocialSharing,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Geolocation,
     DetailContentService,
     EventProvider,
-    CallNumber
+    CallNumber,
+    Deeplinks
   ]
 })
 export class AppModule {}

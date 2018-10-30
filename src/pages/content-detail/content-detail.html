@@ -32,7 +32,7 @@
           <ion-col class="newsDate">
             <p>{{params.date | date: 'longDate':'':'es'}}</p>
           </ion-col>
-          <ion-col col-2 class="shareLabel">
+          <ion-col col-2 class="shareLabel" (click)="shareNews(params)" >
             <ion-icon name="icon-icono-compartir"></ion-icon>
             <p>Compartir</p>
           </ion-col>
@@ -62,8 +62,15 @@
               <p class="placeAddress">{{params.address}}<p>
             </ion-col>
           </ion-row>
+          <ion-row>
+              <ion-col col-12 class="shareButton">
+                <button ion-button block color="share" (click)="shareEvent(params)">
+                  <ion-icon name="icon-icono-compartir"></ion-icon>
+                  <span>Compartir este evento</span>
+                </button>
+              </ion-col>
 
-
+            </ion-row>
         </div>
 
         <p *ngIf="typeContent==='noticia'" class="sourceArticle">Fuente del artículo: <span>{{params.source}}</span></p>
