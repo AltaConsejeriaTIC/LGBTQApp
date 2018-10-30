@@ -101,8 +101,8 @@ page-contact {
   .text-area-emergency{
     display: flex;
     position: relative;
-    height: 12rem;
-    width: 32rem;
+    height: 31%;
+    width: 89%;
     margin-right: 0;
     .border-properties{
       left: 7%;
@@ -116,7 +116,7 @@ page-contact {
     display: flex;
     justify-content: center;
     .edit-emergency-message{
-      background-color: #FD3D37;
+      background-color: #FD3D37 !important;
       text-transform: initial;
       font-size: 1.8rem;
       font-weight: bold;
@@ -128,6 +128,29 @@ page-contact {
       .block{
         text-align: left;
         padding-left: 9%;
+      }
+    }
+    .delete-section{
+      text-align: right;
+      .delete{
+        background-color: transparent;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 4rem;
+        width: 85%;
+        color: gray;
+        border: 1px solid #E5E8E8;
+      }
+    }
+    .save-section{
+      .save{
+        background-color: #FD3D37;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 4rem;
+        width: 85%;
       }
     }
   }
@@ -170,7 +193,7 @@ page-contact {
       .row-contacts-info{
         .icon-block{
           text-align: center;
-          padding-top: 3%;
+          padding-top: 4%;
           .custom-icon{
             position: absolute;
             background: #244064;
@@ -194,9 +217,9 @@ page-contact {
           }
         }
       }
-      
+
     }
-  } 
+  }
 
   .onToggle{
     color: #05AE0B;

@@ -23,8 +23,12 @@ export class ContactPage {
   public infoContacts = [];
   public idSet = new Set();
   public keyInfoContacts = 'infoContacts';
+  public keyEmergencyMessage = 'emergencyMessage';
   public keyIdSet = 'idSet';
-  
+  public emergencyMessage="";
+  public isTextOff = true;
+  public isEditOn = false;
+
   public proofArr = ['AAA AAA', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
@@ -50,6 +54,13 @@ export class ContactPage {
 
     });
 
+    this.storage.get(this.keyEmergencyMessage).then((response) => {
+      console.log('printing emergency message: ', response);
+      if( response){
+        this.emergencyMessage = response;
+      }
+    });
+
   }
 
   ionViewDidLoad() {
@@ -70,7 +81,7 @@ export class ContactPage {
       }
       else{
         this.idSet.add(infoContact.id);
-        this.infoContacts.push( 
+        this.infoContacts.push(
           {
             data: infoContact,
             toggle: true
@@ -105,7 +116,7 @@ export class ContactPage {
   }
 
   getIniNames( nameContact ){
-    
+
     let finalIni = '';
     const nameArray = nameContact.split(' ');
     for( let name of nameArray){
@@ -121,5 +132,21 @@ export class ContactPage {
 
   itemSelected( item ){  }
 
+  clickOnEdit(){
+
+    this.isTextOff = false;
+    this.isEditOn = true;
+
+  }
+
+  clickOnSave(){
+    this.isTextOff = true;
+    this.isEditOn = false;
+    this.storage.set( this.keyEmergencyMessage, this.emergencyMessage );
+  }
+
+  clickOnDelete(){
+    this.emergencyMessage="";
+  }
 
 }

@@ -26,12 +26,21 @@
 
     <div class="text-area-emergency">
         <ion-item class="border-properties">
-            <ion-textarea placeholder="Text Input"></ion-textarea>
+            <ion-textarea placeholder="Escriba aqui su mensaje de emergencia" [(ngModel)]="emergencyMessage" disabled="{{isTextOff}}" autocorrect="on"></ion-textarea>
         </ion-item>
     </div>
 
-    <ion-row class="formButton">
-        <button ion-button class="edit-emergency-message">Editar</button>
+    <ion-row class="formButton" *ngIf="!isEditOn">
+        <button ion-button class="edit-emergency-message" (click)="clickOnEdit()">Editar</button>
+    </ion-row>
+
+    <ion-row class="formButton" *ngIf="isEditOn">
+      <ion-col col-6 class="delete-section">
+          <button ion-button class="delete" (click)="clickOnDelete()">Borrar</button>
+      </ion-col>
+      <ion-col col-6 class="save-section">
+          <button ion-button class="save" (click)="clickOnSave()">Guardar</button>
+      </ion-col>
     </ion-row>
 
     <ion-row class="emergency-section-contacts">
@@ -43,30 +52,30 @@
       </ion-col>
     </ion-row>
 
-    <div class="contacts-section-block">    
-            <div *ngIf="findContacts">    
+    <div class="contacts-section-block">
+            <div *ngIf="findContacts">
               <ion-list class="list-block">
                   <div *ngFor="let info of infoContacts; last as lastElement" (click)="itemSelected(info)">
-    
+
                     <ion-row class="row-contacts-info">
-                      <ion-col col-3 class="icon-block"> 
+                      <ion-col col-3 class="icon-block">
                           <span class="custom-icon"> {{getIniNames(info.data.name.formatted)}}</span>
                       </ion-col>
-                      <ion-col col-6 class="text-block"> 
+                      <ion-col col-6 class="text-block">
                           <p>  {{info.data.name.formatted}} </p>
                         </ion-col>
-                      <ion-col col-3 class="toggle-block"> 
+                      <ion-col col-3 class="toggle-block">
                           <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)"></ion-toggle>
                           <p class="check-text" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }">
                               {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
-                          </p>  
+                          </p>
                       </ion-col>
                     </ion-row>
-    
+
                     <div class="resize-line" *ngIf="!lastElement">
-                      <div class="dividerLine"></div> 
+                      <div class="dividerLine"></div>
                     </div>
-    
+
                   </div>
               </ion-list>
             </div>
