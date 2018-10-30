@@ -112,19 +112,16 @@ export class ContentDetailPage {
     return address;
   }
 
-  shareNews(news) {
-    let msg = `${news.title} ${news.source_link}`
-    this.socialSharing.share(msg, "App DDS", null, null)
-      .then( response => {
-        console.log("se pudo compartir");
-      }).catch((e) => {
-        console.error(e);
-      });
-  }
-
-  shareEvent(event) {
-    let url = `myapp://home/content/${event.id}`;
-    let msg = "En Bogota se puede ser"
+  share( content ) {
+    let msg;
+    let url;
+    if (this.typeContent === 'evento'){
+      msg = `${content.title}`;
+      url = `myapp://home/content/${content.id}`;
+    }else{
+      msg = `${content.title}`;
+      url = `${content.source_link}`;
+    }
     this.socialSharing.share(msg, null, null, url)
       .then( response => {
         console.log("se pudo compartir");
