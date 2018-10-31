@@ -89,12 +89,14 @@ page-contact {
       text-align: right;
       font-size: 2rem;
       margin-top: 1%;
+      color: #1E1A42;
     }
     .block{
       padding-left: 2%;
     }
     .sectionTitle{
       font-weight: bold;
+      color: #1E1A42;
     }
   }
 
@@ -122,8 +124,10 @@ page-contact {
       font-weight: bold;
       height: 4rem;
       width: 85%;
+      box-shadow: none;
       .icon{
         text-align: left;
+        font-size: 90%;
       }
       .block{
         text-align: left;
@@ -141,6 +145,7 @@ page-contact {
         width: 85%;
         color: gray;
         border: 1px solid #E5E8E8;
+        box-shadow: none;
       }
     }
     .save-section{
@@ -151,6 +156,7 @@ page-contact {
         font-weight: bold;
         height: 4rem;
         width: 85%;
+        box-shadow: none;
       }
     }
   }
@@ -168,12 +174,14 @@ page-contact {
       text-align: right;
       font-size: 2rem;
       margin-top: 1%;
+      color: #1E1A42;
     }
     .block{
       padding-left: 2%;
     }
     .sectionTitle{
       font-weight: bold;
+      color: #1E1A42
     }
   }
 
@@ -193,30 +201,38 @@ page-contact {
       .row-contacts-info{
         display: flex;
         .icon-block{
-          text-align: center;
+          //text-align: center;
+          left: 6%;
           padding-top: 4%;
+          display: flex;
           .custom-icon{
+            align-self: center;
             position: absolute;
             background: #244064;
             color: #E5E8E8;
             text-align: center;
             width: 27px;
             height: 26px;
-            border-radius: 12px;
+            border-radius: 54%;
             padding-top: 7%;
           }
         }
         .text-block{
           padding-left:0%;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
+          display: flex;
+          font-weight: bold;
+          align-self: center;
         }
         .toggle-block{
           padding-top: 0%;
           padding-right: 0%;
           flex-direction: column;
           .check-text{
-            margin: 60% 2% 0% 40%;
+            margin: 60% 2% 0% 19%;
             text-align: right;
+            letter-spacing: 1px;
+            font-weight: 900;
             // margin-top: 15%;
             font-size: 0.9rem;
           }
@@ -231,13 +247,17 @@ page-contact {
           align-self: center;
           flex-direction: column;
           .icon-block{
+            display: flex;
+            justify-content: center;
             text-align: center;
+            color: gray;
           }
           .check-text-delete{
             margin: 10% 12% 0% 0%;
             font-size: 1rem;
             margin-left: 18%;
             text-align: center;
+            color: #E5E8E8;
           }
         }
       }
@@ -301,7 +321,7 @@ page-contact {
 
   .toggle-md .toggle-icon{
     height: 60%; //36
-    width: 60%; //25
+    width: 100%; //25
     background-color: #E5E8E8;
   }
 

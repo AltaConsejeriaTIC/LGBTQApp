@@ -45,13 +45,14 @@
 
     <ion-row class="emergency-section-contacts">
       <ion-col col-2 class="icon">
-          <ion-icon name="icon-icono-organizaciones"></ion-icon>
+          <ion-icon name="icon-icono-nosotros"></ion-icon>
       </ion-col>
       <ion-col col-10 class="block">
           <p class="sectionTitle">CONTACTOS DE EMERGENCIA</p>
       </ion-col>
     </ion-row>
 
+    <!-- before -->
     <!-- <div class="contacts-section-block">
             <div *ngIf="findContacts">
               <ion-list class="list-block">
@@ -87,6 +88,7 @@
             </div>
     </div> -->
 
+    <!-- after -->
     <div class="contacts-section-block">
         <div *ngIf="findContacts">
           <ion-list class="list-block">
@@ -105,9 +107,9 @@
                           {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
                       </p>
                   </ion-col>
-                  <ion-col col-3 class="delete-icon">
+                  <ion-col col-3 class="delete-icon" (click)="clickOnDeleteContact( info.data.id )">
                       <div class="icon-block">
-                          <ion-icon name="icon-icono-mensaje"></ion-icon>
+                          <ion-icon name="icon-icono-eliminar"></ion-icon>
                       </div>
                       <p class="check-text-delete">ELIMINAR</p>
                   </ion-col>
@@ -137,9 +139,9 @@
                   <ion-toggle color="secondary" class="toggle-move-position" ></ion-toggle>
                   <p class="check-text">INACTIVO</p>
               </ion-col>
-              <ion-col col-3 class="delete-icon">
+              <ion-col col-3 class="delete-icon" (click)="clickOnDeleteContact()">
                   <div class="icon-block">
-                      <ion-icon name="icon-icono-mensaje"></ion-icon>
+                      <ion-icon name="icon-icono-eliminar"></ion-icon>
                   </div>
                   <p class="check-text-delete">ELIMINAR</p>
               </ion-col>
@@ -153,22 +155,17 @@
       </ion-list>
     </div> -->
 
-
-    <ion-row class="formButton">
-      <button ion-button class="edit-emergency-message" (click)="addContact()">
-        <ion-col col-2 class="icon">
-            <ion-icon name="icon-icono-mensaje"></ion-icon>
-        </ion-col>
-        <ion-col col-10 class="block">
-            Añadir contacto
-        </ion-col>
-      </button>
-    </ion-row>
-
-    <div>
-        <button ion-button (click)="clearAllContacts()">
-            -Clear All
-        </button>
+    <div *ngIf="numberOfActiveContacts < 3">
+        <ion-row class="formButton">
+            <button ion-button class="edit-emergency-message" (click)="addContact()">
+              <ion-col col-2 class="icon">
+                  <ion-icon name="icon-icono-anadir"></ion-icon>
+              </ion-col>
+              <ion-col col-10 class="block">
+                  Añadir contacto
+              </ion-col>
+            </button>
+          </ion-row>
     </div>
 
     <!-- <div class="bottomLine"></div> -->

@@ -28,8 +28,9 @@ export class ContactPage {
   public emergencyMessage="";
   public isTextOff = true;
   public isEditOn = false;
+  public numberOfActiveContacts = 0;
 
-  public proofArr = ['AAA AAA', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
+  public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage) {
@@ -44,6 +45,7 @@ export class ContactPage {
         for( let value of response){
           this.infoContacts.push( value );
           this.idSet.add( value.data.id );
+          this.numberOfActiveContacts++;
         }
         this.findContacts = true;
       } else {
@@ -87,6 +89,7 @@ export class ContactPage {
             toggle: true
           }
         );
+        this.numberOfActiveContacts++;
       }
 
       this.saveDataOnCellphone();
@@ -103,6 +106,7 @@ export class ContactPage {
     this.findContacts = false;
     this.infoContacts = [];
     this.idSet = new Set();
+    this.numberOfActiveContacts = 0;
   }
 
   onChange( id, toggleValue){
@@ -147,6 +151,22 @@ export class ContactPage {
 
   clickOnDelete(){
     this.emergencyMessage="";
+  }
+
+  clickOnDeleteContact( id ){
+
+    this.numberOfActiveContacts--;
+    let newContactsArray = [];
+    this.idSet = new Set();
+    for( let value of this.infoContacts){
+      if( value.data.id != id ){
+        newContactsArray.push( value );
+        this.idSet.add( value.data.id );
+      }
+    }
+    this.infoContacts = newContactsArray;
+    this.saveDataOnCellphone();
+
   }
 
 }
