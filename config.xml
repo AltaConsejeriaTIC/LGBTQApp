@@ -88,6 +88,7 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="ToTrack" />
     </plugin>
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.1" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="ionic-plugin-deeplinks" spec="^1.0.17">
         <variable name="URL_SCHEME" value="myapp" />
         <variable name="DEEPLINK_SCHEME" value="https" />

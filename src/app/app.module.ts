@@ -41,6 +41,7 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { ContentDetailModule } from '../pages/content-detail/content-detail.module';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     LogrosPage
 
   ],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp),ContentDetailModule],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
