@@ -52,7 +52,7 @@
       </ion-col>
     </ion-row>
 
-    <div class="contacts-section-block">
+    <!-- <div class="contacts-section-block">
             <div *ngIf="findContacts">
               <ion-list class="list-block">
                   <div *ngFor="let info of infoContacts; last as lastElement" (click)="itemSelected(info)">
@@ -61,14 +61,20 @@
                       <ion-col col-3 class="icon-block">
                           <span class="custom-icon"> {{getIniNames(info.data.name.formatted)}}</span>
                       </ion-col>
-                      <ion-col col-6 class="text-block">
+                      <ion-col col-3 class="text-block">
                           <p>  {{info.data.name.formatted}} </p>
                         </ion-col>
                       <ion-col col-3 class="toggle-block">
-                          <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)"></ion-toggle>
+                          <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)" class="toggle-move-position"></ion-toggle>
                           <p class="check-text" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }">
                               {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
                           </p>
+                      </ion-col>
+                      <ion-col col-3 class="delete-icon">
+                          <div class="icon-block">
+                              <ion-icon name="icon-icono-mensaje"></ion-icon>
+                          </div>
+                          <p class="check-text-delete">ELIMINAR</p>
                       </ion-col>
                     </ion-row>
 
@@ -79,7 +85,74 @@
                   </div>
               </ion-list>
             </div>
-    </div>
+    </div> -->
+
+    <div class="contacts-section-block">
+        <div *ngIf="findContacts">
+          <ion-list class="list-block">
+              <div *ngFor="let info of infoContacts; last as lastElement" (click)="itemSelected(info)">
+
+                <ion-row class="row-contacts-info">
+                  <ion-col col-3 class="icon-block">
+                      <span class="custom-icon">{{getIniNames(info.data.name.formatted)}}</span>
+                  </ion-col>
+                  <ion-col col-3 class="text-block">
+                      <p> {{info.data.name.formatted}}</p>
+                    </ion-col>
+                  <ion-col col-3 class="toggle-block">
+                      <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)" class="toggle-move-position"></ion-toggle>
+                      <p class="check-text" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }">
+                          {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
+                      </p>
+                  </ion-col>
+                  <ion-col col-3 class="delete-icon">
+                      <div class="icon-block">
+                          <ion-icon name="icon-icono-mensaje"></ion-icon>
+                      </div>
+                      <p class="check-text-delete">ELIMINAR</p>
+                  </ion-col>
+                </ion-row>
+
+                <div class="resize-line" *ngIf="!lastElement">
+                  <div class="dividerLine"></div>
+                </div>
+
+              </div>
+          </ion-list>
+        </div>
+      </div>
+
+    <!-- <div class="contacts-section-block">
+      <ion-list class="list-block">
+          <div *ngFor="let info of proofArr; last as lastElement" (click)="itemSelected(info)">
+
+            <ion-row class="row-contacts-info">
+              <ion-col col-3 class="icon-block">
+                  <span class="custom-icon">AL</span>
+              </ion-col>
+              <ion-col col-3 class="text-block">
+                  <p> {{info}}</p>
+                </ion-col>
+              <ion-col col-3 class="toggle-block">
+                  <ion-toggle color="secondary" class="toggle-move-position" ></ion-toggle>
+                  <p class="check-text">INACTIVO</p>
+              </ion-col>
+              <ion-col col-3 class="delete-icon">
+                  <div class="icon-block">
+                      <ion-icon name="icon-icono-mensaje"></ion-icon>
+                  </div>
+                  <p class="check-text-delete">ELIMINAR</p>
+              </ion-col>
+            </ion-row>
+
+            <div class="resize-line" *ngIf="!lastElement">
+              <div class="dividerLine"></div>
+            </div>
+
+          </div>
+      </ion-list>
+    </div> -->
+
 
     <ion-row class="formButton">
       <button ion-button class="edit-emergency-message" (click)="addContact()">

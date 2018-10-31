@@ -191,6 +191,7 @@ page-contact {
       }
 
       .row-contacts-info{
+        display: flex;
         .icon-block{
           text-align: center;
           padding-top: 4%;
@@ -207,19 +208,88 @@ page-contact {
         }
         .text-block{
           padding-left:0%;
+          font-size: 1.2rem;
         }
         .toggle-block{
-          padding-top: 4%;
+          padding-top: 0%;
+          padding-right: 0%;
           flex-direction: column;
           .check-text{
-            margin: 6% 0% 4% 0%;
-            font-size: 12px;
+            margin: 60% 2% 0% 40%;
+            text-align: right;
+            // margin-top: 15%;
+            font-size: 0.9rem;
+          }
+          .toggle-move-position{
+            float: right;
+            padding-top: 30%;
+            height: 33%;
+          }
+        }
+        .delete-icon{
+          padding: 5% 0% 0% 0%;
+          align-self: center;
+          flex-direction: column;
+          .icon-block{
+            text-align: center;
+          }
+          .check-text-delete{
+            margin: 10% 12% 0% 0%;
+            font-size: 1rem;
+            margin-left: 18%;
+            text-align: center;
           }
         }
       }
 
     }
   }
+
+
+  // .contacts-section-block-prueba{
+  //     .list-block{
+  //       .row-contacts-info{
+  //         display: flex;
+  //         .row-left{
+  //           width: 50%;
+  //           justify-content: center;
+  //           .custom-icon{
+  //             position: absolute;
+  //             background: #244064;
+  //             color: #E5E8E8;
+  //             text-align: center;
+  //             width: 27px;
+  //             height: 26px;
+  //             border-radius: 12px;
+  //             padding-top: 7%;
+  //           }
+
+  //         }
+  //         .row-right{
+  //           width: 50%;
+  //           justify-content: right;
+  //           .first-section{
+  //             width: 50%;
+  //             flex-direction: column
+  //           }
+  //           .second-section{
+  //             width: 50%;
+  //             flex-direction: column
+  //           }
+  //         }
+  //       }
+
+  //       .resize-line{
+  //         padding: 0% 4%;
+  //         .dividerLine{
+  //           background: linear-gradient(to right, #E5E8E8);
+  //           height: 0.1rem;
+  //           right: 0;
+  //           left: 0;
+  //         }
+  //       }
+  //     }
+  // }
 
   .onToggle{
     color: #05AE0B;
@@ -230,8 +300,8 @@ page-contact {
   }
 
   .toggle-md .toggle-icon{
-    height: 36%;
-    width: 45%;
+    height: 60%; //36
+    width: 60%; //25
     background-color: #E5E8E8;
   }
 
