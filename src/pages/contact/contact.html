@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content [ngStyle]="{'height': deviceHeight }">
 
     <ion-row class="emergency-section-message">
         <ion-col col-2 class="icon">
@@ -96,9 +96,9 @@
 
                 <ion-row class="row-contacts-info">
                   <ion-col col-3 class="icon-block">
-                      <span class="custom-icon">{{getIniNames(info.data.name.formatted)}}</span>
+                      <span class="custom-icon" [ngClass]="{'onToggleIcon': info.toggle , 'offToggleIcon': !info.toggle }">{{getIniNames(info.data.name.formatted)}}</span>
                   </ion-col>
-                  <ion-col col-3 class="text-block">
+                  <ion-col col-3 class="text-block" [ngClass]="{'onToggleText': info.toggle , 'offToggleText': !info.toggle }">
                       <p> {{info.data.name.formatted}}</p>
                     </ion-col>
                   <ion-col col-3 class="toggle-block">
@@ -123,14 +123,14 @@
           </ion-list>
         </div>
       </div>
-
-    <!-- <div class="contacts-section-block">
+<!--
+    <div class="contacts-section-block">
       <ion-list class="list-block">
           <div *ngFor="let info of proofArr; last as lastElement" (click)="itemSelected(info)">
 
             <ion-row class="row-contacts-info">
               <ion-col col-3 class="icon-block">
-                  <span class="custom-icon">AL</span>
+                  <span class="custom-icon" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }" >AL</span>
               </ion-col>
               <ion-col col-3 class="text-block">
                   <p> {{info}}</p>

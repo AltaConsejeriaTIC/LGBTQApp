@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';
+import {Platform} from 'ionic-angular';
 
 /**
  * Generated class for the ContactPage page.
@@ -29,13 +30,18 @@ export class ContactPage {
   public isTextOff = true;
   public isEditOn = false;
   public numberOfActiveContacts = 0;
+  public deviceHeight = '0px';
 
   public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage, private platform: Platform ) {
     this.loadInfo();
+    // console.log('Width: ' + platform.width());
+    // console.log('Height: ' +  platform.height() );
+    this.deviceHeight = platform.height()+'px';
   }
+
 
   loadInfo(){
 
@@ -67,6 +73,7 @@ export class ContactPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactPage');
+
   }
 
   addContact(){
@@ -95,7 +102,7 @@ export class ContactPage {
       this.saveDataOnCellphone();
 
     }).catch( (error)=>{
-      alert('No Contacts found');
+      // alert('No Contacts found');
       console.log('error: ', error);
     });
 
@@ -167,6 +174,10 @@ export class ContactPage {
     this.infoContacts = newContactsArray;
     this.saveDataOnCellphone();
 
+  }
+
+  getHeightDevice(){
+    return this.platform.height();
   }
 
 }

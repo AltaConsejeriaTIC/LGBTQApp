@@ -205,10 +205,15 @@ page-contact {
           left: 6%;
           padding-top: 4%;
           display: flex;
+          .onToggleIcon{
+            background: #244064;
+          }
+          .offToggleIcon{
+            background: gray;
+          }
           .custom-icon{
             align-self: center;
             position: absolute;
-            background: #244064;
             color: #E5E8E8;
             text-align: center;
             width: 27px;
@@ -216,6 +221,12 @@ page-contact {
             border-radius: 54%;
             padding-top: 7%;
           }
+        }
+        .onToggleText{
+          color: #1E1A42;
+        }
+        .offToggleText{
+          color: grey;
         }
         .text-block{
           padding-left:0%;
@@ -257,7 +268,7 @@ page-contact {
             font-size: 1rem;
             margin-left: 18%;
             text-align: center;
-            color: #E5E8E8;
+            color: gray;
           }
         }
       }
@@ -316,6 +327,16 @@ page-contact {
   }
 
   .offToggle{
+    color: grey;
+  }
+
+  .onToggleIcon{
+    background: #244064;
+    color: #E5E8E8;
+  }
+
+  .offToggleIcon{
+    background-color: gray;
     color: #E5E8E8;
   }
 
