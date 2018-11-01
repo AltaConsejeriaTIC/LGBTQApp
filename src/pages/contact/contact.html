@@ -107,7 +107,7 @@
                           {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
                       </p>
                   </ion-col>
-                  <ion-col col-3 class="delete-icon" (click)="clickOnDeleteContact( info.data.id )">
+                  <ion-col col-3 class="delete-icon" (click)="openDeleteContactModal( info.data.id )">
                       <div class="icon-block">
                           <ion-icon name="icon-icono-eliminar"></ion-icon>
                       </div>
@@ -154,6 +154,19 @@
           </div>
       </ion-list>
     </div> -->
+
+
+    <ion-row class="formButton">
+      <button ion-button class="edit-emergency-message" (click)="openDeleteContactModal(0)">
+        <ion-col col-2 class="icon">
+            <ion-icon name="icon-icono-anadir"></ion-icon>
+        </ion-col>
+        <ion-col col-10 class="block">
+            Eliminar contacto
+        </ion-col>
+      </button>
+    </ion-row>
+
 
     <div *ngIf="numberOfActiveContacts < 3">
         <ion-row class="formButton">

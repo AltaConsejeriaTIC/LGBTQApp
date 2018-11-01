@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';
 import {Platform} from 'ionic-angular';
+import { ModalMenuPage } from '../modal-menu/modal-menu';
 
 /**
  * Generated class for the ContactPage page.
@@ -35,7 +36,7 @@ export class ContactPage {
   public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage, private platform: Platform ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage, private platform: Platform, public modalCtrl: ModalController ) {
     this.loadInfo();
     // console.log('Width: ' + platform.width());
     // console.log('Height: ' +  platform.height() );
@@ -178,6 +179,18 @@ export class ContactPage {
 
   getHeightDevice(){
     return this.platform.height();
+  }
+
+  openDeleteContactModal( id ){
+    let myModal = this.modalCtrl.create(
+      ModalMenuPage ,
+      {},
+      {
+        showBackdrop: false
+      }
+    );
+    myModal.present();
+    // this.clickOnDeleteContact( id );
   }
 
 }
