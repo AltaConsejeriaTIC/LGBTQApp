@@ -156,7 +156,7 @@
     </div> -->
 
 
-    <ion-row class="formButton">
+    <!-- <ion-row class="formButton">
       <button ion-button class="edit-emergency-message" (click)="openDeleteContactModal(0)">
         <ion-col col-2 class="icon">
             <ion-icon name="icon-icono-anadir"></ion-icon>
@@ -165,7 +165,7 @@
             Eliminar contacto
         </ion-col>
       </button>
-    </ion-row>
+    </ion-row> -->
 
 
     <div *ngIf="numberOfActiveContacts < 3">
@@ -183,4 +183,31 @@
 
     <!-- <div class="bottomLine"></div> -->
 
+
+
 </ion-content>
+
+
+<div *ngIf="isDeleteModalOn">
+    <ion-backdrop showBackdrop="false" class="delete-contact-background">
+
+      </ion-backdrop>
+
+
+      <div class="delete-modal-component">
+        <ion-row class="confirm-text-section">
+            <p class="confirm-delete-contact">Estás seguro que deseas eliminar este contacto?</p>
+        </ion-row>
+
+        <ion-row class="form-button-confirm-contact">
+            <ion-col col-6 class="cancel-contact-section">
+                <button ion-button class="cancel" (click)="clickOnCancelDeleteContact()">CANCELAR</button>
+            </ion-col>
+            <ion-col col-6 class="delete-contact-section">
+                <button ion-button class="delete" (click)="clickOnDeleteContact()">ELIMINAR</button>
+            </ion-col>
+          </ion-row>
+      </div>
+</div>
+
+

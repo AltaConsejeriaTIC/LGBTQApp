@@ -276,52 +276,6 @@ page-contact {
     }
   }
 
-
-  // .contacts-section-block-prueba{
-  //     .list-block{
-  //       .row-contacts-info{
-  //         display: flex;
-  //         .row-left{
-  //           width: 50%;
-  //           justify-content: center;
-  //           .custom-icon{
-  //             position: absolute;
-  //             background: #244064;
-  //             color: #E5E8E8;
-  //             text-align: center;
-  //             width: 27px;
-  //             height: 26px;
-  //             border-radius: 12px;
-  //             padding-top: 7%;
-  //           }
-
-  //         }
-  //         .row-right{
-  //           width: 50%;
-  //           justify-content: right;
-  //           .first-section{
-  //             width: 50%;
-  //             flex-direction: column
-  //           }
-  //           .second-section{
-  //             width: 50%;
-  //             flex-direction: column
-  //           }
-  //         }
-  //       }
-
-  //       .resize-line{
-  //         padding: 0% 4%;
-  //         .dividerLine{
-  //           background: linear-gradient(to right, #E5E8E8);
-  //           height: 0.1rem;
-  //           right: 0;
-  //           left: 0;
-  //         }
-  //       }
-  //     }
-  // }
-
   .onToggle{
     color: #05AE0B;
   }
@@ -365,6 +319,95 @@ page-contact {
     right: 0;
     left: 0;
     position: absolute;
+  }
+
+
+  .delete-modal-component{
+    border-radius: 3%;
+    display: flex;
+    pointer-events: auto;
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0px);
+    // right: 5%;
+    // top: 16%;
+    width: 70%;
+    height: 23%;
+    max-height: 143px;
+    z-index: 11;
+    background: white;
+    top: 41%;
+    right: 14%;
+    flex-direction: column;
+
+    .confirm-text-section{
+      padding-bottom: 12%;
+      .confirm-delete-contact{
+        display: flex;
+        text-align: center;
+        padding-bottom: 8%;
+        margin: 8% 10% 0% 10%;
+        color: gray;
+      }
+    }
+    .cancel-button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+    }
+    .delete-button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .form-button-confirm-contact{
+      height: 52%;
+      .cancel-contact-section{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .cancel{
+          padding: 0;
+          margin: 0;
+          background-color: gray;
+          text-transform: initial;
+          font-size: 1.6rem;
+          font-weight: bold;
+          height: 100%;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0px;
+        }
+      }
+      .delete-contact-section{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .delete{
+          padding: 0;
+          margin: 0;
+          background-color: #FD3D37;
+          text-transform: initial;
+          font-size: 1.6rem;
+          font-weight: bold;
+          height: 100%;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+  .delete-contact-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
   }
 
 }

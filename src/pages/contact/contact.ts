@@ -32,6 +32,8 @@ export class ContactPage {
   public isEditOn = false;
   public numberOfActiveContacts = 0;
   public deviceHeight = '0px';
+  public isDeleteModalOn = false;
+  public idToBeDeleted = 0;
 
   public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
@@ -161,8 +163,8 @@ export class ContactPage {
     this.emergencyMessage="";
   }
 
-  clickOnDeleteContact( id ){
-
+  clickOnDeleteContact(  ){
+    const id = this.idToBeDeleted;
     this.numberOfActiveContacts--;
     let newContactsArray = [];
     this.idSet = new Set();
@@ -174,6 +176,7 @@ export class ContactPage {
     }
     this.infoContacts = newContactsArray;
     this.saveDataOnCellphone();
+    this.isDeleteModalOn = false;
 
   }
 
@@ -182,15 +185,13 @@ export class ContactPage {
   }
 
   openDeleteContactModal( id ){
-    let myModal = this.modalCtrl.create(
-      ModalMenuPage ,
-      {},
-      {
-        showBackdrop: false
-      }
-    );
-    myModal.present();
-    // this.clickOnDeleteContact( id );
+    this.isDeleteModalOn = true;
+    this.idToBeDeleted = id;
+  }
+
+  clickOnCancelDeleteContact(){
+    this.isDeleteModalOn = false;
+    this.idToBeDeleted = 0;
   }
 
 }
