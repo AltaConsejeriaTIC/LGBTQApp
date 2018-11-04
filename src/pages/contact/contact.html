@@ -26,7 +26,7 @@
 
     <div class="text-area-emergency">
         <ion-item class="border-properties">
-            <ion-textarea placeholder="Escriba aqui su mensaje de emergencia" [(ngModel)]="emergencyMessage" disabled="{{isTextOff}}" autocorrect="on"></ion-textarea>
+            <ion-textarea rows="6" placeholder="Escriba aqui su mensaje de emergencia" [(ngModel)]="emergencyMessage" disabled="{{isTextOff}}" maxlength="300" type="text"></ion-textarea>
         </ion-item>
     </div>
 
