@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { ContactPage } from './contact';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SMS } from '@ionic-native/sms';
+import { CallNumber } from '@ionic-native/call-number';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SMS } from '@ionic-native/sms';
   ],
   providers: [
     SocialSharing,
-    SMS
+    SMS,
+    CallNumber
   ]
 })
 export class ContactPageModule {}

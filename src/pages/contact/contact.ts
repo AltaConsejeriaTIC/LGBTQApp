@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import {Platform} from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SMS } from '@ionic-native/sms';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the ContactPage page.
@@ -17,7 +18,7 @@ import { SMS } from '@ionic-native/sms';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
-  providers: [SocialSharing , SMS ]
+  providers: [SocialSharing , SMS, CallNumber ]
 })
 export class ContactPage {
 
@@ -47,7 +48,8 @@ export class ContactPage {
               private platform: Platform, 
               public modalCtrl: ModalController,
               private socialSharing: SocialSharing,
-              private sms: SMS  ) {
+              private sms: SMS,
+              private callNumber: CallNumber  ) {
     this.loadInfo();
     // console.log('Width: ' + platform.width());
     // console.log('Height: ' +  platform.height() );
@@ -205,13 +207,13 @@ export class ContactPage {
 
   sendWhatsAppEmergencyMessage(){
   
-    this.socialSharing.shareViaWhatsAppToReceiver( '+573012282987', 'H014 m0nd0' ).then(() => {
+    this.socialSharing.shareViaWhatsAppToReceiver( '+573012282987', 'Hola!' ).then(() => {
       alert('mensaje enviado con exito');
     }).catch(() => {
       alert('error enviado el mensaje');
     });
 
-    this.socialSharing.shareViaWhatsAppToReceiver( '+573108842618', 'H014 m0nd0' ).then(() => {
+    this.socialSharing.shareViaWhatsAppToReceiver( '+573138374055', 'Hola!' ).then(() => {
       alert('mensaje enviado con exito');
     }).catch(() => {
       alert('error enviado el mensaje');
@@ -221,16 +223,22 @@ export class ContactPage {
   sendMessageSMS(){
     
     this.sms.hasPermission().then(()=> {
-      this.sms.send('+573012282987', 'Hello world!');
+      this.sms.send('+573012282987', 'Hola!');
     }).catch(()=>{
       alert("No tiene habilitado los permisos para enviar mensajes SMS");
     });
 
     this.sms.hasPermission().then(()=> {
-      this.sms.send('+573108842618', 'Hello world!');
+      this.sms.send('+573138374055', 'Hola!');
     }).catch(()=>{
       alert("No tiene habilitado los permisos para enviar mensajes SMS");
     });
+  }
+
+  callEmergencyNumber(){
+    this.callNumber.callNumber("+573138374055", true)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
 
 }

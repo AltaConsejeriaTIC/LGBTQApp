@@ -20,7 +20,7 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
-    "@ionic-native/call-number": "^4.16.0",
+    "@ionic-native/call-number": "^4.17.0",
     "@ionic-native/contacts": "^4.16.0",
     "@ionic-native/core": "^4.12.2",
     "@ionic-native/geolocation": "^4.16.0",
