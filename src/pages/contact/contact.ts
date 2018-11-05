@@ -203,7 +203,13 @@ export class ContactPage {
 
   sendWhatsAppEmergencyMessage(){
   
-    this.socialSharing.shareViaWhatsAppToReceiver( '+57 3012282987', 'H014 m0nd0' ).then(() => {
+    this.socialSharing.shareViaWhatsAppToReceiver( '+573012282987', 'H014 m0nd0' ).then(() => {
+      alert('mensaje enviado con exito');
+    }).catch(() => {
+      alert('error enviado el mensaje');
+    });
+
+    this.socialSharing.shareViaWhatsAppToReceiver( '+573108842618', 'H014 m0nd0' ).then(() => {
       alert('mensaje enviado con exito');
     }).catch(() => {
       alert('error enviado el mensaje');
