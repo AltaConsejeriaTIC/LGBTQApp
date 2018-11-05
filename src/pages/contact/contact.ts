@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';
 import {Platform} from 'ionic-angular';
-import { ModalMenuPage } from '../modal-menu/modal-menu';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 /**
  * Generated class for the ContactPage page.
@@ -16,6 +16,7 @@ import { ModalMenuPage } from '../modal-menu/modal-menu';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
+  providers: [SocialSharing ]
 })
 export class ContactPage {
 
@@ -38,7 +39,13 @@ export class ContactPage {
   public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private storage: Storage, private platform: Platform, public modalCtrl: ModalController ) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private contacts: Contacts, 
+              private storage: Storage, 
+              private platform: Platform, 
+              public modalCtrl: ModalController,
+              private socialSharing: SocialSharing ) {
     this.loadInfo();
     // console.log('Width: ' + platform.width());
     // console.log('Height: ' +  platform.height() );
@@ -192,6 +199,17 @@ export class ContactPage {
   clickOnCancelDeleteContact(){
     this.isDeleteModalOn = false;
     this.idToBeDeleted = 0;
+  }
+
+  sendWhatsAppEmergencyMessage(){
+  
+    this.socialSharing.shareViaWhatsAppToReceiver( '+57 3012282987', 'H014 m0nd0' ).then(() => {
+      alert('mensaje enviado con exito');
+    }).catch(() => {
+      alert('error enviado el mensaje');
+    });
+
+    
   }
 
 }
