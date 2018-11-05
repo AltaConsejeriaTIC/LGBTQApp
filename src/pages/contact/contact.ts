@@ -4,6 +4,7 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 import { Storage } from '@ionic/storage';
 import {Platform} from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { SMS } from '@ionic-native/sms';
 
 /**
  * Generated class for the ContactPage page.
@@ -16,7 +17,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
-  providers: [SocialSharing ]
+  providers: [SocialSharing , SMS ]
 })
 export class ContactPage {
 
@@ -45,7 +46,8 @@ export class ContactPage {
               private storage: Storage, 
               private platform: Platform, 
               public modalCtrl: ModalController,
-              private socialSharing: SocialSharing ) {
+              private socialSharing: SocialSharing,
+              private sms: SMS  ) {
     this.loadInfo();
     // console.log('Width: ' + platform.width());
     // console.log('Height: ' +  platform.height() );
@@ -214,8 +216,21 @@ export class ContactPage {
     }).catch(() => {
       alert('error enviado el mensaje');
     });
+  }
 
+  sendMessageSMS(){
     
+    this.sms.hasPermission().then(()=> {
+      this.sms.send('+573012282987', 'Hello world!');
+    }).catch(()=>{
+      alert("No tiene habilitado los permisos para enviar mensajes SMS");
+    });
+
+    this.sms.hasPermission().then(()=> {
+      this.sms.send('+573108842618', 'Hello world!');
+    }).catch(()=>{
+      alert("No tiene habilitado los permisos para enviar mensajes SMS");
+    });
   }
 
 }
