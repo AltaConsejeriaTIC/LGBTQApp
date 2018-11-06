@@ -58,7 +58,7 @@ export class HomePage {
     this.navCtrl.push(OrganizacionPage);
   }
 
-  goToContactPage(fab: FabContainer):void {
+  toggleEmergencyButton(fab: FabContainer):void {
     if(this.panicBackground) {
       fab.close();
     }else{
@@ -66,14 +66,18 @@ export class HomePage {
     }
 
     this.panicBackground = !this.panicBackground;
-    // let myModal = this.modalCtrl.create(
-    //   ModalSpeedDialPage,
-    //   {},
-    //   {
-    //     showBackdrop: false
-    //   }
-    // );
-    // myModal.present();
+  }
+
+  callEmergency():void {
+    console.log("llamar 123")
+  }
+
+  sendEmergencyMSM():void {
+    console.log("enviar mensaje")
+  }
+
+  goToContactPage():void {
+    this.navCtrl.push(ContactPage);
   }
 
   slideChanged() {
