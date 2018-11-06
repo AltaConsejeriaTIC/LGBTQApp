@@ -21,9 +21,6 @@ import { CallNumber } from '@ionic-native/call-number';
   providers: [SocialSharing , SMS, CallNumber ]
 })
 export class ContactPage {
-
-
-
   public findContacts = false;
   public infoContacts = [];
   public idSet = new Set();

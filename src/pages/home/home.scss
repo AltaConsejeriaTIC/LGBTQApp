@@ -248,7 +248,10 @@ page-home {
             color: white;
             padding: 2%;
           }
-
+          ion-fab-list{
+            position: fixed;
+            margin-bottom: 110px;
+          }
           @media (max-height: 500px) {
           .campana{
               padding: 1%;
@@ -278,7 +281,24 @@ page-home {
             padding-top: 1vh !important;
           }
 
-          @media (max-height: 500px) {
+          button[ion-fab] {
+              overflow: visible;
+              position: relative;
+
+              ion-label {
+                  position: absolute;
+                  top: -8px;
+                  right: 40px;
+
+                  color: white;
+                  background-color: rgba(0,0,0,0.7);
+                  line-height: 24px;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+              }
+          }
+
+        @media (max-height: 500px) {
             ion-card-content{
               font-size: 0.85rem;
               padding-top: 0.2vh !important;
@@ -299,4 +319,12 @@ page-home {
     left: 0;
   }
 
+  .filterDark{
+    filter:brightness(0.4);
+    //background-color: #110011;
+  }
+
+  .filterBackgroundDark{
+    background-color: #636363;
+  }
 }

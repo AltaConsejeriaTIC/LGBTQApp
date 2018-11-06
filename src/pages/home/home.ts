@@ -1,6 +1,7 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
-import { NavController, Slides, ModalController } from 'ionic-angular';
+import {NavController, Slides, ModalController, FabContainer} from 'ionic-angular';
 import { ModalMenuPage } from '../modal-menu/modal-menu';
+import { ModalSpeedDialPage } from '../modal-speed-dial/modal-speed-dial';
 import { ListadoPage } from '../listado/listado';
 import { DenunciaPage } from '../denuncia/denuncia';
 import { DerechoPage } from '../derecho/derecho';
@@ -16,6 +17,7 @@ export class HomePage {
   @ViewChild('slides')
   slides: Slides;
 
+  panicBackground: boolean = false;
   activeMenu: string;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
@@ -56,8 +58,22 @@ export class HomePage {
     this.navCtrl.push(OrganizacionPage);
   }
 
-  goToContactPage(){
-    this.navCtrl.push( ContactPage );
+  goToContactPage(fab: FabContainer):void {
+    if(this.panicBackground) {
+      fab.close();
+    }else{
+      fab.setActiveLists(true);
+    }
+
+    this.panicBackground = !this.panicBackground;
+    // let myModal = this.modalCtrl.create(
+    //   ModalSpeedDialPage,
+    //   {},
+    //   {
+    //     showBackdrop: false
+    //   }
+    // );
+    // myModal.present();
   }
 
   slideChanged() {
@@ -79,5 +95,9 @@ export class HomePage {
       }
     );
     myModal.present();
+  }
+
+  hidePanicBackground(): void{
+    //this.panicBackground = false;
   }
 }
