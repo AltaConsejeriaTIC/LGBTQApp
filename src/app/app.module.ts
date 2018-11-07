@@ -37,6 +37,7 @@ import { ContactPage } from '../pages/contact/contact';
 
 import { Contacts } from '@ionic-native/contacts';
 import { IonicStorageModule } from '@ionic/storage';
+import { SMS } from '@ionic-native/sms';
 
 
 @NgModule({
@@ -92,7 +93,9 @@ import { IonicStorageModule } from '@ionic/storage';
     DetailContentService,
     EventProvider,
     CallNumber,
-    Contacts
+    Contacts,
+    SMS,
+    CallNumber
   ]
 })
 export class AppModule {}

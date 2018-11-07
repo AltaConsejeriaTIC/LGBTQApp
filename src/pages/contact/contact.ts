@@ -38,18 +38,16 @@ export class ContactPage {
   public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
   // public proofArr = ['AAA AAA'];
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private contacts: Contacts, 
-              private storage: Storage, 
-              private platform: Platform, 
+              private contacts: Contacts,
+              private storage: Storage,
+              private platform: Platform,
               public modalCtrl: ModalController,
               private socialSharing: SocialSharing,
               private sms: SMS,
               private callNumber: CallNumber  ) {
     this.loadInfo();
-    // console.log('Width: ' + platform.width());
-    // console.log('Height: ' +  platform.height() );
     this.deviceHeight = platform.height()+'px';
   }
 
@@ -68,13 +66,12 @@ export class ContactPage {
       } else {
         this.findContacts = false;
       }
-      console.log( 'after load infocontacts: ', this.infoContacts );
-      console.log (' afeter load idSet: ', this.idSet );
+      // console.log( 'after load infocontacts: ', this.infoContacts );
+      // console.log (' afeter load idSet: ', this.idSet );
 
     });
 
     this.storage.get(this.keyEmergencyMessage).then((response) => {
-      console.log('printing emergency message: ', response);
       if( response){
         this.emergencyMessage = response;
       }
@@ -203,12 +200,6 @@ export class ContactPage {
   }
 
   sendWhatsAppEmergencyMessage(){
-  
-    this.socialSharing.shareViaWhatsAppToReceiver( '+573012282987', 'Hola!' ).then(() => {
-      alert('mensaje enviado con exito');
-    }).catch(() => {
-      alert('error enviado el mensaje');
-    });
 
     this.socialSharing.shareViaWhatsAppToReceiver( '+573138374055', 'Hola!' ).then(() => {
       alert('mensaje enviado con exito');
@@ -218,24 +209,22 @@ export class ContactPage {
   }
 
   sendMessageSMS(){
-    
+
     this.sms.hasPermission().then(()=> {
-      this.sms.send('+573012282987', 'Hola!');
+      for( let value of this.infoContacts){
+        if( value.toggle ){
+          let phoneNumber = value.data.phoneNumbers[0].value;
+          phoneNumber = phoneNumber.replace(/\-/g,'');
+          phoneNumber = phoneNumber.replace(/\s/g, '');
+          phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '')
+          this.sms.send(`+57${phoneNumber}`, this.emergencyMessage);
+
+        }
+      }
     }).catch(()=>{
       alert("No tiene habilitado los permisos para enviar mensajes SMS");
     });
 
-    this.sms.hasPermission().then(()=> {
-      this.sms.send('+573138374055', 'Hola!');
-    }).catch(()=>{
-      alert("No tiene habilitado los permisos para enviar mensajes SMS");
-    });
-  }
 
-  callEmergencyNumber(){
-    this.callNumber.callNumber("+573138374055", true)
-    .then(res => console.log('Launched dialer!', res))
-    .catch(err => console.log('Error launching dialer', err));
   }
-
 }

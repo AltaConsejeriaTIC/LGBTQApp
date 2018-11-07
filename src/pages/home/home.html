@@ -78,7 +78,7 @@
     </ion-slides>
     <ion-card class="panicButton">
         <ion-grid>
-            <ion-row (click)="toggleEmergencyButton(fab)">
+            <ion-row (click)="toggleEmergencyButton(fab)" >
                 <ion-col col-2>
                     <ion-fab left middle #fab>
                         <button ion-fab color="danger"><ion-icon name="icon-campana-boton"></ion-icon></button>
@@ -87,7 +87,7 @@
                               <ion-icon name="settings"></ion-icon>
                               <!--<ion-label>Facebook</ion-label>-->
                             </button>
-                            <button ion-fab (click)="sendEmergencyMSM()"><ion-icon name="mail"></ion-icon></button>
+                            <button ion-fab (click)="sendEmergencySMS()"><ion-icon name="mail"></ion-icon></button>
                             <button ion-fab (click)="callEmergency()"><ion-icon name="call"></ion-icon></button >
                         </ion-fab-list>
                     </ion-fab>
