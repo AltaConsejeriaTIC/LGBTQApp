@@ -7,7 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ModalMenuPage } from '../pages/modal-menu/modal-menu';
-import { ModalSpeedDialPage } from '../pages/modal-speed-dial/modal-speed-dial';
 import { ListadoPage } from '../pages/listado/listado';
 import { DerechoPage } from '../pages/derecho/derecho';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
@@ -45,7 +44,6 @@ import { SMS } from '@ionic-native/sms';
     MyApp,
     HomePage,
     ModalMenuPage,
-    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
@@ -71,7 +69,6 @@ import { SMS } from '@ionic-native/sms';
     MyApp,
     HomePage,
     ModalMenuPage,
-    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
