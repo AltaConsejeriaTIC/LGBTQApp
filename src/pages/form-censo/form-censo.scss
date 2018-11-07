@@ -1,4 +1,69 @@
 page-form-censo {
+
+  .modalMax {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .innerWindow{
+      top:30%;
+      left: 20%;
+      z-index: 200;
+      position: absolute;
+      width: 65%;
+      height: 45%;
+      border-radius: 1.5%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      ion-icon.icon.icon-md{
+        padding-top: 10%;
+        font-size: 4rem;
+        color: #2ABB55;
+      }
+
+      p{
+          margin: 0;
+      }
+    }
+
+    .title, .text{
+      padding: 1% 15%;
+    }
+
+    .title{
+      color: #1E1A42;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .text{
+      color: #747783;
+      font-size: 1.2rem;
+      line-height: 3.5vh;
+    }
+
+    .button-block {
+        width: 100%;
+        background-color: #2C347E;
+        margin: 0 0;
+        .button-inner{
+          font-weight: 900;
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: 0.05em;
+        }
+    }
+  }
+
   .bottomLine{
     height: 0;
     width: 100%;
@@ -31,6 +96,9 @@ page-form-censo {
   ion-content,
   .scroll-content {
     padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .toolbar-background {

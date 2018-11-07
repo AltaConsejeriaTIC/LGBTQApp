@@ -96,6 +96,9 @@ page-form-denuncia-suceso {
   ion-content,
   .scroll-content {
     padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .toolbar-background {

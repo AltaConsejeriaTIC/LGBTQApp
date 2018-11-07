@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class FormCensoPage {
 
   credentialsForm: FormGroup;
+  modalWindow: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
     this.credentialsForm = this.formBuilder.group({
@@ -33,7 +34,11 @@ export class FormCensoPage {
   }
 
   sendData(){
+      this.modalWindow=true;
+    }
 
-  }
+    closeData(){
+        this.modalWindow=false;
+      }
 
 }

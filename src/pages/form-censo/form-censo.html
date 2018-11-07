@@ -100,3 +100,14 @@
   </div>
 
 </ion-content>
+
+<div class="modalMax" *ngIf="modalWindow">
+  <div class="innerWindow">
+      <ion-icon name="ios-checkmark-circle"></ion-icon>
+    <p class="title">¡Tu denuncia se ha enviado con éxito!</p>
+    <p class="text">Muchas gracias. Denunciando nos ayudas a hacer de Bogotá un lugar mejor para todos.</p>
+    <button ion-button block class="goHomeButton" (click)="closeData()">
+      volver al inicio
+    </button>
+  </div>
+</div>
