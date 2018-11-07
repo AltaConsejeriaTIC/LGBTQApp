@@ -16,8 +16,13 @@ import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { AlianzaPage } from '../pages/alianza/alianza';
 import { OrganizacionPage } from '../pages/organizacion/organizacion';
 
+import { FormDenunciaPage } from '../pages/form-denuncia/form-denuncia';
+import { FormDenunciaSucesoPage } from '../pages/form-denuncia-suceso/form-denuncia-suceso';
+
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
+
+import { FormCensoPage } from '../pages/form-censo/form-censo';
 
 import {DiscriminacionPage} from '../pages/discriminacion/discriminacion';
 import {ArcoirisPage} from '../pages/arcoiris/arcoiris';
@@ -59,10 +64,13 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
+    FormCensoPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
@@ -91,10 +99,13 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
+    FormCensoPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,

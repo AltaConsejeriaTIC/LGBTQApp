@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FormCensoPage } from '../form-censo/form-censo';
 
 /**
  * Generated class for the FormularioPage page.
@@ -17,5 +18,9 @@ export class FormularioPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormularioPage');
+  }
+
+  openForm(){
+      this.navCtrl.push(FormCensoPage);
   }
 }

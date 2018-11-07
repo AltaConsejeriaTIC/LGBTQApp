@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormDenunciaPage } from '../form-denuncia/form-denuncia';
 
 @Component({
   selector: 'page-discriminacion',
@@ -12,6 +13,10 @@ export class DiscriminacionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiscriminacionPage');
+  }
+
+  goToFormDenuncia(){
+    this.navCtrl.push(FormDenunciaPage);
   }
 
 }

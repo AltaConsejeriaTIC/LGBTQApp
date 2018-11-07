@@ -1,3 +1,84 @@
 page-formulario {
+  .bottomLine{
+    height: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+.bottomLine:before {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  height: 3px;
+  content: '';
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #1E1A42;
+  }
+
+
+  .bar-button-default,
+  .toolbar-title {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .scroll-content {
+    img {
+      width: 100%;
+      height: 35vh;
+    }
+  }
+
+  .direccionContent{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8%;
+      .title{
+        text-align: center;
+        font-weight: bold;
+        color: #1E1A42;
+
+      }
+      .contentCenso{
+        text-align: center;
+      }
+  }
+
+  .formButton{
+      padding: 5% 0%;
+      display: flex;
+      justify-content: center;
+      .denunciaButton{
+        background-color: #2C347E;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 6rem;
+        width: 100%;
+      }
+  }
 
 }
