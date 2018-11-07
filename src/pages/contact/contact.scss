@@ -1,0 +1,417 @@
+page-contact {
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
+  ion-content{
+    padding: 0 !important;
+    position: relative;
+  }
+  .scroll-content {
+    padding: 0 !important;
+    // position: relative;
+  }
+
+  .toolbar-background {
+    background-color: #FD3D37;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+    color: white !important;
+  }
+  .scroll-content{
+    background-color: white;
+  }
+
+
+  .banner{
+    background-color: #FD3D37;
+    position: relative;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    ion-icon{
+      font-size: 4.4rem;
+    }
+
+    @media (max-height: 500px){
+      ion-icon{
+        font-size: 3rem;
+      }
+    }
+
+    .bannerTitle{
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .bannerContent{
+      text-align: center;
+      margin:0 10%;
+      color: white;
+      font-size: 1.45rem;
+    }
+    @media (max-height: 500px){
+      .bannerContent{
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+
+  .emergency-section-message{
+    left: 1%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 14%;
+    padding-top: 9%;
+    justify-content: center;
+    .icon{
+      text-align: right;
+      font-size: 2rem;
+      margin-top: 1%;
+      color: #1E1A42;
+    }
+    .block{
+      padding-left: 2%;
+    }
+    .sectionTitle{
+      font-weight: bold;
+      color: #1E1A42;
+    }
+  }
+
+  .text-area-emergency{
+    display: flex;
+    position: relative;
+    height: 31%;
+    width: 89%;
+    margin-right: 0;
+    .border-properties{
+      left: 7%;
+      border: 1px solid #E5E8E8;
+      border-radius: 10px;
+    }
+  }
+
+  .formButton{
+    padding: 5% 0% 1%;
+    display: flex;
+    justify-content: center;
+    .edit-emergency-message{
+      background-color: #FD3D37 !important;
+      text-transform: initial;
+      font-size: 1.8rem;
+      font-weight: bold;
+      height: 4rem;
+      width: 85%;
+      box-shadow: none;
+      .icon{
+        text-align: left;
+        font-size: 90%;
+        .add-icon-block{
+          font-size: 85%;
+        }
+      }
+      .block{
+        text-align: left;
+        padding-left: 9%;
+      }
+    }
+    .delete-section{
+      text-align: right;
+      .delete{
+        background-color: transparent;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 4rem;
+        width: 85%;
+        color: gray;
+        border: 1px solid #E5E8E8;
+        box-shadow: none;
+      }
+    }
+    .save-section{
+      .save{
+        background-color: #FD3D37;
+        text-transform: initial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        height: 4rem;
+        width: 85%;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .emergency-section-contacts{
+    left: 1%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 10%;
+    padding-top: 0%;
+    margin-top: 0%;
+    justify-content: center;
+    .icon{
+      text-align: right;
+      font-size: 2rem;
+      margin-top: 1%;
+      color: #1E1A42;
+    }
+    .block{
+      padding-left: 2%;
+    }
+    .sectionTitle{
+      font-weight: bold;
+      color: #1E1A42
+    }
+  }
+
+  .contacts-section-block{
+    .list-block{
+      position: relative;
+      .resize-line{
+        padding: 0% 4%;
+        .dividerLine{
+          background: linear-gradient(to right, #E5E8E8);
+          height: 0.1rem;
+          right: 0;
+          left: 0;
+        }
+      }
+
+      .row-contacts-info{
+        display: flex;
+        .icon-block{
+          //text-align: center;
+          left: 6%;
+          padding-top: 4%;
+          display: flex;
+          .onToggleIcon{
+            background: #244064;
+          }
+          .offToggleIcon{
+            background: gray;
+          }
+          .custom-icon{
+            align-self: center;
+            position: absolute;
+            color: #E5E8E8;
+            text-align: center;
+            width: 27px;
+            height: 26px;
+            border-radius: 54%;
+            padding-top: 7%;
+          }
+        }
+        .onToggleText{
+          color: #1E1A42;
+        }
+        .offToggleText{
+          color: grey;
+        }
+        .text-block{
+          padding-left:0%;
+          font-size: 1.1rem;
+          display: flex;
+          font-weight: bold;
+          align-self: center;
+        }
+        .toggle-block{
+          padding-top: 0%;
+          padding-right: 0%;
+          flex-direction: column;
+          .check-text{
+            margin: 60% 2% 0% 19%;
+            text-align: right;
+            letter-spacing: 1px;
+            font-weight: 900;
+            // margin-top: 15%;
+            font-size: 0.9rem;
+          }
+          .toggle-move-position{
+            float: right;
+            padding-top: 30%;
+            height: 33%;
+          }
+        }
+        .delete-icon{
+          padding: 5% 0% 0% 0%;
+          align-self: center;
+          flex-direction: column;
+          .icon-block{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: gray;
+          }
+          .check-text-delete{
+            margin: 10% 12% 0% 0%;
+            font-size: 1rem;
+            margin-left: 18%;
+            text-align: center;
+            color: gray;
+          }
+        }
+      }
+
+    }
+  }
+
+  .onToggle{
+    color: #05AE0B;
+  }
+
+  .offToggle{
+    color: grey;
+  }
+
+  .onToggleIcon{
+    background: #244064;
+    color: #E5E8E8;
+  }
+
+  .offToggleIcon{
+    background-color: gray;
+    color: #E5E8E8;
+  }
+
+  .toggle-md .toggle-icon{
+    height: 60%; //36
+    width: 100%; //25
+    background-color: #E5E8E8;
+  }
+
+  .toggle-md {
+    padding: 0px;
+  }
+
+  .bottomLine{
+    height: 0vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0.5rem;
+  }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: auto;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
+
+
+  .delete-modal-component{
+    border-radius: 3%;
+    display: flex;
+    pointer-events: auto;
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0px);
+    // right: 5%;
+    // top: 16%;
+    width: 70%;
+    height: 23%;
+    max-height: 143px;
+    z-index: 11;
+    background: white;
+    top: 41%;
+    right: 14%;
+    flex-direction: column;
+
+    .confirm-text-section{
+      padding-bottom: 12%;
+      .confirm-delete-contact{
+        display: flex;
+        text-align: center;
+        padding-bottom: 8%;
+        margin: 8% 10% 0% 10%;
+        color: gray;
+      }
+    }
+    .cancel-button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+    }
+    .delete-button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .form-button-confirm-contact{
+      height: 52%;
+      .cancel-contact-section{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .cancel{
+          padding: 0;
+          margin: 0;
+          background-color: gray;
+          text-transform: initial;
+          font-size: 1.6rem;
+          font-weight: bold;
+          height: 100%;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0px;
+        }
+      }
+      .delete-contact-section{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .delete{
+          padding: 0;
+          margin: 0;
+          background-color: #FD3D37;
+          text-transform: initial;
+          font-size: 1.6rem;
+          font-weight: bold;
+          height: 100%;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+  .delete-contact-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
+  }
+
+}
+

@@ -9,6 +9,7 @@ import { Deeplinks } from '@ionic-native/deeplinks'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ModalMenuPage } from '../pages/modal-menu/modal-menu';
+import { ModalSpeedDialPage } from '../pages/modal-speed-dial/modal-speed-dial';
 import { ListadoPage } from '../pages/listado/listado';
 import { DerechoPage } from '../pages/derecho/derecho';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
@@ -41,6 +42,12 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { ContactPage } from '../pages/contact/contact';
+
+import { Contacts } from '@ionic-native/contacts';
+import { IonicStorageModule } from '@ionic/storage';
+import { SMS } from '@ionic-native/sms';
+
 import { ContentDetailModule } from '../pages/content-detail/content-detail.module';
 
 @NgModule({
@@ -48,6 +55,7 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     MyApp,
     HomePage,
     ModalMenuPage,
+    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
@@ -58,6 +66,7 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
+    ContactPage,
     PoliticaPage,
     PuntosPage,
     AccesoDerechosPage,
@@ -66,12 +75,19 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     LogrosPage
 
   ],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp),ContentDetailModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    ContentDetailModule
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ModalMenuPage,
+    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
@@ -82,6 +98,7 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
+    ContactPage,
     PoliticaPage,
     PuntosPage,
     AccesoDerechosPage,
@@ -97,6 +114,9 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     Geolocation,
     DetailContentService,
     EventProvider,
+    CallNumber,
+    Contacts,
+    SMS,
     CallNumber,
     Deeplinks
   ]

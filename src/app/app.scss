@@ -100,3 +100,12 @@
           }
 
   }
+
+.fab-close-active .button-inner {
+  opacity: 1;
+  transform: none;
+}
+
+.fab-close-active .fab-close-icon{
+  opacity: 0;
+}

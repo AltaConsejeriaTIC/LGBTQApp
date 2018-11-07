@@ -5,5 +5,6 @@ Copiar el archivo `env.example.ts` ubicado en la carpeta `~/src` pegarlo en la m
 
 > La posición `endpoint` recibe la **URI** base de la **API**.
 
+Instalar plugin
 ionic cordova plugin add call-number
 npm install --save @ionic-native/call-number
