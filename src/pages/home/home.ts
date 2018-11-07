@@ -21,7 +21,7 @@ export class HomePage {
   @ViewChild('slides')
   slides: Slides;
 
-  panicBackground: boolean = false;
+  emergencyButtonActivate: boolean = false;
   activeMenu: string;
 
   constructor(
@@ -83,13 +83,12 @@ export class HomePage {
   toggleEmergencyButton(fab: FabContainer):void {
     this.clearValues();
     this.loadInfo();
-    if(this.panicBackground) {
+    if(this.emergencyButtonActivate) {
       fab.close();
     }else{
       fab.setActiveLists(true);
     }
-
-    this.panicBackground = !this.panicBackground;
+    this.emergencyButtonActivate = !this.emergencyButtonActivate;
   }
 
   clearValues(){

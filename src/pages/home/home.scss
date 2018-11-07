@@ -250,12 +250,34 @@ page-home {
           }
           ion-fab-list{
             position: fixed;
-            margin-bottom: 110px;
+            margin-bottom: 170px;
           }
-          @media (max-height: 500px) {
-          .campana{
-              padding: 1%;
+
+          @media (max-height: 900px) {
+            ion-fab-list{
+              margin-bottom: 140px;
             }
+          }
+
+          @media (max-height: 800px) {
+              ion-fab-list{
+                margin-bottom: 115px;
+              }
+            }
+
+          @media (max-height: 700px) {
+            ion-fab-list{
+              margin-bottom: 100px;
+            }
+          }
+
+          @media (max-height: 600px) {
+              ion-fab-list{
+                margin-bottom: 85px;
+              }
+              .campana {
+                  padding: 1%;
+              }
           }
 
           .panicButtonText{
