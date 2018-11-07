@@ -285,25 +285,25 @@ page-home {
 
           @media (max-height: 900px) {
             .fab-list-active{
-              margin-bottom: 140px;
+              margin-bottom: 130px;
             }
           }
 
           @media (max-height: 800px) {
               .fab-list-active{
-                margin-bottom: 115px;
+                margin-bottom: 105px;
               }
             }
 
           @media (max-height: 700px) {
             .fab-list-active{
-              margin-bottom: 100px;
+              margin-bottom: 90px;
             }
           }
 
           @media (max-height: 600px) {
               .fab-list-active{
-                margin-bottom: 85px;
+                margin-bottom: 75px;
               }
               .campana {
                   padding: 1%;
@@ -372,11 +372,15 @@ page-home {
   }
 
   .filterDark{
-    filter:brightness(0.4);
+    filter:brightness(0.3);
     //background-color: #110011;
   }
 
   .filterBackgroundDark{
     background-color: #4a4a4a;
+  }
+
+  .filterBackgroundDark:before {
+    background: linear-gradient(to right, #4d2600, #4d4d00, #003e00, #004d4d, #00004d, #482348);
   }
 }

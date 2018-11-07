@@ -15,9 +15,9 @@
 
     <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()">
+    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" [class.filterDark]="emergencyButtonActivate">
 
-        <ion-slide class="article article1" [class.filterDark]="emergencyButtonActivate">
+        <ion-slide class="article article1" >
           <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
           <ion-row>
             <p class="articleDate">20 junio, 2018</p>
@@ -76,7 +76,7 @@
         </ion-slide>
 
     </ion-slides>
-    <ion-card class="panicButton">
+    <ion-card class="panicButton" [class.filterBackgroundDark]="emergencyButtonActivate">
         <ion-grid>
             <ion-row (click)="toggleEmergencyButton(fab)" >
                 <ion-col col-2>
