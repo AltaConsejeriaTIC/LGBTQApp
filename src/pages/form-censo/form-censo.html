@@ -31,6 +31,12 @@
   </ion-item>
 
   <ion-item>
+    <ion-label stacked>Número de documento</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['documentNumber']"
+        type="text" placeholder="Número de documento"></ion-input>
+  </ion-item>
+
+  <ion-item>
     <ion-label stacked>Nombres</ion-label>
     <ion-input [formControl]="credentialsForm.controls['firstName']"
         type="text" placeholder="Nombres"></ion-input>

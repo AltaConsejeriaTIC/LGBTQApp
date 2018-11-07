@@ -1,39 +1,35 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormDenunciaSucesoPage} from '../form-denuncia-suceso/form-denuncia-suceso'
 
 
 @Component({
-  selector: 'page-form-censo',
-  templateUrl: 'form-censo.html',
+  selector: 'page-form-denuncia',
+  templateUrl: 'form-denuncia.html',
 })
-export class FormCensoPage {
+export class FormDenunciaPage {
 
-  credentialsForm: FormGroup;
+  denunciaForm: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
-    this.credentialsForm = this.formBuilder.group({
+    this.denunciaForm = this.formBuilder.group({
       email: [''],
       documentType: [''],
       documentNumber: [''],
       firstName: [''],
       lastName: [''],
-      address: [''],
-      phone: [''],
-      gender: [''],
-      orientation: [''],
-      identity: [''],
-      age: ['']
+      phone: ['']
 
     });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FormCensoPage');
+    console.log('ionViewDidLoad FormDenunciaPage');
   }
 
-  sendData(){
-
+  goToFormDenunciaSuceso(){
+    this.navCtrl.push(FormDenunciaSucesoPage);
   }
 
 }

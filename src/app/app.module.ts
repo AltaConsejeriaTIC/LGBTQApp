@@ -15,6 +15,9 @@ import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { AlianzaPage } from '../pages/alianza/alianza';
 import { OrganizacionPage } from '../pages/organizacion/organizacion';
 
+import { FormDenunciaPage } from '../pages/form-denuncia/form-denuncia';
+import { FormDenunciaSucesoPage } from '../pages/form-denuncia-suceso/form-denuncia-suceso';
+
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
 
@@ -53,6 +56,8 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
@@ -78,6 +83,8 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
