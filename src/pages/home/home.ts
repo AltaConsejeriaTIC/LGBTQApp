@@ -102,13 +102,16 @@ export class HomePage {
   }
 
   callEmergency():void {
+
     this.callNumber.callNumber("123", true)
-    .then(res => console.log('Launched dialer!', res))
-    .catch(err => console.log('Error launching dialer', err));
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+
   }
 
   sendEmergencySMS():void {
 
+  this.sms.hasPermission().then( ()=>{
     for( let value of this.infoContacts){
       if( value.toggle ){
         let phoneNumber = value.data.phoneNumbers[0].value;
@@ -119,6 +122,11 @@ export class HomePage {
 
       }
     }
+  }).catch( (error)=>{
+    console.log('error: ', error);
+  });
+
+
   }
 
   loadInfo(){
