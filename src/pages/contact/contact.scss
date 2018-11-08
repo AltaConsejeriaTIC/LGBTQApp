@@ -22,8 +22,24 @@ page-contact {
   }
   .scroll-content {
     padding: 0 !important;
+    flex-direction: column;
+    justify-content: space-between;
     // position: relative;
   }
+
+  .wrapper {
+    min-height: calc(100% - 5px);
+    padding-bottom: 1rem;
+  }
+
+  .new-bottom-line {
+      background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+      height: 5px;
+      width: 100%;
+      content: '';
+  }
+
+
 
   .toolbar-background {
     background-color: #FD3D37;
@@ -307,22 +323,22 @@ page-contact {
     padding: 0px;
   }
 
-  .bottomLine{
-    height: 0vh;
-    width: 100%;
-    position: absolute;
-    bottom: 0.5rem;
-  }
+  // .bottomLine{
+  //   height: 0vh;
+  //   width: 100%;
+  //   position: absolute;
+  //   bottom: 0.5rem;
+  // }
 
-  .bottomLine:before {
-    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-    height: 5px;
-    content: '';
-    bottom: auto;
-    right: 0;
-    left: 0;
-    position: absolute;
-  }
+  // .bottomLine:before {
+  //   background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  //   height: 5px;
+  //   content: '';
+  //   // bottom: auto;
+  //   right: 0;
+  //   left: 0;
+  //   position: absolute;
+  // }
 
 
   .delete-modal-component{

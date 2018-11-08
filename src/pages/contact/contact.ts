@@ -35,8 +35,8 @@ export class ContactPage {
   public isDeleteModalOn = false;
   public idToBeDeleted = 0;
 
-  public proofArr = ['ANDRES VARGAS', 'BBB BBB', 'CCC CCC', 'DDD DDD', 'EEE EEE', 'FFF FF', 'ZZZ ZZZ', 'TTT TTT', 'GGG GGG', 'III III', 'OOO OOO', 'PPP PPP'];
-  // public proofArr = ['AAA AAA'];
+  // public proofArr = ['ANDRES VARGAS'];
+  public proofArr = ['ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS'];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,

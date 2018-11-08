@@ -14,7 +14,7 @@
 
 
 <ion-content [ngStyle]="{'height': deviceHeight }">
-
+  <div class="wrapper">
     <ion-row class="emergency-section-message">
         <ion-col col-2 class="icon">
             <ion-icon name="icon-icono-mensaje"></ion-icon>
@@ -52,42 +52,6 @@
       </ion-col>
     </ion-row>
 
-    <!-- before -->
-    <!-- <div class="contacts-section-block">
-            <div *ngIf="findContacts">
-              <ion-list class="list-block">
-                  <div *ngFor="let info of infoContacts; last as lastElement" (click)="itemSelected(info)">
-
-                    <ion-row class="row-contacts-info">
-                      <ion-col col-3 class="icon-block">
-                          <span class="custom-icon"> {{getIniNames(info.data.name.formatted)}}</span>
-                      </ion-col>
-                      <ion-col col-3 class="text-block">
-                          <p>  {{info.data.name.formatted}} </p>
-                        </ion-col>
-                      <ion-col col-3 class="toggle-block">
-                          <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)" class="toggle-move-position"></ion-toggle>
-                          <p class="check-text" [ngClass]="{'onToggle': info.toggle , 'offToggle': !info.toggle }">
-                              {{info.toggle ? 'ACTIVO' : 'INACTIVO' }}
-                          </p>
-                      </ion-col>
-                      <ion-col col-3 class="delete-icon">
-                          <div class="icon-block">
-                              <ion-icon name="icon-icono-mensaje"></ion-icon>
-                          </div>
-                          <p class="check-text-delete">ELIMINAR</p>
-                      </ion-col>
-                    </ion-row>
-
-                    <div class="resize-line" *ngIf="!lastElement">
-                      <div class="dividerLine"></div>
-                    </div>
-
-                  </div>
-              </ion-list>
-            </div>
-    </div> -->
-
     <!-- after -->
     <div class="contacts-section-block">
         <div *ngIf="findContacts">
@@ -123,8 +87,8 @@
           </ion-list>
         </div>
       </div>
-<!--
-    <div class="contacts-section-block">
+
+    <!-- <div class="contacts-section-block">
       <ion-list class="list-block">
           <div *ngFor="let info of proofArr; last as lastElement" (click)="itemSelected(info)">
 
@@ -156,18 +120,6 @@
     </div> -->
 
 
-    <!-- <ion-row class="formButton">
-      <button ion-button class="edit-emergency-message" (click)="openDeleteContactModal(0)">
-        <ion-col col-2 class="icon">
-            <ion-icon name="icon-icono-anadir"></ion-icon>
-        </ion-col>
-        <ion-col col-10 class="block">
-            Eliminar contacto
-        </ion-col>
-      </button>
-    </ion-row> -->
-
-
     <div *ngIf="numberOfActiveContacts < 3">
         <ion-row class="formButton">
             <button ion-button class="edit-emergency-message" (click)="addContact()">
@@ -181,21 +133,9 @@
           </ion-row>
     </div>
 
-    <!-- <ion-row class="formButton">
-        <button ion-button class="edit-emergency-message" (click)="sendMessageSMS()">
-          <ion-col col-2 class="icon">
-              <ion-icon name="icon-icono-anadir"></ion-icon>
-          </ion-col>
-          <ion-col col-10 class="block">
-              ENVIAR SMS
-          </ion-col>
-        </button>
-      </ion-row> -->
+  </div>
 
-    <!-- <div class="bottomLine"></div> -->
-
-
-
+  <div class="new-bottom-line"></div>
 </ion-content>
 
 
@@ -221,4 +161,8 @@
       </div>
 </div>
 
+
+<!-- <ion-footer>
+  <div class="bottomLine"></div>
+</ion-footer> -->
 
