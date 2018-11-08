@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormDenunciaPage } from '../form-denuncia/form-denuncia';
 
 @Component({
   selector: 'page-form-denuncia-suceso',

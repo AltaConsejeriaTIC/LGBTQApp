@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { Contacts} from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';
 import {Platform} from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -26,7 +26,6 @@ export class ContactPage {
   public idSet = new Set();
   public keyInfoContacts = 'infoContacts';
   public keyEmergencyMessage = 'emergencyMessage';
-  public keyIdSet = 'idSet';
   public emergencyMessage="";
   public isTextOff = true;
   public isEditOn = false;
@@ -35,18 +34,11 @@ export class ContactPage {
   public isDeleteModalOn = false;
   public idToBeDeleted = 0;
 
-  // public proofArr = ['ANDRES VARGAS'];
-  public proofArr = ['ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS','ANDRES VARGAS'];
-
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private contacts: Contacts,
               private storage: Storage,
-              private platform: Platform,
-              public modalCtrl: ModalController,
-              private socialSharing: SocialSharing,
-              private sms: SMS,
-              private callNumber: CallNumber  ) {
+              private platform: Platform) {
     this.loadInfo();
     this.deviceHeight = platform.height()+'px';
   }
@@ -66,9 +58,6 @@ export class ContactPage {
       } else {
         this.findContacts = false;
       }
-      // console.log( 'after load infocontacts: ', this.infoContacts );
-      // console.log (' afeter load idSet: ', this.idSet );
-
     });
 
     this.storage.get(this.keyEmergencyMessage).then((response) => {
@@ -114,14 +103,6 @@ export class ContactPage {
       console.log('error: ', error);
     });
 
-  }
-
-  clearAllContacts(){
-    this.storage.clear();
-    this.findContacts = false;
-    this.infoContacts = [];
-    this.idSet = new Set();
-    this.numberOfActiveContacts = 0;
   }
 
   onChange( id, toggleValue){
@@ -184,11 +165,6 @@ export class ContactPage {
     this.isDeleteModalOn = false;
 
   }
-
-  getHeightDevice(){
-    return this.platform.height();
-  }
-
   openDeleteContactModal( id ){
     this.isDeleteModalOn = true;
     this.idToBeDeleted = id;
@@ -197,34 +173,5 @@ export class ContactPage {
   clickOnCancelDeleteContact(){
     this.isDeleteModalOn = false;
     this.idToBeDeleted = 0;
-  }
-
-  sendWhatsAppEmergencyMessage(){
-
-    this.socialSharing.shareViaWhatsAppToReceiver( '+573138374055', 'Hola!' ).then(() => {
-      alert('mensaje enviado con exito');
-    }).catch(() => {
-      alert('error enviado el mensaje');
-    });
-  }
-
-  sendMessageSMS(){
-
-    this.sms.hasPermission().then(()=> {
-      for( let value of this.infoContacts){
-        if( value.toggle ){
-          let phoneNumber = value.data.phoneNumbers[0].value;
-          phoneNumber = phoneNumber.replace(/\-/g,'');
-          phoneNumber = phoneNumber.replace(/\s/g, '');
-          phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '')
-          this.sms.send(`+57${phoneNumber}`, this.emergencyMessage);
-
-        }
-      }
-    }).catch(()=>{
-      alert("No tiene habilitado los permisos para enviar mensajes SMS");
-    });
-
-
   }
 }
