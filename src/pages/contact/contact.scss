@@ -124,9 +124,28 @@ page-contact {
     margin-right: 0;
     .border-properties{
       left: 7%;
-      border: 1px solid #E5E8E8;
       border-radius: 10px;
     }
+  }
+
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus)
+  .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner{
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .border-area-color-on{
+    border: 1px solid #0AC9EF;
+  }
+
+  .border-area-color-off{
+    border: 1px solid #E5E8E8;
   }
 
   .formButton{

@@ -25,7 +25,7 @@
     </ion-row>
 
     <div class="text-area-emergency">
-        <ion-item class="border-properties">
+        <ion-item class="border-properties" [ngClass]="{'border-area-color-on': !isTextOff , 'border-area-color-off': isTextOff }">
             <ion-textarea rows="6" placeholder="Escriba aqui su mensaje de emergencia" [(ngModel)]="emergencyMessage" disabled="{{isTextOff}}" maxlength="300" type="text"></ion-textarea>
         </ion-item>
     </div>
