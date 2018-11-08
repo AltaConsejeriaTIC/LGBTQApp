@@ -114,3 +114,28 @@
         </ion-grid>
     </ion-card>
 </ion-content>
+
+
+<div *ngIf="messageHasBeenSend">
+    <ion-backdrop showBackdrop="false" class="delete-contact-background">
+
+      </ion-backdrop>
+
+      <div class="delete-modal-component">
+          <div class="picture-image-block">
+              <img class="picture-resize" src="../assets/icon/group2.svg">
+          </div>
+
+          <ion-row class="confirm-text-section">
+              <p class="confirm-delete-contact">El mensaje de emergencia ha sido enviado a tus contactos.</p>
+          </ion-row>
+
+          <ion-row class="form-button-confirm-contact">
+              <ion-col col-12 class="cancel-contact-section">
+                  <button ion-button class="cancel" (click)="closeSendEmergencyMessage()" >CONTINUAR</button>
+              </ion-col>
+          </ion-row>
+      </div>
+</div>
+
+

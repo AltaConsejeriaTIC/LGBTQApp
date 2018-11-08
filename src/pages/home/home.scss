@@ -383,4 +383,81 @@ page-home {
   .filterBackgroundDark:before {
     background: linear-gradient(to right, #4d2600, #4d4d00, #003e00, #004d4d, #00004d, #482348);
   }
+
+  .delete-modal-component{
+    border-radius: 3%;
+    display: flex;
+    pointer-events: auto;
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0px);
+    // right: 5%;
+    // top: 16%;
+    width: 70%;
+    height: 43%;
+    // max-height: 143px;
+    z-index: 11;
+    background: white;
+    top: 33%;
+    right: 14%;
+    flex-direction: column;
+
+    .picture-image-block{
+      margin-top: 9%;
+      text-align: center;
+      position: relative;
+      margin-top: 8%;
+      height: 65%;
+      width: 100%;
+      .picture-resize{
+        margin-top: 9%;
+      }
+    }
+
+    .confirm-text-section{
+      height: 79%;
+      .confirm-delete-contact{
+        display: flex;
+        text-align: center;
+        margin: 8% 10% 0% 10%;
+        color: gray;
+      }
+    }
+    .cancel-button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+    }
+    .form-button-confirm-contact{
+      height: 52%;
+      .cancel-contact-section{
+        padding: 0;
+        height: 100%;
+        width: 100%;
+
+        .cancel{
+          padding: 0;
+          margin: 0;
+          text-transform: initial;
+          background-color: #2C347E !important;
+          font-size: 1.6rem;
+          font-weight: bold;
+          height: 100%;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+  .delete-contact-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
+  }
 }

@@ -43,6 +43,7 @@ export class HomePage {
   public numberOfActiveContacts = 0;
   public keyEmergencyMessage = 'emergencyMessage';
   public emergencyMessage="";
+  public messageHasBeenSend = false;
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
@@ -144,7 +145,10 @@ export class HomePage {
         phoneNumber = phoneNumber.replace(/\-/g,'');
         phoneNumber = phoneNumber.replace(/\s/g, '');
         phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '')
-        this.sms.send(`+57${phoneNumber}`, this.emergencyMessage);
+        this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
+          this.messageHasBeenSend = true;
+        });
+
 
       }
     }
@@ -153,6 +157,10 @@ export class HomePage {
   });
 
 
+  }
+
+  closeSendEmergencyMessage(){
+    this.messageHasBeenSend = false;
   }
 
   loadInfo(){
