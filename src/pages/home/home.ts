@@ -1,7 +1,6 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
 import {NavController, Slides, ModalController, FabContainer} from 'ionic-angular';
 import { ModalMenuPage } from '../modal-menu/modal-menu';
-import { ModalSpeedDialPage } from '../modal-speed-dial/modal-speed-dial';
 import { ListadoPage } from '../listado/listado';
 import { DenunciaPage } from '../denuncia/denuncia';
 import { DerechoPage } from '../derecho/derecho';
@@ -21,7 +20,10 @@ export class HomePage {
   @ViewChild('slides')
   slides: Slides;
 
-  panicBackground: boolean = false;
+  @ViewChild('fab')
+  fab: FabContainer;
+
+  emergencyButtonActivate: boolean = false;
   activeMenu: string;
 
   constructor(
@@ -42,54 +44,75 @@ export class HomePage {
   public keyEmergencyMessage = 'emergencyMessage';
   public emergencyMessage="";
 
-  myParam = '';
-
   ngOnInit() {
     this.innerWidth = window.innerWidth;
   }
 
   prevSlide() {
-    this.slides.slidePrev();
+    if(this.emergencyButtonActivate) {
+      this.fabClose();
+    }else {
+      this.slides.slidePrev();
+    }
   }
 
   nextSlide() {
-    this.slides.slideNext();
+    if(this.emergencyButtonActivate) {
+      this.fabClose();
+    }else {
+      this.slides.slideNext();
+    }
   }
 
   goToListado() {
-    this.navCtrl.push(ListadoPage);
+    this.goToPage(ListadoPage);
   }
 
   goToDenuncia() {
-    this.navCtrl.push(DenunciaPage);
+    this.goToPage(DenunciaPage);
   }
 
   goToDerecho() {
-    this.navCtrl.push(DerechoPage);
+    this.goToPage(DerechoPage);
   }
 
   goToAlianza() {
-    this.navCtrl.push(AlianzaPage);
+    this.goToPage(AlianzaPage);
   }
 
   goToOrganizacion() {
-    this.navCtrl.push(OrganizacionPage);
+    this.goToPage(OrganizacionPage);
   }
 
   goToContactPage():void {
-    this.navCtrl.push(ContactPage);
+    this.goToPage(ContactPage);
+  }
+
+  goToPage(page) {
+    if(this.emergencyButtonActivate) {
+      this.fab.close();
+      this.emergencyButtonActivate = false;
+    }else {
+      this.navCtrl.push(page);
+    }
+  }
+
+  fabClose(){
+      this.fab.close();
+      this.emergencyButtonActivate = false;
   }
 
   toggleEmergencyButton(fab: FabContainer):void {
-    this.clearValues();
-    this.loadInfo();
-    if(this.panicBackground) {
+    if(this.emergencyButtonActivate) {
       fab.close();
     }else{
-      fab.setActiveLists(true);
+      this.clearValues();
+      this.loadInfo();
+      setTimeout(function(){
+        fab.setActiveLists(true);
+      },0)
     }
-
-    this.panicBackground = !this.panicBackground;
+    this.emergencyButtonActivate = !this.emergencyButtonActivate;
   }
 
   clearValues(){
@@ -171,17 +194,17 @@ export class HomePage {
   }
 
   openMenuModal(): void {
-    let myModal = this.modalCtrl.create(
-      ModalMenuPage,
-      {},
-      {
-        showBackdrop: false
-      }
-    );
-    myModal.present();
-  }
-
-  hidePanicBackground(): void{
-    //this.panicBackground = false;
+    if(this.emergencyButtonActivate){
+      this.fabClose();
+    }else {
+      let myModal = this.modalCtrl.create(
+        ModalMenuPage,
+        {},
+        {
+          showBackdrop: false
+        }
+      );
+      myModal.present();
+    }
   }
 }

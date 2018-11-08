@@ -1,0 +1,66 @@
+<ion-header no-border>
+
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>canales de denuncia</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <p class="steps">paso 2 de 2</p>
+
+  <p class="title">Descripción del suceso</p>
+
+  <form [formGroup]="denunciaForm">
+
+  <ion-item>
+    <ion-label stacked>Fecha del suceso</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['date']"
+        type="text" placeholder="Fecha del suceso"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Lugar del suceso</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['place']"
+        type="text" placeholder="Lugar del suceso"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Descripción de la situación de discriminación</ion-label>
+    <ion-textarea [formControl]="denunciaForm.controls['description']"
+        type="text" placeholder="Descripción de la situación de discriminación"></ion-textarea>
+  </ion-item>
+
+  <ion-row>
+    <ion-col text-center class="buttonData">
+      <button ion-button block class="sendButton" (click)="sendData()">
+        Continuar con la denuncia
+      </button>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+  <div class="bottomLine">
+
+  </div>
+
+</ion-content>
+
+<div class="modalMax" *ngIf="modalWindow">
+  <div class="innerWindow">
+      <ion-icon name="ios-checkmark-circle"></ion-icon>
+    <p class="title">¡Tu denuncia se ha enviado con éxito!</p>
+    <p class="text">Muchas gracias. Denunciando nos ayudas a hacer de Bogotá un lugar mejor para todos.</p>
+    <button ion-button block class="goHomeButton" (click)="closeData()">
+      volver al inicio
+    </button>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+page-form-censo {
+  .bottomLine{
+    height: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+.bottomLine:before {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  height: 5px;
+  content: '';
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #1E1A42;
+  }
+
+
+  .bar-button-default,
+  .toolbar-title {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .scroll-content {
+    img {
+      width: 100%;
+      height: 35vh;
+    }
+
+    .title{
+      padding-left: 12%;
+      font-weight: bold;
+      color: #1E1A42;
+      font-size: 2rem;
+    }
+
+    .item-md{
+      padding: 0 12%;
+    }
+
+    .item-md.item-block .item-inner{
+      border-bottom: 0;
+    }
+    .item-md.item-input.item-input-has-focus .item-inner,  .item-md.item-input.item-has-focus .item-inner{
+        border-bottom: 0;
+        border-bottom-color: transparent;
+        -webkit-box-shadow: unset;
+        box-shadow: unset
+    }
+
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+      border-bottom: 0;
+      border-bottom-color: transparent;
+      -webkit-box-shadow: unset;
+      box-shadow: unset
+    }
+
+    .item-input-has-focus .label-md[stacked], .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+      font-size: 1.3rem;
+      color: #747783;
+    }
+
+    .item-label-stacked .text-input-md{
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .text-input-md{
+      padding: 1vh;
+    }
+
+    .item-md.item-block .item-inner {
+    padding-right: 0px;
+}
+
+    input.text-input.text-input-md{
+      border: 1px solid #CBCBCB;
+      width: 100%;
+    }
+
+    .buttonData{
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-block {
+        width: 75%;
+        background-color: #2C347E;
+        margin: 7% 0;
+        .button-inner{
+          font-weight: bold;
+          text-transform: none;
+        }
+    }
+  }
+}

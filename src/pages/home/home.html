@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar [class.filterDark]="panicBackground">
+    <ion-navbar [class.filterDark]="emergencyButtonActivate">
 
         <img src="../assets/icon/logo.png">
         <p class="headerTitle">En Bogotá se puede ser</p>
@@ -10,14 +10,14 @@
 
 </ion-header>
 
-<ion-content padding [class.filterBackgroundDark]="panicBackground">
+<ion-content padding [class.filterBackgroundDark]="emergencyButtonActivate">
 
 
-    <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()" [class.filterDark]="panicBackground"></ion-icon>
+    <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()">
+    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" [class.filterDark]="emergencyButtonActivate">
 
-        <ion-slide class="article article1" [class.filterDark]="panicBackground">
+        <ion-slide class="article article1" >
           <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
           <ion-row>
             <p class="articleDate">20 junio, 2018</p>
@@ -43,9 +43,9 @@
 
     </ion-slides>
 
-    <ion-icon name="icon-flecha-derecha" class="arrow arrowRight" (click)="nextSlide()" [class.filterDark]="panicBackground"></ion-icon>
+    <ion-icon name="icon-flecha-derecha" class="arrow arrowRight" (click)="nextSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-card class="newsButton" [class.filterDark]="panicBackground">
+    <ion-card class="newsButton" [class.filterDark]="emergencyButtonActivate">
 
         <ion-card-content (click)="goToListado()">
           todos los eventos y noticias
@@ -53,10 +53,10 @@
 
     </ion-card>
 
-    <ion-slides slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections" [class.filterDark]="panicBackground">
+    <ion-slides slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections" [class.filterDark]="emergencyButtonActivate">
 
         <ion-slide style="background-color: #F1185D" (click)="goToDenuncia()">
-          <ion-icon name="icon-icono-denuncia01"></ion-icon>
+          <ion-icon name="icon-icono-denuncia02"></ion-icon>
           <p class="sectionText">Canales de denuncia</p>
         </ion-slide>
 
@@ -71,12 +71,12 @@
         </ion-slide>
 
         <ion-slide style="background-color: #670FB9" (click)="goToOrganizacion()">
-          <ion-icon name="icon-icono-organizaciones"></ion-icon>
+          <ion-icon name="icon-icono-nosotros"></ion-icon>
           <p class="sectionText">Organizaciones sociales</p>
         </ion-slide>
 
     </ion-slides>
-    <ion-card class="panicButton">
+    <ion-card class="panicButton" [class.filterBackgroundDark]="emergencyButtonActivate">
         <ion-grid>
             <ion-row (click)="toggleEmergencyButton(fab)" >
                 <ion-col col-2>
@@ -85,7 +85,6 @@
                         <ion-fab-list side="top">
                             <button ion-fab (click)="goToContactPage()">
                               <ion-icon name="settings"></ion-icon>
-                              <!--<ion-label>Facebook</ion-label>-->
                             </button>
                             <button ion-fab (click)="sendEmergencySMS()"><ion-icon name="mail"></ion-icon></button>
                             <button ion-fab (click)="callEmergency()"><ion-icon name="call"></ion-icon></button >
@@ -103,12 +102,15 @@
                     <ion-card-content>
                       Llama al 123 o alerta a tus contactos en caso de sentirte en riesgo
                     </ion-card-content>
+
+                  <div class="ion-fab-label fab-list-active">
+                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Configuración del botón</p>
+                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Enviar Mensaje</p>
+                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Llamar al 123</p >
+                  </div>
                 </ion-col>
 
             </ion-row>
         </ion-grid>
     </ion-card>
 </ion-content>
-
-
-

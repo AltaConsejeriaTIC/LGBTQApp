@@ -1,0 +1,102 @@
+<ion-header no-border>
+
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>censo lgbti</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <p class="title">Datos personales</p>
+
+  <form [formGroup]="credentialsForm">
+
+  <ion-item>
+    <ion-label stacked>Correo electrónico</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['email']"
+        type="email" placeholder="Correo electrónico"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Tipo de documento de identidad</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['documentType']"
+        type="text" placeholder="Tipo de documento de identidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Número de documento</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['documentNumber']"
+        type="text" placeholder="Número de documento"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Nombres</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['firstName']"
+        type="text" placeholder="Nombres"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Apellidos</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['lastName']"
+        type="text" placeholder="Apellidos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Dirección</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['address']"
+        type="text" placeholder="Dirección"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Teléfono fijo o celular</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['phone']"
+        type="tel" placeholder="Teléfono fijo o celular"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Sexo de nacimiento</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['gender']"
+        type="text" placeholder="Sexo de nacimiento"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Orientacion sexual</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['orientation']"
+        type="text" placeholder="Orientacion sexual"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Género con el que se identifica</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['identity']"
+        type="text" placeholder="Género con el que se identifica"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Edad</ion-label>
+    <ion-input [formControl]="credentialsForm.controls['age']"
+        type="number" placeholder="Edad"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col text-center class="buttonData">
+      <button ion-button block class="sendButton" (click)="sendData()">
+        Enviar datos
+      </button>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+
+  <div class="bottomLine">
+
+  </div>
+
+</ion-content>

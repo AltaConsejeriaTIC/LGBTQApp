@@ -1,0 +1,76 @@
+<ion-header no-border>
+
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>canales de denuncia</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <p class="steps">paso 1 de 2</p>
+
+  <p class="title">Datos de la o del denunciante</p>
+
+  <form [formGroup]="denunciaForm">
+
+  <ion-item>
+    <ion-label stacked>Nombres</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['firstName']"
+        type="text" placeholder="Nombres"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Apellidos</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['lastName']"
+        type="text" placeholder="Apellidos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Tipo de documento de identidad</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['documentType']"
+        type="text" placeholder="Tipo de documento de identidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Número de documento</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['documentNumber']"
+        type="text" placeholder="Número de documento"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Correo electrónico</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['email']"
+        type="email" placeholder="Correo electrónico"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Teléfono celular</ion-label>
+    <ion-input [formControl]="denunciaForm.controls['phone']"
+        type="tel" placeholder="Teléfono celular"></ion-input>
+  </ion-item>
+
+
+
+  <ion-row>
+    <ion-col text-center class="buttonData">
+      <button ion-button block class="sendButton" (click)="goToFormDenunciaSuceso()">
+        Continuar con la denuncia
+      </button>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+
+  <div class="bottomLine">
+
+  </div>
+
+</ion-content>

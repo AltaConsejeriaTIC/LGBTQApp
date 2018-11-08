@@ -9,15 +9,19 @@ import { Deeplinks } from '@ionic-native/deeplinks'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ModalMenuPage } from '../pages/modal-menu/modal-menu';
-import { ModalSpeedDialPage } from '../pages/modal-speed-dial/modal-speed-dial';
 import { ListadoPage } from '../pages/listado/listado';
 import { DerechoPage } from '../pages/derecho/derecho';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { AlianzaPage } from '../pages/alianza/alianza';
 import { OrganizacionPage } from '../pages/organizacion/organizacion';
 
+import { FormDenunciaPage } from '../pages/form-denuncia/form-denuncia';
+import { FormDenunciaSucesoPage } from '../pages/form-denuncia-suceso/form-denuncia-suceso';
+
 import { QuienesSomosPage } from '../pages/quienes-somos/quienes-somos';
 import { FormularioPage } from '../pages/formulario/formulario';
+
+import { FormCensoPage } from '../pages/form-censo/form-censo';
 
 import {DiscriminacionPage} from '../pages/discriminacion/discriminacion';
 import {ArcoirisPage} from '../pages/arcoiris/arcoiris';
@@ -55,14 +59,16 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     MyApp,
     HomePage,
     ModalMenuPage,
-    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
+    FormCensoPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
@@ -87,14 +93,16 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     MyApp,
     HomePage,
     ModalMenuPage,
-    ModalSpeedDialPage,
     ListadoPage,
     DerechoPage,
     DenunciaPage,
+    FormDenunciaPage,
+    FormDenunciaSucesoPage,
     AlianzaPage,
     OrganizacionPage,
     QuienesSomosPage,
     FormularioPage,
+    FormCensoPage,
     DiscriminacionPage,
     ArcoirisPage,
     PurpuraPage,
