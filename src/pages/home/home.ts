@@ -85,6 +85,7 @@ export class HomePage {
   }
 
   goToContactPage():void {
+    console.log( 'going to contactpage');
     this.goToPage(ContactPage);
   }
 
@@ -92,9 +93,8 @@ export class HomePage {
     if(this.emergencyButtonActivate) {
       this.fab.close();
       this.emergencyButtonActivate = false;
-    }else {
-      this.navCtrl.push(page);
     }
+    this.navCtrl.push(page);
   }
 
   fabClose(){
@@ -108,6 +108,7 @@ export class HomePage {
     }else{
       this.clearValues();
       this.loadInfo();
+      this.sms.hasPermission().then();
       setTimeout(function(){
         fab.setActiveLists(true);
       },0)
