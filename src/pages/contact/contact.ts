@@ -34,6 +34,8 @@ export class ContactPage {
   public isDeleteModalOn = false;
   public idToBeDeleted = 0;
 
+  // public proofArr = ['andres vargas', 'andres vargas', 'andres vargas', 'andres vargas'];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private contacts: Contacts,
@@ -54,6 +56,7 @@ export class ContactPage {
           this.idSet.add( value.data.id );
           this.numberOfActiveContacts++;
         }
+        console.log( this.infoContacts );
         this.findContacts = true;
       } else {
         this.findContacts = false;
@@ -93,6 +96,7 @@ export class ContactPage {
             toggle: true
           }
         );
+        console.log( this.infoContacts );
         this.numberOfActiveContacts++;
       }
 
@@ -115,10 +119,11 @@ export class ContactPage {
     }
   }
 
-  getIniNames( nameContact ){
+  getIniNames( nameContact , phoneNumber ){
 
+    const display = nameContact ? nameContact : phoneNumber;
     let finalIni = '';
-    const nameArray = nameContact.split(' ');
+    const nameArray = display.split(' ');
     for( let name of nameArray){
       finalIni += name.charAt(0);
     }
