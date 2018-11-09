@@ -24,15 +24,13 @@ export class HomePage {
   fab: FabContainer;
 
   emergencyButtonActivate: boolean = false;
-  activeMenu: string;
-
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage) {
-
+      this.innerWidth = window.innerWidth;
     }
 
   public innerWidth: any;
@@ -44,10 +42,6 @@ export class HomePage {
   public keyEmergencyMessage = 'emergencyMessage';
   public emergencyMessage="";
   public messageHasBeenSend = false;
-
-  ngOnInit() {
-    this.innerWidth = window.innerWidth;
-  }
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
@@ -86,7 +80,9 @@ export class HomePage {
   }
 
   goToContactPage():void {
-    this.navCtrl.push(ContactPage);
+    this.navCtrl.push(ContactPage).catch(err => {
+      console.error("Error en goToContactPage", err, err.stack);
+    });
   }
 
   goToPage(page) {
@@ -95,9 +91,10 @@ export class HomePage {
       this.emergencyButtonActivate = false;
     }
     else{
-      this.navCtrl.push(page);
+      this.navCtrl.push(page).catch(err =>{
+        console.error(err,err.stack);
+      });
     }
-
   }
 
   fabClose(){
@@ -105,16 +102,18 @@ export class HomePage {
       this.emergencyButtonActivate = false;
   }
 
-  toggleEmergencyButton(fab: FabContainer):void {
+  toggleEmergencyButton():void {
     if(this.emergencyButtonActivate) {
-      fab.close();
+      this.fab.close();
     }else{
       this.clearValues();
       this.loadInfo();
-      // this.sms.hasPermission().then();
-      setTimeout(function(){
+      this.sms.hasPermission().catch(err =>{
+        console.error(err,err.stack);
+      });
+      setTimeout(function(fab){
         fab.setActiveLists(true);
-      },0)
+      },0,this.fab)
     }
     this.emergencyButtonActivate = !this.emergencyButtonActivate;
   }
@@ -132,7 +131,7 @@ export class HomePage {
 
     this.callNumber.callNumber("123", true)
       .then(res => console.log('Launched dialer!', res))
-      .catch(err => console.log('Error launching dialer', err));
+      .catch(err => console.error('err launching dialer', err, err.stack));
 
   }
 
@@ -142,18 +141,20 @@ export class HomePage {
     for( let value of this.infoContacts){
       if( value.toggle ){
         let phoneNumber = value.data.phoneNumbers[0].value;
-        phoneNumber = phoneNumber.replace(/\-/g,'');
+        phoneNumber = phoneNumber.replace(/-/g,'');
         phoneNumber = phoneNumber.replace(/\s/g, '');
-        phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '')
+        phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
         this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
           this.messageHasBeenSend = true;
+        }).catch(err =>{
+          console.error(err,err.stack);
         });
 
 
       }
     }
-  }).catch( (error)=>{
-    console.log('error: ', error);
+  }).catch(err =>{
+    console.error(err,err.stack);
   });
 
 
@@ -171,8 +172,6 @@ export class HomePage {
       }
     });
 
-
-
     this.storage.get(this.keyInfoContacts).then((response) => {
 
       if( response ){
@@ -185,9 +184,6 @@ export class HomePage {
       } else {
         this.findContacts = false;
       }
-      console.log( 'after load infocontacts: ', this.infoContacts );
-      console.log (' afeter load idSet: ', this.idSet );
-
     });
 
 
@@ -199,7 +195,7 @@ export class HomePage {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize() {
     this.innerWidth = window.innerWidth;
     this.slideChanged();
   }
@@ -215,7 +211,9 @@ export class HomePage {
           showBackdrop: false
         }
       );
-      myModal.present();
+      myModal.present().catch(err => {
+        console.error("Error en openMenuModal", err, err.stack);
+      });
     }
   }
 }
