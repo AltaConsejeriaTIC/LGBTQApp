@@ -45,9 +45,9 @@
 
     <ion-icon name="icon-flecha-derecha" class="arrow arrowRight" (click)="nextSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-card class="newsButton" [class.filterDark]="emergencyButtonActivate">
+    <ion-card class="newsButton" [class.filterDark]="emergencyButtonActivate" (click)="goToListado()">
 
-        <ion-card-content (click)="goToListado()">
+        <ion-card-content>
           todos los eventos y noticias
         </ion-card-content>
 
