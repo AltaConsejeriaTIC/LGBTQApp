@@ -19,21 +19,11 @@
   <form [formGroup]="credentialsForm">
 
   <ion-item>
-    <ion-label stacked>Correo electrónico</ion-label>
-    <ion-input formControlName="email" type="email" placeholder="Correo electrónico"></ion-input>
-  </ion-item>
-
-  <div class="validation-errors">
-	<ng-container *ngFor="let validation of validation_messages.email" >
-		<div class="error-message" *ngIf="credentialsForm.get('email').hasError(validation.type) && (credentialsForm.get('email').dirty || credentialsForm.get('email').touched)">
-	{{ validation.message }}
-		</div>
-	</ng-container>
-</div>
-
-  <ion-item>
-    <ion-label stacked>Tipo de documento de identidad</ion-label>
-    <ion-input formControlName="documentType" type="text" placeholder="Tipo de documento de identidad"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
+    <ion-select [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
+      <ion-option value="TI">Tarjeta de identidad</ion-option>
+      <ion-option value="CC">Cedula de ciudadanía</ion-option>
+    </ion-select>
   </ion-item>
 
   <div class="validation-errors">
@@ -44,10 +34,10 @@
 	</ng-container>
 </div>
 
-  <ion-item>
-    <ion-label stacked>Número de documento</ion-label>
-    <ion-input formControlName="documentNumber" type="text" placeholder="Número de documento"></ion-input>
-  </ion-item>
+<ion-item>
+  <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('documentNumber').hasError(validation_messages.documentNumber['0']['type']) && (credentialsForm.get('documentNumber').dirty || credentialsForm.get('documentNumber').touched)) == true }">Número de documento</ion-label>
+  <ion-input [ngClass]="{'error-box': (credentialsForm.get('documentNumber').hasError(validation_messages.documentNumber['0']['type']) && (credentialsForm.get('documentNumber').dirty || credentialsForm.get('documentNumber').touched)) == true }" formControlName="documentNumber" type="text" placeholder="Número de documento"></ion-input>
+</ion-item>
 
   <div class="validation-errors">
 	<ng-container *ngFor="let validation of validation_messages.documentNumber" >
@@ -57,22 +47,25 @@
 	</ng-container>
 </div>
 
-  <ion-item>
-    <ion-label stacked>Nombres</ion-label>
-    <ion-input formControlName="firstName" type="text" placeholder="Nombres"></ion-input>
-  </ion-item>
+<ion-item>
+  <ion-label stacked [ngClass]="{'error-text': ((credentialsForm.get('firstName').hasError(this.validation_messages.firstName['1']['type']) || (credentialsForm.get('firstName').hasError(validation_messages.firstName['0']['type']))) && (credentialsForm.get('firstName').dirty || credentialsForm.get('firstName').touched)) == true }">Nombres</ion-label>
+  <ion-input [ngClass]="{'error-box': ((credentialsForm.get('firstName').hasError(this.validation_messages.firstName['1']['type']) || (credentialsForm.get('firstName').hasError(validation_messages.firstName['0']['type']))) && (credentialsForm.get('firstName').dirty || credentialsForm.get('firstName').touched)) == true }" formControlName="firstName" type="text" placeholder="Nombres"></ion-input>
+</ion-item>
 
   <div class="validation-errors">
 	<ng-container *ngFor="let validation of validation_messages.firstName" >
 		<div class="error-message" *ngIf="credentialsForm.get('firstName').hasError(validation.type) && (credentialsForm.get('firstName').dirty || credentialsForm.get('firstName').touched)">
 	{{ validation.message }}
 		</div>
+    <div class="error-message" *ngIf="credentialsForm.get('firstName').hasError(validation.pattern) && (credentialsForm.get('firstName').dirty || credentialsForm.get('firstName').touched)">
+  {{ validation.message }}
+    </div>
 	</ng-container>
 </div>
 
   <ion-item>
-    <ion-label stacked>Apellidos</ion-label>
-    <ion-input formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': ((credentialsForm.get('lastName').hasError(this.validation_messages.lastName['1']['type']) || (credentialsForm.get('lastName').hasError(validation_messages.lastName['0']['type']))) && (credentialsForm.get('lastName').dirty || credentialsForm.get('lastName').touched)) == true }">Apellidos</ion-label>
+    <ion-input [ngClass]="{'error-box': ((credentialsForm.get('lastName').hasError(this.validation_messages.lastName['1']['type']) || (credentialsForm.get('lastName').hasError(validation_messages.lastName['0']['type']))) && (credentialsForm.get('lastName').dirty || credentialsForm.get('lastName').touched)) == true }" formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
   </ion-item>
 
   <div class="validation-errors">
@@ -80,12 +73,15 @@
     <div class="error-message" *ngIf="credentialsForm.get('lastName').hasError(validation.type) && (credentialsForm.get('lastName').dirty || credentialsForm.get('lastName').touched)">
   {{ validation.message }}
     </div>
+    <div class="error-message" *ngIf="credentialsForm.get('lastName').hasError(validation.pattern) && (credentialsForm.get('lastName').dirty || credentialsForm.get('lastName').touched)">
+  {{ validation.message }}
+    </div>
   </ng-container>
   </div>
 
   <ion-item>
-    <ion-label stacked>Dirección</ion-label>
-    <ion-input formControlName="address" type="text" placeholder="Dirección"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('address').hasError(validation_messages.address['0']['type']) && (credentialsForm.get('address').dirty || credentialsForm.get('address').touched)) == true }">Dirección</ion-label>
+    <ion-input [ngClass]="{'error-box': (credentialsForm.get('address').hasError(validation_messages.address['0']['type']) && (credentialsForm.get('address').dirty || credentialsForm.get('address').touched)) == true }" formControlName="address" type="text" placeholder="Dirección"></ion-input>
   </ion-item>
 
   <div class="validation-errors">
@@ -97,21 +93,44 @@
   </div>
 
   <ion-item>
-    <ion-label stacked>Teléfono fijo o celular</ion-label>
-    <ion-input formControlName="phone" type="tel" placeholder="Teléfono fijo o celular"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': ((credentialsForm.get('email').hasError(this.validation_messages.email['1']['type']) || (credentialsForm.get('email').hasError(validation_messages.email['0']['type']))) && (credentialsForm.get('email').dirty || credentialsForm.get('email').touched)) == true }">Correo electrónico</ion-label>
+    <ion-input [ngClass]="{'error-box': ((credentialsForm.get('email').hasError(this.validation_messages.email['1']['type']) || (credentialsForm.get('email').hasError(validation_messages.email['0']['type']))) && (credentialsForm.get('email').dirty || credentialsForm.get('email').touched)) == true }" formControlName="email" type="text" placeholder="Correo electrónico"></ion-input>
   </ion-item>
+
+<div class="validation-errors">
+<ng-container *ngFor="let validation of validation_messages.email" >
+  <div class="error-message" *ngIf="credentialsForm.get('email').hasError(validation.type) && (credentialsForm.get('email').dirty || credentialsForm.get('email').touched)">
+{{ validation.message }}
+  </div>
+  <div class="error-message" *ngIf="credentialsForm.get('email').hasError(validation.pattern) && (credentialsForm.get('email').dirty || credentialsForm.get('email').touched)">
+{{ validation.message }}
+  </div>
+</ng-container>
+</div>
+
+<ion-item>
+  <ion-label stacked [ngClass]="{'error-text': ((credentialsForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (credentialsForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)) == true }">Teléfono fijo o celular</ion-label>
+  <ion-input [ngClass]="{'error-box': ((credentialsForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (credentialsForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)) == true }" formControlName="phone" type="text" placeholder="Teléfono fijo o celular"></ion-input>
+</ion-item>
 
   <div class="validation-errors">
   <ng-container *ngFor="let validation of validation_messages.phone" >
     <div class="error-message" *ngIf="credentialsForm.get('phone').hasError(validation.type) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)">
   {{ validation.message }}
     </div>
+    <div class="error-message" *ngIf="credentialsForm.get('phone').hasError(validation.pattern) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)">
+  {{ validation.message }}
+    </div>
   </ng-container>
   </div>
 
   <ion-item>
-    <ion-label stacked>Sexo de nacimiento</ion-label>
-    <ion-input formControlName="gender" type="text" placeholder="Sexo de nacimiento"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('gender').hasError(validation_messages.gender['0']['type']) && (credentialsForm.get('gender').dirty || credentialsForm.get('gender').touched)) == true }">¿Cuál es su sexo?</ion-label>
+    <ion-select [ngClass]="{'error-box': (credentialsForm.get('gender').hasError(validation_messages.gender['0']['type']) && (credentialsForm.get('gender').dirty || credentialsForm.get('gender').touched)) == true }" formControlName="gender" type="text" placeholder="¿Cuál es su sexo?">
+      <ion-option value="Hombre">Hombre</ion-option>
+      <ion-option value="Mujer">Mujer</ion-option>
+      <ion-option value="Intersexual">Intersexual</ion-option>
+    </ion-select>
   </ion-item>
 
   <div class="validation-errors">
@@ -123,9 +142,14 @@
   </div>
 
   <ion-item>
-    <ion-label stacked>Orientacion sexual</ion-label>
-    <ion-input formControlName="orientation" type="text" placeholder="Orientacion sexual"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('orientation').hasError(validation_messages.orientation['0']['type']) && (credentialsForm.get('orientation').dirty || credentialsForm.get('orientation').touched)) == true }">¿Cuál es su orientación sexual?</ion-label>
+    <ion-select [ngClass]="{'error-box': (credentialsForm.get('orientation').hasError(validation_messages.orientation['0']['type']) && (credentialsForm.get('orientation').dirty || credentialsForm.get('orientation').touched)) == true }" formControlName="orientation" type="text" placeholder="¿Cuál es su orientación sexual?">
+      <ion-option value="Homosexual">Homosexual</ion-option>
+      <ion-option value="Heterosexual">Heterosexual</ion-option>
+      <ion-option value="Bisexual">Bisexual</ion-option>
+    </ion-select>
   </ion-item>
+
 
   <div class="validation-errors">
   <ng-container *ngFor="let validation of validation_messages.orientation" >
@@ -136,8 +160,13 @@
   </div>
 
   <ion-item>
-    <ion-label stacked>Género con el que se identifica</ion-label>
-    <ion-input formControlName="identity" type="text" placeholder="Género con el que se identifica"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }">Género con el que se identifica</ion-label>
+    <ion-select [ngClass]="{'error-box': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
+      <ion-option value="Masculino">Masculino</ion-option>
+      <ion-option value="Femenino">Femenino</ion-option>
+      <ion-option value="Transgéenero">Trangénero</ion-option>
+      <ion-option value="Otro">Otro</ion-option>
+    </ion-select>
   </ion-item>
 
   <div class="validation-errors">
@@ -149,8 +178,22 @@
   </div>
 
   <ion-item>
-    <ion-label stacked>Edad</ion-label>
-    <ion-input formControlName="age" type="number" placeholder="Edad"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }">Otros</ion-label>
+    <ion-input [ngClass]="{'error-box': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }" formControlName="others" type="text" placeholder="Otros"></ion-input>
+  </ion-item>
+
+  <div class="validation-errors">
+  <ng-container *ngFor="let validation of validation_messages.others" >
+    <div class="error-message" *ngIf="credentialsForm.get('others').hasError(validation.type) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)">
+  {{ validation.message }}
+    </div>
+  </ng-container>
+  </div>
+
+  <ion-item>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }">Fecha de nacimiento</ion-label>
+    <ion-datetime [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="age" placeholder="Fecha de nacimiento"></ion-datetime>
+    <!-- <ion-input [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" formControlName="age" type="text" placeholder="Fecha de nacimiento"></ion-input> -->
   </ion-item>
 
   <div class="validation-errors">
@@ -181,8 +224,8 @@
 <div class="modalMax" *ngIf="modalWindow">
   <div class="innerWindow">
       <ion-icon name="ios-checkmark-circle"></ion-icon>
-    <p class="title">¡Tu denuncia se ha enviado con éxito!</p>
-    <p class="text">Muchas gracias. Denunciando nos ayudas a hacer de Bogotá un lugar mejor para todos.</p>
+    <p class="title">¡Tu credentials se ha enviado con éxito!</p>
+    <p class="text">Muchas gracias. credentialsndo nos ayudas a hacer de Bogotá un lugar mejor para todos.</p>
     <button ion-button block class="goHomeButton" (click)="closeData()">
       volver al inicio
     </button>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 
@@ -24,16 +24,19 @@ export class FormCensoPage {
 		{ type: 'required', message: 'El número de documento es requerido' }
 	],
   'firstName': [
-		{ type: 'required', message: 'El nombre es requerido.' }
+		{ type: 'required', message: 'El nombre es requerido.' },
+		{ type: 'pattern', message: 'El formato no es válido' }
 	],
   'lastName': [
-		{ type: 'required', message: 'El apellido es requerido.' }
+		{ type: 'required', message: 'El apellido es requerido.' },
+		{ type: 'pattern', message: 'El formato no es válido' }
 	],
   'address': [
 		{ type: 'required', message: 'La dirección es requerida.' }
 	],
   'phone': [
-		{ type: 'required', message: 'El teléfono es requerido.' }
+		{ type: 'required', message: 'El teléfono es requerido.' },
+    { type: 'pattern', message: 'El formato no es válido' }
 	],
   'gender': [
 		{ type: 'required', message: 'El sexo de nacimiento es requerido.' }
@@ -42,7 +45,10 @@ export class FormCensoPage {
 		{ type: 'required', message: 'La orientación sexual es requerida.' }
 	],
   'identity': [
-		{ type: 'required', message: 'El género es requerido.' }
+		{ type: 'required', message: 'Debe colocar el género' }
+	],
+  'others': [
+		{ type: 'required', message: 'Debe colocar alguna identidad' }
 	],
   'age': [
 		{ type: 'required', message: 'La edad es requerida.' }
@@ -57,16 +63,28 @@ export class FormCensoPage {
                               	])),
       documentType: new FormControl ('', Validators.required),
       documentNumber: new FormControl ('', Validators.required),
-      firstName: new FormControl ('', Validators.required),
-      lastName: new FormControl ('', Validators.required),
+      firstName: new FormControl ('', Validators.compose([
+                              		Validators.required,
+                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              	])),
+      lastName: new FormControl ('', Validators.compose([
+                              		Validators.required,
+                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              	])),
       address: new FormControl ('', Validators.required),
-      phone: new FormControl ('', Validators.required),
+      phone: new FormControl ('', Validators.compose([
+                              		Validators.required,
+                              		Validators.pattern('^[0-9]*$')
+                              	])),
       gender: new FormControl ('', Validators.required),
       orientation: new FormControl ('', Validators.required),
       identity: new FormControl ('', Validators.required),
+      others: new FormControl ('', Validators.required),
       age: new FormControl ('', Validators.required)
 
     });
+
+    console.log(this.validation_messages.others['0']['type']);
   }
 
   ionViewDidLoad() {
