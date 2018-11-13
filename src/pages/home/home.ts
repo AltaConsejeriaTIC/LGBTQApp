@@ -23,14 +23,21 @@ export class HomePage {
   @ViewChild('fab')
   fab: FabContainer;
 
-  emergencyButtonActivate: boolean = false;
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage) {
+      storage.get('firstUseApp').then(value => {
+        if(value === null){
+          this.firstTime = true;
+          this.toggleEmergencyButton();
+        }
 
+      }).catch(err => {
+        console.error("Error en constructor, storage.get", err, err.stack);
+      });
     }
 
   public keyInfoContacts = 'infoContacts';
@@ -41,6 +48,8 @@ export class HomePage {
   public keyEmergencyMessage = 'emergencyMessage';
   public emergencyMessage="";
   public messageHasBeenSend = false;
+  public firstTime: boolean = true;
+  public emergencyButtonActivate: boolean = false;
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
@@ -164,7 +173,6 @@ export class HomePage {
   }
 
   loadInfo(){
-
     this.storage.get(this.keyEmergencyMessage).then((response) => {
       if( response){
         this.emergencyMessage = response;
