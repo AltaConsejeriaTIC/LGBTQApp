@@ -181,7 +181,7 @@ page-contact {
         font-weight: bold;
         height: 4rem;
         width: 85%;
-        color: gray;
+        color: #9B9DA9;
         border: 1px solid #E5E8E8;
         box-shadow: none;
       }
@@ -247,7 +247,7 @@ page-contact {
             background: #244064;
           }
           .offToggleIcon{
-            background: gray;
+            background: #9B9DA9;
           }
           .custom-icon{
             align-self: center;
@@ -264,7 +264,7 @@ page-contact {
           color: #1E1A42;
         }
         .offToggleText{
-          color: grey;
+          color: #9B9DA9;
         }
         .text-block{
           padding-left:0%;
@@ -300,14 +300,14 @@ page-contact {
             display: flex;
             justify-content: center;
             text-align: center;
-            color: gray;
+            color: #9B9DA9;
           }
           .check-text-delete{
             margin: 10% 12% 0% 0%;
             font-size: 1rem;
             margin-left: 18%;
             text-align: center;
-            color: gray;
+            color: #9B9DA9;
           }
         }
       }
@@ -320,7 +320,7 @@ page-contact {
   }
 
   .offToggle{
-    color: grey;
+    color: #9B9DA9;
   }
 
   .onToggleIcon{
@@ -329,7 +329,7 @@ page-contact {
   }
 
   .offToggleIcon{
-    background-color: gray;
+    background-color: #9B9DA9;
     color: #E5E8E8;
   }
 
@@ -362,7 +362,7 @@ page-contact {
 
 
   .delete-modal-component{
-    border-radius: 3%;
+    border-radius: 4%;
     display: flex;
     pointer-events: auto;
     position: absolute;
@@ -371,8 +371,8 @@ page-contact {
     // right: 5%;
     // top: 16%;
     width: 70%;
-    height: 23%;
-    max-height: 143px;
+    height: 29%;
+    max-height: 170px;
     z-index: 11;
     background: white;
     top: 41%;
@@ -380,13 +380,14 @@ page-contact {
     flex-direction: column;
 
     .confirm-text-section{
-      padding-bottom: 12%;
+      padding-bottom: 0%;
+      height: 66%;
       .confirm-delete-contact{
         display: flex;
         text-align: center;
         padding-bottom: 8%;
-        margin: 8% 10% 0% 10%;
-        color: gray;
+        margin: 14% 10% 0% 10%;
+        color: #9B9DA9;
       }
     }
     .cancel-button{
@@ -403,7 +404,7 @@ page-contact {
       margin: 0;
     }
     .form-button-confirm-contact{
-      height: 52%;
+      height: 34%;
       .cancel-contact-section{
         padding: 0;
         height: 100%;
@@ -411,14 +412,15 @@ page-contact {
         .cancel{
           padding: 0;
           margin: 0;
-          background-color: gray;
+          background-color: #A9ACBD;
           text-transform: initial;
           font-size: 1.6rem;
           font-weight: bold;
           height: 100%;
           width: 100%;
           box-shadow: none;
-          border-radius: 0px;
+          border-radius: 0%;
+          border-bottom-left-radius: 4%;
         }
       }
       .delete-contact-section{
@@ -435,7 +437,8 @@ page-contact {
           height: 100%;
           width: 100%;
           box-shadow: none;
-          border-radius: 0px;
+          border-radius: 0%;
+          border-bottom-right-radius: 4%;
         }
       }
     }
