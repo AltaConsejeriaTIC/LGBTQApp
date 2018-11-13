@@ -11,6 +11,7 @@ export class FormCensoPage {
 
   credentialsForm: FormGroup;
   modalWindow: boolean = false;
+  identityOhter: boolean = false;
 
   validation_messages = {
 'email': [
@@ -98,5 +99,15 @@ export class FormCensoPage {
     closeData(){
         this.modalWindow=false;
       }
+
+      onChangeIdentity($event){
+        console.log($event);
+        if($event == 'Otro'){
+          this.identityOhter = true;
+        }
+        else{
+          this.identityOhter = false;
+        }
+    }
 
 }

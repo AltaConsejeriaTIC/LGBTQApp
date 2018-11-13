@@ -20,7 +20,7 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
-    <ion-select [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
+    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
       <ion-option value="TI">Tarjeta de identidad</ion-option>
       <ion-option value="CC">Cedula de ciudadanía</ion-option>
     </ion-select>
@@ -126,7 +126,7 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('gender').hasError(validation_messages.gender['0']['type']) && (credentialsForm.get('gender').dirty || credentialsForm.get('gender').touched)) == true }">¿Cuál es su sexo?</ion-label>
-    <ion-select [ngClass]="{'error-box': (credentialsForm.get('gender').hasError(validation_messages.gender['0']['type']) && (credentialsForm.get('gender').dirty || credentialsForm.get('gender').touched)) == true }" formControlName="gender" type="text" placeholder="¿Cuál es su sexo?">
+    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('gender').hasError(validation_messages.gender['0']['type']) && (credentialsForm.get('gender').dirty || credentialsForm.get('gender').touched)) == true }" formControlName="gender" type="text" placeholder="¿Cuál es su sexo?">
       <ion-option value="Hombre">Hombre</ion-option>
       <ion-option value="Mujer">Mujer</ion-option>
       <ion-option value="Intersexual">Intersexual</ion-option>
@@ -143,7 +143,7 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('orientation').hasError(validation_messages.orientation['0']['type']) && (credentialsForm.get('orientation').dirty || credentialsForm.get('orientation').touched)) == true }">¿Cuál es su orientación sexual?</ion-label>
-    <ion-select [ngClass]="{'error-box': (credentialsForm.get('orientation').hasError(validation_messages.orientation['0']['type']) && (credentialsForm.get('orientation').dirty || credentialsForm.get('orientation').touched)) == true }" formControlName="orientation" type="text" placeholder="¿Cuál es su orientación sexual?">
+    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('orientation').hasError(validation_messages.orientation['0']['type']) && (credentialsForm.get('orientation').dirty || credentialsForm.get('orientation').touched)) == true }" formControlName="orientation" type="text" placeholder="¿Cuál es su orientación sexual?">
       <ion-option value="Homosexual">Homosexual</ion-option>
       <ion-option value="Heterosexual">Heterosexual</ion-option>
       <ion-option value="Bisexual">Bisexual</ion-option>
@@ -161,10 +161,10 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }">Género con el que se identifica</ion-label>
-    <ion-select [ngClass]="{'error-box': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
+    <ion-select okText="OK" cancelText="CANCELAR" (ionChange)="onChangeIdentity($event)" [ngClass]="{'error-box': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
       <ion-option value="Masculino">Masculino</ion-option>
       <ion-option value="Femenino">Femenino</ion-option>
-      <ion-option value="Transgéenero">Trangénero</ion-option>
+      <ion-option value="Transgénero">Trangénero</ion-option>
       <ion-option value="Otro">Otro</ion-option>
     </ion-select>
   </ion-item>
@@ -177,12 +177,12 @@
   </ng-container>
   </div>
 
-  <ion-item>
+  <ion-item *ngIf="identityOhter">
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }">Otros</ion-label>
     <ion-input [ngClass]="{'error-box': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }" formControlName="others" type="text" placeholder="Otros"></ion-input>
   </ion-item>
 
-  <div class="validation-errors">
+  <div class="validation-errors" *ngIf="identityOhter">
   <ng-container *ngFor="let validation of validation_messages.others" >
     <div class="error-message" *ngIf="credentialsForm.get('others').hasError(validation.type) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)">
   {{ validation.message }}
@@ -192,7 +192,7 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }">Fecha de nacimiento</ion-label>
-    <ion-datetime [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="age" placeholder="Fecha de nacimiento"></ion-datetime>
+    <ion-datetime doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="age" placeholder="Fecha de nacimiento"></ion-datetime>
     <!-- <ion-input [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" formControlName="age" type="text" placeholder="Fecha de nacimiento"></ion-input> -->
   </ion-item>
 
