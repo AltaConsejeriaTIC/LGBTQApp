@@ -30,10 +30,9 @@ export class HomePage {
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage) {
-      this.innerWidth = window.innerWidth;
+
     }
 
-  public innerWidth: any;
   public keyInfoContacts = 'infoContacts';
   public infoContacts = [];
   public idSet = new Set();
@@ -196,7 +195,6 @@ export class HomePage {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.innerWidth = window.innerWidth;
     this.slideChanged();
   }
 

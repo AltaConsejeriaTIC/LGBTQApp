@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Contacts} from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';
-import {Platform} from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { SMS } from '@ionic-native/sms';
 import { CallNumber } from '@ionic-native/call-number';
@@ -30,19 +29,16 @@ export class ContactPage {
   public isTextOff = true;
   public isEditOn = false;
   public numberOfActiveContacts = 0;
-  public deviceHeight = '0px';
+  public innerHeight = '0px';
   public isDeleteModalOn = false;
   public idToBeDeleted = 0;
-
-  // public proofArr = ['andres vargas', 'andres vargas', 'andres vargas', 'andres vargas'];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private contacts: Contacts,
-              private storage: Storage,
-              private platform: Platform) {
+              private storage: Storage) {
     this.loadInfo();
-    this.deviceHeight = platform.height()+'px';
+    this.innerHeight = window.innerHeight + 'px';
   }
 
 
@@ -71,17 +67,8 @@ export class ContactPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactPage');
-
-  }
-
   addContact(){
-
-
     this.contacts.pickContact().then( response => {
-
-      //alert("inside picking contacts");
 
       const infoContact = response['_objectInstance'];
 
@@ -119,7 +106,7 @@ export class ContactPage {
     }
   }
 
-  getIniNames( nameContact , phoneNumber ){
+  getIniNames(nameContact:String , phoneNumber ){
 
     const display = nameContact ? nameContact : phoneNumber;
     let finalIni = '';
@@ -132,10 +119,14 @@ export class ContactPage {
 
   saveDataOnCellphone(){
     this.findContacts = true;
-    this.storage.set( this.keyInfoContacts , this.infoContacts);
+    this.storage.set( this.keyInfoContacts , this.infoContacts).catch(err => {
+      console.error("Error en saveDataOnCellphone", err, err.stack);
+    });
   }
 
-  itemSelected( item ){  }
+  itemSelected( item ){
+    console.log(item)
+  }
 
   clickOnEdit(){
 
@@ -147,7 +138,9 @@ export class ContactPage {
   clickOnSave(){
     this.isTextOff = true;
     this.isEditOn = false;
-    this.storage.set( this.keyEmergencyMessage, this.emergencyMessage );
+    this.storage.set( this.keyEmergencyMessage, this.emergencyMessage ).catch(err => {
+      console.error("Error en clickOnSave", err, err.stack);
+    });
   }
 
   clickOnDelete(){
@@ -178,5 +171,10 @@ export class ContactPage {
   clickOnCancelDeleteContact(){
     this.isDeleteModalOn = false;
     this.idToBeDeleted = 0;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerHeight = window.innerHeight + 'px';
   }
 }
