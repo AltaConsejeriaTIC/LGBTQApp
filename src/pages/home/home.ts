@@ -50,6 +50,7 @@ export class HomePage {
   public messageHasBeenSend = false;
   public firstTime: boolean = true;
   public emergencyButtonActivate: boolean = false;
+  public hasPressedSendMessage = false;
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
@@ -145,31 +146,34 @@ export class HomePage {
 
   sendEmergencySMS():void {
 
-  this.sms.hasPermission().then( ()=>{
-    for( let value of this.infoContacts){
-      if( value.toggle ){
-        let phoneNumber = value.data.phoneNumbers[0].value;
-        phoneNumber = phoneNumber.replace(/-/g,'');
-        phoneNumber = phoneNumber.replace(/\s/g, '');
-        phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
-        this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
-          this.messageHasBeenSend = true;
-        }).catch(err =>{
-          console.error(err,err.stack);
-        });
+    this.hasPressedSendMessage = true;
+
+    if( this.emergencyMessage ){
+      this.sms.hasPermission().then( ()=>{
+        for( let value of this.infoContacts){
+          if( value.toggle ){
+            let phoneNumber = value.data.phoneNumbers[0].value;
+            phoneNumber = phoneNumber.replace(/-/g,'');
+            phoneNumber = phoneNumber.replace(/\s/g, '');
+            phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
+            this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
+              this.messageHasBeenSend = true;
+            }).catch(err =>{
+              console.error(err,err.stack);
+            });
 
 
-      }
+          }
+        }
+      }).catch(err =>{
+        console.error(err,err.stack);
+      });
     }
-  }).catch(err =>{
-    console.error(err,err.stack);
-  });
-
-
   }
 
   closeSendEmergencyMessage(){
     this.messageHasBeenSend = false;
+    this.hasPressedSendMessage = false;
   }
 
   loadInfo(){
