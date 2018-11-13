@@ -53,6 +53,9 @@ export class FormCensoPage {
 	],
   'age': [
 		{ type: 'required', message: 'La edad es requerida.' }
+	],
+  'education': [
+		{ type: 'required', message: 'La orientación sexual es requerida.' }
 	]
 }
 
@@ -81,7 +84,8 @@ export class FormCensoPage {
       orientation: new FormControl ('', Validators.required),
       identity: new FormControl ('', Validators.required),
       others: new FormControl ('', Validators.required),
-      age: new FormControl ('', Validators.required)
+      age: new FormControl ('', Validators.required),
+      education: new FormControl ('', Validators.required)
 
     });
 

@@ -204,6 +204,32 @@
   </ng-container>
   </div>
 
+  <ion-item>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('education').hasError(validation_messages.education['0']['type']) && (credentialsForm.get('education').dirty || credentialsForm.get('education').touched)) == true }">Último nivel educativo alcanzado</ion-label>
+    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('education').hasError(validation_messages.education['0']['type']) && (credentialsForm.get('education').dirty || credentialsForm.get('education').touched)) == true }" formControlName="education" type="text" placeholder="Último nivel educativo alcanzado">
+      <ion-option value="Ninguno">Ninguno</ion-option>
+      <ion-option value="Preescolar">Preescolar</ion-option>
+      <ion-option value="Básica primaria">Básica primaria</ion-option>
+      <ion-option value="Básica Secundaria">Básica Secundaria</ion-option>
+      <ion-option value="Media">Media</ion-option>
+      <ion-option value="Técnico">Técnico</ion-option>
+      <ion-option value="Técnologo">Técnologo</ion-option>
+      <ion-option value="Universitaria">Universitaria</ion-option>
+      <ion-option value="Especialización">Especialización</ion-option>
+      <ion-option value="Maestría">Maestría</ion-option>
+      <ion-option value="Doctorado">Doctorado</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <div class="validation-errors">
+  <ng-container *ngFor="let validation of validation_messages.education" >
+    <div class="error-message" *ngIf="credentialsForm.get('education').hasError(validation.type) && (credentialsForm.get('education').dirty || credentialsForm.get('education').touched)">
+  {{ validation.message }}
+    </div>
+  </ng-container>
+  </div>
+
   <ion-row>
     <ion-col text-center class="buttonData">
       <button ion-button block class="sendButton" (click)="sendData()">
