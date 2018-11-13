@@ -22,33 +22,53 @@
   <div class="sections">
 
     <ion-row class="title">
-        <ion-col col-2 class="icon">
-            <ion-icon name="hand"></ion-icon>
-        </ion-col>
-        <ion-col col-9>
-          <p class="sectionTitle">Eres víctima de discriminación si por tu orientación sexual o identidad de género:</p>
+        <ion-col>
+          <p class="sectionTitle">Denuncia cualquier forma de discriminación o violencia</p>
         </ion-col>
     </ion-row>
-    <ion-row>
-        <ion-col col-2>
-        </ion-col>
-        <ion-col col-8 class="list">
-          <p><span>-</span>Eres tratado de manera menos favorable.</p>
-          <p><span>-</span>No recibes un servicio adecuado.</p>
-          <p><span>-</span>Eres víctima de violencia física, verbal, sicológica o simbólica.</p>
-
-          <p class="denunciaText">Si vives o has vivido una de estas situaciones y deseas formalizar una denuncia, ingresa al siguiente formulario. La Dirección de Diversidad Sexual iniciará el seguimiento y trámite respectivo.</p>
-
-        </ion-col>
+    <ion-row class="list">
+          <p class="denunciaText">Aquí hay algunos ejemplos de discriminación y violencia que puedes denunciar:</p>
     </ion-row>
+
+    <ion-list class="accordion-list">
+
+        <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+
+          <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+            <ion-icon item-left name='{{item.icon}}'></ion-icon>
+            <ion-icon item-right name="ios-arrow-down" *ngIf="!item.open"></ion-icon>
+            <ion-icon item-right name="ios-arrow-up" *ngIf="item.open"></ion-icon>
+              <p>{{ item.name }}</p>
+          </button>
+
+          <ion-list *ngIf="item.children && item.open" no-lines>
+
+            <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+
+                <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                    <img src="{{child.image}}">
+                    <h2>{{ child.information }}</h2>
+                    <p>Teléfono: </p>
+                    <p>{{ child.phone }}</p>
+                    <p>Correo electrónico: </p>
+                    <p>{{ child.mail }}</p>
+                </ion-item>
+
+            </ion-list-header>
+
+        </ion-list>
+
+      </ion-list-header>
+
+    </ion-list>
 
     <ion-row class="formButton">
         <button ion-button class="denunciaButton" (click)="goToFormDenuncia()">Ir al formulario de denuncia</button>
     </ion-row>
 
-  </div>
+    <div class="bottomLine">
 
-  <div class="bottomLine">
+    </div>
 
   </div>
 
