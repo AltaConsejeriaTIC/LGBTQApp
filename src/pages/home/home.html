@@ -103,10 +103,10 @@
                       Llama al 123 o alerta a tus contactos en caso de sentirte en riesgo
                     </ion-card-content>
 
-                  <div class="ion-fab-label fab-list-active">
-                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Configuración del botón</p>
-                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Enviar Mensaje</p>
-                    <p class="fab fab-in-list" [class.show]="emergencyButtonActivate">Llamar al 123</p >
+                  <div *ngIf="emergencyButtonActivate" class="ion-fab-label fab-list-active">
+                    <p class="fab fab-in-list show">Configuración del botón</p>
+                    <p class="fab fab-in-list show">Enviar Mensaje</p>
+                    <p class="fab fab-in-list show">Llamar al 123</p >
                   </div>
                 </ion-col>
 
