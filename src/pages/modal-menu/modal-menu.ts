@@ -3,12 +3,6 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { QuienesSomosPage } from '../quienes-somos/quienes-somos';
 import { FormularioPage } from '../formulario/formulario';
 
-/**
- * Generated class for the ModalMenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-modal-menu',
@@ -23,13 +17,17 @@ export class ModalMenuPage {
 
   goToQuienesSomos() {
     this.navCtrl.push(QuienesSomosPage);
+    this.viewCtrl.dismiss();
   }
 
   goToFormulario() {
     this.navCtrl.push(FormularioPage);
+    this.viewCtrl.dismiss();
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
+
+
 }
