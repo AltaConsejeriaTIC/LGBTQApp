@@ -20,28 +20,58 @@
 
   <form [formGroup]="denunciaForm">
 
-  <ion-item>
-    <ion-label stacked>Fecha del suceso</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['date']"
-        type="text" placeholder="Fecha del suceso"></ion-input>
+    <ion-item>
+        <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }">Fecha del suceso</ion-label>
+        <ion-input [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" formControlName="date" type="text" placeholder="Nombres"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Lugar del suceso</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['place']"
-        type="text" placeholder="Lugar del suceso"></ion-input>
-  </ion-item>
+    <div class="validation-errors">
+    <ng-container *ngFor="let validation of validation_messages.date" >
+      <div class="error-message" *ngIf="denunciaForm.get('date').hasError(validation.type) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)">
+    {{ validation.message }}
+      </div>
+      <div class="error-message" *ngIf="denunciaForm.get('date').hasError(validation.pattern) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)">
+    {{ validation.message }}
+      </div>
+    </ng-container>
+  </div>
 
   <ion-item>
-    <ion-label stacked>Descripción de la situación de discriminación</ion-label>
-    <ion-textarea [formControl]="denunciaForm.controls['description']"
-        type="text" placeholder="Descripción de la situación de discriminación"></ion-textarea>
-  </ion-item>
+      <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('place').hasError(validation_messages.place['0']['type'])) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)) == true }">Lugar del suceso</ion-label>
+      <ion-input [ngClass]="{'error-box': ((denunciaForm.get('place').hasError(validation_messages.place['0']['type'])) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)) == true }" formControlName="place" type="text" placeholder="Nombres"></ion-input>
+</ion-item>
+
+  <div class="validation-errors">
+  <ng-container *ngFor="let validation of validation_messages.place" >
+    <div class="error-message" *ngIf="denunciaForm.get('place').hasError(validation.type) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)">
+  {{ validation.message }}
+    </div>
+    <div class="error-message" *ngIf="denunciaForm.get('place').hasError(validation.pattern) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)">
+  {{ validation.message }}
+    </div>
+  </ng-container>
+</div>
+
+<ion-item>
+    <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('description').hasError(validation_messages.description['0']['type'])) && (denunciaForm.get('description').dirty || denunciaForm.get('description').touched)) == true }">Descripción de la situación de discriminación</ion-label>
+    <ion-textarea [ngClass]="{'error-box': ((denunciaForm.get('description').hasError(validation_messages.description['0']['type'])) && (denunciaForm.get('description').dirty || denunciaForm.get('description').touched)) == true }" formControlName="description" type="text" placeholder="Descripción de la situación de discriminación"></ion-textarea>
+</ion-item>
+
+<div class="validation-errors">
+<ng-container *ngFor="let validation of validation_messages.description" >
+  <div class="error-message" *ngIf="denunciaForm.get('description').hasError(validation.type) && (denunciaForm.get('description').dirty || denunciaForm.get('description').touched)">
+{{ validation.message }}
+  </div>
+  <div class="error-message" *ngIf="denunciaForm.get('description').hasError(validation.pattern) && (denunciaForm.get('description').dirty || denunciaForm.get('description').touched)">
+{{ validation.message }}
+  </div>
+</ng-container>
+</div>
 
   <ion-row>
     <ion-col text-center class="buttonData">
       <button ion-button block class="sendButton" (click)="sendData()">
-        Continuar con la denuncia
+        Enviar denuncia
       </button>
     </ion-col>
   </ion-row>
