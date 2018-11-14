@@ -159,3 +159,18 @@
     </div>
 </div>
 
+<div *ngIf="hasPressedSendMessage && emergencyMessage">
+  <ion-backdrop showBackdrop="false" class="delete-contact-background">
+
+    </ion-backdrop>
+
+    <div class="delete-modal-component-new">
+        <div class="picture-image-block">
+            <img class="picture-resize" src="../assets/icon/group2.svg">
+        </div>
+
+        <ion-row class="confirm-text-section">
+            <p class="confirm-delete-contact-new">Se está enviando el mensaje de emergencia.</p>
+        </ion-row>
+    </div>
+</div>

@@ -33,6 +33,8 @@ export class ContactPage {
   public isDeleteModalOn = false;
   public idToBeDeleted = 0;
 
+  // public newArray = [ 'Aaaaa Vvvvvv', 'Aaaaa Vvvvvv', 'Aaaaa Vvvvvv', 'Aaaaa Vvvvvv', 'Aaaaa Vvvvvv'];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private contacts: Contacts,

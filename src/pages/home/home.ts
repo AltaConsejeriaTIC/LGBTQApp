@@ -158,16 +158,22 @@ export class HomePage {
             phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
             this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
               this.messageHasBeenSend = true;
+              this.hasPressedSendMessage = false;
             }).catch(err =>{
               console.error(err,err.stack);
+              alert( ' Ocurrio un error enviando el mensaje');
+              this.hasPressedSendMessage = false;
             });
-
-
           }
         }
       }).catch(err =>{
         console.error(err,err.stack);
+        alert( 'La App no tiene permisos para enviar mensajes');
+        this.hasPressedSendMessage = false;
       });
+    }
+    else{
+      this.hasPressedSendMessage = false;
     }
   }
 
