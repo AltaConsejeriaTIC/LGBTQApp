@@ -93,13 +93,7 @@ page-puntos {
 
   }
 
-  .accordion-list {
-          background: color($colors, light);
-          ion-icon.icon.icon-md, .item-ios ion-icon{
-            color: #2C347E;
-          }
 
-      }
       ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
       ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
       ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
@@ -133,15 +127,16 @@ page-puntos {
           margin-bottom: 0px;
 
       }
-      .section-active {
-      }
 
       .item-inner {
-    padding-right: 0px !important;
-}
+          padding-right: 0px !important;
+    }
 
       .accordion-list{
         background-color: #004FC6;
+        ion-icon.icon.icon-md, .item-ios ion-icon{
+          color: #2C347E;
+        }
       }
 
       .child {

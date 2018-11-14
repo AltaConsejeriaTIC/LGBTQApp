@@ -31,6 +31,9 @@ page-form-denuncia {
   ion-content,
   .scroll-content {
     padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .toolbar-background {
@@ -71,6 +74,10 @@ page-form-denuncia {
       margin: 0;
     }
 
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+          box-shadow: unset;
+    }
+
     .item-md{
       padding: 0 12%;
     }
@@ -92,26 +99,50 @@ page-form-denuncia {
       box-shadow: unset
     }
 
-    .item-input-has-focus .label-md[stacked], .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+    .item-input-has-focus .label-md[stacked], .item-input .label-md, .item-select .label-md, .item-datetime .label-md, .datetime-md .datetime-placeholder{
       font-size: 1.3rem;
       color: #747783;
     }
 
-    .item-label-stacked .text-input-md{
+    .error-text{
+      color: #BB0847 !important;
+    }
+
+    .error-message{
+      color: #BB0847 !important;
+      padding-left: 12%;
+    }
+
+    .error-box{
+      border: 1px solid #BB0847 !important;
+    }
+
+    .item-label-stacked .text-input-md, .datetime-md .datetime-placeholder, .select-md .select-placeholder{
       font-weight: bold;
       font-size: 1.4rem;
+      color: #535662;
     }
 
     .text-input-md{
-      padding: 1vh;
     }
 
     .item-md.item-block .item-inner {
     padding-right: 0px;
 }
 
+ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md{
+  border: 1px solid #cbcbcb;
+  margin: 1vh 0px;
+  padding-left: 3%;
+}
+
+.item-label-stacked ion-datetime{
+  padding: 0 0;
+  padding: 1vh 3%;
+}
+
+
     input.text-input.text-input-md{
-      border: 1px solid #CBCBCB;
       width: 100%;
     }
 

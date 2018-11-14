@@ -20,41 +20,98 @@
 
   <form [formGroup]="denunciaForm">
 
-  <ion-item>
-    <ion-label stacked>Nombres</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['firstName']"
-        type="text" placeholder="Nombres"></ion-input>
+    <ion-item>
+        <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('firstName').hasError(this.validation_messages.firstName['1']['type']) || (denunciaForm.get('firstName').hasError(validation_messages.firstName['0']['type']))) && (denunciaForm.get('firstName').dirty || denunciaForm.get('firstName').touched)) == true }">Nombres</ion-label>
+        <ion-input [ngClass]="{'error-box': ((denunciaForm.get('firstName').hasError(this.validation_messages.firstName['1']['type']) || (denunciaForm.get('firstName').hasError(validation_messages.firstName['0']['type']))) && (denunciaForm.get('firstName').dirty || denunciaForm.get('firstName').touched)) == true }" formControlName="firstName" type="text" placeholder="Nombres"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Apellidos</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['lastName']"
-        type="text" placeholder="Apellidos"></ion-input>
-  </ion-item>
+    <div class="validation-errors">
+  	<ng-container *ngFor="let validation of validation_messages.firstName" >
+  		<div class="error-message" *ngIf="denunciaForm.get('firstName').hasError(validation.type) && (denunciaForm.get('firstName').dirty || denunciaForm.get('firstName').touched)">
+  	{{ validation.message }}
+  		</div>
+      <div class="error-message" *ngIf="denunciaForm.get('firstName').hasError(validation.pattern) && (denunciaForm.get('firstName').dirty || denunciaForm.get('firstName').touched)">
+    {{ validation.message }}
+      </div>
+  	</ng-container>
+  </div>
 
   <ion-item>
-    <ion-label stacked>Tipo de documento de identidad</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['documentType']"
-        type="text" placeholder="Tipo de documento de identidad"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('lastName').hasError(this.validation_messages.lastName['1']['type']) || (denunciaForm.get('lastName').hasError(validation_messages.lastName['0']['type']))) && (denunciaForm.get('lastName').dirty || denunciaForm.get('lastName').touched)) == true }">Apellidos</ion-label>
+    <ion-input [ngClass]="{'error-box': ((denunciaForm.get('lastName').hasError(this.validation_messages.lastName['1']['type']) || (denunciaForm.get('lastName').hasError(validation_messages.lastName['0']['type']))) && (denunciaForm.get('lastName').dirty || denunciaForm.get('lastName').touched)) == true }" formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Número de documento</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['documentNumber']"
-        type="text" placeholder="Número de documento"></ion-input>
-  </ion-item>
+  <div class="validation-errors">
+  <ng-container *ngFor="let validation of validation_messages.lastName" >
+    <div class="error-message" *ngIf="denunciaForm.get('lastName').hasError(validation.type) && (denunciaForm.get('lastName').dirty || denunciaForm.get('lastName').touched)">
+  {{ validation.message }}
+    </div>
+    <div class="error-message" *ngIf="denunciaForm.get('lastName').hasError(validation.pattern) && (denunciaForm.get('lastName').dirty || denunciaForm.get('lastName').touched)">
+  {{ validation.message }}
+    </div>
+  </ng-container>
+  </div>
 
   <ion-item>
-    <ion-label stacked>Correo electrónico</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['email']"
-        type="email" placeholder="Correo electrónico"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (denunciaForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (denunciaForm.get('documentType').dirty || denunciaForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
+    <ion-select [ngClass]="{'error-box': (denunciaForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (denunciaForm.get('documentType').dirty || denunciaForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
+      <ion-option value="TI">Tarjeta de identidad</ion-option>
+      <ion-option value="CC">Cedula de ciudadanía</ion-option>
+    </ion-select>
   </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Teléfono celular</ion-label>
-    <ion-input [formControl]="denunciaForm.controls['phone']"
-        type="tel" placeholder="Teléfono celular"></ion-input>
+  <div class="validation-errors">
+	<ng-container *ngFor="let validation of validation_messages.documentType" >
+		<div class="error-message" *ngIf="denunciaForm.get('documentType').hasError(validation.type) && (denunciaForm.get('documentType').dirty || denunciaForm.get('documentType').touched)">
+	{{ validation.message }}
+		</div>
+	</ng-container>
+</div>
+
+<ion-item>
+  <ion-label stacked [ngClass]="{'error-text': (denunciaForm.get('documentNumber').hasError(validation_messages.documentNumber['0']['type']) && (denunciaForm.get('documentNumber').dirty || denunciaForm.get('documentNumber').touched)) == true }">Número de documento</ion-label>
+  <ion-input [ngClass]="{'error-box': (denunciaForm.get('documentNumber').hasError(validation_messages.documentNumber['0']['type']) && (denunciaForm.get('documentNumber').dirty || denunciaForm.get('documentNumber').touched)) == true }" formControlName="documentNumber" type="text" placeholder="Número de documento"></ion-input>
+</ion-item>
+
+  <div class="validation-errors">
+	<ng-container *ngFor="let validation of validation_messages.documentNumber" >
+		<div class="error-message" *ngIf="denunciaForm.get('documentNumber').hasError(validation.type) && (denunciaForm.get('documentNumber').dirty || denunciaForm.get('documentNumber').touched)">
+	{{ validation.message }}
+		</div>
+	</ng-container>
+</div>
+
+<ion-item>
+    <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('email').hasError(this.validation_messages.email['1']['type']) || (denunciaForm.get('email').hasError(validation_messages.email['0']['type']))) && (denunciaForm.get('email').dirty || denunciaForm.get('email').touched)) == true }">Correo electrónico</ion-label>
+    <ion-input [ngClass]="{'error-box': ((denunciaForm.get('email').hasError(this.validation_messages.email['1']['type']) || (denunciaForm.get('email').hasError(validation_messages.email['0']['type']))) && (denunciaForm.get('email').dirty || denunciaForm.get('email').touched)) == true }" formControlName="email" type="text" placeholder="Correo electrónico"></ion-input>
   </ion-item>
+
+<div class="validation-errors">
+<ng-container *ngFor="let validation of validation_messages.email" >
+  <div class="error-message" *ngIf="denunciaForm.get('email').hasError(validation.type) && (denunciaForm.get('email').dirty || denunciaForm.get('email').touched)">
+{{ validation.message }}
+  </div>
+  <div class="error-message" *ngIf="denunciaForm.get('email').hasError(validation.pattern) && (denunciaForm.get('email').dirty || denunciaForm.get('email').touched)">
+{{ validation.message }}
+  </div>
+</ng-container>
+</div>
+
+<ion-item>
+  <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (denunciaForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (denunciaForm.get('phone').dirty || denunciaForm.get('phone').touched)) == true }">Teléfono fijo o celular</ion-label>
+  <ion-input [ngClass]="{'error-box': ((denunciaForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (denunciaForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (denunciaForm.get('phone').dirty || denunciaForm.get('phone').touched)) == true }" formControlName="phone" type="text" placeholder="Teléfono fijo o celular"></ion-input>
+</ion-item>
+
+  <div class="validation-errors">
+  <ng-container *ngFor="let validation of validation_messages.phone" >
+    <div class="error-message" *ngIf="denunciaForm.get('phone').hasError(validation.type) && (denunciaForm.get('phone').dirty || denunciaForm.get('phone').touched)">
+  {{ validation.message }}
+    </div>
+    <div class="error-message" *ngIf="denunciaForm.get('phone').hasError(validation.pattern) && (denunciaForm.get('phone').dirty || denunciaForm.get('phone').touched)">
+  {{ validation.message }}
+    </div>
+  </ng-container>
+  </div>
 
 
 
