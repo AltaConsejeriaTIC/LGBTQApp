@@ -172,9 +172,6 @@ export class HomePage {
         this.hasPressedSendMessage = false;
       });
     }
-    else{
-      this.hasPressedSendMessage = false;
-    }
   }
 
   closeSendEmergencyMessage(){
