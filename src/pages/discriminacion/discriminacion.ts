@@ -12,59 +12,63 @@ export class DiscriminacionPage {
 
   items = [
         {
-            "name": "Casa refugio LGBTI",
-            "icon": "ios-home",
+            "name": "Discriminación",
+            "icon": "warning",
             "children": [
                 {
-                    "image":"../assets/imgs/home.png",
-                    "information": "Hogar transitorio para personas LGBTI que han sido víctimas de violencia y no tienen una red de apoyo. En esta casa se comienza un proceso de restablecimiento de derechos, si necesitas entrar a esta casa puedes acudir con los siguientes datos de contacto:",
-                    "description": "Sector Salud - CAMI Zampar Mendoza",
-                    "phone": "(57) 3444484",
-                    "address": "Diagonal 34 No. 5 - 43",
-                    "mail": "casarefugio@gobiernobogota.gov.co"
+                    "information1": "• Eres víctima de discriminación cuando (en tu hogar, en tu trabajo, institución educativa, de salud o en un espacio público)",
+                    "information2": "• Recibes trato desfavorable por ser Lesbiana, Gay, Bisexual, Transgénero o Intersexual",
+                    "information3": "• Te niegan el acceso al empleo, a la atención médica, a la educación o a espacios en establecimientos públicos",
+                    "information4": "• Recibes represalias por demostración de afecto en público",
+                    "information5": "• Cuando de manera repetida y sistemática se burlan de tus expresiones, gestos o ropa",
+                    "information6": "• O cuando se presentan algunas de las violencias siguientes"
+
                 }
 
             ]
         },
         {
-            "name": "Centro comunitario Teusaquillo",
-            "icon": "ios-home",
+            "name": "Violencia Física",
+            "icon": "warning",
             "children": [
               {
-                "image":"../assets/imgs/home.png",
-                "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
-                "description": "Sector Salud - CAMI Zampar Mendoza",
-                "phone": "(57) 3444484",
-                "address": "Diagonal 34 No. 5 - 43",
-                "mail": "casarefugio@gobiernobogota.gov.co"
+                "information1": "• Violación al derecho a la vida",
+                "information2": "• Actos como Empujones, palizas, lanzamiento de botellas, piedras u otros objetos",
+                "information3": "• Ataques multitudinarios",
+                "information4": "• Violación a la integridad personal",
+                "information5": "• Violación sexual, privación de la libertad, tortura, tratos crueles, inhumanos y degradantes"
               }
             ]
         },
         {
-            "name": "Centro comunitario los Mártires",
-            "icon": "ios-home",
+            "name": "Violencia en servicios de salud",
+            "icon": "warning",
             "children": [
                 {
-                  "image":"../assets/imgs/home.png",
-                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
-                  "description": "Sector Salud - CAMI Zampar Mendoza",
-                  "phone": "(57) 3444484",
-                  "address": "Diagonal 34 No. 5 - 43",
-                  "mail": "casarefugio@gobiernobogota.gov.co"
+                  "information1": "• Negligencia en prestación de servicios de salud",
+                  "information2": "• Atención médica necesaria negada, rechazo del personal médico al contacto físico necesario o la utilización de precauciones excesivas, se culpan a los pacientes por su estado de salud, utilizan lenguaje grosero, abusivo o abusan físicamente"
                 }
             ]
         },
         {
-            "name": "Unidad contra la discriminación UCD",
-            "icon": "ios-home",
+            "name": "Violencia simbólica",
+            "icon": "warning",
             "children": [
                 {
-                  "image":"../assets/imgs/home.png",
-                  "information": "Texto descriptivo que le indique a los usuarios qué clase de beneficios van a recibir en las instituciones referenciadas.",
-                  "description": "Sector Salud - CAMI Zampar Mendoza",
-                  "phone": "(57) 3444484",
-                  "address": "Diagonal 34 No. 5 - 43",
-                  "mail": "casarefugio@gobiernobogota.gov.co"
+                  "information1": "• Discurso de Odio e incitación a la violencia",
+                  "information2": "• Trato hostil, abusivo, grosero o humillante",
+                  "information3": "• Intentos de “modificar” la orientación sexual y la identidad de género."
+                }
+            ]
+        },
+        {
+            "name": "Violencia psicológica",
+            "icon": "warning",
+            "children": [
+                {
+                  "information1": "• Cuando degradan tu manera de pensar o actuar",
+                  "information2": "• Amenazas o intimidación para ocultar tu orientación sexual o identidad de género.",
+                  "information3": "• No permitir expresarte libremente."
                 }
             ]
         }

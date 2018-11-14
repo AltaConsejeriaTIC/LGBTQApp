@@ -46,12 +46,12 @@
             <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
 
                 <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
-                    <img src="{{child.image}}">
-                    <h2>{{ child.information }}</h2>
-                    <p>Teléfono: </p>
-                    <p>{{ child.phone }}</p>
-                    <p>Correo electrónico: </p>
-                    <p>{{ child.mail }}</p>
+                    <p>{{ child.information1 }}</p>
+                    <p>{{ child.information2 }}</p>
+                    <p *ngIf="child.information3">{{ child.information3 }}</p>
+                    <p *ngIf="child.information4">{{ child.information4 }}</p>
+                    <p *ngIf="child.information5">{{ child.information5 }}</p>
+                    <p *ngIf="child.information6">{{ child.information6 }}</p>
                 </ion-item>
 
             </ion-list-header>

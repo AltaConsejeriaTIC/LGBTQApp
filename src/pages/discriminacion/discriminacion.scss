@@ -92,14 +92,23 @@ page-discriminacion {
         .icon{
             text-align: center;
             font-size: 2rem;
+
         }
         .sectionTitle{
           font-size: 1.8rem;
-          padding: 0 0 0 5%;
+          padding: 0 0 0 8%;
           margin: 0;
         }
       }
+      ion-row.list.row {
+        position: relative;
+        padding-bottom: 5%;
+      }
+      ion-list-header.item.item-md.list-header.list-header-md {
+        border-top: 0;
+}
       .list {
+
         p{
           color: #727689;
           font-size: 1.45rem;
@@ -112,11 +121,25 @@ page-discriminacion {
       }
       .denunciaText{
         margin: 0;
-        padding: 4% 7% 0 7%;
+        padding: 4% 7% 0 10%;
         line-height: 3.8vh;
         color: #727689;
         font-size: 1.3rem;
       }
+    }
+    .list:before{
+      background-color: lightgray;
+      content: '';
+      width: 90%;
+      position: absolute;
+      left: 5%;
+      height: 1px;
+      bottom: 1px;
+    }
+        ion-icon.icon.icon-md.ion-md-warning.item-icon, ion-icon.icon.icon-ios.ion-ios-warning.item-icon {
+        margin: 0 5% 0 0;
+        display: flex;
+        align-items: center;
     }
   }
   @media (max-height: 500px){
@@ -182,9 +205,6 @@ page-discriminacion {
 
   button.item.item-block.item-md.section, button.item.item-block.item-md.section-active, button.item.item-block.item-ios.section-active, button.item.item-block.item-ios.section {
       height: 12vh;
-  }
-
-  button.item.item-block.item-md.section {
     padding-left: 9%;
     padding-right: 3%;
 }
@@ -217,16 +237,11 @@ page-discriminacion {
       .item-inner>.input-wrapper>.label>p{
             padding-top: 5%;
             font-size: 1.4rem;
-            padding-left: 8%;
+            padding-left: 10%;
             text-transform: initial;
+            font-weight: normal;
       }
-        .item-inner>.input-wrapper>.label>p:nth-of-type(2), .item-inner>.input-wrapper>.label>p:nth-of-type(4) {
-            padding-top: 0%;
-    }
-      .item-inner>.input-wrapper>.label>p:nth-child(odd){
-        color: #505050;
-        font-weight: 400;
-      }
+
   }
   .label {
       margin: 0px;
@@ -249,13 +264,12 @@ page-discriminacion {
   }
 
   .item-md p, .item-ios p {
-
-white-space: normal;
-padding-right: 25%;
-color: #363B56;
-font-weight: bold;
-font-size: 1.65rem;
-}
+    white-space: normal;
+    padding-right: 8%;
+    color: #363B56;
+    font-weight: bold;
+    font-size: 1.65rem;
+    }
 
 
 ion-icon.icon.icon-md.ion-ios-arrow-down.item-icon, ion-icon.icon.icon-md.ion-ios-arrow-up.item-icon {
