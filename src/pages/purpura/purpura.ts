@@ -16,7 +16,7 @@ export class PurpuraPage {
   }
 
   doCallNumber(){
-    this.callNumber.callNumber('01 8000 112 137', true);
+    this.callNumber.callNumber('018000112137', true);
   }
 
 }
