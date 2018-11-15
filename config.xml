@@ -87,6 +87,12 @@
     <plugin name="cordova-plugin-geolocation" spec="~4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="ToTrack" />
     </plugin>
+    <edit-config file="*-Info.plist" mode="merge" target="NSContactsUsageDescription">
+        <string>necesita acceso a los contactos para poder ser agregados</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSSupportsPurgeableLocalStorage">
+        <string>necesita acceso a la memoria del teléfono </string>
+    </edit-config>
     <plugin name="cordova-plugin-contacts" spec="3.0.1" />
     <plugin name="cordova-sqlite-storage" spec="2.5.0" />
     <plugin name="cordova-plugin-x-socialsharing" spec="5.4.1" />
