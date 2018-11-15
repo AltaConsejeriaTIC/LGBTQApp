@@ -16,7 +16,7 @@ export class ArcoirisPage {
   }
 
   doCallNumber(){
-    this.callNumber.callNumber('335 80 66', true);
+    this.callNumber.callNumber('0313358066', true);
   }
 
 }

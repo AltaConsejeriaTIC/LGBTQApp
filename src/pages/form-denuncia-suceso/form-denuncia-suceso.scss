@@ -24,7 +24,7 @@ page-form-denuncia-suceso {
       justify-content: space-between;
       align-items: center;
 
-      ion-icon.icon.icon-md{
+      ion-icon.icon.icon-md, ion-icon.icon.icon-ios{
         padding-top: 10%;
         font-size: 4rem;
         color: #2ABB55;
@@ -141,32 +141,34 @@ page-form-denuncia-suceso {
       margin: 0;
     }
 
-    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-ios.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
           box-shadow: unset;
     }
 
-    .item-md{
+    .item-md, .item-ios{
       padding: 0 12%;
     }
 
-    .item-md.item-block .item-inner{
+    .item-md.item-block .item-inner, .item-ios.item-block .item-inner{
       border-bottom: 0;
     }
-    .item-md.item-input.item-input-has-focus .item-inner,  .item-md.item-input.item-has-focus .item-inner{
+    .item-md.item-input.item-input-has-focus .item-inner,  .item-md.item-input.item-has-focus .item-inner, .item-ios.item-input.item-input-has-focus .item-inner,  .item-ios.item-input.item-has-focus .item-inner{
         border-bottom: 0;
         border-bottom-color: transparent;
         -webkit-box-shadow: unset;
         box-shadow: unset
     }
 
-    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .item-ios.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-ios.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
       border-bottom: 0;
       border-bottom-color: transparent;
       -webkit-box-shadow: unset;
       box-shadow: unset
     }
 
-    .item-input-has-focus .label-md[stacked], .item-input .label-md, .item-select .label-md, .item-datetime .label-md, .datetime-md .datetime-placeholder{
+    .item-input-has-focus .label-md[stacked], .item-input .label-md, .item-select .label-md, .item-datetime .label-md, .datetime-md .datetime-placeholder,
+    .item-input-has-focus .label-ios[stacked], .item-input .label-ios, .item-select .label-ios, .item-datetime .label-ios, .datetime-ios .datetime-placeholder{
       font-size: 1.3rem;
       color: #747783;
     }
@@ -184,20 +186,17 @@ page-form-denuncia-suceso {
       border: 1px solid #BB0847 !important;
     }
 
-    .item-label-stacked .text-input-md, .datetime-md .datetime-placeholder, .select-md .select-placeholder{
+    .item-label-stacked .text-input-md, .datetime-md .datetime-placeholder, .select-md .select-placeholder, .item-label-stacked .text-input-ios, .datetime-ios .datetime-placeholder, .select-ios .select-placeholder{
       font-weight: bold;
       font-size: 1.4rem;
       color: #535662;
     }
 
-    .text-input-md{
-    }
-
-    .item-md.item-block .item-inner {
+    .item-md.item-block .item-inner, .item-ios.item-block .item-inner {
     padding-right: 0px;
 }
 
-ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, ion-textarea.input{
+ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, ion-textarea.input, ion-select.select.select-ios,{
   border: 1px solid #cbcbcb;
   margin: 1vh 0px;
   padding-left: 3%;
@@ -208,7 +207,7 @@ ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, 
   padding: 1vh 3%;
 }
 
-    input.text-input.text-input-md{
+    input.text-input.text-input-md, input.text-input.text-input-ios{
       width: 100%;
     }
 
@@ -218,7 +217,7 @@ ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, 
     margin-bottom: 5%;
   }
 
-  textarea.text-input.text-input-md {
+  textarea.text-input.text-input-md, textarea.text-input.text-input-ios {
     height: 26.1vh;
 }
 
