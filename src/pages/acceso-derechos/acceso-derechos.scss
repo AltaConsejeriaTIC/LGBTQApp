@@ -1,5 +1,4 @@
 page-acceso-derechos {
-
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
@@ -11,9 +10,9 @@ page-acceso-derechos {
   }
 
   .toolbar{
-    .icon{
-      color: white !important;
-    }
+  .icon{
+    color: white !important;
+  }
   }
 
   ion-content,
@@ -22,204 +21,150 @@ page-acceso-derechos {
   }
 
   .toolbar-background {
-    background-color: #004FC6;
+    background-color: #004FC6;;
   }
 
   .bar-button-default,
   .toolbar-title {
-      color: #9BC3FF !important;
+    color: #9BC3FF !important;
   }
   .scroll-content{
-    background-color: #004FC6;
+    background-color: #004FC6;;
   }
 
-  .banner{
-    background-color: #004FC6;
-    position: relative;
-    height: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    .banner{
+      background-color: #004FC6;;
+      position: relative;
+      height: 37%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
 
-    ion-icon{
-      font-size: 4.4rem;
-    }
-
-    .bannerTitle{
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 2rem;
-      margin: 0 15%;
-      text-align: center;
-    }
-
-    .bannerContent{
-      text-align: center;
-      margin:3% 10%;
-      color: #9BC3FF;
-      font-size: 1.45rem;
-    }
-    @media (max-height: 500px){
-      .bannerContent{
-        font-size: 1.3rem;
-      }
-    }
-  }
-
-  .sections{
-    position: relative;
-    border-top-left-radius: 6% 5%;
-    border-top-right-radius: 6% 5%;
-    background-color: white;
-    height: 75%;
-    padding-top: 5%;
-
-  }
-
-  .accordion-list {
-          background: color($colors, light);
-          ion-icon.icon.icon-md, .item-ios ion-icon{
-            color: #2C347E;
-          }
-
-      }
-      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
-      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
-      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
-      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
-        padding: 2% 2% 5% 7%  !important;
+      ion-icon{
+        font-size: 4.4rem;
       }
 
-      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
-      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
-      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
-      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
-        padding: 9% 2% 5% 7%;
-      }
-
-      .list-header-md{
-        margin-bottom: 0;
-      }
-      .section {
-          background: #fff;
-          color: #000;
-          margin-bottom: 0px;
-
-      }
-      .section-active {
-      }
-
-      .item-inner {
-    padding-right: 0px !important;
-}
-
-button.item.item-block.item-ios.section-active > .item-inner:before{
-  background-color: lightgray;
-    content: '';
-    width: 100%;
-    position: absolute;
-    left: 0%;
-    height: 2px;
-    bottom: 0px;
-}
-
-      .accordion-list{
-        background-color: #004FC6;
-      }
-
-
-      .child {
-          background: #e8e7e6;
-          color: #000;
-          margin-bottom: 4px;
-      }
-      .child-item {
-          background: white;
-          padding: 7%;
-          h2{
-            color: #505050;
-            font-size: 1.4rem;
-            line-height: 3.5vh;
-            position: relative;
-            padding: 0vh 2vh 3vh;
-            text-transform: initial;
-          }
-          h2:before{
-            background-color: lightgray;
-            content: '';
-            width: 100%;
-            position: absolute;
-            left: 0;
-            height: 1px;
-            bottom: 0px;
-          }
-          .item-inner>.input-wrapper>.label>p{
-                padding-top: 5%;
-                font-size: 1.4rem;
-                padding-left: 4%;
-                text-transform: initial;
-          }
-            .item-inner>.input-wrapper>.label>p:nth-of-type(3), .item-inner>.input-wrapper>.label>p:nth-of-type(5) {
-                padding-top: 0%;
+      @media (max-height: 500px){
+        ion-icon{
+          font-size: 3rem;
         }
-          .item-inner>.input-wrapper>.label>p:nth-child(odd){
-            color: #505050;
-            font-weight: 400;
-          }
-      }
-      .label {
-          margin: 0px;
-
-      }
-      .list {
-          margin-bottom: 0px;
       }
 
-      .item-inner:before{
+      .bannerTitle{
+        text-transform: uppercase;
+        font-weight: 800;
+        text-align: center;
+        margin: 2% 20%;
+      }
+
+      .bannerContent{
+        text-align: center;
+        margin:0 10%;
+        color: #9BC3FF;;
+        font-size: 1.45rem;
+      }
+      @media (max-height: 500px){
+        .bannerContent{
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .sections{
+      position: relative;
+      border-top-left-radius: 8% 8%;
+      border-top-right-radius: 8% 8%;
+      background-color: white;
+      .section{
+        height: 18%;
+        position: relative;
+        .sectionTitle{
+          color: #363B56;
+          font-weight: bold;
+          font-size: 1.7rem;
+        }
+        @media (max-height: 500px){
+            .sectionTitle{
+                font-size: 1.5rem;
+                margin-top: 3%;
+            }
+        }
+        .sectionContent{
+          margin-top: 2%;
+          color: #727689;
+        }
+        @media (max-height: 500px){
+            .sectionContent{
+                  font-size: 1.1rem;
+            }
+        }
+      }
+
+      .section:after{
         background-color: lightgray;
         content: '';
         width: 90%;
         position: absolute;
         left: 5%;
+        bottom: 0;
         height: 1px;
-        bottom: 0px;
+      }
+      .politicaPublica, .tusDerechos, .puntosAtencion{
+          display: flex;
+          align-items: center;
+          .icon{
+            text-align: center;
+            font-size: 2.8rem;
+              color: #363B56;
+          }
+          .arrow{
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: row-reverse;
+              text-align: center;
+              font-size: 3.8rem;
+              margin-left: 4%;
+              color: #363B56;
+              .icon{
+                font-size: 3.8rem;
+              }
+          }
       }
 
-      .item-md p, .item-ios p {
+    }
 
-    white-space: normal;
-    padding-right: 25%;
-    color: #363B56;
-    font-weight: bold;
-    font-size: 1.65rem;
-}
+    .tusDerechos{
+      position: relative;
+    }
 
-ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(6)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
-ion-list.list.list-md > ion-list-header.item.item-md.list-header.list-header-md > .item-inner > .input-wrapper >
-ion-label.label.label-md > ion-item.child-item.item.item-block.item-md{
-  border-bottom: 1.2vh solid #004FC6;
-}
+    .tusDerechos:after, .tusDerechos:before{
 
-ion-icon.icon.icon-md.ion-ios-arrow-down.item-icon, ion-icon.icon.icon-md.ion-ios-arrow-up.item-icon {
-    margin-right: 7%;
-}
+    }
 
-.bottomLine{
-  height: 0vh;
-  width: 100%;
-  position: relative;
-}
+    .tusDerechos:after{
+        bottom: 0px;
+    }
 
-.bottomLine:before {
-background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-height: 5px;
-content: '';
-bottom: -1px;
-right: 0;
-left: 0;
-position: absolute;
-}
+    .tusDerechos:before{
+        top: -1px;
+    }
+
+    .bottomLine{
+      height: 0vh;
+      width: 100%;
+      position: relative;
+    }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: -1px;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
 
 }

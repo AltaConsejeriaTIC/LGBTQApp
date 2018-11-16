@@ -32,6 +32,15 @@ import {LogrosPage} from '../pages/logros/logros';
 import {PuntosPage} from '../pages/puntos/puntos';
 import {AccesoDerechosPage} from '../pages/acceso-derechos/acceso-derechos';
 
+import {EducacionPage} from '../pages/educacion/educacion';
+import {SaludPage} from '../pages/salud/salud';
+import {HabitatPage} from '../pages/habitat/habitat';
+import {VidaPage} from '../pages/vida/vida';
+import {ParticipacionPage} from '../pages/participacion/participacion';
+import {CulturaPage} from '../pages/cultura/cultura';
+import {ServiciosPage} from '../pages/servicios/servicios';
+import {TrabajoPage} from '../pages/trabajo/trabajo';
+
 import {ObjetivoPage} from '../pages/objetivo/objetivo';
 import {CoordinaPage} from '../pages/coordina/coordina';
 
@@ -79,6 +88,14 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     LogrosPage,
     ObjetivoPage,
     CoordinaPage,
+    EducacionPage,
+    SaludPage,
+    HabitatPage,
+    VidaPage,
+    ParticipacionPage,
+    CulturaPage,
+    ServiciosPage,
+    TrabajoPage,
     LogrosPage
 
   ],
@@ -114,6 +131,14 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     LogrosPage,
     ObjetivoPage,
     CoordinaPage,
+    EducacionPage,
+    SaludPage,
+    HabitatPage,
+    VidaPage,
+    ParticipacionPage,
+    CulturaPage,
+    ServiciosPage,
+    TrabajoPage,
     LogrosPage
   ],
   providers: [
