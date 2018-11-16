@@ -19,45 +19,57 @@
 
     <ion-icon name="icon-icono-politica"></ion-icon>
     <p class="bannerTitle">ASí garantizamos tus derechos</p>
-    <p class="bannerContent">La Alcaldía de Bogotá ejecuta acciones para personas LGBTI, entérate aquí cuáles son y cómo puedes acceder a ellas</p>
+    <p class="bannerContent">Las acciones que la Alcaldía de Bogotá ejecuta a favor de personas LGBTI se sustentan en la Política Pública LGBTI, conócela.</p>
 
   </div>
 
   <div class="sections">
-    <div class="politicaPublica section" (click)="goToPolitica()">
+    <div class="politicaPublica section" (click)="goToObjetivo()">
         <ion-col col-2 class="icon">
             <ion-icon name="information-circle"></ion-icon>
         </ion-col>
-        <ion-col col-9>
-          <p class="sectionTitle">Sobre la Política Pública </p>
-          <p class="sectionContent">Las acciones que la Alcaldía de Bogotá ejecuta se sustentan en la Política.</p>
+        <ion-col col-8>
+          <p class="sectionTitle">Objetivo de la política</p>
+          <p class="sectionContent">Garantizar el ejercicio pleno de derechos de personas LGBTI</p>
         </ion-col>
         <ion-col col-1 class="arrow">
-            <ion-icon name="icon-flecha-derecha-1"></ion-icon>
+            <ion-icon name="icon-flecha-derecha"></ion-icon>
         </ion-col>
+    </div>
+    <div class="tusDerechos section" (click)="goToLogros()">
+      <ion-col col-2 class="icon">
+          <ion-icon name="checkmark-circle"></ion-icon>
+      </ion-col>
+      <ion-col col-8>
+        <p class="sectionTitle">Logros de la política </p>
+        <p class="sectionContent">Entérate cuales han sido los mayores logros en la ejecución de la Política</p>
+      </ion-col>
+      <ion-col col-1 class="arrow">
+          <ion-icon name="icon-flecha-derecha"></ion-icon>
+      </ion-col>
     </div>
     <div class="tusDerechos section" (click)="goToAccesoDerechos()">
       <ion-col col-2 class="icon">
           <ion-icon name="ios-list-outline"></ion-icon>
       </ion-col>
-      <ion-col col-9>
+      <ion-col col-8>
         <p class="sectionTitle">Tus derechos</p>
         <p class="sectionContent">Encuentra información para el acceso a tus derechos.</p>
       </ion-col>
       <ion-col col-1 class="arrow">
-          <ion-icon name="icon-flecha-derecha-1"></ion-icon>
+          <ion-icon name="icon-flecha-derecha"></ion-icon>
       </ion-col>
     </div>
     <div class="puntosAtencion section" (click)="goToPuntos()">
       <ion-col col-2 class="icon">
           <ion-icon name="icon-icono-ubicacion"></ion-icon>
       </ion-col>
-      <ion-col col-9>
+      <ion-col col-8>
         <p class="sectionTitle">Puntos de atención</p>
         <p class="sectionContent">En estos lugares dónde puedes obtener información y atención</p>
       </ion-col>
       <ion-col col-1 class="arrow">
-          <ion-icon name="icon-flecha-derecha-1"></ion-icon>
+          <ion-icon name="icon-flecha-derecha"></ion-icon>
       </ion-col>
     </div>
 

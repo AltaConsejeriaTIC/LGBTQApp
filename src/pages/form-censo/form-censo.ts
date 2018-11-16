@@ -63,17 +63,17 @@ export class FormCensoPage {
     this.credentialsForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+                              		Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z-.]{2,}$')
                               	])),
       documentType: new FormControl ('', Validators.required),
       documentNumber: new FormControl ('', Validators.required),
       firstName: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              		Validators.pattern('^[a-záéíóúñüçA-ZÁÉÍÓÚ´ÑÜÇ\\s]*$')
                               	])),
       lastName: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              		Validators.pattern('^[a-záéíóúñüçA-ZÁÉÍÓÚ´ÑÜÇ\\s]*$')
                               	])),
       address: new FormControl ('', Validators.required),
       phone: new FormControl ('', Validators.compose([
