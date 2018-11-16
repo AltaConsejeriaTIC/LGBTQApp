@@ -166,6 +166,7 @@ export class HomePage {
               }).catch(err =>{
                 console.error(err,err.stack);
                 this.hasPressedSendMessage = false;
+                alert(' ocurrio un error al momento de enviar el mensaje');
                 return false;
               }), 90000  ) //90 secs
               .then((thing) => console.log('I did a thing!'))
