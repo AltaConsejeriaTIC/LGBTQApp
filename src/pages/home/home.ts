@@ -10,6 +10,7 @@ import { ContactPage } from '../contact/contact';
 import { SMS } from '@ionic-native/sms';
 import { CallNumber } from '@ionic-native/call-number';
 import { Storage } from '@ionic/storage';
+import { timeout, TimeoutError } from 'promise-timeout';
 
 @Component({
   selector: 'page-home',
@@ -156,14 +157,27 @@ export class HomePage {
             phoneNumber = phoneNumber.replace(/-/g,'');
             phoneNumber = phoneNumber.replace(/\s/g, '');
             phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
-            this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
-              this.messageHasBeenSend = true;
-              this.hasPressedSendMessage = false;
-            }).catch(err =>{
-              console.error(err,err.stack);
-              alert( ' Ocurrio un error enviando el mensaje');
-              this.hasPressedSendMessage = false;
-            });
+
+            timeout(
+              this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
+                this.messageHasBeenSend = true;
+                this.hasPressedSendMessage = false;
+                return true;
+              }).catch(err =>{
+                console.error(err,err.stack);
+                this.hasPressedSendMessage = false;
+                return false;
+              }), 90000  ) //90 secs
+              .then((thing) => console.log('I did a thing!'))
+              .catch((err) => {
+                if (err instanceof TimeoutError) {
+                  console.error('Timeout :-(');
+                  this.hasPressedSendMessage = false;
+                  alert( 'No se pudo enviar el mensaje');
+                }
+              });
+
+
           }
         }
       }).catch(err =>{
