@@ -28,12 +28,12 @@ import {ArcoirisPage} from '../pages/arcoiris/arcoiris';
 import {PurpuraPage} from '../pages/purpura/purpura';
 
 import {PoliticaPage} from '../pages/politica/politica';
+import {LogrosPage} from '../pages/logros/logros';
 import {PuntosPage} from '../pages/puntos/puntos';
 import {AccesoDerechosPage} from '../pages/acceso-derechos/acceso-derechos';
 
 import {ObjetivoPage} from '../pages/objetivo/objetivo';
 import {CoordinaPage} from '../pages/coordina/coordina';
-import {LogrosPage} from '../pages/logros/logros';
 
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
@@ -76,6 +76,7 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     PoliticaPage,
     PuntosPage,
     AccesoDerechosPage,
+    LogrosPage,
     ObjetivoPage,
     CoordinaPage,
     LogrosPage
@@ -110,6 +111,7 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     PoliticaPage,
     PuntosPage,
     AccesoDerechosPage,
+    LogrosPage,
     ObjetivoPage,
     CoordinaPage,
     LogrosPage

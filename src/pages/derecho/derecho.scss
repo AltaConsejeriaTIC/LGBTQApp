@@ -79,7 +79,7 @@ page-derecho {
       background-color: white;
       height: 63%;
       .section{
-        height: 33.3%;
+        height: 24.2%;
         .sectionTitle{
           margin-bottom: 1%;
           color: #363B56;
@@ -108,7 +108,7 @@ page-derecho {
           .icon{
             text-align: center;
             font-size: 2.8rem;
-              margin-bottom: 11.5%;
+              margin-bottom: 9.5%;
               color: #363B56;
           }
           .arrow{
@@ -117,7 +117,8 @@ page-derecho {
             flex-direction: row-reverse;
               text-align: center;
               font-size: 3.8rem;
-              margin-bottom: 11.5%;
+              margin-bottom: 9.5%;
+              margin-left: 4%;
               color: #363B56;
               .icon{
                 font-size: 3.8rem;
@@ -145,7 +146,7 @@ page-derecho {
     }
 
     .tusDerechos:before{
-        top: 0px;
+        top: -1px;
     }
 
     .bottomLine{
