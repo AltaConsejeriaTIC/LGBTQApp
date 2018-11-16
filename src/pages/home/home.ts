@@ -31,11 +31,7 @@ export class HomePage {
     private callNumber: CallNumber,
     private storage: Storage) {
       storage.get('firstUseApp').then(value => {
-        if(value === null){
-          this.firstTime = true;
-          this.toggleEmergencyButton();
-        }
-
+        this.firstTime = (value === null ? true : value);
       }).catch(err => {
         console.error("Error en constructor, storage.get", err, err.stack);
       });
@@ -52,6 +48,7 @@ export class HomePage {
   public firstTime: boolean = true;
   public emergencyButtonActivate: boolean = false;
   public hasPressedSendMessage = false;
+  public tutorialStep = 1;
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
@@ -243,5 +240,10 @@ export class HomePage {
         console.error("Error en openMenuModal", err, err.stack);
       });
     }
+  }
+
+  nextStepTutorial() {
+    this.firstTime = !this.firstTime;
+    this.tutorialStep += 1;
   }
 }

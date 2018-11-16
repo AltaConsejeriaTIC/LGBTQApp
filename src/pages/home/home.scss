@@ -238,6 +238,14 @@ page-home {
           align-items: center;
           justify-content: center;
 
+          [col-3] {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 22%;
+            -ms-flex: 0 0 22%;
+            flex: 0 0 22%;
+            width: 22%;
+            max-width: 22%;
+          }
           .icono{
             justify-content: center;
             display: flex;
@@ -313,7 +321,7 @@ page-home {
           }
 
           .panicButtonText{
-            padding: 5.5%;
+            padding: 3.5% 3.5% 3.5% 6.5%;
           }
 
           ion-card-header, ion-card-content{
@@ -543,7 +551,52 @@ page-home {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.7;
-    z-index: 10;
+    opacity: 0.8;
+    z-index: 21;
   }
+
+  .firstTimeUse{
+    position: absolute;
+    z-index: 100;
+  }
+
+  button.tutorial {
+    position: absolute;
+    padding: 0 35px;
+    z-index: 22;
+    top: 10px;
+    right: 10px;
+    width: 145px;
+    height: 38px;
+    background: #ffffff;
+    border-radius: 4px;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  p.firstStep{
+    position: absolute;
+    width: 245px;
+    z-index: 22;
+    height: 153px;
+    left: 46px;
+    button: 209px;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    b{
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 23px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+  }
+
 }

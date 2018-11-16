@@ -7,6 +7,10 @@
         <ion-icon name="icon-menu-hamburguesa" (click)="openMenuModal()"></ion-icon>
 
     </ion-navbar>
+    <div *ngIf="firstTime">
+        <ion-backdrop class="delete-contact-background"> </ion-backdrop>
+        <button class="tutorial" ion-button color="light" (click)="nextStepTutorial()">Continuar</button>
+    </div>
 
 </ion-header>
 
@@ -79,7 +83,7 @@
     <ion-card class="panicButton" [class.filterBackgroundDark]="emergencyButtonActivate">
         <ion-grid>
             <ion-row (click)="toggleEmergencyButton()">
-                <ion-col col-2>
+                <ion-col col-3>
                     <ion-fab left middle #fab>
                         <button ion-fab color="danger"><ion-icon name="icon-campana-boton"></ion-icon></button>
                         <ion-fab-list side="top">
@@ -104,15 +108,21 @@
                     </ion-card-content>
 
                   <div *ngIf="emergencyButtonActivate" class="ion-fab-label fab-list-active">
-                    <p class="fab fab-in-list show">Configuración del botón</p>
-                    <p class="fab fab-in-list show">Enviar Mensaje</p>
-                    <p class="fab fab-in-list show">Llamar al 123</p >
+                    <p class="fab fab-in-list show" (click)="goToContactPage()">Configuración del botón</p>
+                    <p class="fab fab-in-list show" (click)="sendEmergencySMS()">Enviar Mensaje</p>
+                    <p class="fab fab-in-list show" (click)="callEmergency()">Llamar al 123</p >
                   </div>
                 </ion-col>
 
             </ion-row>
         </ion-grid>
     </ion-card>
+    <div *ngIf="firstTime">
+        <ion-backdrop class="delete-contact-background"></ion-backdrop>
+        <div *ngIf="tutorialStep === 1">
+            <p class="firstStep"><b>Te damos la bienvenida</b><br/><br/>En esta aplicación vas a encontrar eventos, noticias, organizaciones sociales y alianzas privadas que apoyan a personas LGBTI. También encontraras medios para denunciar cualquier tipo de discriminación !y mucho mas! </p>
+        </div>
+    </div>
 </ion-content>
 
 <div *ngIf="messageHasBeenSend">
