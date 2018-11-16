@@ -118,9 +118,9 @@ export class HomePage {
     }else{
       this.clearValues();
       this.loadInfo();
-      this.sms.hasPermission().catch(err =>{
-        console.error(err,err.stack);
-      });
+      // this.sms.hasPermission().catch(err =>{
+      //   console.error(err,err.stack);
+      // });
       setTimeout(function(fab){
         fab.setActiveLists(true);
       },0,this.fab)
@@ -150,7 +150,7 @@ export class HomePage {
     this.hasPressedSendMessage = true;
 
     if( this.emergencyMessage ){
-      this.sms.hasPermission().then( ()=>{
+      // this.sms.hasPermission().then( ()=>{
         for( let value of this.infoContacts){
           if( value.toggle ){
             let phoneNumber = value.data.phoneNumbers[0].value;
@@ -181,11 +181,11 @@ export class HomePage {
 
           }
         }
-      }).catch(err =>{
-        console.error(err,err.stack);
-        alert( 'La App no tiene permisos para enviar mensajes');
-        this.hasPressedSendMessage = false;
-      });
+      // }).catch(err =>{
+      //   console.error(err,err.stack);
+      //   alert( 'La App no tiene permisos para enviar mensajes');
+      //   this.hasPressedSendMessage = false;
+      // });
     }
   }
 
