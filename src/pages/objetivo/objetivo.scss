@@ -64,10 +64,9 @@ page-objetivo {
 
     .sections{
       position: relative;
-      border-top-left-radius: 8% 8%;
-      border-top-right-radius: 8% 8%;
+      border-top-left-radius: 8% 4%;
+      border-top-right-radius: 8% 4%;
       background-color: white;
-      height: 75%;
 
       .text{
         position: relative;
@@ -90,6 +89,11 @@ page-objetivo {
         }
         .list{
               padding-top: 5%;
+              .titleGeneral, .titleEspecifico, .titleCordina{
+                font-weight: bold;
+                color: #363B56;
+                font-size: 1.8rem;
+              }
               p{
                  margin: 5% 0%;
                  color: #727689;
@@ -97,13 +101,16 @@ page-objetivo {
                  line-height: 24px;
                  line-height: 3.8vh;
               }
+              span{
+                font-weight: bold;
+              }
               @media (max-height: 600px){
                   p{
                     font-size: 1.3rem;
                   }
               }
               p:not(:first-child):not(:last-child){
-                font-weight: bold;
+
               }
               span{
                 font-weight: bold;
@@ -151,6 +158,12 @@ page-objetivo {
         justify-content: center;
         align-items: center;
         height: 30%;
+        .titleHorario{
+          font-weight: bold;
+          color: #363B56;
+          font-size: 1.8rem;
+          padding: 4% 0;
+        }
         p{
           color: #6D6F76;
           font-size: 1.3rem;

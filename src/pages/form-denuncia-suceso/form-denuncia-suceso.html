@@ -22,7 +22,7 @@
 
     <ion-item>
         <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }">Fecha del suceso</ion-label>
-        <ion-input [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" formControlName="date" type="text" placeholder="Nombres"></ion-input>
+          <ion-datetime doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="date" placeholder="Fecha del suceso"></ion-datetime>
   </ion-item>
 
     <div class="validation-errors">
@@ -38,7 +38,7 @@
 
   <ion-item>
       <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('place').hasError(validation_messages.place['0']['type'])) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)) == true }">Lugar del suceso</ion-label>
-      <ion-input [ngClass]="{'error-box': ((denunciaForm.get('place').hasError(validation_messages.place['0']['type'])) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)) == true }" formControlName="place" type="text" placeholder="Nombres"></ion-input>
+      <ion-input [ngClass]="{'error-box': ((denunciaForm.get('place').hasError(validation_messages.place['0']['type'])) && (denunciaForm.get('place').dirty || denunciaForm.get('place').touched)) == true }" formControlName="place" type="text" placeholder="Lugar del suceso"></ion-input>
 </ion-item>
 
   <div class="validation-errors">

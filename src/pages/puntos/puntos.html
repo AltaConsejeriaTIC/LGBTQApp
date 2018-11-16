@@ -39,10 +39,12 @@
                 <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
                     <img src="{{child.image}}">
                     <h2>{{ child.information }}</h2>
+                    <p *ngIf="child.address">Dirección:</p>
+                    <p *ngIf="child.address">{{ child.address }}</p>
                     <p>Teléfono: </p>
                     <p>{{ child.phone }}</p>
-                    <p>Correo electrónico: </p>
-                    <p>{{ child.mail }}</p>
+                    <p *ngIf="child.mail">Correo electrónico: </p>
+                    <p *ngIf="child.mail">{{ child.mail }}</p>
                 </ion-item>
 
             </ion-list-header>

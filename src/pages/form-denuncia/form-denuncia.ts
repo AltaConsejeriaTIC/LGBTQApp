@@ -42,7 +42,7 @@ export class FormDenunciaPage {
     this.denunciaForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+                              		Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z-.]{2,}$')
                               	])),
 
       documentType: new FormControl ('', Validators.required),
@@ -51,12 +51,12 @@ export class FormDenunciaPage {
 
       firstName: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              		Validators.pattern('^[a-záéíóúñüçA-ZÁÉÍÓÚ´ÑÜÇ\\s]*$')
                               	])),
 
       lastName: new FormControl ('', Validators.compose([
                               		Validators.required,
-                              		Validators.pattern('^[a-zA-Z\s]*$')
+                              		Validators.pattern('^[a-záéíóúñüçA-ZÁÉÍÓÚ´ÑÜÇ\\s]*$')
                               	])),
 
       phone: new FormControl ('', Validators.compose([

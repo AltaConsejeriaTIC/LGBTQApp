@@ -16,13 +16,13 @@ export class FormDenunciaSucesoPage {
   validation_messages = {
 
       'date': [
-        { type: 'required', message: 'Debe escoger un tipo de documento' }
+        { type: 'required', message: 'Debe seleccionar una fecha' }
       ],
       'place': [
-        { type: 'required', message: 'El número de documento es requerido' }
+        { type: 'required', message: 'El lugar del suceso es requerido' }
       ],
       'description': [
-        { type: 'required', message: 'El nombre es requerido.' }
+        { type: 'required', message: 'La descripción no puede ser vacía' }
       ]
 }
 
