@@ -1,3 +1,179 @@
 page-alianza {
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
 
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #05AE0B;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+    color: #98E4A4 !important;
+  }
+  .scroll-content{
+    background-color: #05AE0B;
+  }
+
+    .banner{
+      background-color: #05AE0B;
+      position: relative;
+      height: 27%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+      ion-icon{
+        font-size: 4.4rem;
+      }
+
+      @media (max-height: 500px){
+        ion-icon{
+          font-size: 3rem;
+        }
+      }
+
+      .bannerTitle{
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      .bannerContent{
+        text-align: center;
+        margin:0 10%;
+        color: #98E4A4;
+        font-size: 1.45rem;
+      }
+      @media (max-height: 500px){
+        .bannerContent{
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .sections{
+      position: relative;
+      border-top-left-radius: 8% 8%;
+      border-top-right-radius: 8% 8%;
+      background-color: white;
+      height: 73%;
+      display: flex;
+      flex-direction: column;
+
+      .section:nth-child(n+3):after{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+        top: 0;
+      }
+
+      .aliado{
+        height: 5vh;
+        color: white;
+        background-color: #363B56;
+        width: 16vh;
+        margin-right: 12%;
+        margin-top: -2.5vh;
+        position: relative;
+        align-self: flex-end;
+        border-radius: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-icon.icon.icon-ios.ion-md-person-add {
+            margin-right: 8%;
+        }
+        p{
+          font-weight: bold;
+        }
+      }
+      .section{
+        height: 33.3%;
+        position: relative;
+        .sectionTitle{
+          margin-bottom: 1%;
+          margin-right: 10%;
+          color: #363B56;
+          font-weight: bold;
+          font-size: 1.7rem;
+        }
+        @media (max-height: 500px){
+            .sectionTitle{
+                font-size: 1.5rem;
+                margin-top: 3%;
+            }
+        }
+        .sectionContent{
+          margin-top: 2%;
+          color: #727689;
+          margin-right: 10%;
+        }
+        @media (max-height: 500px){
+            .sectionContent{
+                  font-size: 1.3rem;
+            }
+        }
+      }
+      .politicaPublica, .tusDerechos, .puntosAtencion{
+          display: flex;
+          align-items: center;
+          .icon{
+            text-align: center;
+            font-size: 2.1rem;
+              margin-bottom: 0;
+              color: #363B56;
+          }
+      }
+
+    }
+
+    .tusDerechos{
+      position: relative;
+    }
+
+    .tusDerechos:after{
+        bottom: 0px;
+    }
+
+    .tusDerechos:before{
+        top: 0px;
+    }
+
+    .bottomLine{
+      height: 0vh;
+      width: 100%;
+      position: relative;
+    }
+
+  .bottomLine:before {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    content: '';
+    bottom: -1px;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
 }
