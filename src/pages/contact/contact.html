@@ -63,7 +63,7 @@
                       <span class="custom-icon" [ngClass]="{'onToggleIcon': info.toggle , 'offToggleIcon': !info.toggle }">{{getIniNames(info.data.name.formatted, info.data.phoneNumbers[0].value)}}</span>
                   </ion-col>
                   <ion-col col-4 class="text-block" [ngClass]="{'onToggleText': info.toggle , 'offToggleText': !info.toggle }">
-                      <p> {{ info || info.data.name.formatted ?  info.data.name.formatted : info.data.phoneNumbers[0].value }}</p>
+                      <p> {{ info.data.name.formatted ?  info.data.name.formatted : info.data.phoneNumbers[0].value }}</p>
                     </ion-col>
                   <ion-col col-3 class="toggle-block">
                       <ion-toggle color="secondary" [(ngModel)]="info.toggle" checked="info.toggle" (ionChange)="onChange(info.data.id, info.toggle)" class="toggle-move-position"></ion-toggle>
