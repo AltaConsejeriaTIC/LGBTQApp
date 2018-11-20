@@ -46,7 +46,7 @@ export class HomePage {
   public keyFirstTimeUse = 'firstTimeUse';
   public emergencyMessage="";
   public messageHasBeenSend = false;
-  public firstTime: boolean = true;
+  public firstTime: boolean = false;
   public emergencyButtonActivate: boolean = false;
   public hasPressedSendMessage = false;
   public tutorialStep = 1;
@@ -102,14 +102,16 @@ export class HomePage {
   }
 
   goToPage(page) {
-    if(this.emergencyButtonActivate) {
-      this.fab.close();
-      this.emergencyButtonActivate = false;
-    }
-    else{
-      this.navCtrl.push(page).catch(err =>{
-        console.error(err,err.stack);
-      });
+    if(!this.firstTime){
+      if(this.emergencyButtonActivate) {
+        this.fab.close();
+        this.emergencyButtonActivate = false;
+      }
+      else{
+        this.navCtrl.push(page).catch(err =>{
+          console.error(err,err.stack);
+        });
+      }
     }
   }
 
