@@ -168,7 +168,7 @@
       </div>
 </div>
 
-<!-- hasPressedSendMessage && !emergencyMessage -->
+<!-- hasPressedSendMessage && ( !emergencyMessage ||  checkContactsAvailable() ) -->
 <div *ngIf="hasPressedSendMessage && ( !emergencyMessage ||  checkContactsAvailable() )">
   <ion-backdrop showBackdrop="false" class="delete-contact-background">
 
@@ -180,8 +180,12 @@
         </div>
 
         <ion-row class="confirm-text-section">
-            <p class="confirm-title-delete-contact"> ¡Tu mensaje no ha podido ser enviado!</p>
-            <p class="confirm-delete-contact-new">Para enviarlo, configura primero un mensaje y los contactos de emergencia.</p>
+            <div class="box-title">
+              <p class="confirm-title-delete-contact"> ¡Tu mensaje no ha podido ser enviado!</p>
+            </div>
+            <div class="box-delete-contact">
+              <p class="confirm-delete-contact-new">Para enviarlo, configura primero un mensaje y los contactos de emergencia.</p>
+            </div>
         </ion-row>
 
         <ion-row class="form-button-confirm-contact">

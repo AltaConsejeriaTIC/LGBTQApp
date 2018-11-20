@@ -246,7 +246,7 @@ page-home {
             opacity: 0.3;
           }
 
-        
+
           button[disabled]#principal-button {
             opacity: 1;
           }
@@ -428,9 +428,15 @@ page-home {
     background: linear-gradient(to right, #4d2600, #4d4d00, #003e00, #004d4d, #00004d, #482348);
   }
 
+  @media ( min-width: 320px ){
+    .delete-modal-component-alert{
+      min-height: 334px;
+    }
+
+  }
 
   .delete-modal-component-alert{
-    border-radius: 3%;
+    border-radius: 4%;
     display: flex;
     pointer-events: auto;
     position: absolute;
@@ -439,7 +445,7 @@ page-home {
     // right: 5%;
     // top: 16%;
     width: 70%;
-    height: 62%;
+    height: 49%;
     // max-height: 143px;
     z-index: 22;
     background: white;
@@ -448,11 +454,10 @@ page-home {
     flex-direction: column;
 
     .picture-image-block{
-      margin-top: 9%;
       text-align: center;
       position: relative;
-      margin-top: 8%;
-      height: 44%;
+      margin-top: 6%;
+      height: 28%;
       width: 100%;
       .picture-resize{
         margin-top: 5%;
@@ -461,26 +466,32 @@ page-home {
 
     .confirm-text-section{
       height: 79%;
-      .confirm-delete-contact{
+      .box-title{
+        height: 40%;
         display: flex;
-        text-align: center;
-        margin: 8% 10% 0% 10%;
-        color: gray;
+        justify-content: center;
+        padding-top: 5%;
+        .confirm-title-delete-contact{
+          display: flex;
+          text-align: left;
+          margin: 0% 12% 0% 12%;
+          font-weight: bold;
+          font-size: 142%;
+          color: #2C347E;
+        }
       }
-      .confirm-delete-contact-new{
+      .box-delete-contact{
+        height: 60%;
         display: flex;
-        text-align: left;
-        margin: 0% 10% 0% 10%;
-        color: gray;
-        font-size: 100%;
-      }
-      .confirm-title-delete-contact{
-        display: flex;
-        text-align: left;
-        margin: 0% 10% 0% 12%;
-        font-weight: bold;
-        font-size: 142%;
-        color: #2C347E;
+        justify-content: center;
+        .confirm-delete-contact-new{
+          display: flex;
+          padding-top: 3%;
+          text-align: left;
+          margin: 0% 12% 0% 12%;
+          color: gray;
+          font-size: 100%;
+        }
       }
     }
     .cancel-button{
@@ -507,7 +518,7 @@ page-home {
           height: 100%;
           width: 100%;
           box-shadow: none;
-          border-radius: 0px;
+          border-radius: 4%;
         }
       }
     }
