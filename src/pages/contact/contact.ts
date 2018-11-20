@@ -175,8 +175,8 @@ export class ContactPage {
     this.idToBeDeleted = 0;
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.innerHeight = window.innerHeight + 'px';
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize() {
+  //   this.innerHeight = window.innerHeight + 'px';
+  // }
 }

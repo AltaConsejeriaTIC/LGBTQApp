@@ -428,9 +428,12 @@ page-home {
     background: linear-gradient(to right, #4d2600, #4d4d00, #003e00, #004d4d, #00004d, #482348);
   }
 
-  @media ( min-width: 320px ){
+  @media ( max-width: 320px ){
     .delete-modal-component-alert{
       min-height: 334px;
+    }
+    .delete-modal-component-alert .confirm-text-section .box-delete-contact .confirm-delete-contact-new {
+      margin-top: 7% !important;
     }
 
   }
@@ -445,7 +448,7 @@ page-home {
     // right: 5%;
     // top: 16%;
     width: 70%;
-    height: 49%;
+    height: 55%;
     // max-height: 143px;
     z-index: 22;
     background: white;
@@ -465,7 +468,7 @@ page-home {
     }
 
     .confirm-text-section{
-      height: 79%;
+      height: 66%;
       .box-title{
         height: 40%;
         display: flex;
