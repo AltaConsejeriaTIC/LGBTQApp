@@ -23,12 +23,12 @@ page-listado {
   .scroll-content {
 
 .article{
-      margin: -1px;
+      margin: 0px;
       position: relative;
       img {
-        margin-top: -3px;
+        margin-top: 0px;
         width: 100%;
-        height: 72vw;
+        height: 40vh;
         border: none !important;
         border-style: none !important;
         box-shadow: none !important;
@@ -168,7 +168,7 @@ page-listado {
   }
 
   .article:before, .news:before{
-    bottom: 2px;
+    bottom: 0px;
   }
 
   .news:before{

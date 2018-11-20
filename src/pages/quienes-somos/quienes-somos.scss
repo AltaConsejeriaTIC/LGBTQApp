@@ -78,6 +78,11 @@ page-quienes-somos {
       bottom: 0px;
   }
 
+  .direccionContacto{
+    padding-bottom: 0;
+    padding-top: 6%;
+  }
+
   .direccionContacto>p:nth-child(odd){
     color: #1E1A42;
     font-weight: bold;
@@ -90,11 +95,12 @@ page-quienes-somos {
 
 
   .social{
-    padding-top: 3%;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .social ion-icon{
-        font-size: 2.7rem;
+        font-size: 3.2rem;
         padding-right: 3%;
   }
   a{

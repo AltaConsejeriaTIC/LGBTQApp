@@ -52,10 +52,10 @@ export class FormCensoPage {
 		{ type: 'required', message: 'Debe colocar alguna identidad' }
 	],
   'age': [
-		{ type: 'required', message: 'La edad es requerida.' }
+		{ type: 'required', message: 'La fecha de nacimiento es requerida.' }
 	],
   'education': [
-		{ type: 'required', message: 'La orientación sexual es requerida.' }
+		{ type: 'required', message: 'El nivel de educación es requerida.' }
 	]
 }
 

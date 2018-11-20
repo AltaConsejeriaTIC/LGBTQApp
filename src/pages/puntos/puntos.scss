@@ -229,9 +229,9 @@ ion-icon.icon.icon-md.ion-ios-arrow-down.item-icon, ion-icon.icon.icon-md.ion-io
 
 .bottomLine:before {
 background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-height: 5px;
+height: 0.8vh;
 content: '';
-bottom: -1px;
+bottom: 0px;
 right: 0;
 left: 0;
 position: absolute;
