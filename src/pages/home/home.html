@@ -147,23 +147,25 @@
       </div>
 </div>
 
-<div *ngIf="hasPressedSendMessage && !emergencyMessage">
+<!-- hasPressedSendMessage && !emergencyMessage -->
+<div *ngIf="hasPressedSendMessage && ( !emergencyMessage ||  checkContactsAvailable() )">
   <ion-backdrop showBackdrop="false" class="delete-contact-background">
 
     </ion-backdrop>
 
-    <div class="delete-modal-component">
+    <div class="delete-modal-component-alert">
         <div class="picture-image-block">
-            <img class="picture-resize" src="../assets/icon/group2.svg">
+            <img class="picture-resize" src="../assets/icon/Vector.svg">
         </div>
 
         <ion-row class="confirm-text-section">
-            <p class="confirm-delete-contact-new">El mensaje de emergencia no puede ser enviado porque la configuración del mensaje está vacío.</p>
+            <p class="confirm-title-delete-contact"> ¡Tu mensaje no ha podido ser enviado!</p>
+            <p class="confirm-delete-contact-new">Para enviarlo, configura primero un mensaje y los contactos de emergencia.</p>
         </ion-row>
 
         <ion-row class="form-button-confirm-contact">
           <ion-col col-12 class="cancel-contact-section">
-              <button ion-button class="cancel" (click)="closeSendEmergencyMessage()" >CONTINUAR</button>
+              <button ion-button class="cancel" (click)="closeSendEmergencyMessage()" >VOLVER</button>
           </ion-col>
       </ion-row>
     </div>
