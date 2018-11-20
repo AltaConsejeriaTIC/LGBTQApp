@@ -32,6 +32,9 @@ page-home {
       height: 5px;
     }
 
+  .overlap-ion-backdrop{
+    z-index: 99;
+  }
   ion-card{
     margin: 4% 6% !important;
     width: 88% !important;
@@ -238,6 +241,16 @@ page-home {
           align-items: center;
           justify-content: center;
 
+
+          .low-opacity {
+            opacity: 0.3;
+          }
+
+        
+          button[disabled]#principal-button {
+            opacity: 1;
+          }
+
           [col-3] {
             -webkit-box-flex: 0;
             -webkit-flex: 0 0 22%;
@@ -280,7 +293,7 @@ page-home {
             align-items: center;
             min-width: 50px;
             min-height: 50px;
-
+            height: 100%;
             p{
               margin: 8px 0;
               color: #ffffff;
@@ -290,6 +303,27 @@ page-home {
               width: 250px;
               padding: 8px 0;
               text-align: left;
+              span{
+                font-size: 20px;
+                font-weight: 800;
+                line-height: 23px;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+              }
+              b{
+                font-size: 15px;
+              }
+            }
+
+            p.tutorial-text.first{
+              left: 0;
+              bottom: 30%;
+              width: 85%;
+              font-size: 15px;
+              font-weight: normal;
+              line-height: normal;
+              letter-spacing: 0.04em;
+              color: #ffffff;
             }
           }
 
@@ -551,7 +585,7 @@ page-home {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.7;
     z-index: 21;
   }
 
@@ -578,13 +612,10 @@ page-home {
     text-transform: uppercase;
   }
 
-  p.firstStep{
+  p.tutorial-text{
     position: absolute;
-    width: 245px;
     z-index: 22;
-    height: 153px;
-    left: 46px;
-    button: 209px;
+    width: 75%;
     font-weight: normal;
     line-height: normal;
     font-size: 14px;
@@ -597,6 +628,20 @@ page-home {
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
+  }
+
+  p.tutorial-text.first{
+    left: 40px;
+    left: calc(40px + constant(safe-area-inset-left));
+    left: calc(40px + env(safe-area-inset-left));;
+    bottom: 20%;
+  }
+
+  p.tutorial-text.second{
+    left: 40px;
+    left: calc(40px + constant(safe-area-inset-left));
+    left: calc(40px + env(safe-area-inset-left));;
+    bottom: 20%;
   }
 
 }

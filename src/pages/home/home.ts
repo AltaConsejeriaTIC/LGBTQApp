@@ -30,7 +30,7 @@ export class HomePage {
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage) {
-      storage.get('firstUseApp').then(value => {
+      storage.get(this.keyFirstTimeUse).then(value => {
         this.firstTime = (value === null ? true : value);
       }).catch(err => {
         console.error("Error en constructor, storage.get", err, err.stack);
@@ -43,6 +43,7 @@ export class HomePage {
   public findContacts = false;
   public numberOfActiveContacts = 0;
   public keyEmergencyMessage = 'emergencyMessage';
+  public keyFirstTimeUse = 'firstTimeUse';
   public emergencyMessage="";
   public messageHasBeenSend = false;
   public firstTime: boolean = true;
@@ -87,6 +88,14 @@ export class HomePage {
   }
 
   goToContactPage():void {
+    if(this.firstTime){
+      this.storage.set(this.keyFirstTimeUse,false).catch(err => {
+        console.error("Error en goToContactPage", err, err.stack);
+      });
+      this.firstTime = false;
+      this.tutorialStep = -Infinity;
+    }
+
     this.navCtrl.push(ContactPage).catch(err => {
       console.error("Error en goToContactPage", err, err.stack);
     });
@@ -110,19 +119,22 @@ export class HomePage {
   }
 
   toggleEmergencyButton():void {
-    if(this.emergencyButtonActivate) {
-      this.fab.close();
-    }else{
-      this.clearValues();
-      this.loadInfo();
-      // this.sms.hasPermission().catch(err =>{
-      //   console.error(err,err.stack);
-      // });
-      setTimeout(function(fab){
-        fab.setActiveLists(true);
-      },0,this.fab)
+    if(!this.firstTime || this.tutorialStep == 4){
+      if(this.emergencyButtonActivate) {
+        this.fab.close();
+      }else{
+        this.clearValues();
+        this.loadInfo();
+        setTimeout(function(fab){
+          fab.setActiveLists(true);
+        },0,this.fab)
+      }
+      if(this.firstTime){
+        this.tutorialStep += 1;
+      }
+      this.emergencyButtonActivate = !this.emergencyButtonActivate;
+
     }
-    this.emergencyButtonActivate = !this.emergencyButtonActivate;
   }
 
   clearValues(){
@@ -148,41 +160,34 @@ export class HomePage {
 
     if( this.emergencyMessage ){
       // this.sms.hasPermission().then( ()=>{
-        for( let value of this.infoContacts){
-          if( value.toggle ){
-            let phoneNumber = value.data.phoneNumbers[0].value;
-            phoneNumber = phoneNumber.replace(/-/g,'');
-            phoneNumber = phoneNumber.replace(/\s/g, '');
-            phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
+      for( let value of this.infoContacts){
+        if( value.toggle ){
+          let phoneNumber = value.data.phoneNumbers[0].value;
+          phoneNumber = phoneNumber.replace(/-/g,'');
+          phoneNumber = phoneNumber.replace(/\s/g, '');
+          phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
 
-            timeout(
-              this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
-                this.messageHasBeenSend = true;
+          timeout(
+            this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
+              this.messageHasBeenSend = true;
+              this.hasPressedSendMessage = false;
+              return true;
+            }).catch(err =>{
+              console.error(err,err.stack);
+              this.hasPressedSendMessage = false;
+              alert(' ocurrio un error al momento de enviar el mensaje');
+              return false;
+            }), 90000  ) //90 secs
+            .then((thing) => console.log('I did a thing!'))
+            .catch((err) => {
+              if (err instanceof TimeoutError) {
+                console.error('Timeout :-(');
                 this.hasPressedSendMessage = false;
-                return true;
-              }).catch(err =>{
-                console.error(err,err.stack);
-                this.hasPressedSendMessage = false;
-                alert(' ocurrio un error al momento de enviar el mensaje');
-                return false;
-              }), 90000  ) //90 secs
-              .then((thing) => console.log('I did a thing!'))
-              .catch((err) => {
-                if (err instanceof TimeoutError) {
-                  console.error('Timeout :-(');
-                  this.hasPressedSendMessage = false;
-                  alert( 'No se pudo enviar el mensaje');
-                }
-              });
-
-
-          }
+                alert( 'No se pudo enviar el mensaje');
+              }
+            });
         }
-      // }).catch(err =>{
-      //   console.error(err,err.stack);
-      //   alert( 'La App no tiene permisos para enviar mensajes');
-      //   this.hasPressedSendMessage = false;
-      // });
+      }
     }
   }
 
@@ -243,7 +248,8 @@ export class HomePage {
   }
 
   nextStepTutorial() {
-    this.firstTime = !this.firstTime;
     this.tutorialStep += 1;
+    this.firstTime = this.tutorialStep < 7;
+    console.log(this.tutorialStep)
   }
 }
