@@ -198,6 +198,19 @@ export class HomePage {
     this.hasPressedSendMessage = false;
   }
 
+  checkContactsAvailable(){
+
+    let check : any;
+    check = false;
+
+    if( this.infoContacts.length === 0 ) return true;
+    for( let value of this.infoContacts ){
+      check |= value.toggle;
+    }
+
+    return !check;
+  }
+
   loadInfo(){
     this.storage.get(this.keyEmergencyMessage).then((response) => {
       if( response){
