@@ -1,3 +1,239 @@
 page-educacion {
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
 
+  ion-header {
+    max-height: 6vh;
+        height: 6vh;
+  }
+
+  .toolbar-ios{
+    min-height: 6vh;
+  }
+
+  .fixed-content, .scroll-content {
+    margin-top: 6vh;
+  }
+
+  ion-title.title.title-md, ion-title.title.title-ios{
+    padding: 0 75px 1px !important;
+  }
+
+  .toolbar{
+    .icon{
+      color: white !important;
+    }
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #004FC6;
+  }
+
+  .bar-button-default,
+  .toolbar-title {
+      color: #9BC3FF !important;
+  }
+  .scroll-content{
+    background-color: #004FC6;
+  }
+
+  .banner{
+    background-color: #004FC6;
+    position: relative;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    ion-icon{
+      font-size: 4.4rem;
+    }
+
+    .bannerTitle{
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 2rem;
+      margin: 0 15%;
+      text-align: center;
+    }
+    @media (max-height: 500px){
+      .bannerTitle{
+        font-size: 1.8rem;
+      }
+    }
+
+    .bannerContent{
+      text-align: center;
+      margin:3% 10%;
+      color: #9BC3FF;
+      font-size: 1.45rem;
+    }
+    @media (max-height: 500px){
+      .bannerContent{
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .sections{
+    position: relative;
+    border-top-left-radius: 6% 5%;
+    border-top-right-radius: 6% 5%;
+    background-color: white;
+
+  }
+
+
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
+      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
+      ion-list-header.item.item-ios.list-header.list-header-ios:first-child > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
+            border-top-left-radius: 7% 30%;
+            border-top-right-radius: 7% 30%;
+            background-color: white;
+      }
+
+      ion-list-header.item.item-md.list-header.list-header-md:first-child > .item-inner > .input-wrapper > ion-label.label.label-md{
+          background-color: #004FC6;
+      }
+
+      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section,
+      ion-list-header.item.item-md.list-header.list-header-md > div.item-inner div.input-wrapper > ion-label.label.label-md > button.item.item-block.item-md.section-active,
+      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section,
+      ion-list-header.item.item-ios.list-header.list-header-ios > div.item-inner div.input-wrapper > ion-label.label.label-ios > button.item.item-block.item-ios.section-active{
+
+      }
+
+      button.item.item-block.item-md.section, button.item.item-block.item-md.section-active, button.item.item-block.item-ios.section-active, button.item.item-block.item-ios.section {
+          height: 16vh;
+      }
+
+      .list-header-md{
+        margin-bottom: 0;
+      }
+      .section {
+          background: #fff;
+          color: #000;
+          margin-bottom: 0px;
+
+      }
+
+      .item-inner {
+          padding-right: 0px !important;
+    }
+
+      .accordion-list{
+        background-color: #004FC6;
+        ion-icon.icon.icon-md, .item-ios ion-icon{
+          color: #2C347E;
+        }
+      }
+
+      .child {
+          background: #e8e7e6;
+          color: #000;
+          margin-bottom: 4px;
+      }
+      .child-item {
+          background: white;
+          padding: 0% 0% 7% 0%;
+          h2{
+            color: #505050;
+            font-size: 1.4rem;
+            line-height: 3.5vh;
+            position: relative;
+            padding: 4% 8% 6% 8%;
+            text-transform: initial;
+          }
+          h2:before{
+            background-color: lightgray;
+            content: '';
+            width: 84%;
+            position: absolute;
+            left: 8%;
+            height: 1px;
+            bottom: 0px;
+          }
+          .item-inner>.input-wrapper>.label>p{
+                padding-top: 5%;
+                font-size: 1.4rem;
+                padding-left: 8%;
+                text-transform: initial;
+          }
+            .item-inner>.input-wrapper>.label>p:nth-of-type(2), .item-inner>.input-wrapper>.label>p:nth-of-type(4) {
+                padding-top: 0%;
+        }
+          .item-inner>.input-wrapper>.label>p:nth-child(odd){
+            color: #505050;
+            font-weight: 400;
+          }
+      }
+      .label {
+          margin: 0px;
+          img{
+            width: 100%;
+          }
+      }
+      .list {
+          margin-bottom: 0px;
+      }
+
+      .item-inner:before{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+        bottom: 0px;
+      }
+
+      .item-md p, .item-ios p {
+
+    white-space: normal;
+    padding-right: 25%;
+    color: #363B56;
+    font-weight: bold;
+    font-size: 1.65rem;
+}
+
+ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
+ion-list.list.list-md > ion-list-header.item.item-md.list-header.list-header-md > .item-inner > .input-wrapper >
+ion-label.label.label-md > ion-item.child-item.item.item-block.item-md,
+ion-list-header.item.item-ios.list-header.list-header-ios:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-ios >
+ion-list.list.list-ios > ion-list-header.item.item-ios.list-header.list-header-ios > .item-inner > .input-wrapper >
+ion-label.label.label-ios > ion-item.child-item.item.item-block.item-ios
+{
+  border-bottom: 1.2vh solid #004FC6;
+}
+
+ion-icon.icon.icon-md.ion-ios-arrow-down.item-icon, ion-icon.icon.icon-md.ion-ios-arrow-up.item-icon {
+    margin-right: 7%;
+}
+
+.bottomLine{
+  height: 0vh;
+  width: 100%;
+  position: relative;
+}
+
+.bottomLine:before {
+background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+height: 0.8vh;
+content: '';
+bottom: 0px;
+right: 0;
+left: 0;
+position: absolute;
+}
 }
