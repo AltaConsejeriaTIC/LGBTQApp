@@ -1,3 +1,76 @@
 page-alianzas-aliado {
+  .bottomLine{
+    height: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+.bottomLine:before {
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  height: 3px;
+  content: '';
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.toolbar{
+  .icon{
+    color: white !important;
+  }
+}
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.24rem;
+  }
+
+  ion-content,
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .toolbar-background {
+    background-color: #05AE0B;
+  }
+
+
+  .bar-button-default,
+  .toolbar-title {
+    color: #98E4A4 !important;
+  }
+
+  .scroll-content {
+    img {
+      width: 100%;
+      height: auto;
+      align-self: center;
+      padding-bottom: 10%;
+    }
+  }
+
+  .direccionContent{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 12%;
+      .contentCenso{
+        text-align: left;
+        line-height: 4vh;
+        color: #747783;
+        p{
+          font-size: 1.5rem;
+          margin-top: 0;
+          span{
+            font-weight: bold;
+            color: rgba(54, 59, 86, 0.7);
+          }
+        }
+      }
+  }
 
 }
