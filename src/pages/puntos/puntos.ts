@@ -56,7 +56,7 @@ export class PuntosPage {
             "icon": "ios-home",
             "children": [
                 {
-                  "image":"../assets/imgs/home.png",
+                  "image":"../assets/imgs/unidad.png",
                   "information": "Esta unidad busca atender jurídicamente vulneraciones a los derechos fundamentales de personas LGBTI.",
                   "description": "Sector Salud - CAMI Zampar Mendoza",
                   "phone": "(57) 5188471 Ext: 4128 / (57) 3279797 Ext. 1835",
