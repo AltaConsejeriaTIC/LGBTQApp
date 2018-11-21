@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AlianzaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AlianzasAliadoPage } from '../alianzas-aliado/alianzas-aliado';
 
 @Component({
   selector: 'page-alianza',
@@ -21,5 +15,9 @@ export class AlianzaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlianzaPage');
+  }
+
+  goToSerAliado(){
+    this.navCtrl.push(AlianzasAliadoPage);
   }
 }
