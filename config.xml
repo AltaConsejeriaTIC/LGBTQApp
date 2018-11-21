@@ -104,5 +104,7 @@
         <variable name="DEEPLINK_HOST" value="example.com" />
         <variable name="ANDROID_PATH_PREFIX" value="/" />
     </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
 </widget>

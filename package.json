@@ -83,7 +83,9 @@
         "DEEPLINK_HOST": "example.com",
         "ANDROID_PATH_PREFIX": "/"
       },
-      "mx.ferreyra.callnumber": {}
+      "mx.ferreyra.callnumber": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "android"

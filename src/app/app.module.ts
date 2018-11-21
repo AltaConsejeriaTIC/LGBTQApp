@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Deeplinks } from '@ionic-native/deeplinks'
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -153,7 +154,8 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     Contacts,
     SMS,
     CallNumber,
-    Deeplinks
+    Deeplinks,
+    InAppBrowser
   ]
 })
 export class AppModule {}
