@@ -295,7 +295,7 @@ page-home {
             min-height: 50px;
             height: 100%;
             p{
-              margin: 8px 0;
+              margin: 9px 0;
               color: #ffffff;
               font-size: 1.8rem;
               font-weight: 800;
@@ -734,14 +734,14 @@ page-home {
   p.tutorial-text.first{
     left: 40px;
     left: calc(40px + constant(safe-area-inset-left));
-    left: calc(40px + env(safe-area-inset-left));;
+    left: calc(40px + env(safe-area-inset-left));
     bottom: 55%;
   }
 
   p.tutorial-text.second{
     left: 40px;
     left: calc(40px + constant(safe-area-inset-left));
-    left: calc(40px + env(safe-area-inset-left));;
+    left: calc(40px + env(safe-area-inset-left));
     bottom: 20%;
   }
 
@@ -756,7 +756,7 @@ page-home {
     color: #ffffff;
     left: 80px;
     left: calc(40px + constant(safe-area-inset-left));
-    left: calc(40px + env(safe-area-inset-left));;
+    left: calc(40px + env(safe-area-inset-left));
     bottom: 20%;
     display: flex;
   }

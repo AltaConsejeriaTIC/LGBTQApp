@@ -31,7 +31,7 @@ export class HomePage {
     private callNumber: CallNumber,
     private storage: Storage) {
       storage.get(this.keyFirstTimeUse).then(value => {
-        //this.firstTime = (value === null ? true : value);
+        this.firstTime = (value === null ? true : value);
       }).catch(err => {
         console.error("Error en constructor, storage.get", err, err.stack);
       });
