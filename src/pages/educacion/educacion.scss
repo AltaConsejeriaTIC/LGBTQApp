@@ -115,7 +115,7 @@ page-educacion {
       }
 
       button.item.item-block.item-md.section, button.item.item-block.item-md.section-active, button.item.item-block.item-ios.section-active, button.item.item-block.item-ios.section {
-          height: 16vh;
+          height: 14vh;
       }
 
       .list-header-md{
@@ -170,7 +170,7 @@ page-educacion {
                 padding-left: 8%;
                 text-transform: initial;
           }
-            .item-inner>.input-wrapper>.label>p:nth-of-type(2), .item-inner>.input-wrapper>.label>p:nth-of-type(4) {
+            .item-inner>.input-wrapper>.label>p:nth-of-type(3), .item-inner>.input-wrapper>.label>p:nth-of-type(5), .item-inner>.input-wrapper>.label>p:nth-of-type(7) {
                 padding-top: 0%;
         }
           .item-inner>.input-wrapper>.label>p:nth-child(odd){
@@ -198,19 +198,20 @@ page-educacion {
         bottom: 0px;
       }
 
-      .item-md p, .item-ios p {
+      .item-md p, .item-ios p  {
 
     white-space: normal;
-    padding-right: 25%;
+    padding-left: 7%;
+    padding-right: 15%;
     color: #363B56;
-    font-weight: bold;
+    font-weight: bold ;
     font-size: 1.65rem;
 }
 
-ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
+ion-list-header.item.item-md.list-header.list-header-md:not(:nth-child(6)) > div.item-inner div.input-wrapper > ion-label.label.label-md >
 ion-list.list.list-md > ion-list-header.item.item-md.list-header.list-header-md > .item-inner > .input-wrapper >
 ion-label.label.label-md > ion-item.child-item.item.item-block.item-md,
-ion-list-header.item.item-ios.list-header.list-header-ios:not(:nth-child(4)) > div.item-inner div.input-wrapper > ion-label.label.label-ios >
+ion-list-header.item.item-ios.list-header.list-header-ios:not(:nth-child(6)) > div.item-inner div.input-wrapper > ion-label.label.label-ios >
 ion-list.list.list-ios > ion-list-header.item.item-ios.list-header.list-header-ios > .item-inner > .input-wrapper >
 ion-label.label.label-ios > ion-item.child-item.item.item-block.item-ios
 {
