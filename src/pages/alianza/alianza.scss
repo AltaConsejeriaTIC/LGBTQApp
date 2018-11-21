@@ -97,23 +97,13 @@ page-alianza {
         right: 7%;
         margin-top: -3.5vh;
         position: relative;
-        -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
         align-self: flex-end;
         border-radius: 5vh;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
         justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
         align-items: center;
         position: absolute;
+        z-index: 99;
         ion-icon.icon.icon-ios.ion-md-person-add {
             margin-right: 8%;
         }
