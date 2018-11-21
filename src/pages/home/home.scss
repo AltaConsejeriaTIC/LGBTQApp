@@ -242,7 +242,7 @@ page-home {
           justify-content: center;
 
 
-          .low-opacity {
+          .low-opacity,button[disabled]#principal-button.low-opacity {
             opacity: 0.3;
           }
 

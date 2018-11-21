@@ -85,11 +85,11 @@
             <ion-row (click)="toggleEmergencyButton()">
                 <ion-col col-3>
                     <ion-fab left middle #fab [ngStyle]="{'z-index': 99*(tutorialStep>1) }">
-                        <button ion-fab color="danger" [disabled]="firstTime && tutorialStep!=4" id="principal-button"><ion-icon name="icon-campana-boton"></ion-icon></button>
+                        <button ion-fab color="danger" [class.low-opacity]="tutorialStep==6"  [disabled]="firstTime && tutorialStep!=4" id="principal-button"><ion-icon name="icon-campana-boton"></ion-icon></button>
                         <ion-fab-list side="top">
                             <button ion-fab (click)="goToContactPage()" [disabled]="firstTime && tutorialStep!=6"><ion-icon name="settings"></ion-icon></button>
                             <button ion-fab (click)="sendEmergencySMS()" [disabled]="firstTime" [class.low-opacity]="tutorialStep==6"><ion-icon name="mail"></ion-icon></button>
-                            <button ion-fab (click)="callEmergency()" [disabled]="firstTime"[class.low-opacity]="tutorialStep==6"><ion-icon name="call"></ion-icon></button >
+                            <button ion-fab (click)="callEmergency()" [disabled]="firstTime" [class.low-opacity]="tutorialStep==6"><ion-icon name="call"></ion-icon></button >
                             <div *ngIf="tutorialStep == 5 || tutorialStep == 6" style="width: 100%;">
                               <img src="../assets/icon/arrow.svg">
                             </div>
