@@ -45,6 +45,9 @@ import {TrabajoPage} from '../pages/trabajo/trabajo';
 import {ObjetivoPage} from '../pages/objetivo/objetivo';
 import {CoordinaPage} from '../pages/coordina/coordina';
 
+import { AlianzasAliadoPage } from '../pages/alianzas-aliado/alianzas-aliado';
+import { OrganizacionAparecerPage } from '../pages/organizacion-aparecer/organizacion-aparecer';
+
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
 import { HttpClientModule } from '@angular/common/http';
@@ -97,7 +100,9 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     CulturaPage,
     ServiciosPage,
     TrabajoPage,
-    LogrosPage
+    LogrosPage,
+    AlianzasAliadoPage,
+    OrganizacionAparecerPage
 
   ],
   imports: [
@@ -140,7 +145,9 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     CulturaPage,
     ServiciosPage,
     TrabajoPage,
-    LogrosPage
+    LogrosPage,
+    AlianzasAliadoPage,
+    OrganizacionAparecerPage
   ],
   providers: [
     StatusBar,

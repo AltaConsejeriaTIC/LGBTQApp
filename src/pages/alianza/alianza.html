@@ -19,12 +19,12 @@
 
       <ion-icon name="icon-icono-alianzas"></ion-icon>
       <p class="bannerTitle">nuestras alianzas</p>
-      <p class="bannerContent">A través de los siguientes canales puedes denunciar un acto de discriminación o vulneración de tus derechos.</p>
+      <p class="bannerContent">Aquí puedes encontrar alianzas que hemos realizado con el sector privado y mixto para brindarte oportunidades y ofertas que te interesarán</p>
 
   </div>
 
   <div class="sections">
-    <div class="aliado">
+    <div class="aliado" (click)="goToSerAliado()">
         <ion-icon name="md-person-add"></ion-icon>
         <p>Ser aliado</p>
     </div>
@@ -33,7 +33,15 @@
             <img src="../assets/imgs/image.png">
         </ion-col>
         <ion-col col-8>
-          <p class="sectionTitle">Denuncia por discriminación</p>
+          <p class="sectionTitle">Red Latinoamericana de Ciudades Arcoiris</p>
+        </ion-col>
+    </div>
+    <div class="politicaPublica section" >
+        <ion-col col-4 class="icon">
+            <img src="../assets/imgs/image.png">
+        </ion-col>
+        <ion-col col-8>
+          <p class="sectionTitle">Cine Colombia</p>
           <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
         </ion-col>
     </div>
@@ -42,16 +50,7 @@
             <img src="../assets/imgs/image.png">
         </ion-col>
         <ion-col col-8>
-          <p class="sectionTitle">Denuncia por discriminación</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
-        </ion-col>
-    </div>
-    <div class="politicaPublica section" >
-        <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
-        </ion-col>
-        <ion-col col-8>
-          <p class="sectionTitle">Denuncia por discriminación</p>
+          <p class="sectionTitle">Tu boleta</p>
           <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
         </ion-col>
     </div>
