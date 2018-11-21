@@ -63,6 +63,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { SMS } from '@ionic-native/sms';
 
 import { ContentDetailModule } from '../pages/content-detail/content-detail.module';
+import { ComplaintProvider } from '../providers/complaint/complaint';
 
 @NgModule({
   declarations: [
@@ -155,7 +156,8 @@ import { ContentDetailModule } from '../pages/content-detail/content-detail.modu
     SMS,
     CallNumber,
     Deeplinks,
-    InAppBrowser
+    InAppBrowser,
+    ComplaintProvider
   ]
 })
 export class AppModule {}

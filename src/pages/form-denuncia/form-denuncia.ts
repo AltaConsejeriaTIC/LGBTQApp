@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FormDenunciaSucesoPage } from '../form-denuncia-suceso/form-denuncia-suceso';
+import { ComplaintProvider } from '../../providers/complaint/complaint';
 
 
 @Component({
@@ -38,7 +39,10 @@ export class FormDenunciaPage {
       ]
 }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor( public navCtrl: NavController,
+               public navParams: NavParams,
+               private formBuilder: FormBuilder,
+               private complaintProvider: ComplaintProvider) {
     this.denunciaForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -64,6 +68,19 @@ export class FormDenunciaPage {
                               		Validators.pattern('^[0-9]*$')
                               	]))
     });
+
+    complaintProvider.postData( 'http://localhost:8080/complaints',
+    {
+      "first_name": "andres",
+      "last_name": "andres",
+      "document_type": "cc",
+      "document_number": "10000000",
+      "email": "ALGO@gmail.com",
+      "phone": "3150000000",
+      "event_day": "2018-08-11",
+      "event_place": "xxxxx",
+      "description": "xxxxx"
+    } );
 
   }
 
