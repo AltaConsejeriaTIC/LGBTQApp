@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FormDenunciaPage } from '../form-denuncia/form-denuncia';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-form-denuncia-suceso',
@@ -45,6 +46,8 @@ sendData(){
 
   closeData(){
       this.modalWindow=false;
+      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.popToRoot();
     }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { HomePage } from '../home/home';
 
 
 @Component({
@@ -59,7 +60,7 @@ export class FormCensoPage {
 	]
 }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public app: App) {
     this.credentialsForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -102,6 +103,8 @@ export class FormCensoPage {
 
     closeData(){
         this.modalWindow=false;
+        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.popToRoot();
       }
 
       onChangeIdentity($event){
