@@ -87,9 +87,12 @@
                     <ion-fab left middle #fab [ngStyle]="{'z-index': 99*(tutorialStep>1) }">
                         <button ion-fab color="danger" [disabled]="firstTime && tutorialStep!=4" id="principal-button"><ion-icon name="icon-campana-boton"></ion-icon></button>
                         <ion-fab-list side="top">
-                            <button ion-fab (click)="goToContactPage()" [disabled]="tutorialStep<6"><ion-icon name="settings"></ion-icon></button>
-                            <button ion-fab (click)="sendEmergencySMS()" [disabled]="tutorialStep<7" [class.low-opacity]="tutorialStep==6"><ion-icon name="mail"></ion-icon></button>
-                            <button ion-fab (click)="callEmergency()" [disabled]="tutorialStep<7"[class.low-opacity]="tutorialStep==6"><ion-icon name="call"></ion-icon></button >
+                            <button ion-fab (click)="goToContactPage()" [disabled]="firstTime && tutorialStep!=6"><ion-icon name="settings"></ion-icon></button>
+                            <button ion-fab (click)="sendEmergencySMS()" [disabled]="firstTime" [class.low-opacity]="tutorialStep==6"><ion-icon name="mail"></ion-icon></button>
+                            <button ion-fab (click)="callEmergency()" [disabled]="firstTime"[class.low-opacity]="tutorialStep==6"><ion-icon name="call"></ion-icon></button >
+                            <div *ngIf="tutorialStep == 5 || tutorialStep == 6" style="width: 100%;">
+                              <img src="../assets/icon/arrow.svg">
+                            </div>
                         </ion-fab-list>
                     </ion-fab>
                 </ion-col>
@@ -106,11 +109,11 @@
                     </ion-card-content>
 
                   <div *ngIf="emergencyButtonActivate" class="ion-fab-label fab-list-active">
-                    <p class="fab fab-in-list show" (click)="goToContactPage()" >Configuración del botón</p>
-                    <p class="fab fab-in-list show" (click)="sendEmergencySMS()" [class.low-opacity]="tutorialStep==6">Enviar Mensaje</p>
-                    <p class="fab fab-in-list show" (click)="callEmergency()" [class.low-opacity]="tutorialStep==6">Llamar al 123</p >
+                    <p class="fab fab-in-list show" (click)="disable('goToContactPage',firstTime && tutorialStep!=6)" >Configuración del botón</p>
+                    <p class="fab fab-in-list show" (click)="disable('sendEmergencySMS',firstTime)" [class.low-opacity]="tutorialStep==6">Enviar Mensaje</p>
+                    <p class="fab fab-in-list show" (click)="disable('callEmergency',firstTime)" [class.low-opacity]="tutorialStep==6">Llamar al 123</p >
                     <div *ngIf="tutorialStep == 5">
-                      <p class="tutorial-text first">
+                      <p class="tutorial-text position first">
                         <span>Al presionar el botón puedes:</span><br/><br/>
                         <b>1.</b> Llamar al 123. <br/>
                         <b>2.</b> Enviar un mensaje de texto a los contactos que desees. <br/>
@@ -118,7 +121,7 @@
                       </p>
                     </div>
                     <div *ngIf="tutorialStep == 6">
-                      <p class="tutorial-text first">
+                      <p class="tutorial-text position first">
                         <span>Ingresa a la configuración del botón</span><br/><br/>
                          Aquí puedes configurar el mensaje de emergencia que se enviará y los contactos que lo recibirán.
                       </p>
@@ -132,16 +135,18 @@
     <div *ngIf="firstTime && tutorialStep < 5">
         <ion-backdrop class="delete-contact-background"></ion-backdrop>
         <div *ngIf="tutorialStep === 1">
-            <p class="tutorial-text first"><b>Te damos la bienvenida</b><br/><br/>En esta aplicación vas a encontrar eventos, noticias, organizaciones sociales y alianzas privadas que apoyan a personas LGBTI. También encontraras medios para denunciar cualquier tipo de discriminación !y mucho mas! </p>
+            <p class="tutorial-text position first"><b>Te damos la bienvenida</b><br/><br/>En esta aplicación vas a encontrar eventos, noticias, organizaciones sociales y alianzas privadas que apoyan a personas LGBTI. También encontraras medios para denunciar cualquier tipo de discriminación <br/> !y mucho mas! </p>
         </div>
         <div *ngIf="tutorialStep === 2">
-          <p class="tutorial-text second"><b>Pero antes de continuar</b><br/><br/>Queremos mostrarte una característica muy importante de esta aplicación. el botón de emergencia.</p>
+          <p class="tutorial-text position second"><b>Pero antes de continuar</b><br/><br/>Queremos mostrarte una característica muy importante de esta aplicación, el botón de emergencia.</p>
         </div>
-        <div *ngIf="tutorialStep === 3">
-          <p class="tutorial-text second"><b>éste el el botón de emergencia</b><br/><br/>Si en algún momento te encuentras en situación de riesgo. puedes usar esta opción para enviarle un mensaje predeterminado a los contactos que desees.</p>
-        </div>
-        <div *ngIf="tutorialStep === 4">
-          <p class="tutorial-text second"><b>Presiona el botón</b><br/><br/>Para mirar su funcionamiento.</p>
+
+        <div *ngIf="tutorialStep === 3 || tutorialStep === 4" class="tutorial-arrow">
+          <div style="width: 20%;">
+            <img class="tutorial-arrow" src="../assets/icon/arrow.svg">
+          </div>
+          <p *ngIf="tutorialStep === 3" class="tutorial-text tutorial-arrow"><b>éste es el botón de emergencia</b><br/><br/>Si en algún momento te encuentras en situación de riesgo. puedes usar esta opción para enviarle un mensaje predeterminado a los contactos que desees.</p>
+          <p *ngIf="tutorialStep === 4" class="tutorial-text tutorial-arrow"><b>Presiona el botón</b><br/>Para mirar su funcionamiento.</p>
         </div>
     </div>
 </ion-content>

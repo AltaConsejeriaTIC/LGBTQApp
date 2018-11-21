@@ -31,7 +31,7 @@ export class HomePage {
     private callNumber: CallNumber,
     private storage: Storage) {
       storage.get(this.keyFirstTimeUse).then(value => {
-        this.firstTime = (value === null ? true : value);
+        //this.firstTime = (value === null ? true : value);
       }).catch(err => {
         console.error("Error en constructor, storage.get", err, err.stack);
       });
@@ -46,7 +46,7 @@ export class HomePage {
   public keyFirstTimeUse = 'firstTimeUse';
   public emergencyMessage="";
   public messageHasBeenSend = false;
-  public firstTime: boolean = false;
+  public firstTime: boolean = true;
   public emergencyButtonActivate: boolean = false;
   public hasPressedSendMessage = false;
   public tutorialStep = 1;
@@ -266,5 +266,11 @@ export class HomePage {
     this.tutorialStep += 1;
     this.firstTime = this.tutorialStep < 7;
     console.log(this.tutorialStep)
+  }
+
+  disable(callback,condition){
+    if(!condition){
+      this[callback]();
+    }
   }
 }
