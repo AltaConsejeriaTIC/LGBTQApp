@@ -11,56 +11,73 @@ export class EducacionPage {
 
   items = [
         {
-            "name": "Casa refugio LGBTI",
-            "icon": "ios-home",
+            "name": "Ingreso escolar menores de 3 años",
             "children": [
                 {
-                    "image":"../assets/imgs/refugio.png",
-                    "information": "Hogar transitorio para personas LGBTI que han sido víctimas de violencia y no tienen una red de apoyo. En esta casa se comienza un proceso de restablecimiento de derechos, si necesitas entrar a esta casa puedes acudir con los siguientes datos de contacto:",
-                    "description": "Sector Salud - CAMI Zampar Mendoza",
-                    "phone": "(57) 3444484",
-                    "address": "Diagonal 34 No. 5 - 43",
-                    "mail": "casarefugio@gobiernobogota.gov.co"
+                    "information": "Ingreso al sistema educativo para personas menores de tres años.",
+                    "description": "Secretaría de Integración Social - Subdirección de infancia",
+                    "phone": "3279797 extensión 1005 - 1006",
+                    "web": "www.integracionsocial.gov.co"
                 }
 
             ]
         },
         {
-            "name": "Centro comunitario Teusaquillo",
-            "icon": "ios-home",
+            "name": "Ingreso escolar de 3 a 18 años",
             "children": [
               {
-                "image":"../assets/imgs/teusaquillo.png",
-                "information": "Centro de atención integral en donde se ofrece un conjunto de acciones psicosociales y de desarrollo comunitario a personas LGBTI",
-                "description": "Sector Salud - CAMI Zampar Mendoza",
-                "phone": "(57) 3384616",
-                "address": "Transversal 17ª bis Nº 36-74"
+                "information": "Ingreso al sistema educativo para personas entre tres y 18 años.",
+                "description": "Secretaría de Educación. Subsecretaría de acceso y permanencia",
+                "phone": "3241000 Ext 3100",
+                "web": "www.educacionbogota.edu.co",
+                "webText": "O Dirígete a las Direcciones Locales de educación mas cercanas."
               }
             ]
         },
         {
-            "name": "Centro comunitario los Mártires",
-            "icon": "ios-home",
+            "name": "Educación Flexible",
             "children": [
                 {
-                  "image":"../assets/imgs/martires.png",
-                  "information": "Centro de atención integral en donde se ofrece un conjunto de acciones psicosociales y de desarrollo comunitario a personas LGBTI.",
-                  "description": "Sector Salud - CAMI Zampar Mendoza",
-                  "phone": "(57) 2436286",
-                  "address": "Carrera 14 bis Nº 21-10 "
+                  "information": "Si deseas ingresar al sistema educativo a través de un modelo de educación flexible. Los sistemas de educación flexibles son para personas mayores o con horarios dispuestos para personas que trabajan.",
+                  "description": "Secretaría de Integración Social - Subdirección para asuntos LGBTI",
+                  "phone": "3279797 Ext. 68000",
+                  "web": "www.integracionsocial.gov.co"
                 }
             ]
         },
         {
-            "name": "Unidad contra la discriminación UCD",
-            "icon": "ios-home",
+            "name": "Educación superior",
             "children": [
                 {
-                  "image":"../assets/imgs/unidad.png",
-                  "information": "Esta unidad busca atender jurídicamente vulneraciones a los derechos fundamentales de personas LGBTI.",
-                  "description": "Sector Salud - CAMI Zampar Mendoza",
-                  "phone": "(57) 5188471 Ext: 4128 / (57) 3279797 Ext. 1835",
-                  "address": "Calle 19 Nº 27-09"
+                  "information": "Si deseas obtener información respecto a becas para acceso a educación superior.",
+                  "description": "Secretaría de Educación. Subsecretaría de integración institucional",
+                  "phone": "3241000 Ext 3100",
+                  "web": "www.educacionbogota.edu.co"
+                }
+            ]
+        },
+        {
+            "name": "Bachillerato y educación técnica",
+            "children": [
+                {
+                  "information": "Si deseas acceder a educación y/o educación técnica.",
+                  "description": "Instituto Distrital para la protección de la Niñez y la Juventud",
+                  "address": "IPRON. Carrera 27 A número 63 B - 07 ",
+                  "phone": "2112287",
+                  "web": "www.idipron.gov.co"
+                }
+            ]
+        },
+        {
+            "name": "Hostigamiento escolar",
+            "children": [
+                {
+                  "information": "Si eres víctima de hostigamiento escolar.",
+                  "description": "Secretaría de Educación. Dirección de Inclusión e integración de poblaciones ",
+                  "phone": "3241000 Ext: 2209 ",
+                  "web": "www.idipron.gov.co",
+                  "webText": "O Dirígete a las Direcciones Locales de educación mas cercanas.",
+                  "web2": "www.educacionbogota.edu.co"
                 }
             ]
         }
