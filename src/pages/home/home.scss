@@ -101,7 +101,7 @@ page-home {
     .articleDate, .articleType{
           text-transform: uppercase;
           letter-spacing: 0.04em;
-          font-size: 0.9rem;
+          font-size: 1.3rem;
           font-weight: bold;
     }
 
@@ -127,7 +127,6 @@ page-home {
     color: white;
     font-size: 1.8em;
     border-radius: 50%;
-    color: white;
     padding: 1.5%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(30px);/* Note: backdrop-filter has minimal browser support */
@@ -192,7 +191,7 @@ page-home {
       }
 
       p.sectionText.alianza {
-          padding: 0% 4%;
+          padding: 0 4%;
       }
 
       @media (max-height: 500px) {
@@ -277,8 +276,7 @@ page-home {
           }
 
           .ion-fab-label{
-            margin: 60px 0;
-            margin-bottom: 140px;
+            margin: 60px 0 140px;
             position: fixed;
             bottom: 0;
             top: auto;
@@ -476,7 +474,7 @@ page-home {
         .confirm-title-delete-contact{
           display: flex;
           text-align: left;
-          margin: 0% 12% 0% 12%;
+          margin: 0 12% 0 12%;
           font-weight: bold;
           font-size: 142%;
           color: #2C347E;
@@ -490,7 +488,7 @@ page-home {
           display: flex;
           padding-top: 3%;
           text-align: left;
-          margin: 0% 12% 0% 12%;
+          margin: 0 12% 0 12%;
           color: gray;
           font-size: 100%;
         }
@@ -545,7 +543,6 @@ page-home {
     flex-direction: column;
 
     .picture-image-block{
-      margin-top: 9%;
       text-align: center;
       position: relative;
       margin-top: 8%;
@@ -561,13 +558,13 @@ page-home {
       .confirm-delete-contact{
         display: flex;
         text-align: center;
-        margin: 8% 10% 0% 10%;
+        margin: 8% 10% 0 10%;
         color: gray;
       }
       .confirm-delete-contact-new{
         display: flex;
         text-align: center;
-        margin: 0% 10% 0% 10%;
+        margin: 0 10% 0 10%;
         color: gray;
       }
     }
@@ -595,7 +592,7 @@ page-home {
           height: 100%;
           width: 100%;
           box-shadow: none;
-          border-radius: 0px;
+          border-radius: 0;
         }
       }
     }
@@ -622,7 +619,6 @@ page-home {
     flex-direction: column;
 
     .picture-image-block{
-      margin-top: 9%;
       text-align: center;
       position: relative;
       margin-top: 8%;
@@ -638,13 +634,13 @@ page-home {
       .confirm-delete-contact{
         display: flex;
         text-align: center;
-        margin: 8% 10% 0% 10%;
+        margin: 8% 10% 0 10%;
         color: gray;
       }
       .confirm-delete-contact-new{
         display: flex;
         text-align: center;
-        margin: 0% 10% 0% 10%;
+        margin: 0 10% 0 10%;
         color: gray;
       }
     }
@@ -672,7 +668,7 @@ page-home {
           height: 100%;
           width: 100%;
           box-shadow: none;
-          border-radius: 0px;
+          border-radius: 0;
         }
       }
     }
@@ -731,17 +727,17 @@ page-home {
     }
   }
 
-  p.tutorial-text.first{
+  p.tutorial-text {
     left: 40px;
     left: calc(40px + constant(safe-area-inset-left));
     left: calc(40px + env(safe-area-inset-left));
+  }
+
+  .first{
     bottom: 55%;
   }
 
-  p.tutorial-text.second{
-    left: 40px;
-    left: calc(40px + constant(safe-area-inset-left));
-    left: calc(40px + env(safe-area-inset-left));
+  .second{
     bottom: 20%;
   }
 
@@ -754,7 +750,7 @@ page-home {
     font-size: 14px;
     letter-spacing: 0.04em;
     color: #ffffff;
-    left: 80px;
+    left: 40px;
     left: calc(40px + constant(safe-area-inset-left));
     left: calc(40px + env(safe-area-inset-left));
     bottom: 20%;
