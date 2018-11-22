@@ -14,9 +14,7 @@ export class ComplaintProvider {
   constructor(public http: HttpClient) { }
 
   postData(baseUrl, data){
-    this.http.post(baseUrl, data, httpOptions)
-      .subscribe(res => { console.log( res) }
-      , err => { console.log(err)} );
+    return this.http.post(baseUrl, data, httpOptions);
   }
 
 }

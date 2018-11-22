@@ -37,7 +37,7 @@ export class FormDenunciaPage {
         { type: 'required', message: 'El teléfono es requerido.' },
         { type: 'pattern', message: 'El formato no es válido' }
       ]
-}
+  }
 
   constructor( public navCtrl: NavController,
                public navParams: NavParams,
@@ -69,18 +69,6 @@ export class FormDenunciaPage {
                               	]))
     });
 
-    complaintProvider.postData( 'http://localhost:8080/complaints',
-    {
-      "first_name": "andres",
-      "last_name": "andres",
-      "document_type": "cc",
-      "document_number": "10000000",
-      "email": "ALGO@gmail.com",
-      "phone": "3150000000",
-      "event_day": "2018-08-11",
-      "event_place": "xxxxx",
-      "description": "xxxxx"
-    } );
 
   }
 
@@ -89,7 +77,14 @@ export class FormDenunciaPage {
   }
 
   goToFormDenunciaSuceso(){
-    this.navCtrl.push(FormDenunciaSucesoPage);
+    this.navCtrl.push(FormDenunciaSucesoPage, {
+      first_name: this.denunciaForm.get('firstName').value,
+      last_name: this.denunciaForm.get('lastName').value,
+      document_type: this.denunciaForm.get('documentType').value,
+      document_number: this.denunciaForm.get('documentNumber').value,
+      email: this.denunciaForm.get('email').value,
+      phone: this.denunciaForm.get('phone').value
+    } );
   }
 
 }
