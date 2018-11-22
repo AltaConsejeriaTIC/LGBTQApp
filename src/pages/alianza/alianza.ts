@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlianzasAliadoPage } from '../alianzas-aliado/alianzas-aliado';
 import { AlianzasDetailPage } from '../alianzas-detail/alianzas-detail';
+import { RedPage } from '../red/red';
 
 @Component({
   selector: 'page-alianza',
@@ -16,6 +17,10 @@ export class AlianzaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlianzaPage');
+  }
+
+  goToRed(){
+    this.navCtrl.push(RedPage);
   }
 
   goToSerAliado(){
