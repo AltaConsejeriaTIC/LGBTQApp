@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FormDenunciaSucesoPage } from '../form-denuncia-suceso/form-denuncia-suceso';
+import { ComplaintProvider } from '../../providers/complaint/complaint';
 
 
 @Component({
@@ -36,9 +37,12 @@ export class FormDenunciaPage {
         { type: 'required', message: 'El teléfono es requerido.' },
         { type: 'pattern', message: 'El formato no es válido' }
       ]
-}
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor( public navCtrl: NavController,
+               public navParams: NavParams,
+               private formBuilder: FormBuilder,
+               private complaintProvider: ComplaintProvider) {
     this.denunciaForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -65,6 +69,7 @@ export class FormDenunciaPage {
                               	]))
     });
 
+
   }
 
   ionViewDidLoad() {
@@ -72,7 +77,14 @@ export class FormDenunciaPage {
   }
 
   goToFormDenunciaSuceso(){
-    this.navCtrl.push(FormDenunciaSucesoPage);
+    this.navCtrl.push(FormDenunciaSucesoPage, {
+      first_name: this.denunciaForm.get('firstName').value,
+      last_name: this.denunciaForm.get('lastName').value,
+      document_type: this.denunciaForm.get('documentType').value,
+      document_number: this.denunciaForm.get('documentNumber').value,
+      email: this.denunciaForm.get('email').value,
+      phone: this.denunciaForm.get('phone').value
+    } );
   }
 
 }
