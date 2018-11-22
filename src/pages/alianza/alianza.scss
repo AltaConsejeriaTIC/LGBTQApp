@@ -132,6 +132,7 @@ page-alianza {
           margin-top: 2%;
           color: #727689;
           margin-right: 10%;
+              margin-bottom: 2%;
         }
         @media (max-height: 500px){
             .sectionContent{
@@ -139,7 +140,7 @@ page-alianza {
             }
         }
       }
-      .politicaPublica, .tusDerechos, .puntosAtencion{
+      .politicaPublica{
           display: flex;
           align-items: center;
           .icon{
@@ -148,6 +149,19 @@ page-alianza {
               margin-bottom: 0;
               color: #363B56;
           }
+      }
+
+      .destacado{
+          height: 31.5% !important;
+        .star{
+          display: flex;
+          flex-direction: column;
+          ion-icon.icon.icon-md.ion-md-star, ion-icon.icon.icon-ios.ion-md-star {
+                padding-right: 9%;
+                text-align: right;
+                color: #F9E087;
+            }
+        }
       }
 
     }

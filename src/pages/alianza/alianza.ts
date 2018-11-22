@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlianzasAliadoPage } from '../alianzas-aliado/alianzas-aliado';
+import { AlianzasDetailPage } from '../alianzas-detail/alianzas-detail';
 
 @Component({
   selector: 'page-alianza',
@@ -20,4 +21,10 @@ export class AlianzaPage {
   goToSerAliado(){
     this.navCtrl.push(AlianzasAliadoPage);
   }
+
+  goToDetail(){
+    this.navCtrl.push(AlianzasDetailPage);
+  }
+
+
 }
