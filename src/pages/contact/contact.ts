@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component} from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Contacts} from '@ionic-native/contacts';
 import { Storage } from '@ionic/storage';

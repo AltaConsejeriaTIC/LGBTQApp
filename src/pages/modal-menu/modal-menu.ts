@@ -17,23 +17,36 @@ export class ModalMenuPage {
   }
 
   goToQuienesSomos() {
-    this.navCtrl.push(QuienesSomosPage);
-    this.viewCtrl.dismiss();
+    this.navCtrl.push(QuienesSomosPage).catch(err => {
+      console.error("Error en goToQuienesSomos", err, err.stack);
+    });
+    this.viewCtrl.dismiss().catch(err => {
+      console.error("Error en goToQuienesSomos", err, err.stack);
+    });
   }
 
   goToFormulario() {
-    this.navCtrl.push(FormularioPage);
-    this.viewCtrl.dismiss();
+    this.navCtrl.push(FormularioPage).catch(err => {
+      console.error("Error en goToFormulario", err, err.stack);
+    });
+    this.viewCtrl.dismiss().catch(err => {
+      console.error("Error en goToFormulario", err, err.stack);
+    });
   }
 
   goToPDF() {
-  const browser = this.iab.create('http://www.bogotaturismo.gov.co/sites/default/files/guia_ttca_lgbti_2016_ok_aprobada_19_feb.pdf', '_system');
-  this.viewCtrl.dismiss();
+  this.iab.create('http://www.bogotaturismo.gov.co/sites/default/files/guia_ttca_lgbti_2016_ok_aprobada_19_feb.pdf', '_system');
+  this.viewCtrl.dismiss().catch(err => {
+    console.error("Error en goToPDF", err, err.stack);
+  });
 }
 
   dismiss() {
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss().catch(err => {
+      console.error("Error en dismiss", err, err.stack);
+    });
   }
+
 
 
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { FormDenunciaPage } from '../form-denuncia/form-denuncia';
 import { HomePage } from '../home/home';
 
 @Component({
@@ -25,7 +24,7 @@ export class FormDenunciaSucesoPage {
       'description': [
         { type: 'required', message: 'La descripción no puede ser vacía' }
       ]
-}
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
     this.denunciaForm = this.formBuilder.group({
@@ -46,8 +45,12 @@ sendData(){
 
   closeData(){
       this.modalWindow=false;
-      this.navCtrl.setRoot(HomePage);
-      this.navCtrl.popToRoot();
+      this.navCtrl.setRoot(HomePage).catch(err => {
+        console.error("Error en closeData", err, err.stack);
+      });
+      this.navCtrl.popToRoot().catch(err => {
+        console.error("Error en closeData", err, err.stack);
+      });
     }
 
 }
