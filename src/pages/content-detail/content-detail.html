@@ -85,7 +85,8 @@
   <div *ngIf="typeContent == 'noticia'" class="link">
 
       <p>Para ver la noticia completa</p>
-      <p>haz clic en el <a [href]="params.source_link">siguiente enlace</a><p>
+      <p>haz clic en el <span (click)="goToLink()">siguiente enlace</span><p>
+      <!-- <p>haz clic en el <a [href]="params.source_link">siguiente enlace</a><p> -->
 
   </div>
 

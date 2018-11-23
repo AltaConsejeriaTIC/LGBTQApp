@@ -47,6 +47,9 @@ import {CoordinaPage} from '../pages/coordina/coordina';
 
 import { AlianzasAliadoPage } from '../pages/alianzas-aliado/alianzas-aliado';
 import { OrganizacionAparecerPage } from '../pages/organizacion-aparecer/organizacion-aparecer';
+import { AlianzasDetailPage } from '../pages/alianzas-detail/alianzas-detail';
+import { OrganizacionDetailPage } from '../pages/organizacion-detail/organizacion-detail';
+import { RedPage } from '../pages/red/red';
 
 import { DetailContentService } from '../services/detail-content.service';
 import { EventProvider } from '../providers/event/event';
@@ -103,7 +106,10 @@ import { ComplaintProvider } from '../providers/complaint/complaint';
     TrabajoPage,
     LogrosPage,
     AlianzasAliadoPage,
-    OrganizacionAparecerPage
+    OrganizacionAparecerPage,
+    AlianzasDetailPage,
+    OrganizacionDetailPage,
+    RedPage
 
   ],
   imports: [
@@ -148,7 +154,10 @@ import { ComplaintProvider } from '../providers/complaint/complaint';
     TrabajoPage,
     LogrosPage,
     AlianzasAliadoPage,
-    OrganizacionAparecerPage
+    OrganizacionAparecerPage,
+    AlianzasDetailPage,
+    OrganizacionDetailPage,
+    RedPage
   ],
   providers: [
     StatusBar,

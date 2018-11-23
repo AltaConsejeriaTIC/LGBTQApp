@@ -28,15 +28,16 @@
         <ion-icon name="md-person-add"></ion-icon>
         <p>Ser aliado</p>
     </div>
-    <div class="politicaPublica section" >
+    <div class="politicaPublica section destacado" (click)="goToRed()">
         <ion-col col-4 class="icon">
             <img src="../assets/imgs/image.png">
         </ion-col>
-        <ion-col col-8>
+        <ion-col col-8 class="star">
           <p class="sectionTitle">Red Latinoamericana de Ciudades Arcoiris</p>
+          <ion-icon name="md-star"></ion-icon>
         </ion-col>
     </div>
-    <div class="politicaPublica section" >
+    <div class="politicaPublica section" (click)="goToDetail()">
         <ion-col col-4 class="icon">
             <img src="../assets/imgs/image.png">
         </ion-col>
@@ -45,7 +46,7 @@
           <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
         </ion-col>
     </div>
-    <div class="politicaPublica section" >
+    <div class="politicaPublica section" (click)="goToDetail()">
         <ion-col col-4 class="icon">
             <img src="../assets/imgs/image.png">
         </ion-col>

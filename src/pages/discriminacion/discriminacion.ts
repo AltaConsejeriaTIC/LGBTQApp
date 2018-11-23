@@ -16,12 +16,11 @@ export class DiscriminacionPage {
             "icon": "warning",
             "children": [
                 {
-                    "information1": "• Eres víctima de discriminación cuando (en tu hogar, en tu trabajo, institución educativa, de salud o en un espacio público)",
+                    "information1": "Eres víctima de discriminación cuando (en tu hogar, en tu trabajo, institución educativa, de salud o en un espacio público):",
                     "information2": "• Recibes trato desfavorable por ser Lesbiana, Gay, Bisexual, Transgénero o Intersexual.",
                     "information3": "• Te niegan el acceso al empleo, a la atención médica, a la educación o a espacios en establecimientos públicos.",
                     "information4": "• Recibes represalias por demostración de afecto en público.",
-                    "information5": "• Cuando de manera repetida y sistemática se burlan de tus expresiones, gestos o ropa.",
-                    "information6": "• O cuando se presentan algunas de las violencias siguientes."
+                    "information5": "• Cuando de manera repetida y sistemática se burlan de tus expresiones, gestos o ropa."
 
                 }
 

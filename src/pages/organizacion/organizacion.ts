@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { OrganizacionAparecerPage } from '../organizacion-aparecer/organizacion-aparecer';
+import { OrganizacionDetailPage } from '../organizacion-detail/organizacion-detail';
 
 /**
  * Generated class for the OrganizacionPage page.
@@ -21,5 +22,9 @@ export class OrganizacionPage {
   }
   goToAparecer(){
     this.navCtrl.push(OrganizacionAparecerPage);
+  }
+
+  goToDetail(){
+    this.navCtrl.push(OrganizacionDetailPage);
   }
 }
