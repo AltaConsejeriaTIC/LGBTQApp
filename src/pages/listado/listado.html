@@ -21,19 +21,19 @@
     <button [ngClass]="{'lineNews': noticia == true }" (click)="changeSectionNews()" class="buttonSection buttonNews">NOTICIAS</button>
   </div>
 
-  <p class="month">{{monthTitle}}, 2018</p>
+  <p class="month">{{ monthTitle }}, {{yearTitle}}</p>
 
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding >
+  <!--(ionScroll)="onScroll($event)"-->
   <div *ngIf="evento" >
     <div *ngFor="let event of events" (click)="goToDetails(event)">
       <div class="article">
-        <img [src]="api + event.image">
+        <img [src]="api + event.image" alt="event images">
         <ion-row class="articleContent">
 
-          <ion-col col-11 id="new1" class="articleText">
+          <ion-col col-11 class="articleText">
             <p class="titleArticle">{{event.title}}</p>
             <p class="dateArticle">Del {{event.start_date | date:'dd MMMM':'':'es'}}
               al {{event.finish_date | date:'longDate':'':'es'}}
@@ -48,7 +48,7 @@
   <div *ngIf="noticia" >
     <div *ngFor="let n of news" id="new1" (click)="goToDetails(n)">
       <div class="news">
-          <img [src]="api + n.image">
+          <img [src]="api + n.image" alt="news image">
           <ion-row class="articleContent">
             <ion-col col-12 class="articleDateNews">
               <p>{{n.date | date:'longDate':'':'es'}}</p>
