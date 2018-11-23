@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FormDenunciaSucesoPage } from '../form-denuncia-suceso/form-denuncia-suceso';
-import { ComplaintProvider } from '../../providers/complaint/complaint';
 
 
 @Component({
@@ -41,8 +40,7 @@ export class FormDenunciaPage {
 
   constructor( public navCtrl: NavController,
                public navParams: NavParams,
-               private formBuilder: FormBuilder,
-               private complaintProvider: ComplaintProvider) {
+               private formBuilder: FormBuilder) {
     this.denunciaForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -84,7 +82,9 @@ export class FormDenunciaPage {
       document_number: this.denunciaForm.get('documentNumber').value,
       email: this.denunciaForm.get('email').value,
       phone: this.denunciaForm.get('phone').value
-    } );
+    }).catch(err => {
+      console.error("Error en goToFormDenunciaSuceso", err, err.stack);
+    });
   }
 
 }
