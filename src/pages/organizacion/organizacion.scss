@@ -63,7 +63,7 @@ page-organizacion {
         color: rgba(255, 255, 255, 0.6);
         font-size: 1.45rem;
       }
-      @media (max-height: 500px){
+      @media (max-height: 570px){
         .bannerContent{
           font-size: 1.3rem;
         }
@@ -110,9 +110,18 @@ page-organizacion {
           font-weight: bold;
         }
       }
+      @media (max-height: 570px){
+        .aliado{
+          width: 30vh;
+        }
+      }
       .section{
         height: 33.3%;
         position: relative;
+        img{
+          height: 15vh;
+          width: auto;
+        }
         .sectionTitle{
           margin-top: 0;
           margin-bottom: 0%;
@@ -121,7 +130,7 @@ page-organizacion {
           font-weight: bold;
           font-size: 1.7rem;
         }
-        @media (max-height: 500px){
+        @media (max-height: 570px){
             .sectionTitle{
                 font-size: 1.5rem;
                 margin-top: 3%;
@@ -134,7 +143,8 @@ page-organizacion {
         }
         @media (max-height: 500px){
             .sectionContent{
-                  font-size: 1.3rem;
+                  font-size: 1.2rem;
+                  margin-bottom: 0;
             }
         }
       }

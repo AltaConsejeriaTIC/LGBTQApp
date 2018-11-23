@@ -54,6 +54,11 @@ page-organizacion-aparecer {
       align-self: center;
       padding-bottom: 10%;
     }
+    @media (max-height: 500px){
+    img{
+        width: 80%;
+      }
+    }
   }
 
   .direccionContent{
@@ -72,6 +77,11 @@ page-organizacion-aparecer {
           span{
             font-weight: bold;
             color: rgba(54, 59, 86, 0.7);
+          }
+        }
+        @media (max-height: 570px){
+          p{
+              font-size: 1.3rem;
           }
         }
       }

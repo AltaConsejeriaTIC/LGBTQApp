@@ -82,6 +82,11 @@ page-red {
             line-height: 24px;
             line-height: 3.8vh;
           }
+          @media (max-height: 570px){
+              p{
+                font-size: 1.2rem;
+              }
+          }
         }
 
         .list{
@@ -101,9 +106,9 @@ page-red {
                  line-height: 24px;
                  line-height: 3.8vh;
           }
-          @media (max-height: 600px){
+          @media (max-height: 570px){
               p{
-                font-size: 1.3rem;
+                font-size: 1.2rem;
               }
           }
           p:not(:first-child):not(:last-child){
@@ -167,6 +172,9 @@ page-red {
         justify-content: center;
         align-items: center;
         height: 13%;
+        .sedes{
+            margin-left: 15%;
+        }
         .title{
           color: #1E1A42;
           font-weight: bold;
@@ -178,21 +186,21 @@ page-red {
           font-size: 1.4rem;
           margin: 0 0 0 8%;
         }
-        @media (max-height: 500px){
+        @media (max-height: 570px){
             p{
-              font-size: 1.3rem;
+              font-size: 1.2rem;
               margin-bottom: 1%;
               margin-top: 1%
             }
         }
-        @media (max-height: 600px){
+        @media (max-height: 570px){
             p{
-              font-size: 1.3rem;
+              font-size: 1.2rem;
             }
         }
-        p:nth-child(odd){
+        p{
           font-weight: bold;
-          color: #6D6F76;
+          color: #1E1A42;
         }
       }
       @media (max-height: 500px){
@@ -211,7 +219,6 @@ page-red {
 
     ion-col.pais.col {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 

@@ -63,7 +63,7 @@ page-alianza {
         color: #98E4A4;
         font-size: 1.45rem;
       }
-      @media (max-height: 500px){
+      @media (max-height: 570px){
         .bannerContent{
           font-size: 1.3rem;
         }
@@ -114,6 +114,12 @@ page-alianza {
       .section{
         height: 33.3%;
         position: relative;
+          @media (max-height: 570px){
+        img{
+          height: 15vh;
+          width: auto;
+        }
+      }
         .sectionTitle{
           margin-top: 0;
           margin-bottom: 0%;
@@ -122,9 +128,9 @@ page-alianza {
           font-weight: bold;
           font-size: 1.7rem;
         }
-        @media (max-height: 500px){
+        @media (max-height: 570px){
             .sectionTitle{
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 margin-top: 3%;
             }
         }
