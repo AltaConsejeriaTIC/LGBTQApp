@@ -36,7 +36,7 @@ export class FormDenunciaPage {
         { type: 'required', message: 'El teléfono es requerido.' },
         { type: 'pattern', message: 'El formato no es válido' }
       ]
-  }
+  };
 
   constructor( public navCtrl: NavController,
                public navParams: NavParams,

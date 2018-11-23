@@ -26,7 +26,6 @@
 </ion-header>
 
 <ion-content padding >
-  <!--(ionScroll)="onScroll($event)"-->
   <div *ngIf="evento" >
     <div *ngFor="let event of events" (click)="goToDetails(event)">
       <div class="article">
