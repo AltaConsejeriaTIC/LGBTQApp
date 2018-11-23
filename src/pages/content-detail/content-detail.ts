@@ -5,6 +5,7 @@ import { DetailContentService } from '../../services/detail-content.service';
 import { ServerConfig } from '../../../config/server';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventProvider } from '../../providers/event/event';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import {} from '@types/googlemaps';
 
@@ -35,7 +36,8 @@ export class ContentDetailPage {
     private detailService: DetailContentService,
     public geolocation: Geolocation,
     private socialSharing: SocialSharing,
-    private eventService: EventProvider
+    private eventService: EventProvider,
+    private iab: InAppBrowser
   ) {
     this.match = this.navParams.get('data');
     this.loadData(this.match);
@@ -128,5 +130,9 @@ export class ContentDetailPage {
       }).catch((e) => {
         console.error(e);
       });
+  }
+
+  goToLink() {
+    const browser = this.iab.create(this.params.source_link, '_system');
   }
 }
