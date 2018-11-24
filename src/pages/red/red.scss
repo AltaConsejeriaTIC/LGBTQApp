@@ -70,7 +70,6 @@ page-red {
 
       .text{
         position: relative;
-        height: 85%;
         justify-content: center;
         padding-top: 5%;
 
@@ -171,7 +170,6 @@ page-red {
       .horario{
         justify-content: center;
         align-items: center;
-        height: 13%;
         .sedes{
             margin-left: 15%;
         }
@@ -211,12 +209,7 @@ page-red {
       }
 
     }
-    @media (min-height: 825px){
-        .sections{
-            height: 85%;
-        }
-    }
-
+  
     ion-col.pais.col {
     display: flex;
     align-items: center;
