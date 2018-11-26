@@ -1,25 +1,64 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ServiciosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-servicios',
   templateUrl: 'servicios.html',
 })
 export class ServiciosPage {
 
+  information: any[];
+
+  items = [
+        {
+            "name": "Alimentación",
+            "children": [
+                {
+                    "information": "Si deseas acceder a servicios de alimentación.",
+                    "description": "Secretaría de Integración Social - Subdirección para asuntos LGBTI",
+                    "phone": "3279797 Ext. 68000",
+                    "web": "www.integracionsocial.gov.co",
+                    "webText": "O Dirígete a las Direcciones Locales de educación mas cercanas."
+                }
+
+            ]
+        },
+        {
+            "name": "Emergencia",
+            "children": [
+              {
+                "information": "Si necesitas apoyo para el acceso a servicios sociales (emergencia naturales, funerario, centros de atención de habitabilidad en calle, centros día para personas mayore y centros crecer para personas con discapacidad).",
+                "description": "Secretaría de Integración Social - Subdirección para asuntos",
+                "phone": "3279797 Ext. 68000",
+                "web": "www.integracionsocial.gov.co"
+              }
+            ]
+        },
+        {
+            "name": "Atención psicosocial",
+            "children": [
+                {
+                  "information": "Si requieres atención psicosocial.",
+                  "description": "Secretaría de Integración Social - Subdirección para asuntos LGBTI",
+                  "phone": "3279797 Ext. 68000",
+                  "web": "www.integracionsocial.gov.co"
+                }
+            ]
+        }
+    ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.information = this.items;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ServiciosPage');
   }
+  toggleSection(i) {
+  this.information[i].open = !this.information[i].open;
+  }
 
+  toggleItem(i, j) {
+  this.information[i].children[j].open = !this.information[i].children[j].open;
+  }
 }

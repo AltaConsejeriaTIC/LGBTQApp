@@ -1,18 +1,70 @@
-<!--
-  Generated template for the HabitatPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>habitat</ion-title>
+  <ion-navbar mode="ios" hideBackButton>
+    <ion-title text-center>Política pública LGBTI</ion-title>
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon name="icon-fleacha-atras"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <div class="banner">
+      <p class="bannerTitle">Hábitat</p>
+      <p class="bannerContent">Si tu familia es unipersonal, homoparental o extensa puedes acceder al subsidio en vivienda de manera diferencial.</p>
+  </div>
+
+
+
+    <ion-list class="accordion-list">
+
+        <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+
+          <button ion-item class="section-active">
+              <p>{{ item.name }}</p>
+          </button>
+
+          <ion-list no-lines>
+
+            <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+
+                <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                    <h2>{{ child.information }}</h2>
+                    <p class="title">{{ child.description }}</p>
+                    <p>Dirección: </p>
+                    <p>{{ child.address}}</p>
+                    <p class="title">{{ child.description2 }}</p>
+                    <p class="bold">Dirección: </p>
+                    <p>{{ child.address2 }}</p>
+                    <p class="title">{{ child.description3 }}</p>
+                    <p>Dirección: </p>
+                    <p>{{ child.address3 }}</p>
+                    <p class="title">{{ child.description4 }}</p>
+                    <p>Dirección: </p>
+                    <p>{{ child.address4 }}</p>
+                </ion-item>
+
+            </ion-list-header>
+
+        </ion-list>
+
+
+
+    </ion-list-header>
+
+    <div class="bottomLine">
+
+    </div>
+
+  </ion-list>
+
+
+
+
 
 </ion-content>
