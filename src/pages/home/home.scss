@@ -436,7 +436,7 @@ page-home {
   }
 
   .delete-modal-component-alert{
-    border-radius: 4%;
+    border-radius: 6%;
     display: flex;
     pointer-events: auto;
     position: absolute;
@@ -520,8 +520,8 @@ page-home {
           box-shadow: none;
           border-top-left-radius: 0% !important;
           border-top-right-radius: 0% !important;
-          border-bottom-left-radius: 4%;
-          border-bottom-right-radius: 4%;
+          border-bottom-left-radius: 13px;
+          border-bottom-right-radius: 13px;
         }
       }
     }
