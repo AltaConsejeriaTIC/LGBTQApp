@@ -201,7 +201,7 @@
     </div>
 </div>
 
-<div *ngIf="hasPressedSendMessage && emergencyMessage">
+<div *ngIf="hasPressedSendMessage && emergencyMessage && !checkContactsAvailable()">
   <ion-backdrop showBackdrop="false" class="delete-contact-background">
 
     </ion-backdrop>
