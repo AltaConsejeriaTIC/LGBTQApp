@@ -11,6 +11,8 @@ import { SMS } from '@ionic-native/sms';
 import { CallNumber } from '@ionic-native/call-number';
 import { Storage } from '@ionic/storage';
 import { timeout, TimeoutError } from 'promise-timeout';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -29,7 +31,9 @@ export class HomePage {
     public modalCtrl: ModalController,
     private sms: SMS,
     private callNumber: CallNumber,
-    private storage: Storage) {
+    private storage: Storage,
+    private androidPermissions: AndroidPermissions,
+    public plt: Platform) {
       storage.get(this.keyFirstTimeUse).then(value => {
         this.firstTime = (value === null ? true : value);
       }).catch(err => {
@@ -133,6 +137,12 @@ export class HomePage {
       }
       if(this.firstTime){
         this.tutorialStep += 1;
+        if (this.plt.is('android')) {
+          this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
+            result => console.log('Has permission?',result.hasPermission),
+            err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+          );
+        }
       }
       this.emergencyButtonActivate = !this.emergencyButtonActivate;
 

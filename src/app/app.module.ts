@@ -70,6 +70,7 @@ import { SMS } from '@ionic-native/sms';
 
 import { ContentDetailModule } from '../pages/content-detail/content-detail.module';
 import { ComplaintProvider } from '../providers/complaint/complaint';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -173,7 +174,8 @@ import { ComplaintProvider } from '../providers/complaint/complaint';
     CallNumber,
     Deeplinks,
     InAppBrowser,
-    ComplaintProvider
+    ComplaintProvider,
+    AndroidPermissions
   ]
 })
 export class AppModule {}
