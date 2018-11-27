@@ -33,7 +33,11 @@ export class ListadoPage {
     this.detailService.setEvento(this.evento);
     this.eventService.getData(`${this.api}/events`).subscribe(
       (response) => {
-        this.events = response;
+        this.events = response.map((event)=>{
+          event.start_date = event.start_date.slice(0, -1);
+          event.finish_date = event.finish_date.slice(0, -1);
+          return event;
+        });
         this.monthTitle = this.months[response[0].start_date.slice(5,7)-1];
         this.yearTitle = response[0].start_date.slice(0,4);
       },
@@ -56,6 +60,8 @@ export class ListadoPage {
     this.evento = true;
     this.noticia = false;
     this.title = 'EVENTOS Y NOTICIAS';
+    this.monthTitle = this.months[this.events[0].start_date.slice(5,7)-1];
+    this.yearTitle = this.events[0].start_date.slice(0,4);
     this.detailService.setEvento(true);
   }
 
@@ -63,6 +69,8 @@ export class ListadoPage {
     this.evento = false;
     this.noticia = true;
     this.title = 'ACTUALIDAD BOGOTÁ';
+    this.monthTitle = this.months[this.news[0].date.slice(5,7)-1];
+    this.yearTitle = this.news[0].date.slice(0,4);
     this.detailService.setEvento(false);
   }
 
@@ -73,10 +81,14 @@ export class ListadoPage {
   }
 
   onScroll(e: ScrollEvent) {
-    this.monthTitle = this.months[this.events[Math.ceil((e.scrollTop-293)/450)].start_date.slice(5,7)-1];
-    this.yearTitle = this.events[Math.ceil((e.scrollTop-293)/450)].start_date.slice(0,4);
+    let currentEvent;
+    if (this.evento) {
+      currentEvent = this.events[Math.ceil((e.scrollTop-256)/450)].start_date;
+    }else{
+      currentEvent = this.news[Math.ceil((e.scrollTop-160.8)/362)].date;
+    }
+    this.monthTitle = this.months[currentEvent.slice(5,7)-1];
+    this.yearTitle = currentEvent.slice(0,4);
     this.ref.detectChanges();
   }
-
-
 }
