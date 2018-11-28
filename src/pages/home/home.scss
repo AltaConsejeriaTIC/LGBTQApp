@@ -98,6 +98,16 @@ page-home {
     .row{
           margin-bottom: 4%;
     }
+
+    @media (max-height: 700px) {
+      .row{
+        margin-bottom: 1%;
+      }
+      .titleText{
+        font-size: 1.9rem;
+      }
+
+    }
     .articleDate, .articleType{
           text-transform: uppercase;
           letter-spacing: 0.04em;
@@ -341,6 +351,24 @@ page-home {
             .fab-list-active{
               margin-bottom: 90px;
             }
+            .fab{
+              width: 40px;
+              height: 40px;
+            }
+            .fab-close-active .fab-close-icon {
+              line-height: 35px;
+            }
+            .fab-in-list {
+              margin: 8px 0;
+              width: 35px;
+              height: 35px;
+            }
+            ion-fab-list{
+              min-width: 40px;
+            }
+            ion-fab[middle] {
+              margin-top: -20px;
+            }
           }
 
           @media (max-height: 600px) {
@@ -350,6 +378,25 @@ page-home {
               .campana {
                   padding: 1%;
               }
+            .ion-fab-label{
+              p{
+                padding: 0;
+                margin: 10px 0;
+              }
+
+              p.tutorial-text.first{
+                bottom: 35%;
+              }
+            }
+          }
+
+          @media (max-height: 570px) {
+            .fab-list-active{
+              margin-bottom: 80px;
+            }
+            .campana {
+              padding: 1%;
+            }
           }
 
           .panicButtonText{
@@ -375,6 +422,16 @@ page-home {
             padding-top: 1vh !important;
           }
 
+          @media (max-height: 600px) {
+            ion-card-content{
+              font-size: 1rem;
+              padding-top: 0 !important;
+            }
+
+            .panicButtonText{
+              padding-bottom: 1.5%;
+            }
+          }
           button[ion-fab] {
               overflow: visible;
               position: relative;
@@ -518,8 +575,8 @@ page-home {
           height: 100% !important;
           width: 100% !important;
           box-shadow: none;
-          border-top-left-radius: 0% !important;
-          border-top-right-radius: 0% !important;
+          border-top-left-radius: 0 !important;
+          border-top-right-radius: 0 !important;
           border-bottom-left-radius: 13px;
           border-bottom-right-radius: 13px;
         }

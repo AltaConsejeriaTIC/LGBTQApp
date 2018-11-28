@@ -23,6 +23,9 @@ export class HomePage {
   @ViewChild('slides')
   slides: Slides;
 
+  @ViewChild('slidesCards')
+  slidesCards: Slides;
+
   @ViewChild('fab')
   fab: FabContainer;
 
@@ -128,12 +131,16 @@ export class HomePage {
     if(!this.firstTime || this.tutorialStep == 4){
       if(this.emergencyButtonActivate) {
         this.fab.close();
+        this.slides.lockSwipes(false);
+        this.slidesCards.lockSwipes(false);
       }else{
         this.clearValues();
         this.loadInfo();
         setTimeout(function(fab){
           fab.setActiveLists(true);
-        },0,this.fab)
+        },0,this.fab);
+        this.slides.lockSwipes(true);
+        this.slidesCards.lockSwipes(true);
       }
       if(this.firstTime){
         this.tutorialStep += 1;

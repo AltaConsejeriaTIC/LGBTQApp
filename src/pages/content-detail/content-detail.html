@@ -59,7 +59,8 @@
             </ion-col>
             <ion-col col-10 class="placeInfo">
               <p class="placeName">{{params.place}}</p>
-              <p class="placeAddress">{{params.address}}<p>
+              <p class="placeAddress">{{params.address}}</p>
+              <p><a class="placeLocation" (click)="goToMaps()">Ver ubicación</a></p>
             </ion-col>
           </ion-row>
         </div>
@@ -76,12 +77,6 @@
 
   </div>
 
-
-
-  <div id="mapa">
-      <div id="map_canvas"></div>
-  </div>
-
   <div *ngIf="typeContent == 'noticia'" class="link">
 
       <p>Para ver la noticia completa</p>
@@ -92,5 +87,4 @@
   <div class="bottomLine">
 
   </div>
-
 </ion-content>

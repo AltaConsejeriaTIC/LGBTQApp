@@ -1,12 +1,6 @@
 page-content-detail {
 
-  #map_canvas {
-    height: 50vh;
-    width: 100%;
-  }
-
   .bottomLine{
-    height: 2vh;
     width: 100%;
     position: relative;
   }
@@ -49,7 +43,7 @@ page-content-detail {
   }
 
   .articleText{
-    padding: 1% 10% 0% 10%;
+    padding: 1% 10% 0 10%;
 
     .newsDate {
         font-weight: 600;
@@ -72,7 +66,7 @@ page-content-detail {
       background-color: #E3E3E3;
       content: '';
       width: 110%;
-      bottom: 0px;
+      bottom: 0;
       position: absolute;
       left: -5%;
       height: 1px;
@@ -123,7 +117,7 @@ page-content-detail {
 
   }
   .shareFab {
-    margin: 0px 20px;
+    margin: 0 20px;
   }
   .shareButton {
     background-color: white;
@@ -137,14 +131,14 @@ page-content-detail {
     background-color: #E3E3E3;
     content: '';
     width: 90%;
-    bottom: 0px;
+    bottom: 0;
     position: absolute;
     left: 5%;
     height: 1px;
        }
 
   .info{
-        padding: 4% 0%;
+        padding: 4% 0;
         position: relative;
         ion-icon {
           color: rgba(149, 154, 180, 0.5);
@@ -157,7 +151,7 @@ page-content-detail {
     background-color: #E3E3E3;
     content: '';
     width: 110%;
-    top: 0px;
+    top: 0;
     position: absolute;
     left: -5%;
     height: 1px;
@@ -167,7 +161,7 @@ page-content-detail {
        background-color: #E3E3E3;
        content: '';
        width: 110%;
-       bottom: 0px;
+       bottom: 0;
        position: absolute;
        left: -5%;
        height: 1px;

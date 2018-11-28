@@ -119,3 +119,5 @@ errno.cmd
 errno
 create.cmd
 create
+
+package-lock\.json
