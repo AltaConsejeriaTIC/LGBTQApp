@@ -56,14 +56,16 @@
 
     </ion-list-header>
 
-    <div class="bottomLine">
+    <div *ngIf="!footer" class="bottomLine">
 
     </div>
 
   </ion-list>
 
 
-
-
-
 </ion-content>
+
+<ion-footer *ngIf="footer">
+  <div class="bottomLine">
+  </div>
+</ion-footer>
