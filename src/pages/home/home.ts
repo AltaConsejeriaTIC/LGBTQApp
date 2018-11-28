@@ -178,9 +178,12 @@ export class HomePage {
           phoneNumber = phoneNumber.replace(/-/g,'');
           phoneNumber = phoneNumber.replace(/\s/g, '');
           phoneNumber = phoneNumber.replace(/[\])}[{(]/g, '');
+          if( phoneNumber.length <= 10){
+            phoneNumber = `+57`+phoneNumber;
+          }
 
           timeout(
-            this.sms.send(`+57${phoneNumber}`, this.emergencyMessage).then( ()=>{
+            this.sms.send( `${phoneNumber}`, this.emergencyMessage).then( ()=>{
               this.messageHasBeenSend = true;
               this.hasPressedSendMessage = false;
               return true;
