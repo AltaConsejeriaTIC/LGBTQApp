@@ -57,7 +57,7 @@
 
     </ion-card>
 
-    <ion-slides slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections" [class.filterDark]="emergencyButtonActivate">
+    <ion-slides #slidesCards slidesPerView="3" spaceBetween="5" centeredSlides="false" class="sections" [class.filterDark]="emergencyButtonActivate">
 
         <ion-slide style="background-color: #F1185D" (click)="goToDenuncia()">
           <ion-icon name="icon-icono-denuncia02"></ion-icon>

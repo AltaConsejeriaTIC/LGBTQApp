@@ -98,6 +98,16 @@ page-home {
     .row{
           margin-bottom: 4%;
     }
+
+    @media (max-height: 700px) {
+      .row{
+        margin-bottom: 1%;
+      }
+      .titleText{
+        font-size: 1.9rem;
+      }
+
+    }
     .articleDate, .articleType{
           text-transform: uppercase;
           letter-spacing: 0.04em;
@@ -344,6 +354,17 @@ page-home {
             .fab{
               width: 40px;
               height: 40px;
+            }
+            .fab-close-active .fab-close-icon {
+              line-height: 35px;
+            }
+            .fab-in-list {
+              margin: 8px 0;
+              width: 35px;
+              height: 35px;
+            }
+            ion-fab-list{
+              min-width: 40px;
             }
             ion-fab[middle] {
               margin-top: -20px;
