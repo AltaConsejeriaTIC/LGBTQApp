@@ -422,6 +422,16 @@ page-home {
             padding-top: 1vh !important;
           }
 
+          @media (max-height: 600px) {
+            ion-card-content{
+              font-size: 1rem;
+              padding-top: 0 !important;
+            }
+
+            .panicButtonText{
+              padding-bottom: 1.5%;
+            }
+          }
           button[ion-fab] {
               overflow: visible;
               position: relative;
