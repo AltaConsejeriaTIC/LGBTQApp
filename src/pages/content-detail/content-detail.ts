@@ -6,6 +6,7 @@ import { ServerConfig } from '../../../config/server';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventProvider } from '../../providers/event/event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import html2canvas from 'html2canvas';
 
 import {} from '@types/googlemaps';
 
@@ -29,6 +30,8 @@ export class ContentDetailPage {
   match;
   protected api = ServerConfig.apiEndPoint;
   protected id: number;
+  im;
+  image;
 
   constructor(
     public navCtrl: NavController,
@@ -57,6 +60,7 @@ export class ContentDetailPage {
     let geocoder = new google.maps.Geocoder();
     this.map = new google.maps.Map(document.getElementById("map_canvas"), options);
     this.geocodeAddress(geocoder, this.map);
+
   }
 
   setTitle(){
@@ -68,10 +72,37 @@ export class ContentDetailPage {
   }
 
   loadData(data) {
+    console.log("---api--",this.api);
+
     if (data){
+      let algo;
       this.typeContent = this.detailService.getContent();
       this.id = this.navParams.get('id');
       this.params = this.navParams.get('data');
+      console.log("---image--",this.params.image);
+      this.eventService.getImage(`${this.api}${this.params.image}`).subscribe(
+        (response) =>{
+          console.log(response);
+          this.image = window.URL.createObjectURL(new Blob([response],{type: 'image/jpeg'}))
+        },
+        (error) => console.log(error)
+      );
+
+        /*.then(function(response) {
+          console.log("----entró------");
+          console.log("....................",response);
+          this.image = window.URL.createObjectURL(new Blob([response.data],{type: 'image/jpeg'}))
+        })
+        .catch(function(error) {
+          console.log('Hubo un problema con la petición Fetch:' + error.message);
+        });*/
+
+      /*this.eventService.getData(`${this.api}${this.params.image}`).subscribe(
+        (response) => {
+          this.image = window.URL.createObjectURL(new Blob([response.data],{type: 'image/jpeg'}))
+        },
+        (error) => console.log(error)
+      );*/
     }else{
       this.typeContent = 'evento';
       this.id = parseInt(this.navParams.get('id'));
@@ -115,21 +146,28 @@ export class ContentDetailPage {
   }
 
   share( content ) {
-    let msg;
-    let url;
     if (this.typeContent === 'evento'){
-      msg = `${content.title}`;
-      url = `myapp://home/content/${content.id}`;
-    }else{
-      msg = `${content.title}`;
-      url = `${content.source_link}`;
-    }
-    this.socialSharing.share(msg, null, null, url)
-      .then( response => {
-        console.log("se pudo compartir");
-      }).catch((e) => {
-        console.error(e);
+      const div = document.getElementById("contentShare");
+      html2canvas(div).then((canvas)=>{
+        let info = canvas.toDataURL("image/jpg");
+        this.im = info;
+        this.socialSharing.share(null, null, info, null)
+        .then( response => {
+          console.log("se pudo compartir");
+        }).catch((e) => {
+          console.error(e);
+        });
       });
+    }else{
+      let msg = `${content.title}`;
+      let url = `${content.source_link}`;
+      this.socialSharing.share(msg, null, null, url)
+        .then( response => {
+          console.log("se pudo compartir");
+        }).catch((e) => {
+          console.error(e);
+        });
+    }
   }
 
   goToLink() {

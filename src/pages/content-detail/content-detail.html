@@ -19,10 +19,9 @@
 </ion-header>
 
 <ion-content padding>
-
   <div class="article">
 
-    <img [src]="api + params.image">
+    <img id="contentShare" [src]="image">
 
     <ion-row class="articleContent">
 
@@ -38,30 +37,31 @@
           </ion-col>
         </ion-row>
 
+        <div id="contentShare">
+          <p class="titleArticle">{{params.title}}</p>
 
-        <p class="titleArticle">{{params.title}}</p>
+          <div *ngIf="typeContent==='evento'" class="info">
 
-        <div *ngIf="typeContent==='evento'" class="info">
+            <ion-row class="timeContent">
+              <ion-col col-1 class="iconDate">
+                <ion-icon name="icon-icono-hora"></ion-icon>
+              </ion-col>
+              <ion-col col-10 class="contentDate">
+                <p class="durationEvent">Del {{params.start_date | date: 'd MMMM':'':'es'}} al {{params.finish_date | date: 'longDate':'':'es'}}</p>
+                <p class="timeEvent">{{params.start_time}} - {{params.finish_time}}<p>
+              </ion-col>
+            </ion-row>
 
-          <ion-row class="timeContent">
-            <ion-col col-1 class="iconDate">
-              <ion-icon name="icon-icono-hora"></ion-icon>
-            </ion-col>
-            <ion-col col-10 class="contentDate">
-              <p class="durationEvent">Del {{params.start_date | date: 'd MMMM':'':'es'}} al {{params.finish_date | date: 'longDate':'':'es'}}</p>
-              <p class="timeEvent">{{params.start_time}} - {{params.finish_time}}<p>
-            </ion-col>
-          </ion-row>
-
-          <ion-row class="placeContent">
-            <ion-col col-1 class="iconPlace">
-              <ion-icon name="icon-icono-ubicacion"></ion-icon>
-            </ion-col>
-            <ion-col col-10 class="placeInfo">
-              <p class="placeName">{{params.place}}</p>
-              <p class="placeAddress">{{params.address}}<p>
-            </ion-col>
-          </ion-row>
+            <ion-row class="placeContent">
+              <ion-col col-1 class="iconPlace">
+                <ion-icon name="icon-icono-ubicacion"></ion-icon>
+              </ion-col>
+              <ion-col col-10 class="placeInfo">
+                <p class="placeName">{{params.place}}</p>
+                <p class="placeAddress">{{params.address}}<p>
+              </ion-col>
+            </ion-row>
+          </div>
         </div>
 
         <p *ngIf="typeContent==='noticia'" class="sourceArticle">Fuente del artículo: <span>{{params.source}}</span></p>
@@ -75,7 +75,7 @@
     </ion-row>
 
   </div>
-
+  <img [src]="im" alt="imagen">
 
 
   <div id="mapa">
