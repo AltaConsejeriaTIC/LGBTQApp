@@ -71,6 +71,8 @@ import { SMS } from '@ionic-native/sms';
 import { ContentDetailModule } from '../pages/content-detail/content-detail.module';
 import { ComplaintProvider } from '../providers/complaint/complaint';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { AllianceProvider } from '../providers/alliance/alliance';
+import { DirectivesModule } from '../directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -118,7 +120,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    ContentDetailModule
+    ContentDetailModule,
+    DirectivesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -175,7 +178,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     Deeplinks,
     InAppBrowser,
     ComplaintProvider,
-    AndroidPermissions
+    AndroidPermissions,
+    AllianceProvider
   ]
 })
 export class AppModule {}
