@@ -13,6 +13,9 @@ import { Storage } from '@ionic/storage';
 import { timeout, TimeoutError } from 'promise-timeout';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { Platform } from 'ionic-angular';
+import {ServerConfig} from "../../../config/server";
+import {EventProvider} from "../../providers/event/event";
+
 
 @Component({
   selector: 'page-home',
@@ -36,14 +39,22 @@ export class HomePage {
     private callNumber: CallNumber,
     private storage: Storage,
     private androidPermissions: AndroidPermissions,
-    public plt: Platform) {
+    public plt: Platform,
+    public eventService: EventProvider
+  ) {
       storage.get(this.keyFirstTimeUse).then(value => {
         this.firstTime = (value === null ? true : value);
       }).catch(err => {
         console.error("Error en constructor, storage.get", err, err.stack);
       });
-    }
 
+      this.eventService.getData(`${this.api}/highlights`).subscribe((highlights)=>{
+        console.log(highlights)
+      })
+
+  }
+
+  protected api = ServerConfig.apiEndPoint;
   public keyInfoContacts = 'infoContacts';
   public infoContacts = [];
   public idSet = new Set();
@@ -53,7 +64,7 @@ export class HomePage {
   public keyFirstTimeUse = 'firstTimeUse';
   public emergencyMessage="";
   public messageHasBeenSend = false;
-  public firstTime: boolean = true;
+  public firstTime: boolean = false;
   public emergencyButtonActivate: boolean = false;
   public hasPressedSendMessage = false;
   public tutorialStep = 1;
