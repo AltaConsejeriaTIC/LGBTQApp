@@ -57,10 +57,10 @@
             <ion-col col-1 class="iconPlace">
               <ion-icon name="icon-icono-ubicacion"></ion-icon>
             </ion-col>
-            <ion-col col-10 class="placeInfo">
+            <ion-col col-10 class="placeInfo" (click)="goToMaps()">
               <p class="placeName">{{params.place}}</p>
               <p class="placeAddress">{{params.address}}</p>
-              <p><a class="placeLocation" (click)="goToMaps()">Ver ubicación</a></p>
+              <p><a class="placeLocation" >Ver ubicación</a></p>
             </ion-col>
           </ion-row>
         </div>
