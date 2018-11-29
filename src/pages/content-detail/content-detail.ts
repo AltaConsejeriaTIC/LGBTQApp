@@ -6,6 +6,7 @@ import { ServerConfig } from '../../../config/server';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventProvider } from '../../providers/event/event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import html2canvas from 'html2canvas';
 
 import {} from '@types/googlemaps';
@@ -40,7 +41,8 @@ export class ContentDetailPage {
     public geolocation: Geolocation,
     private socialSharing: SocialSharing,
     private eventService: EventProvider,
-    private iab: InAppBrowser
+    private iab: InAppBrowser,
+    private sanitizer:DomSanitizer
   ) {
     this.match = this.navParams.get('data');
     this.loadData(this.match);
@@ -73,44 +75,18 @@ export class ContentDetailPage {
 
   loadData(data) {
     console.log("---api--",this.api);
-
-    if (data){
-      let algo;
-      this.typeContent = this.detailService.getContent();
-      this.id = this.navParams.get('id');
-      this.params = this.navParams.get('data');
-      console.log("---image--",this.params.image);
-      this.eventService.getImage(`${this.api}${this.params.image}`).subscribe(
-        (response) =>{
-          console.log(response);
-          this.image = window.URL.createObjectURL(new Blob([response],{type: 'image/jpeg'}))
-        },
-        (error) => console.log(error)
-      );
-
-        /*.then(function(response) {
-          console.log("----entró------");
-          console.log("....................",response);
-          this.image = window.URL.createObjectURL(new Blob([response.data],{type: 'image/jpeg'}))
-        })
-        .catch(function(error) {
-          console.log('Hubo un problema con la petición Fetch:' + error.message);
-        });*/
-
-      /*this.eventService.getData(`${this.api}${this.params.image}`).subscribe(
-        (response) => {
-          this.image = window.URL.createObjectURL(new Blob([response.data],{type: 'image/jpeg'}))
-        },
-        (error) => console.log(error)
-      );*/
-    }else{
-      this.typeContent = 'evento';
-      this.id = parseInt(this.navParams.get('id'));
-      this.eventService.getEvent(this.api, this.id).subscribe(
-        (response) => this.params = response,
-        (error) => console.log(error)
-      );
-    }
+    this.typeContent = this.detailService.getContent();
+    this.id = this.navParams.get('id');
+    this.params = this.navParams.get('data');
+    this.eventService.getImage(`${this.api}${this.params.image}`).subscribe(
+      (response) =>{
+        console.log(response);
+          let tmp = URL.createObjectURL(new Blob([response],{type: 'image/jpeg'}));
+          this.image = this.sanitizer.bypassSecurityTrustUrl(tmp);
+        console.log("------",this.image);
+      },
+      (error) => console.log(error)
+    );
   }
 
   geocodeAddress(geocoder, resultsMap) {
