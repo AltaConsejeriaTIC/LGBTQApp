@@ -57,6 +57,7 @@ export class HomePage {
   public emergencyButtonActivate: boolean = false;
   public hasPressedSendMessage = false;
   public tutorialStep = 1;
+  public tapEmergencyButton = 0;
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
@@ -128,6 +129,25 @@ export class HomePage {
   }
 
   toggleEmergencyButton():void {
+
+    console.log( 'tap emergency button: ', this.tapEmergencyButton );
+    if( this.tapEmergencyButton === 1 ){
+      this.tapEmergencyButton+=1;
+      if (this.plt.is('android')) {
+        this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
+          result => {
+            if( !result.hasPermission ){
+              this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS)
+            }
+          },
+          err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS)
+        );
+      }
+    }
+    if( this.emergencyButtonActivate ){
+      this.tapEmergencyButton+=1;
+    }
+
     if(!this.firstTime || this.tutorialStep == 4){
       if(this.emergencyButtonActivate) {
         this.fab.close();
@@ -144,16 +164,10 @@ export class HomePage {
       }
       if(this.firstTime){
         this.tutorialStep += 1;
-        if (this.plt.is('android')) {
-          this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
-            result => console.log('Has permission?',result.hasPermission),
-            err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-          );
-        }
       }
       this.emergencyButtonActivate = !this.emergencyButtonActivate;
-
     }
+
   }
 
   clearValues(){
