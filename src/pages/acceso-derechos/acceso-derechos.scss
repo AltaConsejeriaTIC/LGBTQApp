@@ -116,8 +116,15 @@ page-acceso-derechos {
           align-items: center;
           .icon{
             text-align: center;
-            font-size: 2.8rem;
-              color: #363B56;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            color: #363B56;
+          }
+          @media (max-height: 500px){
+              .icon{
+                    font-size: 1.8rem;
+              }
           }
           .arrow{
             justify-content: flex-start;
