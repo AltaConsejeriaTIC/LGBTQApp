@@ -33,33 +33,9 @@
   }
 }
 
-// @include makeIcon(icon-fleacha-atras, '\e003');
-// @include makeIcon(icon-flecha-derecha, '\e004');
-// @include makeIcon(icon-icono-configuracion, '\e006');
-// @include makeIcon(icon-icono-alianzas, '\e002');
-// @include makeIcon(icon-icono-censo, '\e005');
-// @include makeIcon(icon-icono-facebook, '\e008');
-// @include makeIcon(icon-icono-llamada, '\e009');
-// @include makeIcon(icon-icono-mensaje, '\e00a');
-// @include makeIcon(icon-icono-nosotros, '\e00b');
-// @include makeIcon(icon-icono-politica, '\e00c');
-// @include makeIcon(icon-icono-twitter, '\e00d');
-// @include makeIcon(icon-icono-organizaciones, '\e00e');
-// @include makeIcon(icon-menu-hamburguesa, '\e00f');
-// @include makeIcon(icon-icono-denuncia, '\e000');
-// @include makeIcon(icon-icono-configuracion-1, '\e001');
-// @include makeIcon(icon-flecha-derecha-1, '\e007');
-// @include makeIcon(icon-fleacha-atras-1, '\e010');
-// @include makeIcon(icon-campana-boton, '\e011');
-// @include makeIcon(icon-icono-hora, '\e012');
-// @include makeIcon(icon-icono-ubicacion, '\e013');
-// @include makeIcon(icon-icono-compartir, '\e014');
-// @include makeIcon(icon-icono-denuncia01, '\e015');
-// @include makeIcon(icon-icono-denuncia02, '\e016');
-
 @include makeIcon(icon-campana-boton, '\61');
 @include makeIcon(icon-icono-denuncia02, '\62');
-@include makeIcon(icon-icono-facebook, '\63');
+@include makeIcon(icon-facebook, '\63');
 @include makeIcon(icon-fleacha-atras, '\64');
 @include makeIcon(icon-flecha-derecha, '\65');
 @include makeIcon(icon-icono-alianzas, '\66');
@@ -67,14 +43,22 @@
 @include makeIcon(icon-icono-censo, '\68');
 @include makeIcon(icon-icono-compartir, '\69');
 @include makeIcon(icon-icono-configuracion, '\6a');
-@include makeIcon(icon-icono-eliminar, '\6b');
-@include makeIcon(icon-icono-hora, '\6c');
-@include makeIcon(icon-icono-llamada, '\6d');
-@include makeIcon(icon-icono-mensaje, '\6e');
-@include makeIcon(icon-icono-nosotros, '\6f');
-@include makeIcon(icon-icono-politica, '\70');
-@include makeIcon(icon-icono-ubicacion, '\71');
-@include makeIcon(icon-icono-instagram, '\72');
-@include makeIcon(icon-menu-hamburguesa, '\73');
-@include makeIcon(icon-icono-twitter, '\74');
-@include makeIcon(icon-icono-youtube, '\75');
+@include makeIcon(icon-habitat, '\6b');
+@include makeIcon(icon-icono-eliminar, '\6c');
+@include makeIcon(icon-icono-hora, '\6d');
+@include makeIcon(icon-icono-llamada, '\6e');
+@include makeIcon(icon-icono-mensaje, '\6f');
+@include makeIcon(icon-icono-nosotros, '\70');
+@include makeIcon(icon-icono-politica, '\71');
+@include makeIcon(icon-icono-ubicacion, '\72');
+@include makeIcon(icon-instagram, '\73');
+@include makeIcon(icon-menu-hamburguesa, '\74');
+@include makeIcon(icon-twitter, '\75');
+@include makeIcon(icon-youtube, '\76');
+@include makeIcon(icon-icono-educacion, '\77');
+@include makeIcon(icon-icono-cultura, '\78');
+@include makeIcon(icon-icono-vidayseguridad, '\79');
+@include makeIcon(icon-icono-participacion, '\7a');
+@include makeIcon(icon-icono-salud, '\41');
+@include makeIcon(icon-icono-serviciossociales, '\42');
+@include makeIcon(icon-icono-trabajo, '\43');

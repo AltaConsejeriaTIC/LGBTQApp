@@ -8,6 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class TrabajoPage {
 
   information: any[];
+  footer: boolean = true;
 
   items = [
         {
@@ -47,11 +48,7 @@ export class TrabajoPage {
 
   toggleSection(i) {
   this.information[i].open = !this.information[i].open;
+  this.footer = !this.footer;
 }
-
-toggleItem(i, j) {
-  this.information[i].children[j].open = !this.information[i].children[j].open;
-}
-
 
 }

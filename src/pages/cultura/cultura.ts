@@ -8,6 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class CulturaPage {
 
   information: any[];
+  footer: boolean = true;
 
   items = [
         {
@@ -56,10 +57,7 @@ export class CulturaPage {
 
   toggleSection(i) {
   this.information[i].open = !this.information[i].open;
-}
-
-toggleItem(i, j) {
-  this.information[i].children[j].open = !this.information[i].children[j].open;
+  this.footer = !this.footer;
 }
 
 }

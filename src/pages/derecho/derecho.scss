@@ -81,20 +81,27 @@ page-derecho {
       .section{
         height: 24.2%;
         .sectionTitle{
-          margin-bottom: 1%;
+          margin: 0;
           color: #363B56;
           font-weight: bold;
           font-size: 1.7rem;
+          p{
+            margin: 0;
+          }
         }
         @media (max-height: 500px){
             .sectionTitle{
                 font-size: 1.3rem;
-                margin-top: 3%;
             }
         }
         .sectionContent{
-          margin-top: 2%;
+          margin: 0;
           color: #727689;
+          font-size: 1.3rem;
+          p{
+            margin: 0;
+
+          }
         }
         @media (max-height: 500px){
             .sectionContent{
@@ -107,14 +114,15 @@ page-derecho {
           align-items: center;
           .icon{
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
               margin-bottom: 9.5%;
               color: #363B56;
           }
           @media (max-height: 500px){
             .icon{
               font-size: 2.2rem;
-            }              
+                margin-bottom: 7.5%;
+            }
           }
 
           .arrow{

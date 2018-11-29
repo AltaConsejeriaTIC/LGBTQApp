@@ -48,7 +48,7 @@ page-puntos {
   .banner{
     background-color: #004FC6;
     position: relative;
-    height: 30vh;
+    height: 30.2vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,6 +172,7 @@ page-puntos {
           }
             .item-inner>.input-wrapper>.label>p:nth-of-type(2), .item-inner>.input-wrapper>.label>p:nth-of-type(4) {
                 padding-top: 0%;
+                margin: 0;
         }
           .item-inner>.input-wrapper>.label>p:nth-child(odd){
             color: #505050;
