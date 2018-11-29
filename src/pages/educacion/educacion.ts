@@ -93,11 +93,13 @@ export class EducacionPage {
   }
 
   toggleSection(i) {
-  this.information[i].open = !this.information[i].open;
-}
-
-toggleItem(i, j) {
-  this.information[i].children[j].open = !this.information[i].children[j].open;
-}
+    this.information[i].open = !this.information[i].open;
+  
+    this.information.forEach((item, index) => {
+      if (index != i){
+        this.information[index].open = false;
+      }
+    });
+  }
 
 }
