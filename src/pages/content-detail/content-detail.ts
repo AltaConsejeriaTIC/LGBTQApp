@@ -5,7 +5,7 @@ import { ServerConfig } from '../../../config/server';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventProvider } from '../../providers/event/event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { Platform } from 'ionic-angular';
 
 @IonicPage({
   name: 'content',
@@ -21,6 +21,7 @@ export class ContentDetailPage {
   params: any = {};
   typeContent: string = "evento";
   match;
+  GeoURI: string;
   protected api = ServerConfig.apiEndPoint;
   protected id: number;
 
@@ -30,11 +31,17 @@ export class ContentDetailPage {
     private detailService: DetailContentService,
     private socialSharing: SocialSharing,
     private eventService: EventProvider,
-    private iab: InAppBrowser
+    private iab: InAppBrowser,
+    public platform: Platform
   ) {
     this.match = this.navParams.get('data');
     this.loadData(this.match);
     this.setTitle();
+    if(this.platform.is('ios')){
+      this.GeoURI = `maps://?q=${this.params.latitude},${this.params.longitude}&z=17`
+    }else{
+      this.GeoURI = `geo:${this.params.latitude},${this.params.longitude}?q=${this.params.latitude},${this.params.longitude}&z=17`;
+    }
   }
 
   setTitle(){
@@ -83,6 +90,6 @@ export class ContentDetailPage {
   }
 
   goToMaps() {
-    this.iab.create(`geo:${this.params.latitude},${this.params.longitude}?q=${this.params.latitude},${this.params.longitude}&z=17`, '_system');
+    this.iab.create(this.GeoURI, '_system');
   }
 }
