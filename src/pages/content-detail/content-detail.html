@@ -26,7 +26,7 @@
     <ion-row class="articleContent">
 
       <ion-col class="articleText">
-        <ion-fab top right edge class="shareFab">
+        <ion-fab top right edge class="shareFab" [hidden]="hideShareButton">
           <button class="shareButton" ion-fab mini (click)="share(params)">
             <ion-icon name="icon-icono-compartir"></ion-icon>
           </button>
@@ -38,7 +38,7 @@
         </ion-row>
 
         <div id="contentShare">
-          <p class="titleArticle">{{params.title}}</p>
+          <p class="titleArticle" >{{params.title}}</p>
 
           <div *ngIf="typeContent==='evento'" class="info">
 
@@ -75,7 +75,6 @@
     </ion-row>
 
   </div>
-  <img [src]="im" alt="imagen">
 
 
   <div id="mapa">

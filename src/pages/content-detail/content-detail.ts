@@ -31,7 +31,7 @@ export class ContentDetailPage {
   match;
   protected api = ServerConfig.apiEndPoint;
   protected id: number;
-  im;
+  hideShareButton = false;
   image;
 
   constructor(
@@ -121,19 +121,26 @@ export class ContentDetailPage {
     return address;
   }
 
-  share( content ) {
-    if (this.typeContent === 'evento'){
-      const div = document.getElementById("contentShare");
-      html2canvas(div).then((canvas)=>{
-        let info = canvas.toDataURL("image/jpg");
-        this.im = info;
-        this.socialSharing.share(null, null, info, null)
+  screenShot() {
+    const div = document.getElementById("contentShare");
+    html2canvas(div).then((canvas)=>{
+      let info = canvas.toDataURL("image/jpg");
+      this.socialSharing.share(null, null, info, null)
         .then( response => {
           console.log("se pudo compartir");
+          this.hideShareButton = false;
         }).catch((e) => {
-          console.error(e);
-        });
+        console.error(e);
       });
+    });
+  }
+
+  share( content ) {
+    if (this.typeContent === 'evento'){
+      this.hideShareButton = true;
+      setTimeout(() => {
+        this.screenShot();
+      },10);
     }else{
       let msg = `${content.title}`;
       let url = `${content.source_link}`;
