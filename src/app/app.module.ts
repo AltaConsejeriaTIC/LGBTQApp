@@ -73,6 +73,7 @@ import { ComplaintProvider } from '../providers/complaint/complaint';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { AllianceProvider } from '../providers/alliance/alliance';
 import { DirectivesModule } from '../directives/directives.module';
+import { OrganizationProvider } from '../providers/organization/organization';
 
 @NgModule({
   declarations: [
@@ -179,7 +180,8 @@ import { DirectivesModule } from '../directives/directives.module';
     InAppBrowser,
     ComplaintProvider,
     AndroidPermissions,
-    AllianceProvider
+    AllianceProvider,
+    OrganizationProvider
   ]
 })
 export class AppModule {}
