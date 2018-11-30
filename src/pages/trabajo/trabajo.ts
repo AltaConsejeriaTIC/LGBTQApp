@@ -47,8 +47,17 @@ export class TrabajoPage {
   }
 
   toggleSection(i) {
-  this.information[i].open = !this.information[i].open;
-  this.footer = !this.footer;
-}
+
+    this.information[i].open = !this.information[i].open;
+
+    this.information.forEach((item, index) => {
+      if (index != i){
+        this.information[index].open = false;
+      }
+    });
+
+    this.information[i].open ? this.footer = false : this.footer = true;
+
+  }
 
 }

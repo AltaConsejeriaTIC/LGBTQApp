@@ -16,13 +16,13 @@ export class SaludPage {
                 {
                     "information": "Si deseas información sobre Infecciones de Transmisión Sexual, Enfermedades Crónicas, transmisibles y no transmisibles, de alto costo, maternidad y gestación. Acompañamiento y asesoría en construcción identitaria.",
                     "description": "Subred Centro Oriente:",
-                    "address": "IPRON. Carrera 27 A número 63 B - 07 ",
-                    "description2": "Subred Centro Oriente:",
-                    "address2": "IPRON. Carrera 27 A número 63 B - 07 ",
-                    "description3": "Subred Centro Oriente:",
-                    "address3": "IPRON. Carrera 27 A número 63 B - 07 ",
-                    "description4": "Subred Centro Oriente:",
-                    "address4": "IPRON. Carrera 27 A número 63 B - 07 "
+                    "address": "Diagonal 34 numero 5 - 43",
+                    "description2": "Subred Sur",
+                    "address2": "Carrera 20 Numero 47B 35 Sur",
+                    "description3": "Subred norte:",
+                    "address3": "Calle 66 número 15 - 41",
+                    "description4": "Subred Suroccidente:",
+                    "address4": "Calle 9 Número 39 - 46"
                 }
 
             ]
@@ -33,13 +33,13 @@ export class SaludPage {
               {
                 "information": "Si no cuentas con una red de apoyo y requieres acompañamiento de un profesional para acceder a los servicios del sistema de salud.d",
                 "description": "Subred Centro Oriente:",
-                "address": "IPRON. Carrera 27 A número 63 B - 07 ",
-                "description2": "Subred Centro Oriente:",
-                "address2": "IPRON. Carrera 27 A número 63 B - 07 ",
-                "description3": "Subred Centro Oriente:",
-                "address3": "IPRON. Carrera 27 A número 63 B - 07 ",
-                "description4": "Subred Centro Oriente:",
-                "address4": "IPRON. Carrera 27 A número 63 B - 07 "
+                "address": "Diagonal 34 numero 5 - 43",
+                "description2": "Subred Sur",
+                "address2": "Carrera 20 Numero 47B 35 Sur",
+                "description3": "Subred norte:",
+                "address3": "Calle 66 número 15 - 41",
+                "description4": "Subred Suroccidente:",
+                "address4": "Calle 9 Número 39 - 46"
               }
             ]
         },
@@ -49,13 +49,13 @@ export class SaludPage {
                 {
                   "information": "Si requieres de acompañamiento o asesoría para realizar tu proceso de tránsito.",
                   "description": "Subred Centro Oriente:",
-                  "address": "IPRON. Carrera 27 A número 63 B - 07 ",
-                  "description2": "Subred Centro Oriente:",
-                  "address2": "IPRON. Carrera 27 A número 63 B - 07 ",
-                  "description3": "Subred Centro Oriente:",
-                  "address3": "IPRON. Carrera 27 A número 63 B - 07 ",
-                  "description4": "Subred Centro Oriente:",
-                  "address4": "IPRON. Carrera 27 A número 63 B - 07 "
+                  "address": "Diagonal 34 numero 5 - 43",
+                  "description2": "Subred Sur",
+                  "address2": "Carrera 20 Numero 47B 35 Sur",
+                  "description3": "Subred norte:",
+                  "address3": "Calle 66 número 15 - 41",
+                  "description4": "Subred Suroccidente:",
+                  "address4": "Calle 9 Número 39 - 46"
                 }
             ]
         },
@@ -82,11 +82,13 @@ export class SaludPage {
   }
 
   toggleSection(i) {
-  this.information[i].open = !this.information[i].open;
-}
+    this.information[i].open = !this.information[i].open;
 
-toggleItem(i, j) {
-  this.information[i].children[j].open = !this.information[i].children[j].open;
-}
+    this.information.forEach((item, index) => {
+      if (index != i){
+        this.information[index].open = false;
+      }
+    });
+  }
 
 }

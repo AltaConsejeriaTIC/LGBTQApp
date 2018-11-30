@@ -365,6 +365,7 @@ page-home {
             }
             ion-fab-list{
               min-width: 40px;
+              width: 40px;
             }
             ion-fab[middle] {
               margin-top: -20px;
@@ -751,8 +752,8 @@ page-home {
     position: absolute;
     padding: 0 35px;
     z-index: 22;
-    top: 10px;
-    right: 10px;
+    top: 17px;
+    right: 13px;
     width: 145px;
     height: 38px;
     background: #ffffff;

@@ -60,8 +60,10 @@ export class ListadoPage {
     this.evento = true;
     this.noticia = false;
     this.title = 'EVENTOS Y NOTICIAS';
-    this.monthTitle = this.months[this.events[0].start_date.slice(5,7)-1];
-    this.yearTitle = this.events[0].start_date.slice(0,4);
+    if(this.events[0]){
+      this.monthTitle = this.months[this.events[0].start_date.slice(5,7)-1];
+      this.yearTitle = this.events[0].start_date.slice(0,4);
+    }
     this.detailService.setEvento(true);
   }
 
@@ -69,8 +71,10 @@ export class ListadoPage {
     this.evento = false;
     this.noticia = true;
     this.title = 'ACTUALIDAD BOGOTÁ';
-    this.monthTitle = this.months[this.news[0].date.slice(5,7)-1];
-    this.yearTitle = this.news[0].date.slice(0,4);
+    if(this.events[0]) {
+      this.monthTitle = this.months[this.news[0].date.slice(5,7)-1];
+      this.yearTitle = this.news[0].date.slice(0,4);
+    }
     this.detailService.setEvento(false);
   }
 
