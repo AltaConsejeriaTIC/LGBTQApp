@@ -55,7 +55,21 @@ export class AlianzaPage {
   }
 
   itemSelected( data ){
-
+    this.navCtrl.push(AlianzasDetailPage, {
+      name: data.name,
+      description: data.description,
+      offer: data.offer,
+      website: data.website,
+      phone: data.phone,
+      email: data.email,
+      state: data.state,
+      finish_date: data.finish_date,
+      image: data.image,
+      created_at: data.created_at,
+      updated_at: data.updated_at
+    }).catch(err => {
+      console.error("Error en goToFormDenunciaSuceso", err, err.stack);
+    });
   }
 
 

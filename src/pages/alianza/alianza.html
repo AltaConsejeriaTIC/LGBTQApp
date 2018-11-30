@@ -39,7 +39,7 @@
     </div>
 
     <div *ngFor="let alliance of allAlliances; last as lastElement">
-        <div class="politicaPublica section" (click)="itemSelected(alliance)">
+        <div class="politicaPublica section" (click)="itemSelected( alliance )">
           <ion-col col-4 class="icon">
               <img [src]="api + alliance.image">
           </ion-col>
