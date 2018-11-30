@@ -19,15 +19,14 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="article" id="contentShare">
 
-  <div class="article">
-
-    <img [src]="api + params.image">
+    <img [src]="image">
 
     <ion-row class="articleContent">
 
       <ion-col class="articleText">
-        <ion-fab top right edge class="shareFab">
+        <ion-fab top right edge class="shareFab" [hidden]="hideShareButton">
           <button class="shareButton" ion-fab mini (click)="share(params)">
             <ion-icon name="icon-icono-compartir"></ion-icon>
           </button>

@@ -41,13 +41,13 @@ export class ListadoPage {
         this.monthTitle = this.months[response[0].start_date.slice(5,7)-1];
         this.yearTitle = response[0].start_date.slice(0,4);
       },
-      (error) => console.log(error)
+      (error) => console.log("$$$$$$$$$$$",error)
     );
     this.eventService.getData(`${this.api}/news`).subscribe(
       (response) => {
         this.news = response;
       },
-      (error) => console.log(error)
+      (error) => console.log("*********",error)
     );
   }
 
