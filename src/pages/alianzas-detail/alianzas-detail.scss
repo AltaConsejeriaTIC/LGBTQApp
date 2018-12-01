@@ -100,6 +100,11 @@ page-alianzas-detail {
                   color: #363B56;
                   margin-right: 30%;
               }
+              @media (max-height: 500px){
+                .title{
+                    padding-top: 4vh;
+                }
+              }
               p{
                  margin: 5% 0%;
                  color: #727689;

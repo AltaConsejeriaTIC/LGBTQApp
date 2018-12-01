@@ -1,3 +1,37 @@
+
+div.alert-radio-group, .alert-md .alert-radio-group, .alert-md .alert-checkbox-group {
+  overflow-y: scroll !important;
+      max-height: 65vh !important;
+}
+
+div.alert-radio-group button{
+  min-height: 3.8rem !important;
+}
+
+@media (max-height: 500px){
+  div.alert-radio-group button{
+    min-height: unset !important;
+  }
+}
+
+
+div.alert-radio-group button .button-inner .alert-radio-label{
+  padding: 1vh 3vh !important;
+}
+
+ion-alert.alert-md.select-alert.single-select-alert > .alert-wrapper > div:nth-child(3){
+  overflow-y: scroll !important;
+}
+
+ion-alert.alert-ios.select-alert.single-select-alert:nth-child(5) > .alert-wrapper > div:nth-child(3) > .alert-radio-group > .button-inner {
+    height: 95vh !important;
+}
+
+
+
+
+
+
 page-form-censo {
 
   .modalMax {
@@ -188,6 +222,14 @@ ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, 
 .item-label-stacked ion-datetime{
   padding: 0 0;
   padding: 1vh 3%;
+}
+
+div.alert-radio-group, .alert-md .alert-radio-group, .alert-md .alert-checkbox-group {
+  overflow-y: scroll !important;
+}
+
+ion-alert.alert-md.select-alert.single-select-alert > .alert-wrapper > div:nth-child(3){
+  overflow-y: scroll;
 }
 
 

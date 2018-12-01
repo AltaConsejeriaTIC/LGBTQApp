@@ -59,6 +59,11 @@ page-habitat {
       font-size: 4.4rem;
     }
 
+   button.item-ios .item-inner {
+        background-image: none !important;
+        background-size: 0 !important;
+  }
+
     .bannerTitle{
       text-transform: uppercase;
       font-weight: 800;

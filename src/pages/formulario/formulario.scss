@@ -50,14 +50,20 @@ page-formulario {
       align-self: center;
       padding-bottom: 10%;
     }
+    @media (max-height: 500px){
+      img{
+          padding-bottom: 0;
+      }
+    }
+
   }
 
   .direccionContent{
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding: 12%;
+    height: 100%;
       .title{
         text-align: center;
         font-weight: bold;
@@ -65,6 +71,12 @@ page-formulario {
         font-size: 2.5rem;
 
       }
+      @media (max-height: 500px){
+        .title {
+      margin: 2vh;
+  }
+      }
+
       .contentCenso{
         text-align: left;
         line-height: 4.5vh;
@@ -73,6 +85,13 @@ page-formulario {
           margin-top: 0;
         }
       }
+  }
+  @media (max-height: 500px){
+
+    .direccionContent{
+      padding: 8%;
+      height: 100%;
+    }
   }
 
   .formButton{
@@ -87,6 +106,12 @@ page-formulario {
         height: 6rem;
         width: 100%;
       }
+      @media (max-height: 500px){
+        .denunciaButton {
+          height: 4rem;
+        }
+      }
+
   }
 
 }

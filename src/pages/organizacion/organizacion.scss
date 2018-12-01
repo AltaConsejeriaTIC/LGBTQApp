@@ -148,6 +148,15 @@ page-organizacion {
             }
         }
       }
+      .section:before{
+        background-color: lightgray;
+        content: '';
+        width: 84%;
+        position: absolute;
+        left: 8%;
+        height: 1px;
+        bottom: 0px;
+      }
       .politicaPublica, .tusDerechos, .puntosAtencion{
           display: flex;
           align-items: center;
