@@ -19,31 +19,15 @@
 
     <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" [class.filterDark]="emergencyButtonActivate">
+    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" [class.filterDark]="emergencyButtonActivate" *ngIf="slidesElementes.length == 3">
 
-        <ion-slide class="article article1" >
-          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
-          <ion-row>
-            <p class="articleDate">20 junio, 2018</p>
-            <p class="articleType">noticia</p>
-          </ion-row>
-        </ion-slide>
-
-        <ion-slide class="article article2">
-          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
-          <ion-row>
-            <p class="articleDate">20 junio, 2018</p>
-            <p class="articleType">noticia</p>
-          </ion-row>
-        </ion-slide>
-
-        <ion-slide class="article article3">
-          <p class="titleText">Miles de personas salen a las calles de la India a protestar</p>
-          <ion-row>
-            <p class="articleDate">20 junio, 2018</p>
-            <p class="articleType">noticia</p>
-          </ion-row>
-        </ion-slide>
+      <ion-slide *ngFor="let e of slidesElementes" class="article" [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(' + this.api + e.image + ')'}">
+        <p class="titleText">{{e.title}}</p>
+        <ion-row>
+          <p class="articleDate">{{e.finish_date || e.date | date:'mediumDate':'':'es'}}</p>
+          <p class="articleType">{{e.source ? "noticia" : "evento"}}</p>
+        </ion-row>
+      </ion-slide>
 
     </ion-slides>
 
