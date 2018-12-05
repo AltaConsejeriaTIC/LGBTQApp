@@ -6,6 +6,10 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventProvider } from '../../providers/event/event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Platform } from 'ionic-angular';
+import { DomSanitizer } from '@angular/platform-browser';
+import html2canvas from 'html2canvas';
+
+declare var google;
 
 @IonicPage({
   name: 'content',
@@ -24,6 +28,8 @@ export class ContentDetailPage {
   GeoURI: string;
   protected api = ServerConfig.apiEndPoint;
   protected id: number;
+  hideShareButton = false;
+  image;
 
   constructor(
     public navCtrl: NavController,
@@ -32,7 +38,8 @@ export class ContentDetailPage {
     private socialSharing: SocialSharing,
     private eventService: EventProvider,
     private iab: InAppBrowser,
-    public platform: Platform
+    public platform: Platform,
+    private sanitizer:DomSanitizer
   ) {
     this.match = this.navParams.get('data');
     this.loadData(this.match);
@@ -53,36 +60,83 @@ export class ContentDetailPage {
   }
 
   loadData(data) {
-    if (data){
-      this.typeContent = this.detailService.getContent();
-      this.id = this.navParams.get('id');
-      this.params = this.navParams.get('data');
-    }else{
-      this.typeContent = 'evento';
-      this.id = parseInt(this.navParams.get('id'));
-      this.eventService.getEvent(this.api, this.id).subscribe(
-        (response) => this.params = response,
-        (error) => console.log(error)
-      );
+    console.log("---api--",this.api);
+    this.typeContent = this.detailService.getContent();
+    this.id = this.navParams.get('id');
+    this.params = this.navParams.get('data');
+    this.eventService.getImage(`${this.api}${this.params.image}`).subscribe(
+      (response) =>{
+        console.log(response);
+          let tmp = URL.createObjectURL(new Blob([response],{type: 'image/jpeg'}));
+          this.image = this.sanitizer.bypassSecurityTrustUrl(tmp);
+        console.log("------",this.image);
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  geocodeAddress(geocoder, resultsMap) {
+    var address = this.getLocation(this.params.place);
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status === 'OK') {
+        resultsMap.setCenter(results[0].geometry.location);
+        new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
+  hideMapInNews(){
+    if(this.typeContent == "noticia")
+    {
+     document.getElementById('mapa').style.display = 'none';
+    }
+    else
+    {
+      document.getElementById('mapa').style.display = 'block';
     }
   }
 
-  share( content ) {
-    let msg;
-    let url;
-    if (this.typeContent === 'evento'){
-      msg = `${content.title}`;
-      url = `myapp://home/content/${content.id}`;
-    }else{
-      msg = `${content.title}`;
-      url = `${content.source_link}`;
-    }
-    this.socialSharing.share(msg, null, null, url)
-      .then( () => {
-        console.log("se pudo compartir");
-      }).catch((e) => {
+  getLocation(place){
+    let address: string;
+    address = `${place},bogotá`;
+    return address;
+  }
+
+  screenShot() {
+    const div = document.getElementById("contentShare");
+    html2canvas(div).then((canvas)=>{
+      let info = canvas.toDataURL("image/jpg");
+      this.socialSharing.share(null, null, info, null)
+        .then( response => {
+          console.log("se pudo compartir");
+          this.hideShareButton = false;
+        }).catch((e) => {
         console.error(e);
       });
+    });
+  }
+
+  share( content ) {
+    if (this.typeContent === 'evento'){
+      this.hideShareButton = true;
+      setTimeout(() => {
+        this.screenShot();
+      },10);
+    }else{
+      let msg = `${content.title}`;
+      let url = `${content.source_link}`;
+      this.socialSharing.share(msg, null, null, url)
+        .then( response => {
+          console.log("se pudo compartir");
+        }).catch((e) => {
+          console.error(e);
+        });
+    }
   }
 
   goToLink() {

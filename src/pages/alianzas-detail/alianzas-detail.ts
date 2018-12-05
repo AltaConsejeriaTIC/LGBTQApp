@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServerConfig } from '../../../config/server';
 
 /**
  * Generated class for the AlianzasDetailPage page.
@@ -15,7 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AlianzasDetailPage {
 
+  public infoData : any;
+  protected api = ServerConfig.apiEndPoint;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.infoData = {
+      "name": navParams.get('name'),
+      "description": navParams.get('description'),
+      "offer": navParams.get('offer'),
+      "website": navParams.get('website'),
+      "phone": navParams.get('phone'),
+      "email": navParams.get('email'),
+      "state": navParams.get('state'),
+      "finish_date": navParams.get('finish_date'),
+      "image": navParams.get('image'),
+      "created_at": navParams.get('created_at'),
+      "updated_at": navParams.get('updated_at')
+    }
+
   }
 
   ionViewDidLoad() {

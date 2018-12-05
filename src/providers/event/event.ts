@@ -20,6 +20,9 @@ export class EventProvider {
     return this.http.get(`${baseUrl}/events/${id}`);
     //.catch((error: any) => Observable.throw(error.json().error || 'Server error getPlaces'));
   }
+  getImage(baseUrl): Observable<any>{
+    return this.http.get( baseUrl, {responseType: 'blob'})
+  }
   get(baseUrl, typeEvent, id): Observable<any> {
     return this.http.get(`${baseUrl}/${typeEvent}/${id}`);
     //.catch((error: any) => Observable.throw(error.json().error || 'Server error getPlaces'));

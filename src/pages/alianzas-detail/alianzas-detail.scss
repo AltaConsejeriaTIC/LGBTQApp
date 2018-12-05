@@ -46,12 +46,17 @@ page-alianzas-detail {
       font-size: 4.4rem;
     }
 
+    .logo-image{
+      height: 52%;
+    }
+
     .bannerTitle{
       text-transform: uppercase;
       font-weight: 800;
       font-size: 2rem;
       margin: 0 5%;
       text-align: center;
+      width: 50%;
     }
 
     .bannerContent{
@@ -94,6 +99,11 @@ page-alianzas-detail {
                   text-transform: uppercase;
                   color: #363B56;
                   margin-right: 30%;
+              }
+              @media (max-height: 500px){
+                .title{
+                    padding-top: 4vh;
+                }
               }
               p{
                  margin: 5% 0%;

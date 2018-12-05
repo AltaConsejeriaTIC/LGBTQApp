@@ -37,23 +37,17 @@
           <ion-icon name="md-star"></ion-icon>
         </ion-col>
     </div>
-    <div class="politicaPublica section" (click)="goToDetail()">
-        <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
-        </ion-col>
-        <ion-col col-8>
-          <p class="sectionTitle">Cine Colombia</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
-        </ion-col>
-    </div>
-    <div class="politicaPublica section" (click)="goToDetail()">
-        <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
-        </ion-col>
-        <ion-col col-8>
-          <p class="sectionTitle">Tu boleta</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
-        </ion-col>
+
+    <div *ngFor="let alliance of allAlliances; last as lastElement">
+        <div class="politicaPublica section" (click)="itemSelected( alliance )">
+          <ion-col col-4 class="icon">
+              <img [src]="api + alliance.image">
+          </ion-col>
+          <ion-col col-8>
+            <p class="sectionTitle" appLines="2">{{alliance.name}}</p>
+            <p class="sectionContent" appLines="2">{{alliance.description}}</p>
+          </ion-col>
+        </div>
     </div>
 
   </div>

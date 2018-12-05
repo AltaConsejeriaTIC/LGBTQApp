@@ -28,32 +28,18 @@
         <ion-icon name="md-person-add"></ion-icon>
         <p>Aparecer aquí</p>
     </div>
-    <div class="politicaPublica section" (click)="goToDetail()">
+
+
+    <div *ngFor="let organization of allOrganizations; last as lastElement">
+      <div class="politicaPublica section" (click)="itemSelected(organization)">
         <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
+           <img [src]="api + organization.image">
         </ion-col>
         <ion-col col-8>
-          <p class="sectionTitle">Colombia Diversa</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
+          <p class="sectionTitle" appLines="2">{{organization.name}}</p>
+          <p class="sectionContent" appLines="2">{{organization.description}}</p>
         </ion-col>
     </div>
-    <div class="politicaPublica section" (click)="goToDetail()">
-        <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
-        </ion-col>
-        <ion-col col-8>
-          <p class="sectionTitle">Ágora</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
-        </ion-col>
-    </div>
-    <div class="politicaPublica section" (click)="goToDetail()">
-        <ion-col col-4 class="icon">
-            <img src="../assets/imgs/image.png">
-        </ion-col>
-        <ion-col col-8>
-          <p class="sectionTitle">Armario abierto</p>
-          <p class="sectionContent">Aquí puedes radicar denuncias en caso de discriminación o vulneración.</p>
-        </ion-col>
     </div>
 
   </div>

@@ -16,8 +16,8 @@
 <ion-content>
 
   <div class="banner">
-    <img src="../assets/imgs/detailLogo.png">
-      <p class="bannerTitle">cine colombia</p>
+    <img class="logo-image" [src]="api + infoData.image">
+      <p class="bannerTitle">{{infoData.name}}</p>
   </div>
 
   <div class="sections">
@@ -25,15 +25,12 @@
           <ion-col col-9>
 
             <div class="description">
-              <p>Desde 1927, CineColombia® se encarga de distribuir y exhibir películas del jet-set hollywoodense y del resto del mundo en sus diversas sedes ubicadas a lo largo del país.</p>
+              <p>{{infoData.description}}</p>
             </div>
 
             <div class="list">
               <h2 class="title">para la comunidad lgbti ofrecemos</h2>
-              <p>Entrada de cine 2D o 3D o combo a elección desde $ 7000 presentando el código del descuento en la taquilla.<br><br>
-El código es válido para 1 boleta en localidad general para películas cinematográficas (excluyendo contenidos alternativos) en formato 2D o 3D, o para un producto de comidas únicamente según la información descrita en cada cupón enviado<br><br>
-Esta promoción se puede utilizar desde el 01 de junio de 2018 hasta el 30 de septiembre de 2018.<br><br>
-<b>Fecha de cierre:</b> 12 de Noviembre de 2018</p>
+              <p>{{infoData.offer}}</p>
             </div>
 
           </ion-col>
@@ -43,11 +40,11 @@ Esta promoción se puede utilizar desde el 01 de junio de 2018 hasta el 30 de se
         <ion-col col-9>
             <h2 class="title">Datos de contacto</h2>
             <p>Sitio Web</p>
-            <p>http://colombiadiversa.org/ </p>
+            <p>{{infoData.website}} </p>
             <p>Correo electrónico</p>
-            <p>info@colombiadiversa.org </p>
+            <p>{{infoData.email}} </p>
             <p>Teléfono</p>
-            <p>(+57 1) 4831237 - Fax: (+57 1) 2880393</p>
+            <p>{{infoData.phone}}</p>
         </ion-col>
       </ion-row>
 

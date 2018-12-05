@@ -75,7 +75,7 @@ page-alianza {
       border-top-left-radius: 8% 8%;
       border-top-right-radius: 8% 8%;
       background-color: white;
-      height: 62%;
+      // height: 62%;
       display: flex;
       flex-direction: column;
 
@@ -145,6 +145,15 @@ page-alianza {
                   font-size: 1.3rem;
             }
         }
+      }
+      .section:before{
+        background-color: lightgray;
+        content: '';
+        width: 84%;
+        position: absolute;
+        left: 8%;
+        height: 1px;
+        bottom: 0px;
       }
       .politicaPublica{
           display: flex;
