@@ -59,7 +59,7 @@
             <ion-col col-10 class="placeInfo" (click)="goToMaps()">
               <p class="placeName">{{params.place}}</p>
               <p class="placeAddress">{{params.address}}</p>
-              <p><a class="placeLocation" >Ver ubicación</a></p>
+              <p *ngIf="params.latitude !== 0 && params.longitude !== 0"><a class="placeLocation" >Ver ubicación</a></p>
             </ion-col>
           </ion-row>
         </div>

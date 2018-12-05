@@ -144,6 +144,9 @@ export class ContentDetailPage {
   }
 
   goToMaps() {
-    this.iab.create(this.GeoURI, '_system');
+
+    if( this.params.latitude !== 0 && this.params.longitude !== 0 ){
+      this.iab.create(this.GeoURI, '_system');
+    }
   }
 }
