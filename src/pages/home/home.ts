@@ -49,8 +49,19 @@ export class HomePage {
       });
 
       this.eventService.getData(`${this.api}/highlights`).subscribe((highlights)=>{
-        console.log(highlights)
+        highlights = [
+          {id:20,section_id:4,section:"events"},
+          {id:16,section_id:6,section:"events"},
+          {id:6,section_id:2,section:"news"}
+          ];
+        highlights.forEach((highlight) => {
+          this.eventService.get(this.api, highlight.section,highlight.id).subscribe(
+            (response) => this.slidesElementes.push(response),
+            (error) => console.log(error)
+          );
+        })
       })
+      console.log(this.slidesElementes)
 
   }
 
@@ -69,6 +80,7 @@ export class HomePage {
   public hasPressedSendMessage = false;
   public tutorialStep = 1;
   public tapEmergencyButton = 0;
+  public slidesElementes = [];
 
   prevSlide() {
     if(this.emergencyButtonActivate) {
