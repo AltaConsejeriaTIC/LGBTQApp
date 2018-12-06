@@ -4,6 +4,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { HomePage } from '../home/home';
 import { ComplaintProvider } from '../../providers/complaint/complaint';
 import { ServerConfig } from '../../../config/server';
+import {markDirty} from "@angular/core/src/render3";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class FormCensoPage {
   credentialsForm: FormGroup;
   modalWindow: boolean = false;
   identityOhter: boolean = false;
+  trySend: boolean = false;
   protected api = ServerConfig.apiEndPoint;
 
   validation_messages = {
@@ -68,6 +70,7 @@ export class FormCensoPage {
                private formBuilder: FormBuilder,
                public app: App,
                private complaintProvider: ComplaintProvider) {
+    this.trySend = false;
     this.credentialsForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -105,8 +108,8 @@ export class FormCensoPage {
   }
 
   sendData(){
-
-      var data = {
+    if(this.credentialsForm.valid) {
+      let data = {
         "document_type": this.credentialsForm.get('documentType').value,
         "document_number": this.credentialsForm.get('documentNumber').value,
         "first_name": this.credentialsForm.get('firstName').value,
@@ -114,23 +117,25 @@ export class FormCensoPage {
         "address": this.credentialsForm.get('address').value,
         "email": this.credentialsForm.get('email').value,
         "phone": this.credentialsForm.get('phone').value,
-        "sex_birth":  this.identityOhter ?   this.credentialsForm.get('others').value : this.credentialsForm.get('identity').value,
+        "sex_birth": this.identityOhter ? this.credentialsForm.get('others').value : this.credentialsForm.get('identity').value,
         "sexual_orientation": this.credentialsForm.get('orientation').value,
         "gender": this.credentialsForm.get('gender').value,
         "birth_day": this.credentialsForm.get('age').value,
         "education": this.credentialsForm.get('education').value
-      }
+      };
 
-      this.complaintProvider.postData( `${this.api}/users`, data)
-      .subscribe(res => {
-        this.modalWindow=true;
-      }
-      , err => {
-        this.modalWindow=false;
-        console.log( err );
-        alert('there was an error');
-      } );
+      this.complaintProvider.postData(`${this.api}/users`, data)
+        .subscribe(res => {
+          this.modalWindow = true;
+        }, err => {
+          this.modalWindow = false;
+          console.log(err);
+          alert('there was an error');
+        });
     }
+    this.markFormGroupTouched(this.credentialsForm);
+
+  }
 
     closeData(){
         this.modalWindow=false;
@@ -147,5 +152,15 @@ export class FormCensoPage {
           this.identityOhter = false;
         }
     }
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+
+      if (control.controls) {
+        this.markFormGroupTouched(control);
+      }
+    });
+  }
 
 }

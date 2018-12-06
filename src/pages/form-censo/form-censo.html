@@ -1,7 +1,7 @@
 <ion-header no-border>
 
   <ion-navbar mode="ios" hideBackButton>
-    <ion-title text-center>censo lgbti</ion-title>
+    <ion-title text-center>FORMULARIO lgbti</ion-title>
     <ion-buttons left>
       <button ion-button navPop icon-only>
         <ion-icon name="icon-fleacha-atras"></ion-icon>
@@ -20,9 +20,11 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
-    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
-      <ion-option value="TI">Tarjeta de identidad</ion-option>
+    <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched))}" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
+      <!--<ion-option value="TI">Tarjeta de identidad</ion-option>-->
       <ion-option value="CC">Cedula de ciudadanía</ion-option>
+      <ion-option value="CE">Cedula de extranjería</ion-option>
+      <ion-option value="PP">Pasaporte</ion-option>
     </ion-select>
   </ion-item>
 
@@ -110,7 +112,7 @@
 
 <ion-item>
   <ion-label stacked [ngClass]="{'error-text': ((credentialsForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (credentialsForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)) == true }">Teléfono fijo o celular</ion-label>
-  <ion-input [ngClass]="{'error-box': ((credentialsForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (credentialsForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)) == true }" formControlName="phone" type="text" placeholder="Teléfono fijo o celular"></ion-input>
+  <ion-input [ngClass]="{'error-box': ((credentialsForm.get('phone').hasError(this.validation_messages.phone['1']['type']) || (credentialsForm.get('phone').hasError(validation_messages.phone['0']['type']))) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)) == true }" formControlName="phone" type="text" placeholder="Teléfono fijo o celular" maxlength="10"></ion-input>
 </ion-item>
 
   <div class="validation-errors">
