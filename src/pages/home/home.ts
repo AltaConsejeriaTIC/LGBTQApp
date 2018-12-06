@@ -56,13 +56,11 @@ export class HomePage {
           ];
         highlights.forEach((highlight) => {
           this.eventService.get(this.api, highlight.section,highlight.id).subscribe(
-            (response) => this.slidesElementes.push(response),
+            (response) => {this.slidesElementes.push(response); console.log(this.slidesElementes)},
             (error) => console.log(error)
           );
         })
-      })
-      console.log(this.slidesElementes)
-
+      });
   }
 
   protected api = ServerConfig.apiEndPoint;
@@ -153,7 +151,6 @@ export class HomePage {
 
   toggleEmergencyButton():void {
 
-    console.log( 'tap emergency button: ', this.tapEmergencyButton );
     if( this.tapEmergencyButton === 1 ){
       this.tapEmergencyButton+=1;
       if (this.plt.is('android')) {
@@ -237,7 +234,6 @@ export class HomePage {
               alert(' ocurrio un error al momento de enviar el mensaje');
               return false;
             }), 90000  ) //90 secs
-            .then((thing) => console.log('I did a thing!'))
             .catch((err) => {
               if (err instanceof TimeoutError) {
                 console.error('Timeout :-(');
@@ -322,7 +318,6 @@ export class HomePage {
   nextStepTutorial() {
     this.tutorialStep += 1;
     this.firstTime = this.tutorialStep < 7;
-    console.log(this.tutorialStep)
   }
 
   disable(callback,condition){
