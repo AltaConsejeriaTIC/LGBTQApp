@@ -49,14 +49,19 @@ export class HomePage {
       });
 
       this.eventService.getData(`${this.api}/highlights`).subscribe((highlights)=>{
-        highlights = [
-          {id:20,section_id:4,section:"events"},
-          {id:16,section_id:6,section:"events"},
-          {id:6,section_id:2,section:"news"}
-          ];
+
+        // highlights = [
+        //   {id:20,section_id:4,section:"events"},
+        //   {id:16,section_id:6,section:"events"},
+        //   {id:6,section_id:2,section:"news"}
+        //   ];
+        console.log(highlights);
         highlights.forEach((highlight) => {
-          this.eventService.get(this.api, highlight.section,highlight.id).subscribe(
-            (response) => {this.slidesElementes.push(response); console.log(this.slidesElementes)},
+          this.eventService.get(this.api, highlight.section == "event" ? "events" : "news", highlight.section_id).subscribe(
+            (response) => {
+              this.slidesElementes.push(response);
+              console.log(this.slidesElementes)
+            },
             (error) => console.log(error)
           );
         })

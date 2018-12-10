@@ -139,7 +139,7 @@ page-organizacion {
         .sectionContent{
           margin-top: 2%;
           color: #727689;
-          margin-right: 10%;
+          margin-right: 15%;
         }
         @media (max-height: 500px){
             .sectionContent{
@@ -161,10 +161,13 @@ page-organizacion {
           display: flex;
           align-items: center;
           .icon{
+            padding: 12px 5px 12px 20px;
             text-align: center;
             font-size: 2.1rem;
               margin-bottom: 0;
               color: #363B56;
+            min-width: 125px;
+            min-height: 115px;
           }
       }
 

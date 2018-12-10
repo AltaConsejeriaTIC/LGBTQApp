@@ -74,16 +74,30 @@ export class FormDenunciaPage {
     console.log('ionViewDidLoad FormDenunciaPage');
   }
 
-  goToFormDenunciaSuceso(){
-    this.navCtrl.push(FormDenunciaSucesoPage, {
-      first_name: this.denunciaForm.get('firstName').value,
-      last_name: this.denunciaForm.get('lastName').value,
-      document_type: this.denunciaForm.get('documentType').value,
-      document_number: this.denunciaForm.get('documentNumber').value,
-      email: this.denunciaForm.get('email').value,
-      phone: this.denunciaForm.get('phone').value
-    }).catch(err => {
-      console.error("Error en goToFormDenunciaSuceso", err, err.stack);
+  goToFormDenunciaSuceso() {
+    if (this.denunciaForm.valid) {
+      this.navCtrl.push(FormDenunciaSucesoPage, {
+        first_name: this.denunciaForm.get('firstName').value,
+        last_name: this.denunciaForm.get('lastName').value,
+        document_type: this.denunciaForm.get('documentType').value,
+        document_number: this.denunciaForm.get('documentNumber').value,
+        email: this.denunciaForm.get('email').value,
+        phone: this.denunciaForm.get('phone').value
+      }).catch(err => {
+        console.error("Error en goToFormDenunciaSuceso", err, err.stack);
+      });
+    }
+    this.markFormGroupTouched(this.denunciaForm);
+
+  }
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+
+      if (control.controls) {
+        this.markFormGroupTouched(control);
+      }
     });
   }
 

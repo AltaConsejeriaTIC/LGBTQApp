@@ -4,7 +4,6 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { HomePage } from '../home/home';
 import { ComplaintProvider } from '../../providers/complaint/complaint';
 import { ServerConfig } from '../../../config/server';
-import {markDirty} from "@angular/core/src/render3";
 
 
 @Component({
@@ -16,7 +15,6 @@ export class FormCensoPage {
   credentialsForm: FormGroup;
   modalWindow: boolean = false;
   identityOhter: boolean = false;
-  trySend: boolean = false;
   protected api = ServerConfig.apiEndPoint;
 
   validation_messages = {
@@ -63,14 +61,13 @@ export class FormCensoPage {
   'education': [
 		{ type: 'required', message: 'El nivel de educación es requerida.' }
 	]
-}
+};
 
   constructor( public navCtrl: NavController,
                public navParams: NavParams,
                private formBuilder: FormBuilder,
                public app: App,
                private complaintProvider: ComplaintProvider) {
-    this.trySend = false;
     this.credentialsForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -125,7 +122,7 @@ export class FormCensoPage {
       };
 
       this.complaintProvider.postData(`${this.api}/users`, data)
-        .subscribe(res => {
+        .subscribe(() => {
           this.modalWindow = true;
         }, err => {
           this.modalWindow = false;
@@ -139,18 +136,17 @@ export class FormCensoPage {
 
     closeData(){
         this.modalWindow=false;
-        this.navCtrl.setRoot(HomePage);
-        this.navCtrl.popToRoot();
+        this.navCtrl.setRoot(HomePage).catch(err => {
+          console.error("Error en closeData", err, err.stack);
+        });
+        this.navCtrl.popToRoot().catch(err => {
+          console.error("Error en closeData", err, err.stack);
+        });
       }
 
       onChangeIdentity($event){
         console.log($event);
-        if($event == 'Otro'){
-          this.identityOhter = true;
-        }
-        else{
-          this.identityOhter = false;
-        }
+        this.identityOhter = $event == 'Otro';
     }
 
   private markFormGroupTouched(formGroup: FormGroup) {

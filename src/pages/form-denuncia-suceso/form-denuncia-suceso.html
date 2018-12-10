@@ -22,7 +22,7 @@
 
     <ion-item>
         <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }">Fecha del suceso</ion-label>
-          <ion-datetime doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="date" placeholder="Fecha del suceso"></ion-datetime>
+          <ion-datetime displayFormat="D/M/YYYY" pickerFormat="D/M/YYYY" doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="date" placeholder="Fecha del suceso"></ion-datetime>
   </ion-item>
 
     <div class="validation-errors">
@@ -86,11 +86,22 @@
 
 <div class="modalMax" *ngIf="modalWindow">
   <div class="innerWindow">
-      <ion-icon name="ios-checkmark-circle"></ion-icon>
+      <ion-icon name="checkmark-circle"></ion-icon>
     <p class="title">¡Tu denuncia se ha enviado con éxito!</p>
     <p class="text">Muchas gracias. Denunciando nos ayudas a hacer de Bogotá un lugar mejor para todos.</p>
     <button ion-button block class="goHomeButton" (click)="closeData()">
       volver al inicio
+    </button>
+  </div>
+</div>
+
+<div class="modalMax" *ngIf="modalWindow2">
+  <div class="innerWindow">
+    <ion-icon class="red" name="warning"></ion-icon>
+    <p class="title">Tu denuncia no pudo ser procesada.</p>
+    <p class="text">Enviaste informacion incorrecta o nuestros servidores no estan funcionando.</p>
+    <button ion-button block class="goHomeButton" (click)="closeData2()">
+      Cerrar
     </button>
   </div>
 </div>

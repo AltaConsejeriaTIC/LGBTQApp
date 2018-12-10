@@ -14,6 +14,7 @@ export class FormDenunciaSucesoPage {
 
   denunciaForm: FormGroup;
   modalWindow: boolean = false;
+  modalWindow2: boolean = false;
   protected api = ServerConfig.apiEndPoint;
 
   validation_messages = {
@@ -46,6 +47,7 @@ export class FormDenunciaSucesoPage {
   }
 
   sendData(){
+    if(this.denunciaForm.valid) {
 
       var data = {
         "first_name": this.navParams.get('first_name'),
@@ -57,18 +59,19 @@ export class FormDenunciaSucesoPage {
         "event_day": this.denunciaForm.get('date').value,
         "event_place": this.denunciaForm.get('place').value,
         "description": this.denunciaForm.get('description').value
-      }
+      };
 
-      this.complaintProvider.postData( `${this.api}/complaints`, data)
-      .subscribe(res => {
-        this.modalWindow=true;
-      }
-      , err => {
-        this.modalWindow=false;
-        console.log( err );
-        alert('there was an error');
-      } );
-
+      this.complaintProvider.postData(`${this.api}/complaints`, data)
+        .subscribe(res => {
+            this.modalWindow = true;
+          }
+          , err => {
+            this.modalWindow = false;
+            console.log(err);
+            this.modalWindow2 = true;
+          });
+    }
+    this.markFormGroupTouched(this.denunciaForm);
   }
 
   closeData(){
@@ -80,5 +83,19 @@ export class FormDenunciaSucesoPage {
         console.error("Error en closeData", err, err.stack);
       });
     }
+
+  closeData2(){
+    this.modalWindow2=false;
+  }
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+
+      if (control.controls) {
+        this.markFormGroupTouched(control);
+      }
+    });
+  }
 
 }
