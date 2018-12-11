@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, App } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, App, ViewController, Content } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { ComplaintProvider } from '../../providers/complaint/complaint';
 import { ServerConfig } from '../../../config/server';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-form-censo',
-  templateUrl: 'form-censo.html',
+  templateUrl: 'form-censo.html'
 })
 export class FormCensoPage {
 
@@ -16,6 +16,8 @@ export class FormCensoPage {
   modalWindow: boolean = false;
   identityOhter: boolean = false;
   protected api = ServerConfig.apiEndPoint;
+  isButtonOn = false;
+  @ViewChild(Content) content: Content;
 
   validation_messages = {
 'email': [
@@ -67,7 +69,9 @@ export class FormCensoPage {
                public navParams: NavParams,
                private formBuilder: FormBuilder,
                public app: App,
-               private complaintProvider: ComplaintProvider) {
+               private complaintProvider: ComplaintProvider,
+               public viewCtrl: ViewController,
+               private iab: InAppBrowser) {
     this.credentialsForm = this.formBuilder.group({
       email: new FormControl ('', Validators.compose([
                               		Validators.required,
@@ -93,7 +97,8 @@ export class FormCensoPage {
       identity: new FormControl ('', Validators.required),
       others: new FormControl ('', Validators.required),
       age: new FormControl ('', Validators.required),
-      education: new FormControl ('', Validators.required)
+      education: new FormControl ('', Validators.required),
+      checkBox: new FormControl (false, Validators.required)
 
     });
 
@@ -134,6 +139,25 @@ export class FormCensoPage {
 
   }
 
+  goToTermsAndConditions(){
+    this.iab.create('http://www.sdp.gov.co/sites/default/files/terminos_de_uso_app.pdf', '_system');
+    this.viewCtrl.dismiss().catch(err => {
+      console.error("Error en goToPDF", err, err.stack);
+    });
+  }
+
+  isCheckBoxPressed(){
+    if( this.credentialsForm.get('checkBox').value ){
+      console.log('is on');
+      this.isButtonOn = true;
+      setTimeout(() => {
+        this.content.scrollToBottom();
+      })
+    }
+    else{
+      this.isButtonOn = false;
+    }
+  }
     closeData(){
         this.modalWindow=false;
         this.navCtrl.setRoot(HomePage).catch(err => {
