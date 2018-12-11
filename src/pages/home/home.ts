@@ -330,4 +330,11 @@ export class HomePage {
       this[callback]();
     }
   }
+
+  goToDetails(params) {
+    console.log(params)
+    this.navCtrl.push('content', { id: params.id , data: params}).catch(err => {
+      console.error("Error en goToDetails", err, err.stack);
+    });
+  }
 }

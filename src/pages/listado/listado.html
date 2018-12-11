@@ -45,16 +45,16 @@
   </div>
 
   <div *ngIf="noticia" >
-    <div *ngFor="let n of news" id="new1" (click)="goToDetails(n)">
+    <div *ngFor="let _new of news" id="new1" (click)="goToDetails(_new)">
       <div class="news">
-          <img [src]="api + n.image" alt="news image">
+          <img [src]="api + _new.image" alt="news image">
           <ion-row class="articleContent">
             <ion-col col-12 class="articleDateNews">
-              <p>{{n.date | date:'longDate':'':'es'}}</p>
+              <p>{{_new.date | date:'longDate':'':'es'}}</p>
             </ion-col>
             <ion-col col-12 class="articleTextNews">
-              <p id="articleHeaderNews">{{n.title}}</p>
-              <p>{{n.description}}</p>
+              <p id="articleHeaderNews">{{_new.title}}</p>
+              <p>{{_new.description}}</p>
             </ion-col>
           </ion-row>
         </div>

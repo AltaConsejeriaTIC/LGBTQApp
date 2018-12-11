@@ -9,8 +9,6 @@ import { Platform } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import html2canvas from 'html2canvas';
 
-declare var google;
-
 @IonicPage({
   name: 'content',
   segment: 'content/:id'
@@ -75,31 +73,6 @@ export class ContentDetailPage {
     );
   }
 
-  geocodeAddress(geocoder, resultsMap) {
-    var address = this.getLocation(this.params.place);
-    geocoder.geocode({'address': address}, function(results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-
-  hideMapInNews(){
-    if(this.typeContent == "noticia")
-    {
-     document.getElementById('mapa').style.display = 'none';
-    }
-    else
-    {
-      document.getElementById('mapa').style.display = 'block';
-    }
-  }
 
   getLocation(place){
     let address: string;
@@ -112,7 +85,7 @@ export class ContentDetailPage {
     html2canvas(div).then((canvas)=>{
       let info = canvas.toDataURL("image/jpg");
       this.socialSharing.share(null, null, info, null)
-        .then( response => {
+        .then( () => {
           console.log("se pudo compartir");
           this.hideShareButton = false;
         }).catch((e) => {
@@ -131,7 +104,7 @@ export class ContentDetailPage {
       let msg = `${content.title}`;
       let url = `${content.source_link}`;
       this.socialSharing.share(msg, null, null, url)
-        .then( response => {
+        .then( () => {
           console.log("se pudo compartir");
         }).catch((e) => {
           console.error(e);
