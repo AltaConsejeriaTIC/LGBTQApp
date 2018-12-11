@@ -135,7 +135,6 @@ page-form-denuncia-suceso {
 
     .title{
       padding-left: 12%;
-      font-size: 2rem;
       font-weight: bold;
       line-height: 4.5vh;
       font-size: 2.2rem;
@@ -197,17 +196,16 @@ page-form-denuncia-suceso {
     }
 
     .item-md.item-block .item-inner, .item-ios.item-block .item-inner {
-    padding-right: 0px;
+    padding-right: 0;
 }
 
 ion-input.input, .item-label-stacked ion-datetime, ion-select.select.select-md, ion-textarea.input, ion-select.select.select-ios,{
   border: 1px solid #cbcbcb;
-  margin: 1vh 0px;
+  margin: 1vh 0;
   padding-left: 3%;
 }
 
 .item-label-stacked ion-datetime{
-  padding: 0 0;
   padding: 1vh 3%;
 }
 

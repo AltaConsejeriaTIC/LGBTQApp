@@ -46,15 +46,11 @@ page-organizacion-detail {
       font-size: 4.4rem;
     }
 
-    .logo-picture{
-      height: 52%;
-    }
-
     .bannerTitle{
       text-transform: uppercase;
       font-weight: 800;
       font-size: 2rem;
-      margin: 0 5%;
+      margin: 0 0%;
       text-align: center;
       width: 50%;
     }
@@ -199,5 +195,25 @@ page-organizacion-detail {
     right: 0;
     left: 0;
     position: absolute;
+  }
+  div.logo-picture{
+    height: 60%;
+    width: 30%;
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  img.logo-picture{
+    max-height: 85%;
+    max-width: 85%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
