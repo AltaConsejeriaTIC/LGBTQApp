@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content #content padding>
 
   <p class="steps">paso 2 de 2</p>
 
@@ -68,7 +68,18 @@
 </ng-container>
 </div>
 
-  <ion-row>
+  <ion-row class="terms-condiction-section" [ngClass]="{'mb-5': !isButtonOn }">
+    <ion-col col-2>
+        <ion-checkbox formControlName="checkBox" (ionChange)="isCheckBoxPressed()"></ion-checkbox>
+    </ion-col>
+    <ion-col col-10 class="col-text-section">
+        <ion-label text-wrap class="text-box">
+            Debe aceptar los <a (click)="goToTermsAndConditions()">términos y condiciones</a> para enviar el formulario. Sólo pueden participar mayores de edad.
+        </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="isButtonOn">
     <ion-col text-center class="buttonData">
       <button ion-button block class="sendButton" (click)="sendData()">
         Enviar denuncia

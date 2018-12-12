@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Content, ViewController } from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { ComplaintProvider } from '../../providers/complaint/complaint';
 import { ServerConfig } from '../../../config/server';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-form-denuncia-suceso',
@@ -16,6 +17,8 @@ export class FormDenunciaSucesoPage {
   modalWindow: boolean = false;
   modalWindow2: boolean = false;
   protected api = ServerConfig.apiEndPoint;
+  isButtonOn = false;
+  @ViewChild(Content) content: Content;
 
   validation_messages = {
 
@@ -33,11 +36,14 @@ export class FormDenunciaSucesoPage {
   constructor( public navCtrl: NavController,
                public navParams: NavParams,
                private formBuilder: FormBuilder,
-               private complaintProvider: ComplaintProvider ) {
+               private complaintProvider: ComplaintProvider,
+               public viewCtrl: ViewController,
+               private iab: InAppBrowser ) {
     this.denunciaForm = this.formBuilder.group({
       date: new FormControl ('', Validators.required),
       place: new FormControl ('', Validators.required),
-      description: new FormControl ('', Validators.required)
+      description: new FormControl ('', Validators.required),
+      checkBox: new FormControl (false, Validators.required)
 
     });
   }
@@ -86,6 +92,25 @@ export class FormDenunciaSucesoPage {
 
   closeData2(){
     this.modalWindow2=false;
+  }
+
+  goToTermsAndConditions(){
+    this.iab.create('http://www.sdp.gov.co/sites/default/files/terminos_de_uso_app.pdf', '_system');
+    // this.viewCtrl.dismiss().catch(err => {
+    //   console.error("Error en goToPDF", err, err.stack);
+    // });
+  }
+   isCheckBoxPressed(){
+    if( this.denunciaForm.get('checkBox').value ){
+      console.log('is on');
+      this.isButtonOn = true;
+      setTimeout(() => {
+        this.content.scrollToBottom();
+      })
+    }
+    else{
+      this.isButtonOn = false;
+    }
   }
 
   private markFormGroupTouched(formGroup: FormGroup) {
