@@ -194,7 +194,7 @@
 
   <ion-item>
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }">Fecha de nacimiento</ion-label>
-    <ion-datetime doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="age" placeholder="Fecha de nacimiento"></ion-datetime>
+    <ion-datetime doneText="ACEPTAR" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" displayFormat="DD/MM/YYYY" formControlName="age" placeholder="Fecha de nacimiento"></ion-datetime>
     <!-- <ion-input [ngClass]="{'error-box': (credentialsForm.get('age').hasError(validation_messages.age['0']['type']) && (credentialsForm.get('age').dirty || credentialsForm.get('age').touched)) == true }" formControlName="age" type="text" placeholder="Fecha de nacimiento"></ion-input> -->
   </ion-item>
 
