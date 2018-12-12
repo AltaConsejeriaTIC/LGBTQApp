@@ -149,9 +149,9 @@ export class FormCensoPage {
 
   goToTermsAndConditions(){
     this.iab.create('http://www.sdp.gov.co/sites/default/files/terminos_de_uso_app.pdf', '_system');
-    this.viewCtrl.dismiss().catch(err => {
-      console.error("Error en goToPDF", err, err.stack);
-    });
+    // this.viewCtrl.dismiss().catch(err => {
+    //   console.error("Error en goToPDF", err, err.stack);
+    // });
   }
 
   isCheckBoxPressed(){
