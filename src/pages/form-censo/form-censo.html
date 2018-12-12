@@ -162,8 +162,8 @@
   </div>
 
   <ion-item>
-    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }">Género con el que se identifica</ion-label>
-    <ion-select okText="OK" cancelText="CANCELAR" (ionChange)="onChangeIdentity($event)" [ngClass]="{'error-box': (credentialsForm.get('identity').hasError(validation_messages.identity['0']['type']) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('identity').value === ''  && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }">Género con el que se identifica</ion-label>
+    <ion-select okText="OK" cancelText="CANCELAR" (ionChange)="onChangeIdentity($event)" [ngClass]="{'error-box': (credentialsForm.get('identity').value === '' && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
       <ion-option value="Masculino">Masculino</ion-option>
       <ion-option value="Femenino">Femenino</ion-option>
       <ion-option value="Transgénero">Trangénero</ion-option>
@@ -173,20 +173,20 @@
 
   <div class="validation-errors">
   <ng-container *ngFor="let validation of validation_messages.identity" >
-    <div class="error-message" *ngIf="credentialsForm.get('identity').hasError(validation.type) && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)">
+    <div class="error-message" *ngIf="credentialsForm.get('identity').value === '' && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)">
   {{ validation.message }}
     </div>
   </ng-container>
   </div>
 
   <ion-item *ngIf="identityOhter">
-    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }">Otros</ion-label>
-    <ion-input [ngClass]="{'error-box': (credentialsForm.get('others').hasError(validation_messages.others['0']['type']) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }" formControlName="others" type="text" placeholder="Otros"></ion-input>
+    <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('others').value ==='' && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }">Otros</ion-label>
+    <ion-input [ngClass]="{'error-box': (credentialsForm.get('others').value ==='' && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)) == true }" formControlName="others" type="text" placeholder="Otros"></ion-input>
   </ion-item>
 
   <div class="validation-errors" *ngIf="identityOhter">
   <ng-container *ngFor="let validation of validation_messages.others" >
-    <div class="error-message" *ngIf="credentialsForm.get('others').hasError(validation.type) && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)">
+    <div class="error-message" *ngIf="credentialsForm.get('others').value ==='' && (credentialsForm.get('others').dirty || credentialsForm.get('others').touched)">
   {{ validation.message }}
     </div>
   </ng-container>
@@ -238,7 +238,7 @@
       </ion-col>
       <ion-col col-10 class="col-text-section">
           <ion-label text-wrap class="text-box">
-              Debe aceptar los <a (click)="goToTermsAndConditions()">términos y condiciones</a>para enviar el formulario. Sólo pueden participar mayores de edad.
+              Debe aceptar los <a (click)="goToTermsAndConditions()">términos y condiciones</a> para enviar el formulario. Sólo pueden participar mayores de edad.
           </ion-label>
       </ion-col>
   </ion-row>
