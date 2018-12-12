@@ -19,9 +19,9 @@
 
     <ion-icon name="icon-fleacha-atras" class="arrow arrowLeft" (click)="prevSlide()" [class.filterDark]="emergencyButtonActivate"></ion-icon>
 
-    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" [class.filterDark]="emergencyButtonActivate" *ngIf="slidesElementes && slidesElementes.length > 1">
+    <ion-slides pager loop="true" class="articles" #slides (ionSlideDidChange)="slideChanged()" (click)="goToDetails()" [class.filterDark]="emergencyButtonActivate" *ngIf="slidesElementes && slidesElementes.length > 1">
 
-      <ion-slide *ngFor="let e of slidesElementes" class="article" (click)="goToDetails(e)" [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(' + this.api + e.image + ')'}" >
+      <ion-slide *ngFor="let e of slidesElementes" class="article"  [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(' + this.api + e.image + ')'}" >
         <p class="titleText">{{e.title}}</p>
         <ion-row>
           <p class="articleDate">{{e.finish_date || e.date | date:'mediumDate':'':'es'}}</p>
