@@ -331,9 +331,9 @@ export class HomePage {
     }
   }
 
-  goToDetails(params) {
-    console.log(params)
-    this.navCtrl.push('content', { id: params.id , data: params}).catch(err => {
+  goToDetails() {
+    let event = this.slidesElementes[(this.slides.clickedIndex-1)%(this.slides.length()-2)];
+    this.navCtrl.push('content', { id: event.id , data: event}).catch(err => {
       console.error("Error en goToDetails", err, err.stack);
     });
   }
