@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "./keys/debug.keystore",
+      "storePassword": "vivelabbogota281013",
+      "alias": "debug",
+      "password": "vivelabbogota281013",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "./keys/release.keystore",
+      "storePassword": "vivelabbogota281013",
+      "alias": "release",
+      "password": "vivelabbogota281013",
+      "keystoreType": ""
+    }
+  }
+}
