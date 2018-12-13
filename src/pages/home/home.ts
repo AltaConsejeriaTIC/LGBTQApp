@@ -38,7 +38,7 @@ export class HomePage {
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage,
-    private detailService: DetailContentService,
+    public detailService: DetailContentService,
     private androidPermissions: AndroidPermissions,
     public plt: Platform,
     public eventService: EventProvider
@@ -334,7 +334,7 @@ export class HomePage {
   }
 
   goToDetails() {
-    let event = this.slidesElementes[(this.slides.clickedIndex-1)%(this.slides.length()-2)];
+    let event = this.slidesElementes[(this.slides.clickedIndex+2)%(this.slides.length()-2)];
     this.detailService.setEvento(event.isEvent);
     this.navCtrl.push('content', { id: event.id , data: event}).catch(err => {
       console.error("Error en goToDetails", err, err.stack);
