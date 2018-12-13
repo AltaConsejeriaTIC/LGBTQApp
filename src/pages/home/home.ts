@@ -15,7 +15,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { Platform } from 'ionic-angular';
 import {ServerConfig} from "../../../config/server";
 import {EventProvider} from "../../providers/event/event";
-
+import { DetailContentService } from '../../services/detail-content.service';
 
 @Component({
   selector: 'page-home',
@@ -38,6 +38,7 @@ export class HomePage {
     private sms: SMS,
     private callNumber: CallNumber,
     private storage: Storage,
+    public detailService: DetailContentService,
     private androidPermissions: AndroidPermissions,
     public plt: Platform,
     public eventService: EventProvider
@@ -59,6 +60,7 @@ export class HomePage {
         highlights.forEach((highlight) => {
           this.eventService.get(this.api, highlight.section == "event" ? "events" : "news", highlight.section_id).subscribe(
             (response) => {
+              response.isEvent = highlight.section == "event";
               this.slidesElementes.push(response);
               console.log(this.slidesElementes)
             },
@@ -331,9 +333,10 @@ export class HomePage {
     }
   }
 
-  goToDetails(params) {
-    console.log(params)
-    this.navCtrl.push('content', { id: params.id , data: params}).catch(err => {
+  goToDetails() {
+    let event = this.slidesElementes[(this.slides.clickedIndex+2)%(this.slides.length()-2)];
+    this.detailService.setEvento(event.isEvent);
+    this.navCtrl.push('content', { id: event.id , data: event}).catch(err => {
       console.error("Error en goToDetails", err, err.stack);
     });
   }

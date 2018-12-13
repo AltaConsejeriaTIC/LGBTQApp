@@ -39,46 +39,62 @@
         <ion-col col-11 class="sedes">
             <h2 class="title">Ciudades integrantes:</h2>
             <ion-row>
-              <ion-col col-5 class="pais">
+              <ion-col col-5 class="pais" (click)="goToWebPage('https://www.copred.cdmx.gob.mx/')">
                   <img src="../assets/imgs/mex.png">
                   <ion-col>
                       <p>CDMX</p>
-                      <p>Querétaro</p>
                   </ion-col>
               </ion-col>
-              <ion-col col-6 class="pais">
-                  <img src="../assets/imgs/bra.png">
-                  <p>Sao Paulo</p>
+              <ion-col col-6 class="pais" (click)="goToWebPage('http://www.municipiodequeretaro.gob.mx/triforce.php?id=115')">
+                  <img src="../assets/imgs/mex.png">
+                  <p>Querétaro</p>
               </ion-col>
             </ion-row>
 
             <ion-row>
-              <ion-col col-5 class="pais">
+                <ion-col col-5 class="pais" (click)="goToWebPage('https://prefeitura.sp.gov.br/cidade/secretarias/direitos_humanos/lgbt/')">
+                  <img src="../assets/imgs/bra.png">
+                  <p>Sao Paulo</p>
+                </ion-col>
+                <ion-col col-6 class="pais" (click)="goToWebPage('http://www.montevideo.gub.uy/institucional/dependencias/secretaria-de-la-diversidad')">
+                    <img src="../assets/imgs/uru.png">
+                    <ion-col>
+                      <p>Montevideo</p>
+                    </ion-col>
+                </ion-col>
+              </ion-row>
+
+            <ion-row>
+              <ion-col col-5 class="pais" (click)="goToWebPage('http://www.sdp.gov.co/gestion-socioeconomica/diversidad-sexual/generalidades')">
                   <img src="../assets/imgs/col.png">
                   <ion-col>
                       <p>Bogotá</p>
-                      <p>Medellín</p>
                   </ion-col>
               </ion-col>
-              <ion-col col-6 class="pais">
-                  <img src="../assets/imgs/uru.png">
-                  <p>Montevideo</p>
+              <ion-col col-6 class="pais" (click)="goToWebPage('https://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://d7d5e8106a59675c370d3256ab6dbe9a')">
+                  <img src="../assets/imgs/col.png">
+                  <p>Medellín</p>
               </ion-col>
             </ion-row>
 
             <ion-row>
-              <ion-col col-5 class="pais">
-                  <img src="../assets/imgs/ecu.png">
-                  <p>Quito</p>
+              <ion-col col-5 class="pais" (click)="goToWebPage('https://www.rosario.gov.ar/web/gobierno/desarrollo-social/diversidad-sexual')">
+                  <img src="../assets/imgs/arg.png">
+                  <p>Rosario</p>
               </ion-col>
-              <ion-col col-6 class="pais">
+              <ion-col col-6 class="pais" (click)="goToWebPage('http://www.buenosaires.gob.ar/derechoshumanos/convivencia-en-la-diversidad/diversidad-sexual')">
                   <img src="../assets/imgs/arg.png">
                   <ion-col>
                       <p>Buenos Aires</p>
-                      <p>Rosario</p>
                   </ion-col>
               </ion-col>
             </ion-row>
+            <ion-row>
+                <ion-col col-5 class="pais" (click)="goToWebPage('http://www.quito.gob.ec/')">
+                    <img src="../assets/imgs/ecu.png">
+                    <p>Quito</p>
+                </ion-col>
+              </ion-row>
 
         </ion-col>
       </ion-row>

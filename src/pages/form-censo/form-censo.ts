@@ -94,8 +94,8 @@ export class FormCensoPage {
                               	])),
       gender: new FormControl ('', Validators.required),
       orientation: new FormControl ('', Validators.required),
-      identity: new FormControl ('', Validators.required),
-      others: new FormControl ('', Validators.required),
+      identity: new FormControl (''),
+      others: new FormControl (''),
       age: new FormControl ('', Validators.required),
       education: new FormControl ('', Validators.required),
       checkBox: new FormControl (false, Validators.required)
@@ -110,7 +110,8 @@ export class FormCensoPage {
   }
 
   sendData(){
-    if(this.credentialsForm.valid) {
+
+    if(this.credentialsForm.valid && this.checkSexBirth() ) {
       let data = {
         "document_type": this.credentialsForm.get('documentType').value,
         "document_number": this.credentialsForm.get('documentNumber').value,
@@ -136,14 +137,21 @@ export class FormCensoPage {
         });
     }
     this.markFormGroupTouched(this.credentialsForm);
+  }
 
+  checkSexBirth(){
+
+    if( this.credentialsForm.get('identity').value !== 'Otro'){
+      return ( this.credentialsForm.get('identity').value ) && ( this.credentialsForm.get('identity').value !== '' );
+    }
+    return ( this.credentialsForm.get('others').value ) && ( this.credentialsForm.get('others').value !== '' );
   }
 
   goToTermsAndConditions(){
     this.iab.create('http://www.sdp.gov.co/sites/default/files/terminos_de_uso_app.pdf', '_system');
-    this.viewCtrl.dismiss().catch(err => {
-      console.error("Error en goToPDF", err, err.stack);
-    });
+    // this.viewCtrl.dismiss().catch(err => {
+    //   console.error("Error en goToPDF", err, err.stack);
+    // });
   }
 
   isCheckBoxPressed(){
