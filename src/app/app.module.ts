@@ -74,6 +74,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { AllianceProvider } from '../providers/alliance/alliance';
 import { DirectivesModule } from '../directives/directives.module';
 import { OrganizationProvider } from '../providers/organization/organization';
+import {Firebase} from "@ionic-native/firebase";
 
 @NgModule({
   declarations: [
@@ -181,7 +182,8 @@ import { OrganizationProvider } from '../providers/organization/organization';
     ComplaintProvider,
     AndroidPermissions,
     AllianceProvider,
-    OrganizationProvider
+    OrganizationProvider,
+    Firebase
   ]
 })
 export class AppModule {}
