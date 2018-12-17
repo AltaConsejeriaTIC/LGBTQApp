@@ -26,7 +26,18 @@
 </ion-header>
 
 <ion-content padding >
-  <div *ngIf="evento" >
+
+
+  <div class="not-event-box" *ngIf="evento && events.length===0">
+    <p class="not-event-text">No hay eventos disponibles</p>
+  </div>
+
+  <div class="not-event-box" *ngIf="noticia && news.length===0">
+      <p class="not-event-text">No hay noticias disponibles</p>
+  </div>
+
+
+  <div *ngIf="evento && events.length > 0" >
     <div *ngFor="let event of events" (click)="goToDetails(event)">
       <div class="article">
         <img [src]="api + event.image" alt="event images">
@@ -44,7 +55,7 @@
     </div>
   </div>
 
-  <div *ngIf="noticia" >
+  <div *ngIf="noticia && news.length > 0" >
     <div *ngFor="let _new of news" id="new1" (click)="goToDetails(_new)">
       <div class="news">
           <img [src]="api + _new.image" alt="news image">
