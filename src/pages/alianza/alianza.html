@@ -23,7 +23,7 @@
 
   </div>
 
-  <div class="sections">
+  <div class="sections" [ngClass]="{'sections-height-check':  allAlliances.length <=1 }">
     <div class="aliado" (click)="goToSerAliado()">
         <ion-icon name="md-person-add"></ion-icon>
         <p>Ser aliado</p>
