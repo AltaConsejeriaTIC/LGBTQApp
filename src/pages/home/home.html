@@ -31,7 +31,7 @@
 
     </ion-slides>
 
-  <ion-slides pager class="articles" [class.filterDark]="emergencyButtonActivate" *ngIf="(slidesElementes && slidesElementes.length == 0) || !slidesElementes">
+  <ion-slides pager class="articles" #slides [class.filterDark]="emergencyButtonActivate" *ngIf="(slidesElementes && slidesElementes.length == 0) || !slidesElementes">
 
     <ion-slide class="article"  [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(../../assets/imgs/defaultCarrusel.png)'}" *ngIf="!(slidesElementes && slidesElementes.length > 0)">
       <p class="titleText">En Bogotá se Puede Ser.</p>
@@ -39,7 +39,7 @@
         <p class="articleType">App</p>
       </ion-row>
     </ion-slide>
-</ion-slides>
+  </ion-slides>
 
     <ion-icon name="icon-flecha-derecha" class="arrow arrowRight" (click)="nextSlide()" [class.filterDark]="emergencyButtonActivate" *ngIf="slidesElementes && slidesElementes.length > 1"></ion-icon>
 
