@@ -15,7 +15,7 @@ export class PuntosPage {
             "icon": "ios-home",
             "children": [
                 {
-                    "image":"../assets/imgs/refugio.png",
+                    "image":"./assets/imgs/refugio.png",
                     "information": "Hogar transitorio para personas LGBTI que han sido víctimas de violencia y no tienen una red de apoyo. En esta casa se comienza un proceso de restablecimiento de derechos, si necesitas entrar a esta casa puedes acudir con los siguientes datos de contacto:",
                     "description": "Sector Salud - CAMI Zampar Mendoza",
                     "phone": "(57) 3444484",
@@ -30,7 +30,7 @@ export class PuntosPage {
             "icon": "ios-home",
             "children": [
               {
-                "image":"../assets/imgs/teusaquillo.png",
+                "image":"./assets/imgs/teusaquillo.png",
                 "information": "Centro de atención integral en donde se ofrece un conjunto de acciones psicosociales y de desarrollo comunitario a personas LGBTI",
                 "description": "Sector Salud - CAMI Zampar Mendoza",
                 "phone": "(57) 3384616",
@@ -43,7 +43,7 @@ export class PuntosPage {
             "icon": "ios-home",
             "children": [
                 {
-                  "image":"../assets/imgs/martires.png",
+                  "image":"./assets/imgs/martires.png",
                   "information": "Centro de atención integral en donde se ofrece un conjunto de acciones psicosociales y de desarrollo comunitario a personas LGBTI.",
                   "description": "Sector Salud - CAMI Zampar Mendoza",
                   "phone": "(57) 2436286",
@@ -56,7 +56,7 @@ export class PuntosPage {
             "icon": "ios-home",
             "children": [
                 {
-                  "image":"../assets/imgs/unidad.png",
+                  "image":"./assets/imgs/unidad.png",
                   "information": "Esta unidad busca atender jurídicamente vulneraciones a los derechos fundamentales de personas LGBTI.",
                   "description": "Sector Salud - CAMI Zampar Mendoza",
                   "phone": "(57) 5188471 Ext: 4128 / (57) 3279797 Ext. 1835",

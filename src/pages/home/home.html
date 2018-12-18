@@ -2,7 +2,7 @@
 
     <ion-navbar [class.filterDark]="emergencyButtonActivate">
 
-        <img src="../assets/icon/logo.png">
+        <img src="./assets/icon/logo.png">
         <p class="headerTitle">En Bogotá se puede ser</p>
         <ion-icon name="icon-menu-hamburguesa" (click)="openMenuModal()"></ion-icon>
 
@@ -33,7 +33,7 @@
 
   <ion-slides pager class="articles" #slides [class.filterDark]="emergencyButtonActivate" *ngIf="(slidesElementes && slidesElementes.length == 0) || !slidesElementes">
 
-    <ion-slide class="article"  [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(../../assets/imgs/defaultCarrusel.png)'}" *ngIf="!(slidesElementes && slidesElementes.length > 0)">
+    <ion-slide class="article"  [ngStyle]="{'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url(./assets/imgs/defaultCarrusel.png)'}" *ngIf="!(slidesElementes && slidesElementes.length > 0)">
       <p class="titleText">En Bogotá se Puede Ser.</p>
       <ion-row>
         <p class="articleType">App</p>
@@ -85,7 +85,7 @@
                             <button ion-fab (click)="sendEmergencySMS()" [disabled]="firstTime" [class.low-opacity]="tutorialStep==6"><ion-icon name="mail"></ion-icon></button>
                             <button ion-fab (click)="callEmergency()" [disabled]="firstTime" [class.low-opacity]="tutorialStep==6"><ion-icon name="call"></ion-icon></button >
                             <div *ngIf="tutorialStep == 5 || tutorialStep == 6" style="width: 100%;">
-                              <img src="../assets/icon/arrow.svg">
+                              <img src="./assets/icon/arrow.svg">
                             </div>
                         </ion-fab-list>
                     </ion-fab>
@@ -137,7 +137,7 @@
 
         <div *ngIf="tutorialStep === 3 || tutorialStep === 4" class="tutorial-arrow">
           <div style="width: 20%;">
-            <img class="tutorial-arrow" src="../assets/icon/arrow.svg">
+            <img class="tutorial-arrow" src="./assets/icon/arrow.svg">
           </div>
           <p *ngIf="tutorialStep === 3" class="tutorial-text tutorial-arrow"><b>éste es el botón de emergencia</b><br/><br/>Si en algún momento te encuentras en situación de riesgo. puedes usar esta opción para enviarle un mensaje predeterminado a los contactos que desees.</p>
           <p *ngIf="tutorialStep === 4" class="tutorial-text tutorial-arrow"><b>Presiona el botón</b><br/>Para mirar su funcionamiento.</p>
@@ -152,7 +152,7 @@
 
       <div class="delete-modal-component">
           <div class="picture-image-block">
-              <img class="picture-resize" src="../assets/icon/group2.svg">
+              <img class="picture-resize" src="./assets/icon/group2.svg">
           </div>
 
           <ion-row class="confirm-text-section">
@@ -175,7 +175,7 @@
 
     <div class="delete-modal-component-alert">
         <div class="picture-image-block">
-            <img class="picture-resize" src="../assets/icon/Vector.svg">
+            <img class="picture-resize" src="./assets/icon/Vector.svg">
         </div>
 
         <ion-row class="confirm-text-section">
@@ -202,7 +202,7 @@
 
     <div class="delete-modal-component-new">
         <div class="picture-image-block">
-            <img class="picture-resize" src="../assets/icon/group2.svg">
+            <img class="picture-resize" src="./assets/icon/group2.svg">
         </div>
 
         <ion-row class="confirm-text-section">
