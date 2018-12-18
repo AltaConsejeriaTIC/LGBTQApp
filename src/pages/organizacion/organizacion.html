@@ -23,10 +23,14 @@
 
   </div>
 
-  <div class="sections">
+  <div class="sections" [ngClass]="{'sections-height-check':  allOrganizations.length <=2 }">
     <div class="aliado" (click)="goToAparecer()">
         <ion-icon name="md-person-add"></ion-icon>
         <p>Aparecer aquí</p>
+    </div>
+
+    <div class="not-event-box" *ngIf="allOrganizations.length===0">
+      <p class="not-event-text">No hay Organizaciones disponibles</p>
     </div>
 
 
