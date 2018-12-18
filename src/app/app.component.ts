@@ -33,6 +33,11 @@ export class MyApp {
       let token = localStorage.getItem(TOKEN_KEY);
       if (!token) {
         firebase.getToken().then(token => {
+          if (platform.is('ios')) {
+            firebase.grantPermission().then(response =>{
+              console.log("Permission granted")
+            });
+          }
           this.http.get(ENV.endpoint+"/token/" + token).subscribe(value => {
             localStorage.setItem(TOKEN_KEY, token);
             console.log(value);
