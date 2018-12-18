@@ -70,6 +70,10 @@ page-alianza {
       }
     }
 
+    .sections-height-check{
+      height: calc( 100% - 38% );
+    }
+
     .sections{
       position: relative;
       border-top-left-radius: 8% 8%;
@@ -159,7 +163,7 @@ page-alianza {
           display: flex;
           align-items: center;
           .icon{
-            padding: 12px 5px 12px 20px;
+            padding: 20px 5px 12px 20px;
             text-align: center;
             font-size: 2.1rem;
             margin-bottom: 0;

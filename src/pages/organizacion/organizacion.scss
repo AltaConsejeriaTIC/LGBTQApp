@@ -70,6 +70,27 @@ page-organizacion {
       }
     }
 
+    .sections-height-check{
+      height: calc( 100% - 35% );
+    }
+
+    .not-event-box{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+      .not-event-text{
+        margin-bottom: 7rem;
+        margin-top: 0%;
+        font-size: 27px;
+        padding-left: 5em;
+        padding-right: 5em;
+        text-align: center;
+        font-family: 'Nunito';
+        font-weight: bold;
+      }
+    }
+
     .sections{
       position: relative;
       border-top-left-radius: 8% 8%;

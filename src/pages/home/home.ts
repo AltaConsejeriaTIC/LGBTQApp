@@ -1,5 +1,5 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
-import {NavController, Slides, ModalController, FabContainer} from 'ionic-angular';
+import { NavController, Slides, ModalController, FabContainer} from 'ionic-angular';
 import { ModalMenuPage } from '../modal-menu/modal-menu';
 import { ListadoPage } from '../listado/listado';
 import { DenunciaPage } from '../denuncia/denuncia';
@@ -50,12 +50,6 @@ export class HomePage {
       });
 
       this.eventService.getData(`${this.api}/highlights`).subscribe((highlights)=>{
-
-        // highlights = [
-        //   {id:20,section_id:4,section:"events"},
-        //   {id:16,section_id:6,section:"events"},
-        //   {id:6,section_id:2,section:"news"}
-        //   ];
         console.log(highlights);
         highlights.forEach((highlight) => {
           this.eventService.get(this.api, highlight.section == "event" ? "events" : "news", highlight.section_id).subscribe(
@@ -297,7 +291,11 @@ export class HomePage {
   }
 
   slideChanged() {
-    this.slides.update();
+
+    if( this.slidesElementes.length > 0 ){
+      this.slides.update();
+    }
+
   }
 
   @HostListener('window:resize', ['$event'])

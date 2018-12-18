@@ -38,8 +38,12 @@ export class ListadoPage {
           event.finish_date = event.finish_date.slice(0, -1);
           return event;
         });
-        this.monthTitle = this.months[response[0].start_date.slice(5,7)-1];
-        this.yearTitle = response[0].start_date.slice(0,4);
+
+        if( response[0]){
+          this.monthTitle = this.months[response[0].start_date.slice(5,7)-1];
+          this.yearTitle = response[0].start_date.slice(0,4);
+        }
+
       },
       (error) => console.log("$$$$$$$$$$$",error)
     );
