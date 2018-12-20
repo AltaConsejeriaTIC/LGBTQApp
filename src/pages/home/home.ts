@@ -331,8 +331,20 @@ export class HomePage {
     }
   }
 
-  goToDetails() {
-    let event = this.slidesElementes[(this.slides.clickedIndex+2)%(this.slides.length()-2)];
+  goToDetails( ) {
+
+
+    console.log(' slides length: ', this.slides.length() );
+    console.log('this.slides.clickedIndex: ', this.slides.clickedIndex );
+    let event = null;
+    if( this.slides.length() === 4 ){
+      var ind = this.slides.clickedIndex === 3 || this.slides.clickedIndex === 1 ? 0 : 1;
+      event = this.slidesElementes[ind];
+
+    }
+    else{
+      event = this.slidesElementes[(this.slides.clickedIndex+2)%(this.slides.length()-2)];
+    }
     this.detailService.setEvento(event.isEvent);
     this.navCtrl.push('content', { id: event.id , data: event}).catch(err => {
       console.error("Error en goToDetails", err, err.stack);
