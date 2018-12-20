@@ -1,5 +1,5 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import {NavController, NavParams, Content, ScrollEvent} from 'ionic-angular';
+import {NavController, NavParams, Content, ScrollEvent, Platform} from 'ionic-angular';
 import { DetailContentService } from '../../services/detail-content.service';
 import { EventProvider } from '../../providers/event/event';
 import {ServerConfig} from "../../../config/server";
@@ -22,15 +22,19 @@ export class ListadoPage {
   public events = [];
   public news = [];
   private months: string[] = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
+  public imagesHeight = 0;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private detailService: DetailContentService,
     public ref: ChangeDetectorRef,
-    public eventService: EventProvider
+    public eventService: EventProvider,
+    public platform: Platform
   ) {
     this.detailService.setEvento(this.evento);
+    platform.ready().then((readySource) => {
+      this.imagesHeight = platform.width()/1.25;
+    });
     this.eventService.getData(`${this.api}/events`).subscribe(
       (response) => {
         this.events = response.map((event)=>{
@@ -97,9 +101,9 @@ export class ListadoPage {
   onScroll(e: ScrollEvent) {
     let currentEvent;
     if (this.evento) {
-      currentEvent = this.events[Math.ceil((e.scrollTop-256)/450)].start_date;
+      currentEvent = this.events[Math.ceil((e.scrollTop - this.imagesHeight)/ (this.imagesHeight+160))].start_date;
     }else{
-      currentEvent = this.news[Math.ceil((e.scrollTop-160.8)/362)].date;
+      currentEvent = this.news[Math.ceil((e.scrollTop - this.imagesHeight)/ (this.imagesHeight+189))].date;
     }
     this.monthTitle = this.months[currentEvent.slice(5,7)-1];
     this.yearTitle = currentEvent.slice(0,4);
