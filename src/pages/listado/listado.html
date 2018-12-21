@@ -21,7 +21,7 @@
     <button [ngClass]="{'lineNews': noticia == true }" (click)="changeSectionNews()" class="buttonSection buttonNews">NOTICIAS</button>
   </div>
 
-  <p class="month">{{ monthTitle }}, {{yearTitle}}</p>
+  <p class="month">{{evento && events.length > 0? monthTitle+','+yearTitle: ''}}{{noticia && news.length > 0? monthTitle+','+yearTitle: ''}}</p>
 
 </ion-header>
 
