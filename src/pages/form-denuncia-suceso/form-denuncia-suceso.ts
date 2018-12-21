@@ -113,6 +113,11 @@ export class FormDenunciaSucesoPage {
     }
   }
 
+  getCurrentDate(){
+    var date = new Date();
+    return `${ date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate() }`;
+  }
+
   private markFormGroupTouched(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach(control => {
       control.markAsTouched();

@@ -22,8 +22,8 @@
     <ion-label stacked [ngClass]="{'error-text': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
     <ion-select okText="OK" cancelText="CANCELAR" [ngClass]="{'error-box': (credentialsForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (credentialsForm.get('documentType').dirty || credentialsForm.get('documentType').touched))}" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
       <!--<ion-option value="TI">Tarjeta de identidad</ion-option>-->
-      <ion-option value="CC">Cedula de ciudadanía</ion-option>
-      <ion-option value="CE">Cedula de extranjería</ion-option>
+      <ion-option value="CC">Cédula de ciudadanía</ion-option>
+      <ion-option value="CE">Cédula de extranjería</ion-option>
       <ion-option value="PP">Pasaporte</ion-option>
     </ion-select>
   </ion-item>
@@ -166,7 +166,7 @@
     <ion-select okText="OK" cancelText="CANCELAR" (ionChange)="onChangeIdentity($event)" [ngClass]="{'error-box': (credentialsForm.get('identity').value === '' && (credentialsForm.get('identity').dirty || credentialsForm.get('identity').touched)) == true }" formControlName="identity" type="text" placeholder="Género con el que se identifica">
       <ion-option value="Masculino">Masculino</ion-option>
       <ion-option value="Femenino">Femenino</ion-option>
-      <ion-option value="Transgénero">Trangénero</ion-option>
+      <ion-option value="Transgénero">Transgénero</ion-option>
       <ion-option value="Otro">Otro</ion-option>
     </ion-select>
   </ion-item>

@@ -56,8 +56,8 @@
     <ion-label stacked [ngClass]="{'error-text': (denunciaForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (denunciaForm.get('documentType').dirty || denunciaForm.get('documentType').touched)) == true }">Tipo de documento de identidad</ion-label>
     <ion-select [ngClass]="{'error-box': (denunciaForm.get('documentType').hasError(validation_messages.documentType['0']['type']) && (denunciaForm.get('documentType').dirty || denunciaForm.get('documentType').touched)) == true }" formControlName="documentType" type="text" placeholder="Tipo de documento de identidad">
       <!--<ion-option value="TI">Tarjeta de identidad</ion-option>-->
-      <ion-option value="CC">Cedula de ciudadanía</ion-option>
-      <ion-option value="CE">Cedula de extranjería</ion-option>
+      <ion-option value="CC">Cédula de ciudadanía</ion-option>
+      <ion-option value="CE">Cédula de extranjería</ion-option>
       <ion-option value="PP">Pasaporte</ion-option>    </ion-select>
   </ion-item>
 
