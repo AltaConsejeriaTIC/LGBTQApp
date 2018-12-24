@@ -199,6 +199,19 @@ page-contact {
     }
   }
 
+  @media (min-height: 400px) and (max-height: 570px){
+    .toggle-ios .toggle-inner{
+      left: 5px !important;
+      top: -4px !important;
+    }
+
+    page-contact .contacts-section-block .list-block .row-contacts-info .toggle-block .check-text{
+      margin: 66% 2% 0% 19% !important;
+    }
+
+  }
+
+
   .emergency-section-contacts{
     left: 1%;
     display: flex;
