@@ -205,8 +205,11 @@ page-contact {
       top: -4px !important;
     }
 
-    page-contact .contacts-section-block .list-block .row-contacts-info .toggle-block .check-text{
-      margin: 66% 2% 0% 19% !important;
+    .toggle-block{
+      .check-text{
+        margin: 66% 2% 0% 19% !important;
+      }
+
     }
 
   }
