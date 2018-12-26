@@ -88,40 +88,6 @@
         </div>
       </div>
 
-      <!-- dont delete it -->
-      <!-- <div class="contacts-section-block">
-          <ion-list class="list-block">
-              <div *ngFor="let info of newArray; last as lastElement" (click)="itemSelected(info)">
-
-                <ion-row class="row-contacts-info">
-                  <ion-col col-2 class="icon-block">
-                      <span class="custom-icon" [ngStyle]="{ 'background': '#244064' }" >LL</span>
-                  </ion-col>
-                  <ion-col col-4 class="text-block" >
-                      <p> {{info }}</p>
-                    </ion-col>
-                  <ion-col col-3 class="toggle-block">
-                      <ion-toggle color="secondary" class="toggle-move-position"></ion-toggle>
-                      <p class="check-text" >
-                          {{'ACTIVO'}}
-                      </p>
-                  </ion-col>
-                  <ion-col col-3 class="delete-icon" >
-                      <div class="icon-block">
-                          <ion-icon name="icon-icono-eliminar"></ion-icon>
-                      </div>
-                      <p class="check-text-delete">ELIMINAR</p>
-                  </ion-col>
-                </ion-row>
-
-                <div class="resize-line" *ngIf="!lastElement">
-                  <div class="dividerLine"></div>
-                </div>
-
-              </div>
-          </ion-list>
-      </div> -->
-
     <div *ngIf="numberOfActiveContacts < 3">
         <ion-row class="formButton">
             <button ion-button class="edit-emergency-message" (click)="addContact()">

@@ -37,7 +37,18 @@ page-alianzas-aliado {
     background-color: #05AE0B;
   }
 
+  .wrapper {
+    min-height: calc(100% - 5px);
+    padding-bottom: 1rem;
+  }
 
+  .new-bottom-line {
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    height: 5px;
+    width: 100%;
+    content: '';
+  }
+  
   .bar-button-default,
   .toolbar-title {
     color: #98E4A4 !important;
@@ -57,7 +68,7 @@ page-alianzas-aliado {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 12%;
+    padding: 4% 12% 0% 12%;
       .contentCenso{
         text-align: left;
         line-height: 4vh;
