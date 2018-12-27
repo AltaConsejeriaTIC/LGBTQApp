@@ -46,8 +46,28 @@ page-alianzas-detail {
       font-size: 4.4rem;
     }
 
-    .logo-image{
-      height: 52%;
+    div.logo-picture{
+      height: 110px;
+      width: 110px;
+      background-color: white;
+      border-radius: 6px;
+      position: relative;
+      margin-right: 5px;
+      margin-left: 15px;
+    }
+
+    img.logo-picture{
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      border-radius: 10px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
 
     .bannerTitle{
