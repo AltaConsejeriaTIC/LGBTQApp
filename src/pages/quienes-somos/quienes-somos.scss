@@ -23,6 +23,10 @@ page-quienes-somos {
   }
 }
 
+ion-navbar.toolbar {
+  padding-top: calc(env(safe-area-inset-top) + 5px) !important;
+}
+
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
