@@ -151,19 +151,11 @@ page-form-censo {
   background-color: #05AE0B !important;
 }
 
-  ion-navbar{
-    .toolbar{
-
-      padding-top: cal( env( safe-area-inset-top) + 4px) !important;
-
-      .icon{
-        color: white !important;
-      }
-    }
+.toolbar{
+  .icon{
+    color: white !important;
   }
-
-
-
+}
 
 ion-navbar.toolbar {
   padding-top: calc(env(safe-area-inset-top) + 4px) !important;
