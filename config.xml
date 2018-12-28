@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="gov.altaconsejeriatic.sepuedeser" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="gov.altaconsejeriatic.sepuedeser" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SePuedeSer</name>
     <description>LGBTI App</description>
     <author email="diversidadsexual@sdp.gov.co" href="http://ionicframework.com/">vivelab Bogota Team</author>
