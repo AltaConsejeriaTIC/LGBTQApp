@@ -120,9 +120,9 @@ export class FormCensoPage {
         "address": this.credentialsForm.get('address').value,
         "email": this.credentialsForm.get('email').value,
         "phone": this.credentialsForm.get('phone').value,
-        "sex_birth": this.identityOhter ? this.credentialsForm.get('others').value : this.credentialsForm.get('identity').value,
+        "gender": this.identityOhter ? this.credentialsForm.get('others').value : this.credentialsForm.get('identity').value,
         "sexual_orientation": this.credentialsForm.get('orientation').value,
-        "gender": this.credentialsForm.get('gender').value,
+        "sex_birth": this.credentialsForm.get('gender').value,
         "birth_day": this.credentialsForm.get('age').value,
         "education": this.credentialsForm.get('education').value
       };
