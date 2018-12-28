@@ -24,12 +24,12 @@
     <preference name="orientation" value="portrait" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
-        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
-        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
-        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
-        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
-        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-iconmdpi.png" />
+        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-iconmdpi.png" />
+        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-iconmdpi.png" />
+        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-iconmdpi.png" />
+        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-iconmdpi.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-iconmdpi.png" />
         <splash density="land-ldpi" src="resources/android/splash/320x200.png" />
         <splash density="land-mdpi" src="resources/android/splash/480x320.png" />
         <splash density="land-hdpi" src="resources/android/splash/1280x720.png" />
