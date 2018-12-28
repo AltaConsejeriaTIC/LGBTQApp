@@ -157,6 +157,12 @@ page-form-censo {
   }
 }
 
+ion-navbar.toolbar {
+  padding-top: calc(env(safe-area-inset-top) + 4px) !important;
+}
+
+
+
   .toolbar-title.toolbar-title {
     text-transform: uppercase;
     font-weight: 800;
