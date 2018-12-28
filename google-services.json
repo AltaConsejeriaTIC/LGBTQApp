@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:701877647789:android:9d0dd2ec191f6360",
         "android_client_info": {
-          "package_name": "gov.ambtic.sepuedeser"
+          "package_name": "gov.altaconsejeriatic.sepuedeser"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "701877647789-na9jin3mvi96ukl7e0m7actoshjgn43n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "gov.ambtic.sepuedeser",
+            "package_name": "gov.altaconsejeriatic.sepuedeser",
             "certificate_hash": "57ef317c1227a7997a4b9d53e1b247737f13ff94"
           }
         },
