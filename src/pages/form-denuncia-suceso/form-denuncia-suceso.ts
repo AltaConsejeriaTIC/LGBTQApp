@@ -18,6 +18,7 @@ export class FormDenunciaSucesoPage {
   modalWindow2: boolean = false;
   protected api = ServerConfig.apiEndPoint;
   isButtonOn = false;
+  maxDate : any;
   @ViewChild(Content) content: Content;
 
   validation_messages = {
@@ -39,6 +40,8 @@ export class FormDenunciaSucesoPage {
                private complaintProvider: ComplaintProvider,
                public viewCtrl: ViewController,
                private iab: InAppBrowser ) {
+
+    this.maxDate = new Date().toISOString()
     this.denunciaForm = this.formBuilder.group({
       date: new FormControl ('', Validators.required),
       place: new FormControl ('', Validators.required),

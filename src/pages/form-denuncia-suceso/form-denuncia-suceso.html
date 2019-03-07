@@ -22,7 +22,7 @@
 
     <ion-item>
         <ion-label stacked [ngClass]="{'error-text': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }">Fecha del suceso</ion-label>
-          <ion-datetime displayFormat="D/M/YYYY" pickerFormat="D/M/YYYY" doneText="ACEPTAR" max="{{getCurrentDate()}}" cancelText="CANCELAR" [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="date" placeholder="Fecha del suceso"></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" doneText="ACEPTAR" [max]="maxDate" cancelText="CANCELAR" [ngClass]="{'error-box': ((denunciaForm.get('date').hasError(validation_messages.date['0']['type'])) && (denunciaForm.get('date').dirty || denunciaForm.get('date').touched)) == true }" displayFormat="MM/DD/YYYY" formControlName="date" placeholder="Fecha del suceso"></ion-datetime>
   </ion-item>
 
     <div class="validation-errors">
