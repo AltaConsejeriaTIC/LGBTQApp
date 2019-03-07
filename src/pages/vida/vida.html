@@ -39,7 +39,7 @@
                     <h2>{{ child.information }}</h2>
                     <p *ngIf="child.description" class="title">{{ child.description }}</p>
                     <p *ngIf="child.web" class="title">Sitio web: </p>
-                    <p *ngIf="child.web">{{ child.web }}</p>
+                    <p *ngIf="child.web"><a (click)="goToWebPage(child.web)">{{ child.web }}</a></p>
                     <p *ngIf="child.webText">{{ child.webText }}</p>
                     <p *ngIf="child.address" class="title">Dirección: </p>
                     <p *ngIf="child.address">{{ child.address }}</p>
@@ -48,7 +48,7 @@
                     <p *ngIf="child.address2" class="title">Dirección: </p>
                     <p *ngIf="child.address2">{{ child.address2 }}</p>
                     <p *ngIf="child.web2" class="title">Sitio web: </p>
-                    <p *ngIf="child.web2" class="web2">{{ child.web2 }}</p>
+                    <p *ngIf="child.web2" class="web2"><a (click)="goToWebPage(child.web2)">{{ child.web2 }}</a></p>
                     <p *ngIf="child.mail" class="title">Correo electrónico: </p>
                     <p *ngIf="child.mail">{{ child.mail }}</p>
                     <p *ngIf="child.phone" class="title">Teléfono: </p>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServerConfig } from '../../../config/server';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the AlianzasDetailPage page.
@@ -19,7 +20,7 @@ export class AlianzasDetailPage {
   public infoData : any;
   protected api = ServerConfig.apiEndPoint;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private iab: InAppBrowser) {
 
     this.infoData = {
       "name": navParams.get('name'),
@@ -35,6 +36,16 @@ export class AlianzasDetailPage {
       "updated_at": navParams.get('updated_at')
     }
 
+  }
+
+  goToWebPage(){
+
+    var web = this.infoData.website;
+    if( !web.includes('http')){
+      web = `http://${web}`;
+    }
+
+    this.iab.create(web, '_system');
   }
 
   ionViewDidLoad() {

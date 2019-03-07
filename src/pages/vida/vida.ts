@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-vida',
@@ -121,12 +122,22 @@ export class VidaPage {
         }
     ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private iab: InAppBrowser) {
     this.information = this.items;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VidaPage');
+  }
+
+  goToWebPage(link){
+
+    var web = link;
+    if( !web.includes('http')){
+      web = `http://${web}`;
+    }
+
+    this.iab.create(web, '_system');
   }
 
   toggleSection(i) {

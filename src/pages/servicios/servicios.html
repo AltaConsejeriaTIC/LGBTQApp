@@ -43,7 +43,7 @@
                     <p *ngIf="child.address">Dirección: </p>
                     <p *ngIf="child.address">{{ child.address }}</p>
                     <p>Sitio web: </p>
-                    <p>{{ child.web }}</p>
+                    <p><a (click)="goToWebPage(child.web)">{{child.web}}</a></p>
                     <p *ngIf="child.webText">{{ child.webText }}</p>
                     <p *ngIf="child.web2" class="web2">{{ child.web2 }}</p>
                 </ion-item>

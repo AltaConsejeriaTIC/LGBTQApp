@@ -37,7 +37,7 @@
                     <h2>{{ child.information }}</h2>
                     <p>{{ child.description }}</p>
                     <p>Sitio web: </p>
-                    <p>{{ child.web }}</p>
+                    <p><a (click)="goToWebPage(child.web)">{{ child.web }}</a></p>
                     <p>{{ child.description2 }}</p>
                     <p>Correo electrónico: </p>
                     <p>{{ child.mail2 }}</p>
