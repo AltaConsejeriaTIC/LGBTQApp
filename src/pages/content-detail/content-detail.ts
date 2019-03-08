@@ -113,7 +113,11 @@ export class ContentDetailPage {
   }
 
   goToLink() {
-    this.iab.create(this.params.source_link, '_system');
+    var web = this.params.source_link;
+    if( !web.includes('http')){
+      web = `http://${web}`;
+    }
+    this.iab.create(web, '_system');
   }
 
   goToMaps() {
